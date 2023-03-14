@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import MenuBar from "./components/MenuBar";
 import Navbar from "./components/Navbar";
 import HomeNavBar from "./components/HomeNavBar";
-// import Home from "./pages/Home";
+import Home from "./pages/Home";
 import axios from "axios";
 import Signup from "./Logins/Signup";
 import Login from "./Logins/Login";
@@ -73,7 +73,7 @@ function App() {
 
       <div className={viewPoint}>
         <Routes>
-          {/* <Route path="/" element={<Home />}></Route> */}
+          <Route path="/" element={<Home />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
           {/* <Route path="/slots" element={<Slot />}></Route>

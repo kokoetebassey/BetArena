@@ -10,7 +10,7 @@ import image1 from "../images/image 14.png";
 import image2 from "../images/image 15.png";
 import image3 from "../images/image 16.png";
 
-import MobileHome from "../components/MobileHome";
+// import MobileHome from "../components/MobileHome";
 // import ShitCode from "../pages/ShitCode";
 // import BCD from "../pages/BCD";
 // import TaskHub from "../pages/TaskHub";
@@ -27,7 +27,7 @@ import "swiper/css/bundle";
 // import required modules
 import { Navigation } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
-import Basection from "../homepage/Ba_section";
+// import Basection from "../homepage/Ba_section";
 
 SwiperCore.use([Autoplay]);
 
@@ -89,9 +89,8 @@ export default function Home() {
             </SwiperSlide>
           </Swiper>
         </div>
-          <Basection />
+
       </div>
-      <MobileHome />
     </>
   );
 }
