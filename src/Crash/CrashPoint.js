@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 
-import CrashTime from "../Crash/CrashTime";
+import CrashTime from "./CrashTime";
 // import Message from "../Crash/Message";
-import CrashMessage from "../Crash/CrashMessage";
-import Crashcount from "../Crash/Crashcount";
+import CrashMessage from "./CrashMessage";
+import Crashcount from "./Crashcount";
 import { NavLink } from "react-router-dom";
 
 export default function CrashPoint(crash) {

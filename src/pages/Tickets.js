@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function History() {
+export default function Ticket() {
   return (
     <div className="ticket-display">
       <div className="ticket-display-inner-flex">

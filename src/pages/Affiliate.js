@@ -1,21 +1,21 @@
 import React from "react";
 import "./pagesStyles/affiliate.css";
-import icon1 from "./images/affiliate icon1.png";
-import icon2 from "./images/affiliate icon2.png";
-import affiliateBg from "./images/affiliate bg.png";
-import affiliateWrite from "./images/affiliate write up.png";
-import affiliateMain from "./images/affiliate main img.png";
-import affiliateBubble from "./images/affiliate bubble.png";
-import affiliateIcon from "./images/affiliate icon.png";
-import affiliateFlex1 from "./images/affiliate flex img1.png";
-import affiliateFlex2 from "./images/affiliate flex img2.png";
-import badge from "./images/affiliate badge.png";
-import affiliateFlexIcon3 from "./images/affiliate-flex3 icon.png";
-import affiliateFlex21 from "./images/affiliate-flex3 img.png";
-import affiliateLogo from "./images/affiliate-flex4 logo.png";
-import affiliateLogo1 from "./images/affiliate-flex5 logo1.png";
-import affiliateLogo2 from "./images/affiliate-flex4 logo2.png";
-import affiliateLogoLast from "./images/affiliate flex6 logo.png";
+import icon1 from "../images/images/affiliate icon1.png";
+import icon2 from "../images/images/affiliate icon2.png";
+import affiliateBg from "../images/images/affiliate bg.png";
+import affiliateWrite from "../images/images/affiliate write up.png";
+import affiliateMain from "../images/images/affiliate main img.png";
+import affiliateBubble from "../images/images/affiliate bubble.png";
+import affiliateIcon from "../images/images/affiliate icon.png";
+import affiliateFlex1 from "../images/images/affiliate flex img1.png";
+import affiliateFlex2 from "../images/images/affiliate flex img2.png";
+import badge from "../images/images/affiliate badge.png";
+import affiliateFlexIcon3 from "../images/images/affiliate-flex3 icon.png";
+import affiliateFlex21 from "../images/images/affiliate-flex3 img.png";
+import affiliateLogo from "../images/images/affiliate-flex4 logo.png";
+import affiliateLogo1 from "../images/images/affiliate-flex5 logo1.png";
+import affiliateLogo2 from "../images/images/affiliate-flex4 logo2.png";
+import affiliateLogoLast from "../images/images/affiliate flex6 logo.png";
 import Footer from "./FooterPage";
 
 export default function Affiliate() {
