@@ -1,4 +1,4 @@
-import { Routes,  Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import MenuBar from "./components/MenuBar";
 import Navbar from "./components/Navbar";
@@ -25,7 +25,7 @@ function App() {
         .get(`https://betarena.herokuapp.com/api/profile`, {
           headers: {
             Authorization: `Bearer ${user.Token}`,
-          }
+          },
         })
         .then((response) => {
           setProfile(response.data);
@@ -37,8 +37,7 @@ function App() {
     fetchData();
   }, [user]);
 
-  if(profile){
-
+  if (profile) {
   }
 
   const setScreen = () => {
@@ -77,17 +76,22 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
+
+          {/* ========== Pages ============= */}
+
           <Route path="/slots" element={<Slot />}></Route>
-            {/* <Route path="/crash" element={<Crash />}></Route>
             <Route path="/affiliate" element={<Affiliate />}></Route>
-            <Route path="/promotion" element={<Promotion />}></Route>
+            {/* <Route path="/promotion" element={<Promotion />}></Route>
             <Route path="/BCD" element={<BCD />}></Route>
             <Route path="/TaskHup" element={<TaskHup />}></Route>
             <Route path="/lottery" element={<Lottery />}>
               <Route index element={<Tickets />} />
               <Route path="tickets" element={<Tickets />} />
               <Route path="history" element={<History />} />
-            </Route> */}
+            </Route>
+
+          <Route path="/crash" element={<Crash />}></Route> */}
+
 
           {/* <Route path="BetHistory" element={<BetHistory />}></Route>
             <Route path="/footer" element={<Footer />}></Route>
