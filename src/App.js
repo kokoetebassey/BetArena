@@ -2,8 +2,7 @@ import { Routes,  Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import MenuBar from "./components/MenuBar";
 import Navbar from "./components/Navbar";
-import Crash from "./pages/Crash";
-import CrashPoint from "./pages/CrashPoint"
+import CrashPoint from "./Crash/CrashPoint"
 import HomeNavBar from "./components/HomeNavBar";
 import Home from "./pages/Home";
 import axios from "axios";
@@ -112,6 +111,7 @@ function App() {
         {/* ============= Games =================== */}
 
         <Route path="/crash" element={<Crash />}></Route>
+        <Route path="CrashPoint" element={<CrashPoint />}></Route>
           {/* <Route path="BetHistory" element={<BetHistory />}></Route>
 
             <Route path="Recommend" element={<Recommend />}></Route>
