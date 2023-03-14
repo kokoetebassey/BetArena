@@ -15,6 +15,7 @@ html body {
   height: 100vh;
   padding: 0;
   margin: 0;
+  margin-top: 90px;
 }
 
 .middle_view{
@@ -26,6 +27,7 @@ html body {
 .default-view{
   margin-left: 240px;
   width: 82%;
+  margin-top: 90px;
 }
 
 .error-message{
@@ -36,11 +38,13 @@ html body {
   padding: 5px;
 }
 .full_view{
+  top: 90px;
   margin-left: 70px;
 }
 .left_view{
   margin-left: 70px;
   margin-right: 360px;
+  margin-top: 90px;
 }
 .BetArena-destop {
   /* margin-right: 360px; */

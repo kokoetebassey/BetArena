@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../pages/pagesStyles/crash.css";
+import "./style/crash.css";
 import graph from "../images/images/graph.svg";
 import Keyboard from "../images/images/Keyboard.svg";
 import green from "../images/images/trenball_green.png";
@@ -32,27 +32,6 @@ export default function Crash() {
   function clearThirdPop() {
     setThirdPop(false);
   }
-
-  // const crashGames = [
-  //   {
-  //     id: Math.random().toString(),
-  //     gameName: "BankRoll",
-  //     gameNumber: Math.random().toString(),
-  //     coinType: "BTC",
-  //   },
-  //   {
-  //     id: Math.random().toString(),
-  //     gameWin: Math.random().toFixed(3),
-  //     gameNumber: Math.random().toString(),
-  //     coinType: "ETH",
-  //   },
-  //   {
-  //     id: Math.random().toString(),
-  //     gameWin: Math.random().toString(),
-  //     gameNumber: Math.random().toString(),
-  //     coinType: "SHB",
-  //   },
-  // ];
 
   return (
     <div className="crash-Display-cover">
