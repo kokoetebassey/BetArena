@@ -1,17 +1,17 @@
 import React from "react";
-import slot1 from "../images/slot 1.png";
-import slot2 from "../images/slot 2.png";
-import slot3 from "../images/slot 3.png";
-import slot4 from "../images/slot 4.png";
-import slot5 from "../images/slot 5.png";
-import slotIcon from "../images/slot icon.png";
-import play from "../images/play-icon.png";
-import slot13 from "../images/slot 13.png";
-import slot14 from "../images/slot 14.png";
-import slot15 from "../images/slot 15.png";
-import slot16 from "../images/slot 16.png";
-import slot17 from "../images/slot 17.png";
-import slot6 from "../images/slot 6.png";
+import slot1 from "./images/slot 1.png";
+import slot2 from "./images/slot 2.png";
+import slot3 from "./images/slot 3.png";
+import slot4 from "./images/slot 4.png";
+import slot5 from "./images/slot 5.png";
+import slotIcon from "./images/slot icon.png";
+import play from "./images/play-icon.png";
+import slot13 from "./images/slot 13.png";
+import slot14 from "./images/slot 14.png";
+import slot15 from "./images/slot 15.png";
+import slot16 from "./images/slot 16.png";
+import slot17 from "./images/slot 17.png";
+import slot6 from "./images/slot 6.png";
 
 // import { useRef, useState } from "react";
 // Import Swiper React components
@@ -26,7 +26,7 @@ import "swiper/css/bundle";
 // import required modules
 import { Navigation } from "swiper";
 
-import mark from "../images/best question mark.png";
+import mark from "./images/best question mark.png";
 
 export default function Recommend() {
   return (

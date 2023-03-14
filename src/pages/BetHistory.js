@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import empty from "./images/empty.svg";
+import empty from "../images/empty.svg";
 
 export default function BetHistory() {
   const [activeBet, setActiveBet] = useState(1);

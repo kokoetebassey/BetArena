@@ -1,6 +1,6 @@
 import React from "react";
-import footer1 from "./images/footer-logo.png";
-import footer2 from "./images/footer-top arrow.png";
+import footer1 from "../images/footer-logo.png";
+import footer2 from "../images/footer-top arrow.png";
 import { NavLink } from "react-router-dom";
 import "./pagesStyles/footerPage.css";
 

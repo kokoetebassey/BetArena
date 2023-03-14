@@ -2,6 +2,8 @@ import { Routes,  Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import MenuBar from "./components/MenuBar";
 import Navbar from "./components/Navbar";
+import Crash from "./pages/Crash";
+import CrashPoint from "./pages/CrashPoint"
 import HomeNavBar from "./components/HomeNavBar";
 import Home from "./pages/Home";
 import axios from "axios";
@@ -76,8 +78,9 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/crash" element={<Crash />}></Route>
+          <Route path="CrashPoint" element={<CrashPoint />}></Route>
           {/* <Route path="/slots" element={<Slot />}></Route>
-            <Route path="/crash" element={<Crash />}></Route>
             <Route path="/affiliate" element={<Affiliate />}></Route>
             <Route path="/promotion" element={<Promotion />}></Route>
             <Route path="/BCD" element={<BCD />}></Route>
@@ -92,7 +95,6 @@ function App() {
             <Route path="/footer" element={<Footer />}></Route>
             <Route path="/FooterPage" element={<FooterPage />}></Route>
             <Route path="Recommend" element={<Recommend />}></Route>
-            <Route path="CrashPoint" element={<CrashPoint />}></Route>
 
             <Route path="/slots" element={<Slot />}></Route>
             <Route path="/Support" element={<Support />}></Route>
