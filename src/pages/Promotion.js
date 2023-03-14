@@ -1,18 +1,18 @@
 import React from "react";
 import "./pagesStyles/promotion.css";
-import promotion1 from "./images/promotion 1i.png";
-// import promotion2 from "./images/promotion 2.png";
-import coinSmall from "./images/promotion coin small.png";
-import coinBig from "./images/promotion coin big.png";
-import medal from "./images/promotion medal.png";
-import ball from "./images/promotion ball.png";
-import promotion from "./images/promotion4 img1.png";
-import promotion2 from "./images/promotion4 img2.png";
-import promotion3 from "./images/promotion4 img3.png";
-import promotion4 from "./images/promotion4 img4.png";
-import promotion5 from "./images/promotion6  img1.png";
-import promotion6 from "./images/promotion6  img2.png";
-import promotion7 from "./images/promotion6  img3.png";
+import promotion1 from "../images/images/promotion 1i.png";
+// import promotion2 from "../images/images/promotion 2.png";
+import coinSmall from "../images/images/promotion coin small.png";
+import coinBig from "../images/images/promotion coin big.png";
+import medal from "../images/images/promotion medal.png";
+import ball from "../images/images/promotion ball.png";
+import promotion from "../images/images/promotion4 img1.png";
+import promotion2 from "../images/images/promotion4 img2.png";
+import promotion3 from "../images/images/promotion4 img3.png";
+import promotion4 from "../images/images/promotion4 img4.png";
+import promotion5 from "../images/images/promotion6  img1.png";
+import promotion6 from "../images/images/promotion6  img2.png";
+import promotion7 from "../images/images/promotion6  img3.png";
 import Footer from "./FooterPage";
 
 // Import Swiper React component4

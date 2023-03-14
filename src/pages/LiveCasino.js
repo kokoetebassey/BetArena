@@ -1,45 +1,45 @@
 import React from "react";
 import { useState } from "react";
 import "./pagesStyles/liveCasino.css";
-import slotIcon from "./images/slot icon.png";
-import slotIcon2 from "./images/slot icon 2.png";
-import slotIcon3 from "./images/slot icon 3.png";
-import slotIcon4 from "./images/slot icon 4.png";
-import slot6 from "./images/slot 6.png";
-import slot1 from "./images/slot 1.png";
-import slot2 from "./images/slot 2.png";
-import slot3 from "./images/slot 3.png";
-import slot4 from "./images/slot 4.png";
-import slot5 from "./images/slot 5.png";
-import slot13 from "./images/slot 13.png";
-import slot14 from "./images/slot 14.png";
-import slot15 from "./images/slot 15.png";
-import slot16 from "./images/slot 16.png";
-import slot17 from "./images/slot 17.png";
-import slot19 from "./images/slot 19.png";
-import slot20 from "./images/slot 20.png";
-import slot21 from "./images/slot 21.png";
-import slot22 from "./images/slot 22.png";
-import slot23 from "./images/slot 23.png";
-import slot25 from "./images/slot 25.png";
-import slot26 from "./images/slot 27.png";
-import slot29 from "./images/slot 30.png";
-import slot30 from "./images/slot 30.png";
-import slot31 from "./images/slot 31.png";
-import slot32 from "./images/slot 32.png";
-import slot33 from "./images/slot 33.png";
-import slot34 from "./images/slot 34.png";
-import slot35 from "./images/slot 35.png";
-import slot36 from "./images/slot 36.png";
-import slot37 from "./images/slot 37.png";
-import slot38 from "./images/slot 38.png";
-import slot39 from "./images/slot 39.png";
-import slot40 from "./images/slot 40.png";
-import slot41 from "./images/slot 41.png";
-import slot42 from "./images/slot 42.png";
-import pointer1 from "./images/slot pointer 1.png";
-import pointer2 from "./images/slot pointer 2.png";
-import play from "./images/play-icon.png";
+import slotIcon from "../images/images/slot icon.png";
+import slotIcon2 from "../images/images/slot icon 2.png";
+import slotIcon3 from "../images/images/slot icon 3.png";
+import slotIcon4 from "../images/images/slot icon 4.png";
+import slot6 from "../images/images/slot 6.png";
+import slot1 from "../images/images/slot 1.png";
+import slot2 from "../images/images/slot 2.png";
+import slot3 from "../images/images/slot 3.png";
+import slot4 from "../images/images/slot 4.png";
+import slot5 from "../images/images/slot 5.png";
+import slot13 from "../images/images/slot 13.png";
+import slot14 from "../images/images/slot 14.png";
+import slot15 from "../images/images/slot 15.png";
+import slot16 from "../images/images/slot 16.png";
+import slot17 from "../images/images/slot 17.png";
+import slot19 from "../images/images/slot 19.png";
+import slot20 from "../images/images/slot 20.png";
+import slot21 from "../images/images/slot 21.png";
+import slot22 from "../images/images/slot 22.png";
+import slot23 from "../images/images/slot 23.png";
+import slot25 from "../images/images/slot 25.png";
+import slot26 from "../images/images/slot 27.png";
+import slot29 from "../images/images/slot 30.png";
+import slot30 from "../images/images/slot 30.png";
+import slot31 from "../images/images/slot 31.png";
+import slot32 from "../images/images/slot 32.png";
+import slot33 from "../images/images/slot 33.png";
+import slot34 from "../images/images/slot 34.png";
+import slot35 from "../images/images/slot 35.png";
+import slot36 from "../images/images/slot 36.png";
+import slot37 from "../images/images/slot 37.png";
+import slot38 from "../images/images/slot 38.png";
+import slot39 from "../images/images/slot 39.png";
+import slot40 from "../images/images/slot 40.png";
+import slot41 from "../images/images/slot 41.png";
+import slot42 from "../images/images/slot 42.png";
+import pointer1 from "../images/images/slot pointer 1.png";
+import pointer2 from "../images/images/slot pointer 2.png";
+import play from "../images/images/play-icon.png";
 import Footer from "./FooterPage";
 
 // import { useRef, useState } from "react";
@@ -55,7 +55,7 @@ import "swiper/css/bundle";
 // import required modules
 import { Navigation } from "swiper";
 
-import mark from "./images/best question mark.png";
+import mark from "../images/best question mark.png";
 
 export default function LiveCasino() {
   const [showprovider, setShowprovider] = useState(false);
@@ -66,6 +66,7 @@ export default function LiveCasino() {
   function hidePro() {
     setShowprovider(false);
   }
+  
   return (
     <div className="slot-display-cover">
       <div className="slot-display-desktop">

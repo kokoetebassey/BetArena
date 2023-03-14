@@ -1,12 +1,12 @@
 import React from "react";
 import "./pagesStyles/lottery.css";
-import back from "./images/white arrow back.png";
-import arrow from "./images/white arrow.png";
-import logo from "./images/lottery-main-logo.png";
-import bar from "./images/lottery bar img.png";
-import white from "./images/lottery white ball.png";
-import green from "./images/lottery green ball.png";
-import display from "./images/lottery-display-img.png";
+import back from "../images/images/white arrow back.png";
+import arrow from "../images/images/white arrow.png";
+import logo from "../images/images/lottery-main-logo.png";
+import bar from "../images/images/lottery bar img.png";
+import white from "../images/images/lottery white ball.png";
+import green from "../images/images/lottery green ball.png";
+import display from "../images/images/lottery-display-img.png";
 
 export default function History() {
   return (
