@@ -1,15 +1,15 @@
 import React from "react";
 import "./pagesStyles/vip.css";
-import vip1 from "./images/vip main.png";
-import vip from "./images/vip.png";
-import forumTop from "./images/forum toper.png";
-import forumCube from "./images/forum cube.png";
-import forumMoney from "./images/forum money.png";
-import forumBox from "./images/forum box.png";
-import forumIcon from "./images/forum icon.png";
-import forum1 from "./images/forum footer1.png";
-import forum2 from "./images/forum footer2.png";
-import forum3 from "./images/forum footer3.png";
+import vip1 from "../images/images/vip main.png";
+import vip from "../images/images/vip.png";
+import forumTop from "../images/images/forum toper.png";
+import forumCube from "../images/images/forum cube.png";
+import forumMoney from "../images/images/forum money.png";
+import forumBox from "../images/images/forum box.png";
+import forumIcon from "../images/images/forum icon.png";
+import forum1 from "../images/images/forum footer1.png";
+import forum2 from "../images/images/forum footer2.png";
+import forum3 from "../images/images/forum footer3.png";
 import Footer from "./FooterPage";
 
 export default function Vip() {

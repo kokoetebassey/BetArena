@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import "./pagesStyles/crash.css";
-import graph from "../images/graph.svg";
-import Keyboard from "../images/Keyboard.svg";
-import green from "../images/trenball_green.png";
-import red from "../images/trenball_red.png";
-import cycle from "../images/cycle.png";
-import plus from "../images/plus sign.svg";
-import empty from "../images/empty.svg";
-import Footer from "./FooterPage";
-import Recommend from "./Recommend";
+import "../pages/pagesStyles/crash.css";
+import graph from "../images/images/graph.svg";
+import Keyboard from "../images/images/Keyboard.svg";
+import green from "../images/images/trenball_green.png";
+import red from "../images/images/trenball_red.png";
+import cycle from "../images/images/cycle.png";
+import plus from "../images/images/plus sign.svg";
+import empty from "../images/images/empty.svg";
+import Footer from "../pages/FooterPage";
+import Recommend from "../pages/Recommend";
 import CrashPoint from "./CrashPoint";
-import BetHistory from "./BetHistory";
+import BetHistory from "../pages/BetHistory";
 import { NavLink } from "react-router-dom";
 
 export default function Crash() {
