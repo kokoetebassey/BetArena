@@ -1,0 +1,55 @@
+.h3 {
+  color: #878787;
+  font-size: 12px;
+}
+.lastStep-container label {
+  color: #878787;
+  font-size: 14px;
+}
+.lastStep-container-flex {
+  display: flex;
+  align-items: center;
+}
+.lastStep-container-flex2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.lastStep-contents,
+.lastStep-container {
+  margin-top: 10px;
+}
+.lastStep-contents input {
+  padding: 10px;
+  outline: transparent;
+  border: 1px solid rgb(45, 48, 53);
+  background-color: rgba(45, 48, 53, 0.5);
+  border-radius: 20px;
+  color: #fff;
+  width: 100%;
+}
+.lastStep-contents1 input {
+  padding: 10px;
+  outline: transparent;
+  border: 1px solid rgb(45, 48, 53);
+  background-color: rgba(45, 48, 53, 0.5);
+  border-radius: 20px;
+  color: #fff;
+  margin-top: 10px;
+  width: 100%;
+  margin-left: 25px;
+}
+
+.lastStep-contents input::placeholder,
+.lastStep-contents1 input::placeholder {
+  color: #878787;
+}
+#lastStep-contents1 input {
+  width: 50%;
+}
+#lastStep-contents2 input {
+  width: 50%;
+}
+#lastStep-contents3 input {
+  width: 80%;
+}

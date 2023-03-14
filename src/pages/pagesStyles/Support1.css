@@ -1,0 +1,95 @@
+.support_1_head {
+    width: 40%;
+    height: 60vh;
+    background: #FFFFFF;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 20000;
+}
+    .support_lessthan {
+        position: absolute;
+        right: 0;
+        margin-right: 20px;
+         color: #2960ED;
+    }
+    .support_withdrawer {
+        margin-left: 35px;
+        margin-top: 30px;
+    }
+    .support_withdrawer h1{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: -0.01em;
+        color: #000000;
+    }
+    .support_withdrawer h5{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: -0.01em;  
+        color: #605F70;
+    }
+    .denies_writting_head{
+        margin-top: 30px;
+        margin-left: 20px;
+        display: flex;
+    }
+    .denies_text{
+        padding-left: 10px;
+    }
+    .denies_text h3{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 25px;
+        color: #605F70;
+    } 
+  
+    .pre_text{
+        margin-left: 20px;
+        margin-right: 10px;
+        margin-top: 30px;
+    }
+    .pre_text_1,
+    .pre_text_2,
+    .pre_text_3{
+        margin-left: 20px;
+        margin-right: 10px;
+        margin-top: 20px;
+    }
+    .support_questions{
+        margin-top: 30px;
+        justify-content: center;
+        text-align: center;
+    }
+    .support_questions h3{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.01em;
+    color: #605F70;
+    }
+    .emogy_head{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    .help_center{
+    justify-content: center;
+    text-align: center;
+    margin-top: 15px;
+    }
+    .bottom_line{
+        margin-top: 35px;
+    }

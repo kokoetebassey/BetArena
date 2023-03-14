@@ -1,0 +1,147 @@
+.footer-general {
+  position: relative;
+  bottom: 0;
+  border-radius: 20px;
+  background: #030307;
+  margin-top: 30px;
+}
+
+.footer-logo {
+  padding-top: 40px;
+  margin-left: -10px;
+}
+
+.footer-logo img {
+  width: 200px;
+}
+
+.footer-contacts {
+  display: flex;
+  padding-bottom: 40px;
+}
+
+.footer-contacts-text {
+  display: flex;
+}
+
+.footer-text1 {
+  width: 260px;
+  padding-right: 25px;
+}
+
+.footer-text1 h4 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  color: #757585;
+  font-size: 12px;
+  line-height: 35px;
+  padding-left: 25px;
+  padding-top: 25px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.footer-text2 {
+  color: #ffffff;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  line-height: 35px;
+  padding-left: 25px;
+  padding-top: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.footer-top-logo h1 {
+  color: #ffffff;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.footer-help {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  line-height: 45px;
+  padding-left: 65px;
+  padding-top: 13px;
+  font-size: 20px;
+}
+
+.footer-help h4 {
+  color: #757585;
+  font-size: 12px;
+}
+
+.footer-help h4 a {
+  color: #ad8605;
+  font-size: 12px;
+}
+
+.footer-contact-line {
+  border: 1px solid #605f70;
+  height: 78%;
+  padding-bottom: 90px;
+  margin-top: 35px;
+}
+
+.footer-line {
+  border: 1px solid #605f70;
+}
+
+.footer-last-row h4 {
+  color: #605f70;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  color: #757585;
+  font-size: 12px;
+}
+
+.footer-last-row2 h4 {
+  color: #9593a0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+.footer-last {
+  display: flex;
+  padding-top: 40px;
+  padding-left: 25px;
+  padding-right: 25px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  padding-right: 18px;
+}
+
+.footer-last-row2 {
+  display: flex;
+  align-items: center;
+}
+
+.footer-top {
+  background-color: #201f37;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+}
+
+.footer-top-arrow img {
+  width: 20px;
+}
+
+.footer-top-logo img {
+  width: 50px;
+}

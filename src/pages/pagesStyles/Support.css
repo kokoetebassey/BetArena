@@ -1,0 +1,382 @@
+.overall_nav_head {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    width: 35%;
+    right: 0;
+}
+.nav_images_head {
+    background: #393E42;
+    border-radius: 0px;
+    width: 100%;
+    height: 204px;
+}
+.bet_logo-image{
+float: left;
+}
+.bet_logo_sign{
+float: right;
+padding-right: 25px;
+padding-top: 25px;
+}
+.nav_text_head{
+    padding-top: 120px;
+    padding-left: 70px;
+}
+.nav_text_head h1{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 19px;
+color: #FFFFFF;
+}
+.nav_text_head h3{
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 12px;    
+    color: #B0B2B4;
+line-height: 27px;
+
+}
+.start_conversasion_head{
+    position: relative;
+}
+.start_conversasion {
+    position: absolute;
+    background: #FFFFFF;
+    box-shadow: 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 175px;
+    width: 80%;
+    left: 10%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+    border-radius: 10px 10px 0px 0px;
+}
+.start_conversasion h1{
+padding-left: 20px;
+padding-top: 10px;
+}
+.start_conversasion_images_head{
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.start_conversasion h1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 17px;
+    color: #242427;
+}
+.start_conversasion_images_head{
+    display: flex;
+}
+.start_conversasion_images_2{
+    position: relative;
+    right: 55px;
+}
+.start_conversasion_images_3{
+    position: relative;
+    right: 115px;
+}
+.start_conversasion_text{
+    white-space: nowrap;
+    position: relative;
+    right: 105px;
+    top: 20px;
+}
+.start_conversasion_text h2{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 17px;
+color: #B0B2B4;
+}
+.start_conversasion_text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 17px;
+    color: #242427;
+}
+.send_us{
+    padding-left: 70px;
+}
+.send_us button{
+background: #0071B2;
+border-radius: 15px;
+width: 184px;
+padding: 10px;
+border: none;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+color: #FFFFFF;
+}
+.main_section{
+background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+height: 446px;
+width: 100%;
+}
+.search_section_head {
+    padding-top: 150px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.search_section{
+width: 100%;
+height: 207px;
+background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.search_text{
+    padding-left: 30px;
+    padding-top: 10px;
+}
+.search_text h3{
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 12px;
+    line-height: 1px;
+    color: #000000;
+}
+.search_input{
+    padding-top: 20px;
+    padding-left: 30px;
+}
+.search_input input{
+    border: 2px solid #0071B2;
+    border-radius: 40px;
+    width: 188px;
+    padding: 5px;
+    outline: none;
+    padding-left: 20px;
+}
+.search_input img{
+    position: relative;
+    left: 40px;
+    top: 7px;
+}
+.suggest_text{
+    padding-left: 30px;
+    padding-top: 15px;
+}
+.suggest_text h3{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    color: #605F70;
+}
+.suggested{
+    padding-left: 30px;
+    padding-top: 15px; 
+}
+.suggested h3{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 10px;
+letter-spacing: 1px;
+color: #373737;
+}
+.span1 {
+    margin-left: 6px;
+}
+.span2 {
+    margin-left: 50px;
+}
+.span3{
+    margin-left: 5px;
+}
+@media only screen and (min-width: 650px) and (max-width: 963px) {
+.bet_logo-image img{
+    width: 100px;
+}
+.bet_logo_sign img{
+    width: 10px;
+}
+.bet_logo_sign {
+    padding-right: 20px;
+    padding-top: 2px;
+}
+.nav_text_head {
+    padding-top: 90px;
+}
+.start_conversasion_images img{
+    width: 35px;
+}
+.start_conversasion_images_2 img{
+    width: 35px;
+}
+.start_conversasion_images_3 img{
+    width: 35px;
+}
+.start_conversasion_images_2 {
+    right: 28px;
+}
+.start_conversasion_images_3 {
+    right: 55px;
+}
+.start_conversasion_text {
+    right: 45px;
+    top: 0px;
+}
+.send_us button {
+    width: 124px;
+    padding: 5px;
+    font-size: 10px;
+}
+.start_conversasion {
+    height: 125px;
+}
+.search_section_head {
+    padding-top: 80px;
+    margin-left: 10px;
+}
+.search_input input {
+    width: 118px;
+    font-size: 9px;
+    padding: 2px;
+    padding-left: 20px;
+}
+.search_text h3 {
+    font-size: 9px;
+}
+.search_input {
+    padding-top: 5px;
+}
+
+.span2 {
+    margin-left: 38px;
+}
+}
+@media only screen and (min-width: 650px) and (max-width: 730px) {
+    .nav_text_head {
+        padding-left: 40px;
+    }
+
+    .send_us button {
+        width: 90px;
+    }
+
+    .span1 img,
+    .span2 img,
+    .span3 img{
+        width: 2px;
+    }
+    .span2 {
+        margin-left: 30px;
+    }
+}
+@media only screen and (max-width: 650px) {
+    .overall_nav_head {
+        width: 100%;
+    }
+    .span1 {
+        margin-left: 70px;
+    }
+    .nav_text_head {
+        padding-left: 40px;
+    }
+    .span2 {
+        margin-left: 70px;
+    }
+    .span3 {
+        margin-left: 70px;
+    }
+    .span2 {
+        margin-left: 115px;
+    }
+    .main_section {
+        height: 1600px;
+    }
+    .start_conversasion {
+        left: 5%;
+        width: 37%;
+    }
+    .bet_logo_sign {
+        padding-right: 455px;
+    }
+    .search_section {
+        width: 43%;
+        margin-top: 50px;
+    }
+}
+@media only screen and (min-width: 250px) and (max-width: 405px) {
+    /* .bet_logo-image img{
+        width: 100px;
+    } */
+    /* .bet_logo_sign img{
+        width: 10px;
+    } */
+    /* .bet_logo_sign {
+        padding-right: 20px;
+        padding-top: 2px;
+    }
+    .nav_text_head {
+        padding-top: 90px;
+    }
+    .nav_text_head h3 {
+        font-size: 9px;
+    }
+    .start_conversasion_images img{
+        width: 35px;
+    }
+    .start_conversasion_images_2 img{
+        width: 35px;
+    }
+    .start_conversasion_images_3 img{
+        width: 35px;
+    }
+    .start_conversasion_images_2 {
+        right: 28px;
+    }
+    .start_conversasion_images_3 {
+        right: 55px;
+    }
+    .start_conversasion_text {
+        right: 45px;
+        top: 0px;
+        font-size: 7px;
+    }
+    .send_us button {
+        width: 124px;
+        padding: 5px;
+        font-size: 10px;
+    }
+    .start_conversasion {
+        height: 125px;
+    }
+    .search_section_head {
+        padding-top: 80px;
+        margin-left: 10px;
+    }
+    .search_input input {
+        width: 118px;
+        font-size: 9px;
+        padding: 2px;
+        padding-left: 20px;
+    }
+    .search_text h3 {
+        font-size: 9px;
+    }
+    .search_input {
+        padding-top: 5px;
+    }
+    .suggested h3 {
+        font-size: 8px;
+    }
+    .span2 {
+        margin-left: 38px;
+    }
+     */
+
+}

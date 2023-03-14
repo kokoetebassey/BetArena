@@ -1,0 +1,48 @@
+@media only screen and (max-width: 650px) {
+  .footer-general {
+    display: none;
+  }
+
+  .footer-top-logo h1 {
+    color: #ffffff;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 11px;
+  }
+
+  .footer-top-arrow img {
+    width: 10px;
+  }
+
+  .footer-top {
+    background-color: #201f37;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+  }
+  .mobile-footer-links {
+    display: flex;
+    gap: 10px;
+  }
+
+  .mobile-footer-links1 a,
+  .mobile-footer-links2 a,
+  .mobile-footer-links3 a,
+  .mobile-footer-links4 a,
+  .mobile-footer-links5 a,
+  .mobile-footer-links6 a,
+  .mobile-footer-links7 a,
+  .mobile-footer-links8 a,
+  .mobile-footer-links10 a,
+  .mobile-footer-links12 a,
+  .mobile-footer-links13 a,
+  .mobile-footer-links11 a,
+  .mobile-footer-links9 a {
+    color: #ffffff;
+    font-size: 11px;
+  }
+}

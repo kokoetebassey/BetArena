@@ -1,0 +1,20 @@
+@media only screen and (min-width: 1100px) {
+  .display-left h3 {
+    color: #ffffff;
+  }
+  .display-left {
+    background: rgba(0, 0, 0, 0.46);
+    position: fixed;
+    z-index: 2;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 240px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .display-left {
+    display: none;
+  }
+}

@@ -1,0 +1,241 @@
+/* Mobile View */
+@media only screen and (max-width: 650px) {
+  .MenuBar-mobile {
+    background: rgb(2, 2, 9);
+    color: white;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    z-index: 24098;
+    padding: 0;
+    margin: 0;
+  }
+
+  .MenuBar-mobile-header {
+    box-shadow: 0px 11.1333px 37.1111px rgba(53, 51, 65, 0.46);
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  .MenuBar-mobile-header .casino a {
+    text-decoration: none;
+    background: #353341;
+    padding: 8px 50px;
+    border-radius: 30px;
+    color: rgb(230, 227, 227);
+    font-size: 14px;
+  }
+
+  .MenuBar-mobile-header .casino {
+    width: 45%;
+    padding-top: 15px;
+  }
+  .MenuBar-mobile-header .sport {
+    width: 45%;
+    padding-top: 10px;
+  }
+
+  .MenuBar-mobile-header .sport h3 {
+    padding: 7px 30px;
+    color: #444250;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .MenuBar-mobile-header .cancel {
+    margin: 15px 0px;
+  }
+  .MenuBar-mobile-header .cancel span {
+    padding: 4.5px 9px;
+    color: #353341;
+    font-size: 16px;
+    margin: 12px 0px;
+    font-weight: bolder;
+    background: #1a1922;
+    border-radius: 50%;
+  }
+  .MenuBar-mobile-container {
+    padding: 10px;
+    color: #807c93;
+  }
+  .MenuBar-mobile-content a {
+    text-decoration: none;
+    font-size: 13px;
+  }
+  .MenuBar-mobile-content a .nav-details {
+    display: flex;
+  }
+  .MenuBar-mobile-content a .nav-details .game-icon img {
+    width: 40px;
+  }
+  .MenuBar-mobile-content a .nav-details .game-text {
+    padding: 8px 0px;
+    color: #807c93;
+  }
+  .MenuBar-mobile-container .MenuBar-mobile-content .ba-original {
+    display: flex;
+    position: relative;
+  }
+  .MenuBar-mobile-container
+    .MenuBar-mobile-content
+    .ba-original
+    .game-icon
+    img {
+    width: 40px;
+  }
+  .MenuBar-mobile-container .MenuBar-mobile-content .ba-original .game-text {
+    font-size: 13px;
+    padding-top: 8px;
+  }
+  .MenuBar-mobile-container
+    .MenuBar-mobile-content
+    .ba-original
+    .game-arrow
+    img {
+    width: 6px;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+  }
+  .MenuBar-mobile-container .MenuBar-mobile-content a .promotion h3 {
+    font-size: 16.3px;
+    font-style: italic;
+    font-weight: bolder;
+    color: rgba(173, 134, 5, 1);
+    margin-top: 8px;
+  }
+
+  .MenuBar-mobile-container .MenuBar-mobile-content .switch-mode {
+    display: flex;
+    margin: 15px 9px;
+    gap: 20px;
+  }
+
+  .MenuBar-mobile-container .MenuBar-mobile-content .switch-mode .switch {
+    cursor: pointer;
+  }
+
+  .MenuBar-mobile-container
+    .MenuBar-mobile-content
+    .switch-mode
+    .switch-contents {
+    position: relative;
+    background: #1a1922;
+    height: 27px;
+    display: flex;
+    width: 60px;
+    border-radius: 30px;
+  }
+  .MenuBar-mobile-container
+    .MenuBar-mobile-content
+    .switch-mode
+    .switch-contents
+    img {
+    width: 15px;
+  }
+
+  .MenuBar-mobile-container
+    .MenuBar-mobile-content
+    .switch-mode
+    .switch-contents
+    .moon
+    img {
+    position: absolute;
+    padding: 5px;
+    border-radius: 50%;
+    background: linear-gradient(
+      270deg,
+      rgba(82, 200, 52, 0.2025) -41.58%,
+      rgba(173, 134, 5, 0.75) 100%
+    );
+  }
+
+  .MenuBar-mobile-container
+    .MenuBar-mobile-content
+    .switch-mode
+    .switch-contents
+    .setting
+    img {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+  }
+
+  .MenuBar-mobile-container .MenuBar-mobile-content .switch-mode .mode {
+    font-size: 8px;
+    margin-left: 10px;
+    text-align: center;
+  }
+  .MenuBar-mobile-container .MenuBar-mobile-content .switch-mode .mode h3 {
+    font-size: 10px;
+    color: white;
+  }
+
+  .MenuBar-mobile-container .MenuBar-mobile-content .language-currency {
+    color: #353341;
+    padding: 10px;
+  }
+
+  .MenuBar-mobile-container
+    .MenuBar-mobile-content
+    .language-currency
+    .contents {
+    margin: 17px 0px;
+  }
+
+  .MenuBar-mobile-container
+    .MenuBar-mobile-content
+    .language-currency
+    .contents
+    p {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .MenuBar-mobile-container
+    .MenuBar-mobile-content
+    .language-currency
+    .contents
+    .input {
+    background: #1a1922;
+    display: flex;
+    padding: 8px;
+    margin: 5px 30px;
+    border-radius: 30px;
+  }
+  .MenuBar-mobile-container
+    .MenuBar-mobile-content
+    .language-currency
+    .contents
+    .input
+    img {
+    width: 7px;
+  }
+  .MenuBar-mobile-container
+    .MenuBar-mobile-content
+    .language-currency
+    .contents
+    .input
+    input {
+    background: none;
+    width: 96%;
+    outline: none;
+    border: none;
+  }
+
+  .MenuBar-mobile-container
+    .MenuBar-mobile-content
+    .language-currency
+    .contents
+    .input
+    input::placeholder {
+    padding-left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+}

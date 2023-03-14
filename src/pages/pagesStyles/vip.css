@@ -1,0 +1,199 @@
+.forum-display {
+  max-width: 1368px;
+  margin: 0px auto;
+  min-height: calc(100vh - 590px);
+  padding: 20px;
+}
+
+.forum-page {
+  position: relative;
+}
+
+.forum-page img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.forum-page-text {
+  position: absolute;
+  right: 0px;
+  top: 40%;
+  padding: 0px 0px 0px 400px;
+}
+.forum-page-text h2 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffffff;
+}
+.forum-page-text h3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  color: #ffffff;
+  padding-top: 10px;
+}
+.forum-main-flex-header h1 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  color: #ffffff;
+  padding-top: 10px;
+}
+
+.forum-main-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.forum-main-first-flex {
+  position: relative;
+}
+
+.forum-main-first-flex-top {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+.forum-main-first-flex-top h1 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  color: #ffffff;
+  top: 0;
+  position: absolute;
+  left: 15px;
+}
+.forum-main-first-flex h3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  color: #ffffff;
+  top: 0;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+.forum-main-first-flex-top img {
+  width: 50px;
+}
+.forum-main-first-flex-main {
+  position: absolute;
+  top: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.forum-main-first-flex-main img {
+  width: 100px;
+}
+.forum-main-first-flex-main h2 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+}
+.forum-main-first-flex-main h4 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #605f70;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 17px;
+}
+
+.forum-footer-header {
+  margin-top: 30px;
+  display: flex;
+  column-gap: 10px;
+}
+
+.footer-text-forum {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.forum-footer-first {
+  background: linear-gradient(
+    119.69deg,
+    rgba(189, 25, 247, 0.46) -12.67%,
+    rgba(53, 51, 65, 0) 90.94%
+  );
+  border-radius: 12px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+.forum-footer-second {
+  background: linear-gradient(
+    119.69deg,
+    rgba(50, 252, 0, 0.4462) -12.67%,
+    rgba(53, 51, 65, 0) 90.94%
+  );
+  border-radius: 12px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+.forum-footer-third {
+  background: linear-gradient(
+    119.69deg,
+    rgba(234, 146, 39, 0.46) -12.67%,
+    rgba(53, 51, 65, 0) 90.94%
+  );
+  border-radius: 12px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.forum-footer-first,
+.forum-footer-second,
+.forum-footer-third {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.forum-footer-first img,
+.forum-footer-second img,
+.forum-footer-second img {
+  width: 300px;
+}
+.forum-footer-first h2,
+.forum-footer-second h2,
+.forum-footer-third h2 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+}
+.forum-footer-first h4,
+.forum-footer-second h4,
+.forum-footer-third h4 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #878787;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+}

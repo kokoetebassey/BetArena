@@ -1,0 +1,309 @@
+.chat-display {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 350px;
+  height: 100%;
+  z-index: 103;
+}
+.chat-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.chat-page::before {
+  content: "";
+  position: absolute;
+  left: -0.75rem;
+  top: 0rem;
+  width: 0.75rem;
+  pointer-events: none;
+  height: 100%;
+  background-image: linear-gradient(to left, rgb(4, 4, 4), rgba(36, 38, 43, 0));
+  opacity: 0.1;
+}
+.chat-top {
+  height: 60px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px;
+  background-color: rgb(30, 32, 36);
+}
+.chat-top::before {
+  content: "";
+  position: absolute;
+  bottom: -0.75rem;
+  height: 0.75rem;
+  width: 100%;
+  background-image: linear-gradient(rgb(17, 20, 21), rgba(36, 38, 43, 0));
+  opacity: 0.25;
+}
+.chat-top-flex {
+  position: relative;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100%;
+  cursor: pointer;
+  color: rgb(245, 246, 247);
+  background: transparent;
+  border-radius: 0px;
+  padding: 0px;
+  width: 7.25rem;
+  font-weight: bold;
+}
+.chat-top-flex1 {
+  width: 5.75rem;
+  line-height: 53.875px;
+  background: #0b0d1c;
+  font-size: 13px;
+  border-bottom: 2px solid #ad8605c2;
+  text-align: center;
+}
+.chat-top-flex2 {
+  width: 1.5rem;
+  height: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.chat-top-flex2 h4 {
+  font-size: 12.4px;
+  color: rgba(153, 164, 176, 0.6);
+}
+.chat-top-flex2 h4:hover {
+  color: rgba(153, 164, 176, 0.979);
+  transform: rotate(90deg);
+  animation: ease-in 0.3s rotate;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(20deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+.chat-top-flex1 h3 {
+  font-size: 12.45px;
+  font-weight: bold;
+}
+.chat-top-flex22 {
+  display: flex;
+}
+.chat-top-flex22-1 {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.625rem;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.chat-top-flex22-2 {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.chat-top-flex22-1 .exclaimation {
+  font-size: 19px;
+  color: #878787;
+}
+.chat-top-flex22-1 .exclaimation:hover {
+  color: #87878796;
+}
+.chat-top-flex22-3 {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.625rem;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.chat-top-flex22-3 h3 {
+  font-size: 14px;
+  cursor: pointer;
+  color: #878787;
+}
+.chat-top-flex22-3 h3:hover {
+  color: #87878796;
+  animation: ease-in 0.3s rotates;
+
+  transform: rotate(64deg);
+}
+@keyframes rotates {
+  from {
+    transform: rotate(10deg);
+  }
+  to {
+    transform: rotate(64deg);
+  }
+}
+.chat-body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+  position: relative;
+  flex-direction: column;
+  background: #030307;
+}
+.chat-body-container {
+  display: flex;
+  font-size: 11px;
+  margin: 2px;
+  padding: 2px;
+  gap: 6px;
+  height: 79%;
+  overflow-y: scroll;
+}
+.chat-body-container::-webkit-scrollbar {
+  display: none;
+}
+.chat-body-container .profile-contents {
+  display: block;
+  font-size: 9px;
+  position: relative;
+  width: 30px;
+  cursor: pointer;
+}
+.chat-body-container .profile-contents .profile-img img {
+  width: 30px;
+}
+.chat-body-container .profile-contents .rank {
+  background: #ea9227;
+  position: absolute;
+  top: 26px;
+  color: #080914;
+  border-radius: 30px;
+  padding: 2px;
+  font-size: 8px;
+  font-weight: bold;
+}
+.chat-body-container .message-container {
+  color: #605f70;
+  margin: 2px;
+  padding: 2px;
+  font-weight: bold;
+}
+.chat-body-container .message-container .profile-name {
+  cursor: pointer;
+}
+.chat-body-container .message-container .profile-name:hover {
+  text-decoration: underline;
+}
+.chat-body-container .message-container .profile-name span {
+  padding: 0px 4px;
+  font-weight: 200;
+}
+.chat-body-container .message-container .message-body {
+  background: #201f37;
+  padding: 5px 7px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 10px;
+}
+.chat-footer {
+  position: absolute;
+  bottom: 0;
+  background: #201f37;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-shadow: rgb(0 0 0 / 20%) 0px 0px 10px 0px;
+}
+.send-input {
+  padding: 10px 5px;
+}
+.send-input form {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+.send-input form .input-message {
+  display: flex;
+  gap: 6px;
+  background: #080914;
+  padding: 6px;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.send-input form .input-message {
+  display: flex;
+  gap: 6px;
+  background: #080914;
+  padding: 6px;
+  border-radius: 20px;
+}
+
+.send-input form .input-message input {
+  background: none;
+  outline: none;
+  color: #605f70;
+  border: none;
+  padding: 4px 8px;
+  font-weight: bold;
+}
+
+.send-input-area-btn h3 {
+  font-size: 12px;
+  padding: 10px;
+  color: rgb(245, 246, 247);
+  background: #ad8605;
+  cursor: pointer;
+
+  box-shadow: rgb(29 34 37 / 10%) 0px 4px 8px 0px;
+  border-radius: 30px;
+}
+.send-input-area-btn h3:hover {
+  background: #ad8605a9;
+}
+.send-input-area-btn button h3 {
+  font-size: 25px;
+  transform: rotate(-45deg);
+}
+.send-input-last {
+  display: flex;
+  position: relative;
+  z-index: 10;
+  margin-top: 1.25rem;
+  height: 1.125rem;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.send-input-last1 {
+  padding-left: 0.375rem;
+  margin-bottom: 0.375rem;
+  display: flex;
+  height: 100%;
+  gap: 15px;
+}

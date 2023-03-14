@@ -1,0 +1,236 @@
+
+  .popup_question {
+    display: none;
+    background-color: #293658;
+    width: 70%;
+    padding: 3%;
+    border-radius: 10px;
+    position: relative;
+    bottom: 30%;
+    left: 50%;
+    z-index: 10000;
+  }
+  .midleBackground {
+    position: relative;
+    bottom: 140px;
+}
+.pop_cont {
+  background: rgba(11, 13, 28, 0.73);
+  width: 100%;
+  position: fixed;
+  height: 100vh;
+}
+  .popup_question1 {
+    display: block;
+    background-color: #293658;
+    width: 70%;
+    padding: 3%;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    z-index: 10000;
+  }
+
+  .popup_flex {
+    display: flex;
+    background-color: #0b0d1c;
+    border-radius: 10px;
+    padding: 2%;
+    justify-content: space-between;
+    margin-bottom: 2%;
+    color: #fff;
+    font-size: 80%;
+  }
+  .popup_flex2 {
+    display: flex;
+
+    padding: 1%;
+    justify-content: space-between;
+    margin-bottom: 2%;
+  }
+  .popup_flex2 h4 {
+    background-color: #0b0d1c;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 80%;
+    padding: 1%;
+  }
+
+
+  .popup_container {
+    width: 30%;
+    height: 65%;
+    z-index: 2;
+    top: 0;
+    opacity: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-left: 10%;
+    margin-right: 55%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    position: fixed;
+    background: rgba(30, 32, 37, 1);
+}
+.button button{
+  background: transparent;
+  position: relative;
+  bottom: 70px;
+  height: 40px;
+  width: 170px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+  .popup .imgs {
+    text-align: center;
+    margin: auto;
+  }
+
+  .popup .imgs img {
+    width: 100%;
+  }
+
+ .close {
+    top: 1.5rem;
+    right: 25px;
+    position: absolute;
+    color: white;
+  }
+  .popup .close i:hover {
+    animation: rotate 1s;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(90deg);
+    }
+  }
+
+  .popup_container_flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+   .first {
+    transform: translateX(-100%);
+    animation: slide 5s linear infinite;
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+  @keyframes slide1 {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+   .second {
+    transform: translateX(-100%);
+    animation: slide1 5s linear infinite;
+  }
+
+   /* .para {
+    background-color: rgba(5, 5, 5, 0.699);
+    margin-top: -1.5rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    color: white;
+    overflow: hidden;
+    width: 80%;
+    border-radius: 30px;
+  } */
+  
+.para {
+  color: white;
+  background: rgb(5 5 6 / 55%);
+  font-size: 12px;
+  width: 80%;
+  margin-left: 30px;
+  margin-right: 20px;
+  border-radius: 15px;
+  padding: 5px;
+  overflow: hidden;
+  /* position: absolute; */
+  /* z-index: 1000; */
+  bottom: 40px;
+}
+  span {
+    color: #09ed09;
+  }
+  .span_1 {
+    position: relative;
+    right: 60px;
+}
+.span_2 {
+  margin-left: 10px;
+}
+.second_box_flex{
+  display: flex;
+}
+.second {
+  margin-left: 40px;
+}
+.third {
+  margin-left: 30px;
+}
+@media only screen and (min-width: 650px) and (max-width: 1020px) {
+  .imgs img {
+    width: 150px;
+    margin-top: 30px;
+}
+.para {
+  color: white;
+  font-size: 9px;
+  bottom: 200px;
+}
+.span_1 {
+  right: 40px;
+}
+.third {
+  margin-left: 40px;
+}
+.midleBackground {
+  bottom: 70px;
+}
+.button button {
+    bottom: 38px;
+    height: 20px;
+    width: 90px;
+}
+.midleBackground img{
+  width: 200px;
+}
+}
+@media only screen and (min-width: 650px) and (max-width: 800px) {
+  .third {
+    margin-left: 30px;
+  }
+  .para {
+    margin-left: 20px;
+    font-size: 8px;
+}
+.span_1 {
+  right: 30px;
+}
+.second {
+  margin-left: 10px;
+}
+.button button {
+  bottom: 40px;
+  left: 0px;
+  height: 20px;
+  width: 90px;
+}
+}

@@ -1,0 +1,67 @@
+.popUp-display-cover {
+  position: fixed;
+  z-index: 1000;
+  inset: 0px;
+  background-color: rgba(0, 0, 0, 0.7);
+  filter: none !important;
+}
+.popUp-display-page {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  top: 50%;
+  width: 664px;
+  height: 540px;
+  margin: -375px 0px 0px -310px;
+  transition-property: width, height, margin-left, margin-top;
+  transition-duration: 0.5s;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #1f2124;
+}
+.shitCode-input {
+  padding: 10px 20px;
+}
+.shitCode-display-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #16191b;
+  color: #ffffff;
+}
+.shitCode-redeem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.shitCode-input label {
+  font-weight: 500;
+  font-size: 12px;
+  color: #ffffff;
+}
+.shitCode-redeem input {
+  padding: 8px;
+  background: #24272a;
+  border: 1px solid rgba(50, 252, 0, 0.16);
+  border-radius: 5px;
+  outline: transparent;
+  color: white;
+  width: 100%;
+}
+.shitCode-redeem button {
+  padding: 10px 20px;
+  background: #3c7322;
+  border-radius: 5px;
+  border: transparent;
+  color: #ffffff;
+}
+.shitCode-text1 {
+  padding: 10px 20px;
+  font-size: 12px;
+  color: #605f70;
+}
+.shitCode-text1 ul {
+  margin: 30px 20px 20px 27px;
+}

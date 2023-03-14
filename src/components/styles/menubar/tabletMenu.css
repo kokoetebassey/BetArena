@@ -1,0 +1,103 @@
+
+.tablet-MenuBar {
+  padding: 5px;
+  margin: 5px;
+}
+
+.tablet-MenuBar .casino-img {
+  margin: 2px;
+  margin-bottom: 20px;
+}
+
+.tablet-MenuBar .casino-img img {
+  width: 20px;
+  background: #353341;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.tablet-MenuBar a .game-icon-tab img {
+  width: 42px;
+}
+
+.tablet-MenuBar a.active .game-icon-tab img {
+  background: linear-gradient(
+    277.97deg,
+    #624de2 0.08%,
+    rgba(248, 185, 24, 0) 101.63%
+  );
+  border-radius: 50%;
+}
+
+.tablet-MenuBar .ba-original {
+  display: flex;
+}
+
+.tablet-MenuBar .ba-original .game-icon img {
+  width: 42px;
+}
+
+.tablet-MenuBar .ba-original .game-arrow img {
+  width: 9px;
+}
+.tablet-MenuBar .ba-original .game-arrow {
+  margin-top: 12px;
+}
+
+.tablet-MenuBar .ba-original:hover .game-arrow img {
+  transform: rotate(90deg);
+  animation: rotation 0.2s ease-in;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(20deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+.tablet-MenuBar .middle-belt .rotate img {
+  animation: spin 2s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tablet-MenuBar a .middle-belt {
+  background: #080914;
+  border-radius: 17.8586px;
+  position: relative;
+}
+
+.tablet-MenuBar a .middle-belt img {
+  width: 43.5px;
+}
+
+.tablet-MenuBar a .middle-belt .pointer img {
+  z-index: 2087;
+  position: absolute;
+  top: 1px;
+}
+
+.tablet-MenuBar .language-currency {
+  color: #353341;
+  padding: 10px;
+}
+
+.tablet-MenuBar .language-currency .contents .input {
+  background: #1a1922;
+  display: flex;
+  border-radius: 30px;
+  font-size: 8px;
+  padding: 6px;
+  color: #807c93;
+  font-weight: 900;
+}
