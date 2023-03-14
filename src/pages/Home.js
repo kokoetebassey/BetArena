@@ -3,6 +3,7 @@ import React from "react";
 // import { useState } from "react";
 import "./pagesStyles/home.page/index.css";
 import "./pagesStyles/home.page/home.css";
+import "./pagesStyles/home.page/win.css";
 import second1 from "../images/second 1.png";
 import second2 from "../images/second2.png";
 import second3 from "../images/second3.png";
@@ -27,7 +28,8 @@ import "swiper/css/bundle";
 // import required modules
 import { Navigation } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
-// import Basection from "../homepage/Ba_section";
+import WinSection from "../homepage/WinSection";
+
 
 SwiperCore.use([Autoplay]);
 
@@ -55,7 +57,7 @@ export default function Home() {
             }}
             navigation={{
               prevEl: ".slot-arrow-left-home-top",
-              nextEl: ".slot-arrow-right-home-top"
+              nextEl: ".slot-arrow-right-home-top",
             }}
             modules={[Navigation]}
             className="mySwiper"
@@ -73,7 +75,6 @@ export default function Home() {
                 </div>
               </div>
             </SwiperSlide>
-            
             <SwiperSlide>
               <div className="home-display-top">
                 <div className="home-display-top-images">
@@ -89,7 +90,7 @@ export default function Home() {
             </SwiperSlide>
           </Swiper>
         </div>
-
+        <WinSection />
       </div>
     </>
   );
