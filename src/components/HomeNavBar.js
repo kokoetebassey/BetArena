@@ -81,11 +81,11 @@ export default function HomeNavBar({ setScreen, setView }) {
     window.addEventListener("resize", handleResize);
   });
 
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  // const [showMobileMenu, setShowMobileMenu] = useState(false);
 
-  const MobileHandle = () => {
-    setShowMobileMenu(true);
-  };
+  // const MobileHandle = () => {
+  //   setShowMobileMenu(true);
+  // };
 
   const Cancel = (e) => {
     setPublicMsg(false);
@@ -98,9 +98,9 @@ export default function HomeNavBar({ setScreen, setView }) {
     }
   };
 
-  const close = (data) => {
-    setShowMobileMenu(false);
-  };
+  // const close = (data) => {
+  //   setShowMobileMenu(false);
+  // };
 
   const Message = () => {
     setPublicMsg(true);
