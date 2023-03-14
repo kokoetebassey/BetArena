@@ -5,6 +5,7 @@ import "./pagesStyles/home.page/index.css";
 import "./pagesStyles/home.page/home.css";
 import "./pagesStyles/home.page/win.css";
 import "./pagesStyles/home.page/lobby.css";
+import "./pagesStyles/home.page/ba_display.css";
 import second1 from "../images/second 1.png";
 import second2 from "../images/second2.png";
 import second3 from "../images/second3.png";
@@ -31,12 +32,14 @@ import { Navigation } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import WinSection from "../homepage/WinSection";
 import LobbyRoute from "../homepage/LobbyRoute";
+// import Ba_section from "../homepage/Ba_section";
+import HomeSlots from "../homepage/HomeSlots";
 
 SwiperCore.use([Autoplay]);
 
 export default function Home() {
 
-  const [ showLobbyRoutes, setShowLobbyRoutes ] = useState(1)
+  const [  setShowLobbyRoutes ] = useState(1)
 
   const LobyRoutes = ((e)=>{
     setShowLobbyRoutes(e)
@@ -100,8 +103,8 @@ export default function Home() {
         </div>
         <WinSection />
         <LobbyRoute HandleLobbyRoute={LobyRoutes} />
-
-        <h2>{showLobbyRoutes}</h2>
+        
+        <HomeSlots />
       </div>
     </>
   );

@@ -1,0 +1,230 @@
+ /* ba section */
+ .ba-display {
+  margin-top: 100px;
+  position: relative;
+  margin-left:15px ;
+  margin-right:15px ;
+}
+.ba-display-main a {
+  text-decoration: none;
+}
+.best-display-main a {
+  text-decoration: none;
+}
+.ba-display-text-top {
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 20px 20px 20px 0px;
+  width: 13%;
+}
+.ba-display-main-image-text-pop-inner {
+  padding: 10px;
+}
+.ba-display-text-top h4 {
+  color: white;
+  padding: 15px 20px 15px 15px;
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 21px;
+}
+
+.ba-display-text-top h4 span {
+  color: #ad8605;
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 800;
+  font-size: 14px;
+}
+.ba-display-main {
+  background: rgb(3, 0, 0);
+  width: 100%;
+  border-radius: 10px;
+}
+.ba-display-main-flex {
+  position: relative;
+}
+.ba-display-main-image-text-pop {
+  position: absolute;
+  background: #201f37;
+  width: 72%;
+  top: 190px;
+  left: 270px;
+  z-index: 1;
+  border-radius: 5px;
+}
+.ba-display-main-image-text-pop2 {
+  position: absolute;
+  background: #201f37;
+  width: 100%;
+  top: 190px;
+  left: 100px;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.ba-display-main-image-text-pop-flex1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(3, 0, 0);
+  padding: 5px;
+  border-radius: 5px;
+}
+.ba-display-main-image-text-pop-flex3 {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+.ba-display-main-image-text-pop-flex3-1,
+.ba-display-main-image-text-pop-flex3-2,
+.ba-display-main-image-text-pop-flex3-3 {
+  background: rgb(3, 0, 0);
+  padding: 5px;
+  border-radius: 5px;
+}
+.ba-display-main-image-text-pop-flex3-1 h3 {
+  color: #ffffff;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 41px;
+}
+.ba-display-main-image-text-pop-flex3-2 h3 {
+  color: #ffffff;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 65px;
+}
+.ba-display-main-image-text-pop-flex3-3 h3 {
+  color: #ffffff;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 45px;
+}
+.ba-display-main-image-text-pop-flex3-4 h3 {
+  color: #ffffff;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 12px;
+}
+.ba-display-main-image-text-pop-flex2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(3, 0, 0);
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.ba-display-main-image-text-pop-flex1 h1 {
+  color: #ffffff;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+}
+.ba-display-main-image-text-pop-flex2 h1 {
+  color: #ffffff;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+}
+.ba-display-main-image-text-pop-flex2 h2 {
+  color: #ffffff;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+}
+.ba-display-main-image-text-pop-flex1 h2 {
+  color: #07f02e;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+}
+.ba-display-main-display {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  margin-top: -20px;
+}
+.ba-display-main-display2 {
+  display: flex;
+  gap: 10px;
+  padding: 20px 15px 15px 15px;
+  margin-top: -20px;
+}
+.ba-display-main-image-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5px;
+  padding-right: 5px;
+  position: relative;
+}
+.ba-display-main-image-text h4 {
+  font-size: 12px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  color: #a19a9a;
+}
+
+.ba-display-main-image-text-slide {
+  position: absolute;
+  right: 50px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.ba-display-main-image-text-slide div {
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+.ba-display-main-image-text-slide1 {
+  animation: slide 15s linear infinite;
+}
+@keyframes slide {
+  0% {
+    margin-top: -80px;
+  }
+  5% {
+    margin-top: -70px;
+  }
+  33% {
+    margin-top: -70px;
+  }
+  38% {
+    margin-top: -40px;
+  }
+  56% {
+    margin-top: -40px;
+  }
+  71% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+
