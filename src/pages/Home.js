@@ -34,6 +34,7 @@ import WinSection from "../homepage/WinSection";
 import LobbyRoute from "../homepage/LobbyRoute";
 // import Ba_section from "../homepage/Ba_section";
 import HomeSlots from "../homepage/HomeSlots";
+import Basection from "../homepage/Ba_section";
 
 SwiperCore.use([Autoplay]);
 
@@ -105,6 +106,7 @@ export default function Home() {
         <LobbyRoute HandleLobbyRoute={LobyRoutes} />
         
         <HomeSlots />
+        <Basection />
       </div>
     </>
   );
