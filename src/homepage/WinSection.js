@@ -147,7 +147,7 @@ export default function WinSection() {
             <Swiper
               slidesPerView={3}
               spaceBetween={10}
-              direction={"vertical"}
+         
               speed={2000}
               loop={true}
               autoplay={{
@@ -242,9 +242,7 @@ export default function WinSection() {
               </div>
             </div>
           </div>
-          
         </div>
       </div>
-
   );
 }

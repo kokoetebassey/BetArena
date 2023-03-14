@@ -1,9 +1,10 @@
 import React from "react";
 // import { NavLink } from "react-router-dom";
-// import { useState } from "react";
+import { useState } from "react";
 import "./pagesStyles/home.page/index.css";
 import "./pagesStyles/home.page/home.css";
 import "./pagesStyles/home.page/win.css";
+import "./pagesStyles/home.page/lobby.css";
 import second1 from "../images/second 1.png";
 import second2 from "../images/second2.png";
 import second3 from "../images/second3.png";
@@ -29,11 +30,18 @@ import "swiper/css/bundle";
 import { Navigation } from "swiper";
 import SwiperCore, { Autoplay } from "swiper";
 import WinSection from "../homepage/WinSection";
-
+import LobbyRoute from "../homepage/LobbyRoute";
 
 SwiperCore.use([Autoplay]);
 
 export default function Home() {
+
+  const [ showLobbyRoutes, setShowLobbyRoutes ] = useState(1)
+
+  const LobyRoutes = ((e)=>{
+    setShowLobbyRoutes(e)
+  })
+
   return (
     <>
       <div className="home-display">
@@ -91,6 +99,9 @@ export default function Home() {
           </Swiper>
         </div>
         <WinSection />
+        <LobbyRoute HandleLobbyRoute={LobyRoutes} />
+
+        <h2>{showLobbyRoutes}</h2>
       </div>
     </>
   );
