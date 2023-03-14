@@ -8,28 +8,45 @@ export default function Crashcount(crash) {
     const canvas = mobileCanvasRef.current;
     const ctx = canvas.getContext("2d");
 
+    ctx.clearRect(0, 0, canvas.width, canvas.height); //clear canvas each time a line is drawn.
+
     // define the starting and ending points of the curve
     const startX = 4;
     const startY = 160;
     const endX = 300;
     const endY = 10;
 
-    // create a line/path and start from bottom-left corner
-    ctx.beginPath();
-    ctx.moveTo(startX, startY);
+    let startTime = null; // variable to store start time
 
-    ctx.bezierCurveTo(
-        startX,
-        startY,
-        120,
-        140,
-        endX,
-        endY);
+       const animate = (timestamp) => {
+      if (!startTime) {
+        startTime = timestamp; // set start time if not set
+      }
 
-    // draw the stroke path in red colour with a width of 5px
-    ctx.lineWidth = "2";
-    ctx.strokeStyle = "#FFEB73";
-    ctx.stroke();
+      const progress = timestamp - startTime; // calculate elapsed time
+
+      // create a line/path and start from bottom-left corner
+      ctx.beginPath();
+      ctx.moveTo(startX, startY);
+      
+      // calculate intermediate point based on elapsed time
+      const currentX = startX + ((progress / 20000) * (endX - startX));
+      const currentY = startY + ((progress / 20000) * (endY - startY));
+      ctx.bezierCurveTo(startX, startY, 370, 180, currentX, currentY);
+
+      // draw the stroke path
+      ctx.closePath();
+      ctx.lineWidth = "2";
+      ctx.strokeStyle = "#FFEB73";
+      ctx.stroke();
+
+      // repeat animation until it reaches 50s
+      if (progress < 20000) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate); // start animation
   }, []);
 
   useEffect(() => {
