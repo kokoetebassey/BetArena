@@ -9,6 +9,7 @@ import Signup from "./Logins/Signup";
 import Login from "./Logins/Login";
 
 import { useAuthContext } from "./hooks/useAuthContext";
+import Slot from "./pages/Slot";
 // import { useLogOut } from "./hooks/useLogOut";
 
 function App() {
@@ -76,8 +77,8 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
-          {/* <Route path="/slots" element={<Slot />}></Route>
-            <Route path="/crash" element={<Crash />}></Route>
+          <Route path="/slots" element={<Slot />}></Route>
+            {/* <Route path="/crash" element={<Crash />}></Route>
             <Route path="/affiliate" element={<Affiliate />}></Route>
             <Route path="/promotion" element={<Promotion />}></Route>
             <Route path="/BCD" element={<BCD />}></Route>
