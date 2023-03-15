@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import MenuBar from "./components/MenuBar";
 import Navbar from "./components/Navbar";
+import CrashPoint from "./Crash/CrashPoint"
 import HomeNavBar from "./components/HomeNavBar";
 import Home from "./pages/Home";
 import { BrowserRouter } from "react-router-dom";
@@ -101,10 +102,11 @@ function App() {
             <Route path="vault" element={<Vault />}></Route>
           </Route>
 
+        <Route path="/crash" element={<Crash />}></Route>
+        <Route path="CrashPoint" element={<CrashPoint />}></Route>
           {/* <Route path="BetHistory" element={<BetHistory />}></Route>
 
             <Route path="Recommend" element={<Recommend />}></Route>
-            <Route path="CrashPoint" element={<CrashPoint />}></Route>
 
             <Route path="/Support" element={<Support />}></Route>
             <Route path="/Support1" element={<Support1 />}></Route>
