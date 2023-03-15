@@ -33,15 +33,12 @@ export default function Login() {
           <h1>BUILD THE BEST CRYPTO CASINO TOGETHER</h1>
           <img src={NIKE1} alt="sNIKE1" />
         </div>
-
         <div className="signUp-display-page-main">
           <form onSubmit={HandleSubmit}>
             <div className="signUp-first-flex">
               <label htmlFor="Email">Email Address</label>
               <input
                 type="text"
-                tabIndex="1"
-                autoComplete="off"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 placeholder="Email"
@@ -53,15 +50,12 @@ export default function Login() {
               <label htmlFor="Password">Login Password</label>
               <input
                 type="password"
-                tabIndex="1"
-                autoComplete="off"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 placeholder="Login Password"
                 required
               ></input>
             </div>
-
             <div className="login-submit">
               <div className="login-login">
                 <button disabled={isLoading} type="submit">
@@ -69,7 +63,7 @@ export default function Login() {
                 </button>
               </div>
               <div className="login-signUp">
-                <NavLink to="/signup">
+                <NavLink to="/signup/regist">
                   <h2>Sign up</h2>
                   <h3> &#10095;</h3>
                 </NavLink>

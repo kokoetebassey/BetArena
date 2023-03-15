@@ -233,7 +233,7 @@ export default function Navbar({ setScreen, setView }) {
                 <NavLink to="login">Login</NavLink>
               </div>
               <div className="signup">
-                <NavLink to="signup">Signup</NavLink>
+                <NavLink to="signup/regist">Signup</NavLink>
               </div>
               <div className="play" onClick={Message}>
                 <p>28</p>
