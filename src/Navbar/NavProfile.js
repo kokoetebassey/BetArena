@@ -1,15 +1,15 @@
 import React from "react";
-import userImage from "../images/chatimg.svg";
 import medal from "../images/medal.svg";
 import global from "../images/global.svg";
-import profile from "../images/profile (2).svg";
 import wallet from "../images/wallet (2).svg";
 import reward from "../images/reward (2).svg";
 import transaction from "../images/transaction (2).svg";
 import statistics from "../images/statistics.svg";
 import ba from "../images/ba.svg";
 
-export default function WalletCoins() {
+
+export default function WalletCoins({profile}) {
+
   return (
     <div>
       <div className="pro-pop">
@@ -17,10 +17,10 @@ export default function WalletCoins() {
           <div className="pro-pop-inner-top-flex">
             <div className="pro-pop-inner-top-flex-left">
               <div className="pro-pop-inner-top-flex-left-img">
-                <img src={userImage} alt="userImage" />
+                <img src={profile.img} alt="userImage" />
               </div>
               <div className="pro-pop-inner-top-flex-left1">
-                <h3>Valiant Code</h3>
+                <h3>{profile.username}</h3>
                 <div className="pro-pop-inner-top-flex-left1-inner">
                   <div className="pro-pop-inner-top-flex-left1-inner-medal">
                     <img src={medal} alt="medal" />
@@ -31,7 +31,7 @@ export default function WalletCoins() {
                   </div>
                   <div className="pro-pop-inner-top-flex-left1-inner-rank">
                     <h4>
-                      V<span>0</span>
+                      <span>{profile.ranking}</span>
                     </h4>
                   </div>
                 </div>

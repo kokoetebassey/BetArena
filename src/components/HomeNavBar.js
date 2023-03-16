@@ -25,9 +25,8 @@ import NavProfile from "../Navbar/NavProfile.js";
 
 import { useAuthContext } from "../hooks/useAuthContext";
 
-
 // =============== Import HTTPS request ==================
-import axios from "axios"
+import axios from "axios";
 
 export default function HomeNavBar({ setScreen, setView }) {
   const [searchEL, setSearch] = useState("search");
@@ -35,26 +34,8 @@ export default function HomeNavBar({ setScreen, setView }) {
   const [count, setCount] = useState(true);
   const [menucount, setMenuCount] = useState(true);
   const [PublicMsg, setPublicMsg] = useState(false);
-
+  const [profile, setProfile] = useState("");
   const { user } = useAuthContext();
-
-useEffect(()=>{
-  const fetchData = (async()=>{
-      await axios.get("https://betarena.herokuapp.com/api/profile",{
-        headers: {
-          Authorization: `Bearer ${user.Token}`,
-        },
-    })
-      .then((response)=>{
-        console.log(response.data)
-      })
-      .catch((error)=>{
-        console.log(error)
-      })
-  })
-  fetchData()
-})
-
 
   function searchHandle() {
     if (count) {
@@ -172,6 +153,23 @@ useEffect(()=>{
   const updateCoin = (e) => {
     setNavCoins(e);
   };
+  useEffect(() => {
+    const fetchData = async () => {
+      await axios
+        .get("https://betarena.herokuapp.com/api/profile", {
+          headers: {
+            Authorization: `Bearer ${user.Token}`,
+          },
+        })
+        .then((response) => {
+          setProfile(response.data[0]);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    fetchData();
+  }, [user]);
 
   return (
     <>
@@ -232,12 +230,18 @@ useEffect(()=>{
                 />
               )}
 
-              {navProfile && <NavProfile Clear={HandleCoinDropDown} />}
-
               <div className="Home-Items2">
                 <div className="Home-Items2-1">
                   <img src={userImage} alt="userImage" width={"25px"} />
-                  <h3 onClick={HandleNavProfile}>&#9781;</h3>
+                  <div onClick={HandleNavProfile} className="navPro">
+                    <h3>&#9781;</h3>
+                    {navProfile && (
+                      <NavProfile
+                        profile={profile}
+                        Clear={HandleCoinDropDown}
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
               <div className="Home-Items3">
