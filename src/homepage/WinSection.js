@@ -145,26 +145,23 @@ export default function WinSection() {
             </div>
 
             <Swiper
-              slidesPerView={3}
-              spaceBetween={10}
-         
+              slidesPerView={1}
+              spaceBetween={1}
               speed={2000}
-              loop={true}
+              // loop={true}
               autoplay={{
-                delay: 1000,
-                disableOnInteraction: false,
-              }}
+              delay: 2000,
+              disableOnInteraction: false,
+               }}
               navigation={{
                 nextEl: ".slot-arrow-left-third-top",
                 prevEl: ".slot-arrow-right-third-top",
               }}
               modules={[Navigation]}
-              className="mySwiper"
+              className="mySwiper-side"
             >
-              <SwiperSlide></SwiperSlide>
-              <SwiperSlide></SwiperSlide>
-            </Swiper>
-
+           
+              <SwiperSlide> 
               <div className="home-page-top-third-flex-page-cover">
                 <div className="home-page-top-third-flex-page">
                   <div className="home-page-top-third-flex-page-img">
@@ -177,7 +174,7 @@ export default function WinSection() {
                 </div>
                 <div className="home-page-top-third-flex-page">
                   <div className="home-page-top-third-flex-page-img">
-                    <img src={mi2} alt="pick1" width={"83px"} />
+                    <img src={mi1} alt="pick1" width={"83px"} />
                   </div>
                   <div className="home-page-top-third-flex-page-texts">
                     <h2>Crash</h2>
@@ -186,14 +183,74 @@ export default function WinSection() {
                 </div>
                 <div className="home-page-top-third-flex-page">
                   <div className="home-page-top-third-flex-page-img">
-                    <img src={mi3} alt="pick1" width={"83px"} />
+                    <img src={mi1} alt="pick1" width={"83px"} />
                   </div>
                   <div className="home-page-top-third-flex-page-texts">
                     <h2>Crash</h2>
                     <h3>BA Original</h3>
                   </div>
                 </div>
-              </div>
+                </div>
+                </SwiperSlide>
+                
+              <SwiperSlide>
+              <div className="home-page-top-third-flex-page-cover"> 
+                <div className="home-page-top-third-flex-page">
+                  <div className="home-page-top-third-flex-page-img">
+                    <img src={mi1} alt="pick1" width={"83px"} />
+                  </div>
+                  <div className="home-page-top-third-flex-page-texts">
+                    <h2>Crash</h2>
+                    <h3>BA Original</h3>
+                  </div>
+                </div>
+           
+  
+                <div className="home-page-top-third-flex-page">
+                  <div className="home-page-top-third-flex-page-img">
+                    <img src={mi1} alt="pick1" width={"83px"} />
+                  </div>
+                  <div className="home-page-top-third-flex-page-texts">
+                    <h2>Crash</h2>
+                    <h3>BA Original</h3>
+                  </div>
+                </div>
+   
+ 
+                <div className="home-page-top-third-flex-page">
+                  <div className="home-page-top-third-flex-page-img">
+                    <img src={mi1} alt="pick1" width={"83px"} />
+                  </div>
+                  <div className="home-page-top-third-flex-page-texts">
+                    <h2>Crash</h2>
+                    <h3>BA Original</h3>
+                  </div>
+                </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+
+              {/* <div className="home-page-top-third-flex-page-cover"> */}
+               
+                {/* <div className="home-page-top-third-flex-page">
+                  <div className="home-page-top-third-flex-page-img">
+                    <img src={mi2} alt="pick1" width={"83px"} />
+                  </div>
+                  <div className="home-page-top-third-flex-page-texts">
+                    <h2>Crash</h2>
+                    <h3>BA Original</h3>
+                  </div>
+                </div> */}
+                {/* <div className="home-page-top-third-flex-page">
+                  <div className="home-page-top-third-flex-page-img">
+                    <img src={mi3} alt="pick1" width={"83px"} />
+                  </div>
+                  <div className="home-page-top-third-flex-page-texts">
+                    <h2>Crash</h2>
+                    <h3>BA Original</h3>
+                  </div>
+                </div> */}
+              {/* </div> */}
           </div>
 
           <div className="home-page-top-fourth-flex">
