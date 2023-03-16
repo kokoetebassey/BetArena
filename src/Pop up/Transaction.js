@@ -26,7 +26,7 @@ export default function Transaction() {
               <div className="transaction-contents">
                 <div className="deposit">
                   <div className="deposit-container">
-                    <h3 className="deposit-currency">Deposit Currency</h3>
+                    <h3 className="deposit-currency">Currency</h3>
                     <div className="input-coin">
                       <div className="select-coin">
                         <div className="image">
@@ -35,7 +35,7 @@ export default function Transaction() {
                             alt=""
                           />
                         </div>
-                        <div className="name">
+                        <div className="c">
                           <h4>BTC</h4>
                         </div>
                         <div className="arrow">
