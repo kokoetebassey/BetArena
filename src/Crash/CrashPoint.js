@@ -56,6 +56,27 @@ export default function CrashPoint(crash) {
               <h4>0.33x</h4>
             </div>
           </div>
+          <div className="crash-Display-left-crash-top2">
+            <div className="crash-Display-left-crash-top2-circle"></div>
+            <div className="crash-Display-left-crash-top2-list">
+              <h3>464646465</h3>
+              <h4>0.33x</h4>
+            </div>
+          </div>
+          <div className="crash-Display-left-crash-top2">
+            <div className="crash-Display-left-crash-top2-circle"></div>
+            <div className="crash-Display-left-crash-top2-list">
+              <h3>464646465</h3>
+              <h4>0.33x</h4>
+            </div>
+          </div>
+          <div className="crash-Display-left-crash-top2">
+            <div className="crash-Display-left-crash-top2-circle"></div>
+            <div className="crash-Display-left-crash-top2-list">
+              <h3>464646465</h3>
+              <h4>0.33x</h4>
+            </div>
+          </div>
         </div>
       </div>
       <div className="main-crash">

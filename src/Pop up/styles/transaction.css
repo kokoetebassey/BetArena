@@ -1,0 +1,282 @@
+.transaction {
+  width: 100%;
+  height: 100vh;
+  background: rgb(15, 13, 32);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.transaction-container {
+  width: 500px;
+  height: 85%;
+  background: #232428ab;
+  border-radius: 12px;
+  position: absolute;
+  top: 40px;
+  left: 30%;
+  color: white;
+}
+.transaction-body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.transaction-body .headers {
+  display: flex;
+  padding: 10px;
+  gap: 60%;
+}
+.transaction-body .headers .wallet {
+  font-size: 17px;
+  padding: 5px;
+  font-weight: bold;
+}
+.transaction-body .headers .transactions {
+  font-size: 12px;
+  padding: 5px;
+  font-weight: bold;
+  color: #878787;
+}
+.transaction-body .headers .transactions:hover {
+  color: #fff;
+}
+.transaction-body .transaction-routes {
+  display: block;
+  width: 100%;
+  display: flex;
+  height: 63px;
+  background-color: rgba(0, 0, 0, 0.127);
+  border-radius: 12px;
+  color: #878787;
+  font-size: 13px;
+}
+
+.transaction-body .transaction-routes a {
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.transaction-body .transaction-routes a.active {
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  display: flex;
+  background-color: #ad8605;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+
+.transaction-contents {
+  background-color: rgba(0, 0, 0, 0.127);
+  padding: 10px;
+  margin: 20px 10px;
+  border-radius: 12px;
+}
+.deposit {
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+}
+.deposit-container {
+  padding: 5px;
+  margin: 5px;
+  overflow: hidden;
+  height: 360px;
+  overflow-y: auto;
+}
+.deposit-container::-webkit-scrollbar {
+  display: none;
+}
+.input-coin {
+  background: rgba(135, 135, 135, 0.32);
+  border-radius: 14px;
+  display: flex;
+  padding: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.input-coin img {
+  width: 30px;
+}
+.input-coin .arrow {
+  margin: 15px 55px;
+  font-size: 20px;
+  font-weight: 100;
+}
+.showBalance {
+  border-left: 1px solid grey;
+  margin-right: 10px;
+  color: #c3c3c3;
+  padding: 10px;
+}
+.select-coin {
+  display: flex;
+  width: 80%;
+  gap: 30px;
+  align-items: center;
+}
+.select-coin .image {
+  margin: 15px;
+  position: relative;
+  display: flex;
+  gap: 30px;
+  color: rgb(220, 220, 220);
+}
+.select-coin .image p {
+  font-style: italic;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 7px;
+}
+.select-coin .copy-icon:hover {
+  color: white;
+}
+.select-coin .copy-icon {
+  color: gray;
+  font-size: 18px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.select-coin .name {
+  margin: 10px;
+  font-size: 20px;
+}
+.select-coin input {
+  background: none;
+  outline: none;
+  width: 100%;
+  padding: 11px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 13px;
+  border: none;
+}
+.select-coin input::placeholder {
+  color: #878787;
+}
+.deposit-currency {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 10px;
+}
+.submit-btn {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.submit-btn button {
+  background-color: #ad8605;
+  border: none;
+  padding: 8px 0px;
+  width: 98%;
+  margin-top: 20px;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+}
+.submit-btn button:hover {
+  background-color: #97780f;
+}
+.choose-coin-header {
+  display: flex;
+  font-size: 12px;
+  padding: 15px;
+  color: #878787;
+}
+.choose-coin {
+  width: 90%;
+}
+.choose-coin-header .cancel {
+  cursor: pointer;
+}
+.cancel:hover {
+  color: #fff;
+}
+.choose-coin-content {
+  background: #232428;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  position: relative;
+}
+.choose-coin-content .search-bar {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+}
+.search-bar-content {
+  background: rgba(0, 0, 0, 0.76);
+  width: 87%;
+  margin: 10px;
+  display: flex;
+  border-radius: 12px;
+  padding: 7px;
+}
+.search-bar-content input {
+  width: 400px;
+  background: none;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 10px;
+}
+.search-bar-content .search-icon {
+  padding: 5px;
+}
+.choose-coin-body {
+  display: flex;
+  gap: 30px;
+  margin: 0px 20px;
+  padding: 5px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.choose-coin-body:hover {
+  display: flex;
+  gap: 30px;
+  background: #00000052;
+  margin: 0px 20px;
+  padding: 5px 20px;
+  border-radius: 12px;
+}
+.choose-coin-body .image {
+  width: 5%;
+}
+.choose-coin-body .name {
+  width: 60%;
+}
+.choose-coin-body img {
+  width: 30px;
+}
+.withdraw-address {
+  display: flex;
+  flex-direction: column;
+}
+.withdraw-address input {
+  background: rgba(135, 135, 135, 0.32);
+  outline: none;
+  padding: 15px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 13px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+}
+.withdraw-address label {
+  padding: 10px;
+}
+.withdraw-address input::placeholder {
+  color: #878787;
+}

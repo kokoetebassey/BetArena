@@ -9,8 +9,6 @@ import icon2 from "../images/icon2.png";
 import icon3 from "../images/icon3.png";
 import icon4 from "../images/icon4.png";
 import { NavLink } from "react-router-dom";
-import SecondStep from "./SecondStep";
-import LastStep from "./LastStep";
 
 import { useSignup } from "../hooks/useSignup";
 
@@ -18,10 +16,7 @@ export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [promo, setPromo] = useState("");
-
-  const [next] = useState(false);
-  const [first] = useState(true);
-  const [lastly] = useState(false);
+  const [ref, setRef] = useState(false);
 
   const { signup, isLoading, error } = useSignup();
 
@@ -31,12 +26,8 @@ export default function Signup() {
     signup(data);
   }
 
-  const HandleSecondStep = (e) => {
-    console.log(e);
-  };
-
-  const HandleLastStep = (e) => {
-    console.log(e);
+  const ShowReferral = () => {
+    setRef(true);
   };
 
   return (
@@ -50,69 +41,71 @@ export default function Signup() {
           <h1>BUILD THE BEST CRYPTO CASINO TOGETHER</h1>
           <img src={NIKE1} alt="sNIKE1" width={"400px"} />
         </div>
-
         <div className="signUp-display-page-main">
-          {first && (
-            <form onSubmit={HandleSubmit}>
-              <div className="signUp-first-flex">
-                <label htmlFor="Email">Email Address</label>
-                <input
-                  type="text"
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Email"
-                  value={email}
-                  required
-                ></input>
-              </div>
-
-              <div className="signUp-second-flex">
-                <label htmlFor="Password">Login Password</label>
-                <input
-                  type="password"
-                  onChange={(e) => setPassword(e.target.value)}
-                  value={password}
-                  placeholder="Login Password"
-                  required
-                ></input>
-              </div>
-              <div className="signUp-third-flex">
-                <label htmlFor="Promo">Referral/Promo Code(Optional)</label>
+          <form onSubmit={HandleSubmit}>
+            <div className="signUp-first-flex">
+              <label htmlFor="Email">Email Address</label>
+              <input
+                type="text"
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                value={email}
+                required
+              ></input>
+            </div>
+            <div className="signUp-second-flex">
+              <label htmlFor="Password">Login Password</label>
+              <input
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                placeholder="Login Password"
+                required
+              ></input>
+            </div>
+            <div className="signUp-third-flex">
+              <label onClick={ShowReferral} htmlFor="Promo">
+                Referral/Promo Code(Optional)
+              </label>
+              {ref && (
                 <input
                   type="text"
                   onChange={(e) => setPromo(e.target.value)}
                   placeholder="Referral/Promo Code"
                 ></input>
-              </div>
-              {error && <p className="error-message">{error}</p>}
+              )}
+            </div>
+            {error && <p className="error-message">{error}</p>}
 
-              <div className="signUp-check">
-                <input type="checkbox" required />
-                <label>
-                  I agree with user agreement, and confirm that I am at least 18
-                  years old!
-                </label>
-              </div>
-              <div className="signUp-claim">
-                <img src={gift} alt="gift" width={"20px"} />
-                <h1>CLAIM UPTO 5BTC</h1>
-              </div>
-              <div className="signUp-submit">
-                <NavLink to="/login">
-                  <div className="signUp-login">
-                    <h3> &#10094;</h3>
-                    <h2>Sign in</h2>
-                  </div>
-                </NavLink>
-                <div className="signUp-signUp">
-                  <button disabled={isLoading} type="submit">Sign up</button>
+            <div className="signUp-check">
+              <input type="checkbox" required />
+              <label>
+                I agree with user agreement, and confirm that I am at least 18
+                years old!
+              </label>
+            </div>
+            <div className="signUp-claim">
+              <img src={gift} alt="gift" width={"20px"} />
+              <h1>CLAIM UPTO 5BTC</h1>
+            </div>
+            <div className="signUp-submit">
+              <NavLink to="/login">
+                <div className="signUp-login">
+                  <h3> &#10094;</h3>
+                  <h2>Sign in</h2>
                 </div>
+              </NavLink>
+              <div className="signUp-signUp">
+                {!isLoading ? (
+                  <button type="submit">Sign up</button>
+                ) : (
+                  <button disabled={isLoading} >
+                    Loading...
+                  </button>
+                )}
               </div>
-            </form>
-          )}
-          {next && <SecondStep second={HandleSecondStep} />}
-
-          {lastly && <LastStep SubmitUser={HandleLastStep} />}
-
+            </div>
+          </form>
           <div className="login-socials">
             <div className="login-socials-inner">
               <div className="login-socials-top">

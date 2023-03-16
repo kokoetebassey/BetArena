@@ -35,7 +35,7 @@ export const useSignup = () => {
       // Update the auth context
       dispatch({ type: "LOGIN", payload: json });
       setIsLoading(false);
-      navigate("/");
+      navigate("/signup/secon");
     }
   };
   return { signup, isLoading, error };
