@@ -16,6 +16,30 @@
   .lineCrash {
     display: none;
   }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
+  }
   .crash-Display-left-top {
     display: flex;
     -webkit-box-align: center;
@@ -972,6 +996,30 @@
   }
   .crash-Display-left {
     width: 60%;
+  }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
   }
 
   .lineCrash-mobile {
@@ -2040,7 +2088,25 @@
     position: absolute;
     display: flex;
     align-items: center;
-    gap: 50px;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
   }
 
   .crash-Display-right {
@@ -4173,6 +4239,30 @@
     width: 25px;
     cursor: pointer;
   }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
+  }
   .crash-Display-cover {
     margin: 10px 10px 10px 40px;
   }
@@ -5232,6 +5322,30 @@
     width: 25px;
     cursor: pointer;
   }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
+  }
   .crash-Display-cover {
     margin: 10px 10px 10px 40px;
   }
@@ -6290,6 +6404,30 @@
     width: 25px;
     cursor: pointer;
   }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
+  }
   .crash-Display-cover {
     margin: 10px 10px 10px 40px;
   }
@@ -7343,6 +7481,30 @@
   .crash-Display {
     display: flex;
     gap: 10px;
+  }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
   }
   .main-crash-footer img {
     width: 25px;
