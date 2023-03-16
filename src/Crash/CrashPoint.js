@@ -80,6 +80,20 @@ export default function CrashPoint(crash) {
         </div>
       </div>
       <div className="main-crash">
+        <div className="main-crash-graph">
+          <h3>0</h3>
+          <h3>2</h3>
+          <h3>4</h3>
+          <h3>6</h3>
+          <h3>8</h3>
+        </div>
+        <div className="main-crash-graph-side">
+          <h3>8</h3>
+          <h3>6</h3>
+          <h3>4</h3>
+          <h3>2</h3>
+        </div>
+
         <div className="main-crash-count">{crashGame}</div>
       </div>
       <div className="crash-text">

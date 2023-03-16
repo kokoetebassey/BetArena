@@ -1494,7 +1494,7 @@
     width: fit-content;
     border-radius: 30px;
   }
-  .crash-history button{
+  .crash-history button {
     cursor: pointer;
   }
   .bet-history {
@@ -2036,6 +2036,12 @@
   .lineCrash-mobile {
     display: none;
   }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
 
   .crash-Display-right {
     width: 40%;
@@ -2553,7 +2559,7 @@
     width: fit-content;
     border-radius: 30px;
   }
-  .crash-history button{
+  .crash-history button {
     cursor: pointer;
   }
   .bet-history {
@@ -3084,6 +3090,30 @@
   .main-crash-footer img {
     width: 25px;
     cursor: pointer;
+  }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
   }
   .crash-Display-cover {
     margin: 10px 10px 10px 40px;
@@ -6787,7 +6817,7 @@
     width: fit-content;
     border-radius: 30px;
   }
-    .crash-history button {
+  .crash-history button {
     cursor: pointer;
   }
   .bet-history {
