@@ -94,9 +94,9 @@
 
 
   .home-page-top-fourth-flex {
-    display: flex;
+    /* display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; */
     padding-left: 20px;
     padding-top: 0px;
   }
@@ -192,12 +192,7 @@
     padding-top: 10px;
   }
   .home-page-top-third-flex {
-    display: flex;
-    /* align-items: center; */
-    flex-direction: column;
-    padding-left: 20px;
     padding-top: 10px;
-    /* width: 30%; */
   }
   .home-page-top-first-flex-top {
     display: flex;
@@ -279,6 +274,7 @@
   .home-page-top-third-flex-page-cover {
     display: flex;
     align-items: center;
+    gap: 10px;
   }
 
   .slot-line1-arrows-third-top,
@@ -289,9 +285,9 @@
   }
 
   .home-page-top-fourth-flex {
-    display: flex;
+    /* display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; */
     padding-left: 20px;
     padding-top: 10px;
   }
