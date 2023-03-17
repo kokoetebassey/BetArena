@@ -8,7 +8,8 @@
     gap: 10px; */
   }
   .main-crash-footer img {
-    width: 15px;
+    width: 25px;
+    cursor: pointer;
   }
   .crash-Display-cover {
     margin: 10px;
@@ -18,6 +19,30 @@
   .pop-img-1,
   .lineCrash {
     display: none;
+  }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
   }
   .crash-Display-left-top {
     display: flex;
@@ -35,6 +60,7 @@
     border-radius: 30px;
     color: #ffffff;
     font-size: 11px;
+    cursor: pointer;
   }
   .crash-Display-left-top1.active {
     background: #ad8605;
@@ -111,8 +137,10 @@
     font-size: 11px;
   }
   .crash-Display-left-crash-top2-circle {
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
+    background: #ffd805;
+    border-radius: 50%;
     background: #ffd805;
     border-radius: 50%;
   }
@@ -274,8 +302,8 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
-    margin-top: 30px;
     border: none;
+    cursor: pointer;
     outline: none;
     border-radius: 30px;
   }
@@ -307,6 +335,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .ball-input-flex2 > button {
     height: 2.25rem;
@@ -315,6 +344,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .crash-input-flex2 > button:first-child {
     margin-left: 0px;
@@ -427,33 +457,36 @@
   }
 
   .crash-history {
-    margin: 20px auto 0px 10px;
+    margin: 20px auto 0px 50px;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
     position: relative;
-    gap: 10px;
-    font-size: 11px;
+    font-size: 12px;
+    background-color: rgba(49, 52, 60, 0.7);
+    width: fit-content;
+    border-radius: 30px;
+  }
+  .crash-history button {
+    cursor: pointer;
   }
   .bet-history {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button.active {
     background: #ad8605;
     border: none;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
     padding: 2px 15px;
     border-radius: 30px;
   }
@@ -960,12 +993,37 @@
   }
   .main-crash-footer img {
     width: 25px;
+    cursor: pointer;
   }
   .crash-Display-cover {
-    margin: 10px 10px 10px 40px;
+    margin-top: 90px;
   }
   .crash-Display-left {
     width: 60%;
+  }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
   }
 
   .lineCrash-mobile {
@@ -977,23 +1035,24 @@
   }
   .crash-Display-left-top {
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
     position: relative;
-    gap: 10px;
     margin-right: auto;
     font-size: 12px;
+    background-color: rgba(49, 52, 60, 0.7);
+    border-radius: 30px;
+    width: fit-content;
   }
   .crash-Display-left-top button {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 10px;
-    border-radius: 30px;
+    background-color: transparent;
+    border: transparent;
+    padding: 5px 10px;
     color: #ffffff;
+    cursor: pointer;
   }
   .crash-Display-left-top1.active {
     background: #ad8605;
-    padding: 2px 10px;
+    padding: 6px 10px;
     border-radius: 30px;
   }
 
@@ -1059,8 +1118,10 @@
     color: #ffffff;
   }
   .crash-Display-left-crash-top2-circle {
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
+    background: #ffd805;
+    border-radius: 50%;
     background: #ffd805;
     border-radius: 50%;
   }
@@ -1253,8 +1314,8 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
-    margin-top: 30px;
     border: none;
+    cursor: pointer;
     outline: none;
     border-radius: 30px;
   }
@@ -1288,6 +1349,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .ball-input-flex2 > button {
     height: 2.25rem;
@@ -1296,6 +1358,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .crash-input-flex2 > button:first-child {
     margin-left: 0px;
@@ -1470,6 +1533,7 @@
     border: none;
     outline: none;
     font-size: 12px;
+    cursor: pointer;
   }
   .crash-history {
     margin: 20px auto 0px 50px;
@@ -1477,28 +1541,31 @@
     -webkit-box-align: center;
     align-items: center;
     position: relative;
-    gap: 10px;
     font-size: 12px;
+    background-color: rgba(49, 52, 60, 0.7);
+    width: fit-content;
+    border-radius: 30px;
+  }
+  .crash-history button {
+    cursor: pointer;
   }
   .bet-history {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button.active {
     background: #ad8605;
     border: none;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
     padding: 2px 15px;
     border-radius: 30px;
   }
@@ -2009,6 +2076,7 @@
   }
   .main-crash-footer img {
     width: 25px;
+    cursor: pointer;
   }
   .crash-Display-cover {
     margin: 10px 10px 10px 40px;
@@ -2020,34 +2088,59 @@
   .lineCrash-mobile {
     display: none;
   }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
+  }
 
   .crash-Display-right {
     width: 40%;
   }
   .crash-Display-left-top {
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
     position: relative;
-    gap: 10px;
     margin-right: auto;
     font-size: 12px;
+    background-color: rgba(49, 52, 60, 0.7);
+    border-radius: 30px;
+    width: fit-content;
   }
   .crash-Display-left-top button {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 10px;
-    border-radius: 30px;
+    background-color: transparent;
+    border: transparent;
+    padding: 5px 10px;
     color: #ffffff;
+    cursor: pointer;
   }
   .crash-Display-left-top1.active {
     background: #ad8605;
-    padding: 2px 10px;
+    padding: 6px 10px;
     border-radius: 30px;
   }
 
   .crash-Display-left-crash {
-    background: #030307;
+    background: #00000087;
     margin-top: 10px;
     padding: 5px 10px 10px 20px;
     border-radius: 10px;
@@ -2108,8 +2201,10 @@
     color: #ffffff;
   }
   .crash-Display-left-crash-top2-circle {
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
+    background: #ffd805;
+    border-radius: 50%;
     background: #ffd805;
     border-radius: 50%;
   }
@@ -2302,8 +2397,8 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
-    margin-top: 30px;
     border: none;
+    cursor: pointer;
     outline: none;
     border-radius: 30px;
   }
@@ -2337,6 +2432,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .ball-input-flex2 > button {
     height: 2.25rem;
@@ -2345,6 +2441,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .crash-input-flex2 > button:first-child {
     margin-left: 0px;
@@ -2519,6 +2616,7 @@
     border: none;
     outline: none;
     font-size: 12px;
+    cursor: pointer;
   }
   .crash-history {
     margin: 20px auto 0px 50px;
@@ -2526,28 +2624,31 @@
     -webkit-box-align: center;
     align-items: center;
     position: relative;
-    gap: 10px;
     font-size: 12px;
+    background-color: rgba(49, 52, 60, 0.7);
+    width: fit-content;
+    border-radius: 30px;
+  }
+  .crash-history button {
+    cursor: pointer;
   }
   .bet-history {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button.active {
     background: #ad8605;
     border: none;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
     padding: 2px 15px;
     border-radius: 30px;
   }
@@ -3058,6 +3159,31 @@
   }
   .main-crash-footer img {
     width: 25px;
+    cursor: pointer;
+  }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
   }
   .crash-Display-cover {
     margin: 10px 10px 10px 40px;
@@ -3075,23 +3201,24 @@
   }
   .crash-Display-left-top {
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
     position: relative;
-    gap: 10px;
     margin-right: auto;
     font-size: 12px;
+    background-color: rgba(49, 52, 60, 0.7);
+    border-radius: 30px;
+    width: fit-content;
   }
   .crash-Display-left-top button {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 10px;
-    border-radius: 30px;
+    background-color: transparent;
+    border: transparent;
+    padding: 5px 10px;
     color: #ffffff;
+    cursor: pointer;
   }
   .crash-Display-left-top1.active {
     background: #ad8605;
-    padding: 2px 10px;
+    padding: 6px 10px;
     border-radius: 30px;
   }
 
@@ -3157,8 +3284,10 @@
     color: #ffffff;
   }
   .crash-Display-left-crash-top2-circle {
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
+    background: #ffd805;
+    border-radius: 50%;
     background: #ffd805;
     border-radius: 50%;
   }
@@ -3351,8 +3480,8 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
-    margin-top: 30px;
     border: none;
+    cursor: pointer;
     outline: none;
     border-radius: 30px;
   }
@@ -3386,6 +3515,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .ball-input-flex2 > button {
     height: 2.25rem;
@@ -3394,6 +3524,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .crash-input-flex2 > button:first-child {
     margin-left: 0px;
@@ -3568,6 +3699,7 @@
     border: none;
     outline: none;
     font-size: 12px;
+    cursor: pointer;
   }
   .crash-history {
     margin: 20px auto 0px 50px;
@@ -3575,28 +3707,31 @@
     -webkit-box-align: center;
     align-items: center;
     position: relative;
-    gap: 10px;
     font-size: 12px;
+    background-color: rgba(49, 52, 60, 0.7);
+    width: fit-content;
+    border-radius: 30px;
+  }
+  .crash-history button {
+    cursor: pointer;
   }
   .bet-history {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button.active {
     background: #ad8605;
     border: none;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
     padding: 2px 15px;
     border-radius: 30px;
   }
@@ -4106,6 +4241,31 @@
   }
   .main-crash-footer img {
     width: 25px;
+    cursor: pointer;
+  }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
   }
   .crash-Display-cover {
     margin: 10px 10px 10px 40px;
@@ -4123,23 +4283,24 @@
   }
   .crash-Display-left-top {
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
     position: relative;
-    gap: 10px;
     margin-right: auto;
     font-size: 12px;
+    background-color: rgba(49, 52, 60, 0.7);
+    border-radius: 30px;
+    width: fit-content;
   }
   .crash-Display-left-top button {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 10px;
-    border-radius: 30px;
+    background-color: transparent;
+    border: transparent;
+    padding: 5px 10px;
     color: #ffffff;
+    cursor: pointer;
   }
   .crash-Display-left-top1.active {
     background: #ad8605;
-    padding: 2px 10px;
+    padding: 6px 10px;
     border-radius: 30px;
   }
 
@@ -4205,8 +4366,10 @@
     color: #ffffff;
   }
   .crash-Display-left-crash-top2-circle {
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
+    background: #ffd805;
+    border-radius: 50%;
     background: #ffd805;
     border-radius: 50%;
   }
@@ -4399,8 +4562,8 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
-    margin-top: 30px;
     border: none;
+    cursor: pointer;
     outline: none;
     border-radius: 30px;
   }
@@ -4434,6 +4597,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .ball-input-flex2 > button {
     height: 2.25rem;
@@ -4442,6 +4606,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .crash-input-flex2 > button:first-child {
     margin-left: 0px;
@@ -4616,6 +4781,7 @@
     border: none;
     outline: none;
     font-size: 12px;
+    cursor: pointer;
   }
   .crash-history {
     margin: 20px auto 0px 50px;
@@ -4623,28 +4789,31 @@
     -webkit-box-align: center;
     align-items: center;
     position: relative;
-    gap: 10px;
     font-size: 12px;
+    background-color: rgba(49, 52, 60, 0.7);
+    width: fit-content;
+    border-radius: 30px;
+  }
+  .crash-history button {
+    cursor: pointer;
   }
   .bet-history {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button.active {
     background: #ad8605;
     border: none;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
     padding: 2px 15px;
     border-radius: 30px;
   }
@@ -5155,6 +5324,31 @@
   }
   .main-crash-footer img {
     width: 25px;
+    cursor: pointer;
+  }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
   }
   .crash-Display-cover {
     margin: 10px 10px 10px 40px;
@@ -5172,23 +5366,24 @@
   }
   .crash-Display-left-top {
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
     position: relative;
-    gap: 10px;
     margin-right: auto;
     font-size: 12px;
+    background-color: rgba(49, 52, 60, 0.7);
+    border-radius: 30px;
+    width: fit-content;
   }
   .crash-Display-left-top button {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 10px;
-    border-radius: 30px;
+    background-color: transparent;
+    border: transparent;
+    padding: 5px 10px;
     color: #ffffff;
+    cursor: pointer;
   }
   .crash-Display-left-top1.active {
     background: #ad8605;
-    padding: 2px 10px;
+    padding: 6px 10px;
     border-radius: 30px;
   }
 
@@ -5254,8 +5449,10 @@
     color: #ffffff;
   }
   .crash-Display-left-crash-top2-circle {
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
+    background: #ffd805;
+    border-radius: 50%;
     background: #ffd805;
     border-radius: 50%;
   }
@@ -5448,8 +5645,8 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
-    margin-top: 30px;
     border: none;
+    cursor: pointer;
     outline: none;
     border-radius: 30px;
   }
@@ -5483,6 +5680,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .ball-input-flex2 > button {
     height: 2.25rem;
@@ -5491,6 +5689,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .crash-input-flex2 > button:first-child {
     margin-left: 0px;
@@ -5665,6 +5864,7 @@
     border: none;
     outline: none;
     font-size: 12px;
+    cursor: pointer;
   }
   .crash-history {
     margin: 20px auto 0px 50px;
@@ -5672,28 +5872,31 @@
     -webkit-box-align: center;
     align-items: center;
     position: relative;
-    gap: 10px;
     font-size: 12px;
+    background-color: rgba(49, 52, 60, 0.7);
+    width: fit-content;
+    border-radius: 30px;
+  }
+  .crash-history button {
+    cursor: pointer;
   }
   .bet-history {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button.active {
     background: #ad8605;
     border: none;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
     padding: 2px 15px;
     border-radius: 30px;
   }
@@ -6203,6 +6406,31 @@
   }
   .main-crash-footer img {
     width: 25px;
+    cursor: pointer;
+  }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
   }
   .crash-Display-cover {
     margin: 10px 10px 10px 40px;
@@ -6220,23 +6448,24 @@
   }
   .crash-Display-left-top {
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
     position: relative;
-    gap: 10px;
     margin-right: auto;
     font-size: 12px;
+    background-color: rgba(49, 52, 60, 0.7);
+    border-radius: 30px;
+    width: fit-content;
   }
   .crash-Display-left-top button {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 10px;
-    border-radius: 30px;
+    background-color: transparent;
+    border: transparent;
+    padding: 5px 10px;
     color: #ffffff;
+    cursor: pointer;
   }
   .crash-Display-left-top1.active {
     background: #ad8605;
-    padding: 2px 10px;
+    padding: 6px 10px;
     border-radius: 30px;
   }
 
@@ -6302,8 +6531,10 @@
     color: #ffffff;
   }
   .crash-Display-left-crash-top2-circle {
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
+    background: #ffd805;
+    border-radius: 50%;
     background: #ffd805;
     border-radius: 50%;
   }
@@ -6496,8 +6727,8 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
-    margin-top: 30px;
     border: none;
+    cursor: pointer;
     outline: none;
     border-radius: 30px;
   }
@@ -6531,6 +6762,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .ball-input-flex2 > button {
     height: 2.25rem;
@@ -6539,6 +6771,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .crash-input-flex2 > button:first-child {
     margin-left: 0px;
@@ -6713,6 +6946,7 @@
     border: none;
     outline: none;
     font-size: 12px;
+    cursor: pointer;
   }
   .crash-history {
     margin: 20px auto 0px 50px;
@@ -6720,28 +6954,31 @@
     -webkit-box-align: center;
     align-items: center;
     position: relative;
-    gap: 10px;
     font-size: 12px;
+    background-color: rgba(49, 52, 60, 0.7);
+    width: fit-content;
+    border-radius: 30px;
+  }
+  .crash-history button {
+    cursor: pointer;
   }
   .bet-history {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button.active {
     background: #ad8605;
     border: none;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
     padding: 2px 15px;
     border-radius: 30px;
   }
@@ -7249,8 +7486,33 @@
     display: flex;
     gap: 10px;
   }
+  .main-crash-graph {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -20px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+  }
+  .main-crash-graph-side {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0px;
+    justify-content: space-between;
+    height: 80%;
+    font-size: 12px;
+    color: #878787;
+    font-weight: 100;
+    flex-direction: column;
+    left: -12px;
+  }
   .main-crash-footer img {
     width: 25px;
+    cursor: pointer;
   }
   .crash-Display-cover {
     margin: 10px 10px 10px 40px;
@@ -7268,23 +7530,24 @@
   }
   .crash-Display-left-top {
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
     position: relative;
-    gap: 10px;
     margin-right: auto;
     font-size: 12px;
+    background-color: rgba(49, 52, 60, 0.7);
+    border-radius: 30px;
+    width: fit-content;
   }
   .crash-Display-left-top button {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 10px;
-    border-radius: 30px;
+    background-color: transparent;
+    border: transparent;
+    padding: 5px 10px;
     color: #ffffff;
+    cursor: pointer;
   }
   .crash-Display-left-top1.active {
     background: #ad8605;
-    padding: 2px 10px;
+    padding: 6px 10px;
     border-radius: 30px;
   }
 
@@ -7350,8 +7613,10 @@
     color: #ffffff;
   }
   .crash-Display-left-crash-top2-circle {
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
+    background: #ffd805;
+    border-radius: 50%;
     background: #ffd805;
     border-radius: 50%;
   }
@@ -7544,8 +7809,8 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
-    margin-top: 30px;
     border: none;
+    cursor: pointer;
     outline: none;
     border-radius: 30px;
   }
@@ -7579,6 +7844,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .ball-input-flex2 > button {
     height: 2.25rem;
@@ -7587,6 +7853,7 @@
     color: rgb(153, 164, 176);
     background: rgb(49, 52, 60);
     border: 1px solid #000000;
+    cursor: pointer;
   }
   .crash-input-flex2 > button:first-child {
     margin-left: 0px;
@@ -7760,6 +8027,7 @@
     color: #ffffff;
     border: none;
     outline: none;
+    cursor: pointer;
     font-size: 12px;
   }
   .crash-history {
@@ -7768,28 +8036,31 @@
     -webkit-box-align: center;
     align-items: center;
     position: relative;
-    gap: 10px;
     font-size: 12px;
+    background-color: rgba(49, 52, 60, 0.7);
+    width: fit-content;
+    border-radius: 30px;
+  }
+  .crash-history button {
+    cursor: pointer;
   }
   .bet-history {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button {
-    background-color: rgba(49, 52, 60, 0.7);
-    border: 2px solid #353341;
-    padding: 2px 15px;
-    border-radius: 30px;
+    padding: 2px 8px;
     color: #ffffff;
+    background: transparent;
+    border: none;
   }
   .crash-tab-button.active {
     background: #ad8605;
     border: none;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
     padding: 2px 15px;
     border-radius: 30px;
   }

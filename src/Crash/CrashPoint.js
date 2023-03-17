@@ -45,20 +45,55 @@ export default function CrashPoint(crash) {
             <h3>
               BankRoll <span>CUB</span>
             </h3>
-            <h4>37429645</h4>
+            <h4>3742964</h4>
           </NavLink>
         </div>
         <div className="crash-Display-left-crash-top2-cover">
           <div className="crash-Display-left-crash-top2">
             <div className="crash-Display-left-crash-top2-circle"></div>
             <div className="crash-Display-left-crash-top2-list">
-              <h3>464646465</h3>
+              <h3>46464646</h3>
+              <h4>0.33x</h4>
+            </div>
+          </div>
+          <div className="crash-Display-left-crash-top2">
+            <div className="crash-Display-left-crash-top2-circle"></div>
+            <div className="crash-Display-left-crash-top2-list">
+              <h3>46464646</h3>
+              <h4>0.33x</h4>
+            </div>
+          </div>
+          <div className="crash-Display-left-crash-top2">
+            <div className="crash-Display-left-crash-top2-circle"></div>
+            <div className="crash-Display-left-crash-top2-list">
+              <h3>46464646</h3>
+              <h4>0.33x</h4>
+            </div>
+          </div>
+          <div className="crash-Display-left-crash-top2">
+            <div className="crash-Display-left-crash-top2-circle"></div>
+            <div className="crash-Display-left-crash-top2-list">
+              <h3>46464646</h3>
               <h4>0.33x</h4>
             </div>
           </div>
         </div>
       </div>
       <div className="main-crash">
+        <div className="main-crash-graph">
+          <h3>0</h3>
+          <h3>2</h3>
+          <h3>4</h3>
+          <h3>6</h3>
+          <h3>8</h3>
+        </div>
+        <div className="main-crash-graph-side">
+          <h3>8</h3>
+          <h3>6</h3>
+          <h3>4</h3>
+          <h3>2</h3>
+        </div>
+
         <div className="main-crash-count">{crashGame}</div>
       </div>
       <div className="crash-text">

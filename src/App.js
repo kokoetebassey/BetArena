@@ -1,11 +1,12 @@
-import { Routes,  Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import MenuBar from "./components/MenuBar";
 import Navbar from "./components/Navbar";
-import CrashPoint from "./Crash/CrashPoint"
+import CrashPoint from "./Crash/CrashPoint";
 import HomeNavBar from "./components/HomeNavBar";
 import Home from "./pages/Home";
-import axios from "axios";
+import { BrowserRouter } from "react-router-dom";
+
 import Signup from "./Logins/Signup";
 import Login from "./Logins/Login";
 
@@ -21,38 +22,21 @@ import Promotion from "./pages/Promotion";
 import TaskHup from "./pages/TaskHub";
 import LiveCasino from "./pages/LiveCasino";
 import Crash from "./Crash/Crash";
-
+import Transaction from "./Pop up/Transaction";
+import Deposit from "./Pop up/Deposit";
+import Withdraw from "./Pop up/Withdraw";
+import Swap from "./Pop up/Swap";
+import Vault from "./Pop up/Vault";
+import SecondStep from "./Logins/SecondStep";
+import LastStep from "./Logins/LastStep";
 
 // import { useLogOut } from "./hooks/useLogOut";
 
 function App() {
   const [isTablet, setIsTablet] = useState(false);
   const [viewPoint, setViewPoint] = useState("default-view");
-  const [profile, setProfile] = useState("");
 
   const { user } = useAuthContext();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      await axios
-        .get(`https://betarena.herokuapp.com/api/profile`, {
-          headers: {
-            Authorization: `Bearer ${user.Token}`,
-          }
-        })
-        .then((response) => {
-          setProfile(response.data);
-        })
-        .catch((error) => {
-          console.log(error.response.data.error);
-        });
-    };
-    fetchData();
-  }, [user]);
-
-  if(profile){
-
-  }
 
   const setScreen = () => {
     if (isTablet) {
@@ -73,28 +57,53 @@ function App() {
       setViewPoint("default-view");
     }
   };
-  // const { logout } = useLogOut();
 
-  // const LogoutHandler = () => {
-  //   logout();
-  // };
+  const [displaySelectCoin, setDisplaySelectCoin] = useState(false);
+  const [defaultTransaction, setDefaultTransaction] = useState({
+    coin_name: "BTC",
+    coin_image: `https://assets.coingecko.com/coins/images/1/large/bitcoin.png`,
+    coin_bal: 0,
+  });
+
+  const coinData = (e) => {
+    if (displaySelectCoin) {
+      setDefaultTransaction(e);
+      setDisplaySelectCoin(false);
+    } else {
+      setDefaultTransaction(e);
+      setDisplaySelectCoin(true);
+    }
+  };
+
+  const SelectCoin = (e) => {
+    if (displaySelectCoin) {
+      setDisplaySelectCoin(false);
+    } else {
+      setDisplaySelectCoin(true);
+    }
+  };
 
   return (
     <div className="App">
-      {user && <HomeNavBar setView={setView} setScreen={setScreen} />}
-      <MenuBar isTablet={isTablet} />
-      {!user && <Navbar setView={setView} setScreen={setScreen} />}
+      <BrowserRouter>
+        {user && <HomeNavBar setView={setView} setScreen={setScreen} />}
+        <MenuBar isTablet={isTablet} />
+        {!user && <Navbar setView={setView} setScreen={setScreen} />}
+        <div className={viewPoint}>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/signup" element={<Signup />}>
+              <Route path="regist" element={<Signup />} />
+            </Route>
+            <Route path="/signup/secon" element={<SecondStep />} />
+            <Route path="/signup/finale" element={<LastStep />} />
 
-      <div className={viewPoint}>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/signup" element={<Signup />}></Route>
-          <Route path="/login" element={<Login />}></Route>
+            <Route path="/login" element={<Login />}></Route>
 
-          {/* ========= Pages ================= */}
-          <Route path="/slots" element={<Slot />}></Route>
-          <Route path="/affiliate" element={<Affiliate />}></Route>
-          <Route path="/lottery" element={<Lottery />}>
+            {/* ========= Pages ================= */}
+            <Route path="/slots" element={<Slot />}></Route>
+            <Route path="/affiliate" element={<Affiliate />}></Route>
+            <Route path="/lottery" element={<Lottery />}>
               <Route index element={<Ticket />} />
               <Route path="tickets" element={<Ticket />} />
               <Route path="history" element={<History />} />
@@ -102,17 +111,48 @@ function App() {
             <Route path="/vip" element={<Vip />}></Route>
             <Route path="/promotion" element={<Promotion />}></Route>
             <Route path="/live-casino" element={<LiveCasino />}></Route>
-            
 
-          {/* ========== Pop ============== */}
-          <Route path="/BCD" element={<BCD />}></Route>
-          <Route path="/TaskHup" element={<TaskHup />}></Route>
+            {/* ========== Pop ============== */}
+            <Route path="/BCD" element={<BCD />}></Route>
+            <Route path="/TaskHup" element={<TaskHup />}></Route>
 
-        {/* ============= Games =================== */}
+            {/* ============= Games =================== */}
+            <Route path="/crash" element={<Crash />}></Route>
+            <Route
+              path="/wallet"
+              element={
+                <Transaction
+                  coinData={coinData}
+                  displaySelectCoin={displaySelectCoin}
+                />
+              }
+            >
+              <Route index element={<Deposit />} />
+              <Route
+                path="deposit"
+                element={
+                  <Deposit
+                    defaultTransaction={defaultTransaction}
+                    selectCoin={SelectCoin}
+                  />
+                }
+              ></Route>
+              <Route
+                path="withdraw"
+                element={
+                  <Withdraw
+                    defaultTransaction={defaultTransaction}
+                    selectCoin={SelectCoin}
+                  />
+                }
+              ></Route>
+              <Route path="swap" element={<Swap />}></Route>
+              <Route path="vault" element={<Vault />}></Route>
+            </Route>
 
-        <Route path="/crash" element={<Crash />}></Route>
-        <Route path="CrashPoint" element={<CrashPoint />}></Route>
-          {/* <Route path="BetHistory" element={<BetHistory />}></Route>
+            <Route path="/crash" element={<Crash />}></Route>
+            <Route path="CrashPoint" element={<CrashPoint />}></Route>
+            {/* <Route path="BetHistory" element={<BetHistory />}></Route>
 
             <Route path="Recommend" element={<Recommend />}></Route>
 
@@ -130,8 +170,9 @@ function App() {
             <Route path="/ShitCode" element={<ShitCode />}></Route>
             <Route path="/TaskHub" element={<TaskHub />}></Route>
             <Route path="/Testing" element={<Testing />}></Route> */}
-        </Routes>
-      </div>
+          </Routes>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }

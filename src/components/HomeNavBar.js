@@ -7,8 +7,6 @@ import "./styles/navbar/navbar3.css";
 import "./styles/navbar/openNavbar.css";
 import "./styles/navbar/navbarResponsive.css";
 import play from "../images/play.png";
-import table3 from "../images/table 3.png";
-import userImage from "../images/chatimg.svg";
 import message from "../images/message.svg";
 import wallet from "../images/wallet bet.svg";
 import not from "../images/not bet.svg";
@@ -21,6 +19,13 @@ import logo from "../images/betarena.png";
 import search from "../images/search.svg";
 // import MobileMenubar from "./Mobile-Menubar";
 import Chat from "./Chat";
+import WalletCoins from "../Navbar/WalletCoins";
+import NavProfile from "../Navbar/NavProfile.js";
+
+import { useAuthContext } from "../hooks/useAuthContext";
+
+// =============== Import HTTPS request ==================
+import axios from "axios";
 
 export default function HomeNavBar({ setScreen, setView }) {
   const [searchEL, setSearch] = useState("search");
@@ -28,6 +33,8 @@ export default function HomeNavBar({ setScreen, setView }) {
   const [count, setCount] = useState(true);
   const [menucount, setMenuCount] = useState(true);
   const [PublicMsg, setPublicMsg] = useState(false);
+  const [profile, setProfile] = useState("");
+  const { user } = useAuthContext();
 
   function searchHandle() {
     if (count) {
@@ -113,6 +120,56 @@ export default function HomeNavBar({ setScreen, setView }) {
     }
   };
 
+  const [coinDropdown, setCoinDropdown] = useState(false);
+
+  const HandleCoinDropDown = () => {
+    if (coinDropdown) {
+      setCoinDropdown(false);
+    } else {
+      setCoinDropdown(true);
+    }
+  };
+
+  const [navProfile, setNavProfile] = useState(false);
+
+  const HandleNavProfile = () => {
+    if (navProfile) {
+      setNavProfile(false);
+    } else {
+      setNavProfile(true);
+    }
+  };
+
+  // Coins on the wallet
+
+  const [navCoins, setNavCoins] = useState({
+    id: 1,
+    coin_name: "BTC",
+    coin_bal: "0.00000",
+    coin_image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
+  });
+
+  const updateCoin = (e) => {
+    setNavCoins(e);
+  };
+  useEffect(() => {
+    const fetchData = async () => {
+      await axios
+        .get("https://betarena.herokuapp.com/api/profile", {
+          headers: {
+            Authorization: `Bearer ${user.Token}`,
+          },
+        })
+        .then((response) => {
+          setProfile(response.data[0]);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    fetchData();
+  }, [user]);
+
   return (
     <>
       <div className="Navbar">
@@ -135,27 +192,55 @@ export default function HomeNavBar({ setScreen, setView }) {
                 />
               </div>
 
-              <div className="Home-Items">
-                <div className="Home-Items-inner-first">
-                  <div className="Home-Items-inner-first1">
-                    <div className="Home-Items-inner-first1-coin">
-                      <img src={table3} alt="table3" width={"14px"} />
-                      <h3>Ethereum</h3>
-                      <h4>&#10095;</h4>
+              <div className="home-wallet">
+                <div className="home-wallet-container">
+                  <div
+                    className="home-wallet-content"
+                    onClick={HandleCoinDropDown}
+                  >
+                    <div className="home-wallet-details">
+                      <div className="image">
+                        <img src={navCoins.coin_image} alt="table3" />
+                      </div>
+                      <div className="coin">
+                        <h3>{navCoins.coin_name}</h3>
+                      </div>
+                      {/* <div className="arrow">
+                        <h4>&#10095;</h4>
+                      </div> */}
                     </div>
-                    <h4>0.000000</h4>
+                    <div className="balance">
+                      <h4>{navCoins.coin_bal}</h4>
+                    </div>
                   </div>
-                  <div className="Home-Items-inner-first2">
-                    <img src={wallet} alt="wallet" width={"12px"} />
-                    <h3>Wallet</h3>
-                  </div>
+                  <NavLink to="wallet/deposit">
+                    <div className="Home-wallet-btn">
+                      <img src={wallet} alt="wallet" width={"12px"} />
+                      <h3>Wallet</h3>
+                    </div>
+                  </NavLink>
                 </div>
               </div>
 
+              {coinDropdown && (
+                <WalletCoins
+                  Clear={HandleCoinDropDown}
+                  updateCoin={updateCoin}
+                />
+              )}
+
               <div className="Home-Items2">
                 <div className="Home-Items2-1">
-                  <img src={userImage} alt="userImage" width={"25px"} />
-                  <h3>&#9781;</h3>
+                  <img src={profile.img} alt="userImage" width={"25px"} />
+                  <div onClick={HandleNavProfile} className="navPro">
+                    <h3>&#9781;</h3>
+                    {navProfile && (
+                      <NavProfile
+                        profile={profile}
+                        Clear={HandleCoinDropDown}
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
               <div className="Home-Items3">
@@ -166,45 +251,6 @@ export default function HomeNavBar({ setScreen, setView }) {
               <div className="play" onClick={Message}>
                 <p>28</p>
                 <img src={play} alt="" />
-              </div>
-
-              <div className="coin-pop">
-                <div className="coin-pop-inner">
-                  <div className="coin-pop-inner-top">
-                    <div className="coin-pop-inner-top-flex">
-                      <img
-                        className="dropSearch"
-                        src={search}
-                        alt="search"
-                        width={"20px"}
-                      />
-                      <input type="text" />
-                    </div>
-                  </div>
-
-                  <div className="coin-pop-inner-body">
-                    <div className="coin-pop-inner-body-inner">
-                      <div className="coin-pop-inner-body-inner-flex-left">
-                        <div className="left1">
-                          <img src={table3} alt="table3" width={"14px"} />
-                        </div>
-                        <div className="left2">
-                          <h3>ETH</h3>
-                        </div>
-                        <div className="left3">
-                          <h4>0.0000000</h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="coin-pop-inner-footer">
-                    <button>Manage</button>
-                    <div className="coin-pop-inner-footer2">
-                      <h3>BTC price <span className="price"></span></h3>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
             {PublicMsg && <Chat cancel={Cancel} />}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../pages/pagesStyles/crash.css";
+import "./style/crash.css";
 import graph from "../images/images/graph.svg";
 import Keyboard from "../images/images/Keyboard.svg";
 import green from "../images/images/trenball_green.png";
@@ -33,26 +33,40 @@ export default function Crash() {
     setThirdPop(false);
   }
 
-  // const crashGames = [
-  //   {
-  //     id: Math.random().toString(),
-  //     gameName: "BankRoll",
-  //     gameNumber: Math.random().toString(),
-  //     coinType: "BTC",
-  //   },
-  //   {
-  //     id: Math.random().toString(),
-  //     gameWin: Math.random().toFixed(3),
-  //     gameNumber: Math.random().toString(),
-  //     coinType: "ETH",
-  //   },
-  //   {
-  //     id: Math.random().toString(),
-  //     gameWin: Math.random().toString(),
-  //     gameNumber: Math.random().toString(),
-  //     coinType: "SHB",
-  //   },
-  // ];
+  const Content = [
+    {
+      name: "valiant",
+      cashOut: "200",
+      profit: "360",
+      amount: "22",
+    },
+  ];
+
+  const [auto, setAuto] = useState(1);
+
+  const [stakeValue, setStakeValue] = useState(1);
+  const [stakeValue2, setStakeValue2] = useState(1);
+
+  const Half = () => {
+    setStakeValue(stakeValue / 2);
+  };
+  const Half2 = () => {
+    setStakeValue2(stakeValue2 / 2);
+  };
+
+  const Double = () => {
+    setStakeValue(stakeValue * 2);
+  };
+  const Double2 = () => {
+    setStakeValue2(stakeValue2 * 2);
+  };
+
+  // const maximumBal = () => {
+  //   setStakeValue(stakeValue + 2);
+  // };
+  // const miniimumBal = () => {
+  //   setStakeValue(stakeValue + 2);
+  // };
 
   return (
     <div className="crash-Display-cover">
@@ -92,11 +106,16 @@ export default function Crash() {
                     </div>
                     <div className="ball-input-flex">
                       <div className="ball-input-flex1">
-                        <input type="number" name="number" />
+                        <input
+                          type="number"
+                          onChange={(e) => setStakeValue2(e.target.value)}
+                          value={stakeValue2}
+                          placeholder="1"
+                        />
                       </div>
                       <div className="ball-input-flex2">
-                        <button>/2</button>
-                        <button>x2</button>
+                        <button onClick={Half2}>/2</button>
+                        <button onClick={Double2}>x2</button>
                         <button className="ball-input-flex2-arrows">
                           <div className="ball-input-flex2-arrows1">
                             <h3>&#10095;</h3>
@@ -152,7 +171,7 @@ export default function Crash() {
                 {activeBet === 1 && (
                   <>
                     <div className="main-crash-details">
-                      <NavLink to="/login">
+                      <NavLink to="">
                         <button className="button-cover">
                           <div className="button-inner">
                             <div>Bet</div>
@@ -170,13 +189,18 @@ export default function Crash() {
                           </h3>
                         </div>
                         <div className="crash-input-flex">
-                          <NavLink to="/login">
+                          <NavLink to="">
                             <div className="crash-input-flex1">
-                              <input type="number" name="number" />
+                              <input
+                                type="number"
+                                onChange={(e) => setStakeValue(e.target.value)}
+                                value={stakeValue}
+                                placeholder="1"
+                              />
                             </div>
                             <div className="crash-input-flex2">
-                              <button>/2</button>
-                              <button>x2</button>
+                              <button onClick={Half}>/2</button>
+                              <button onClick={Double}>x2</button>
                               <button className="crash-input-flex2-arrows">
                                 <div className="crash-input-flex2-arrows1">
                                   <h3>&#10095;</h3>
@@ -196,10 +220,11 @@ export default function Crash() {
                             Chance <span>0.99%</span>
                           </h3>
                         </div>
-                        <NavLink to="/login">
+                        <NavLink to="">
                           <input
                             type="number"
-                            name="number"
+                            onChange={(e) => setAuto(e.target.value)}
+                            value={auto}
                             placeholder="10.00"
                           />
                         </NavLink>
@@ -419,10 +444,27 @@ export default function Crash() {
                     </thead>
                   </table>
                   <div className="crash-Display-right-body">
-                    <div className="crash-Display-right-body-inner">
-                      <img src={empty} alt="empty" width={"25px"} />
-                      <h3>No Data Available</h3>
-                    </div>
+                    <table className="crash-table">
+                      {Content &&
+                        Content.map((data) => (
+                          <tbody>
+                            <tr>
+                              <td>{data.name}</td>
+                              <td>{data.cashOut}</td>
+                              <td>{data.amount}</td>
+                              <td>{data.profit}</td>
+                            </tr>
+                          </tbody>
+                        ))}
+                    </table>
+                    {Content === [] && (
+                      <>
+                        <div className="crash-Display-right-body-inner">
+                          <img src={empty} alt="empty" width={"25px"} />
+                          <h3>No Data Available</h3>
+                        </div>
+                      </>
+                    )}
                   </div>
                   <div className="crash-Display-right-footer">
                     <div className="crash-Display-right-footer-left">
@@ -431,7 +473,7 @@ export default function Crash() {
                       </h2>
                       <h3>Players</h3>
                     </div>
-                    <NavLink to="/login">
+                    <NavLink to="">
                       <button className="crash-Display-right-footer-right">
                         <div>Show More</div>
                       </button>
