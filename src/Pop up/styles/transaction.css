@@ -153,6 +153,19 @@
   flex-direction: column;
   position: relative;
 }
+.withdraw-currency {
+  display: flex;
+  font-size: 12px;
+  gap: 5px;
+}
+.withdraw-currency span {
+  font-size: 12px;
+  color: rgb(251, 207, 18);
+}
+.withdraw-currency h3 {
+  font-size: 12px;
+  color: rgb(251, 207, 18);
+}
 .deposit-reward-inner1 .flexA {
   font-size: 12px;
   color: rgb(251, 207, 18);

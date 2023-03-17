@@ -126,7 +126,12 @@ export default function Deposit({ defaultTransaction, selectCoin }) {
 
             {erc20 === 0 && (
               <>
-                <h3 className="deposit-currency">Deposit wallet address</h3>
+                <div className="withdraw-currency">
+                  Withdraw Address
+                  <h3>
+                    (Note: Only<span> {defaultTransaction.coin_name}</span>)
+                  </h3>
+                </div>
                 <div className="input-coin">
                   <div className="select-coin">
                     <div className="image">
@@ -141,7 +146,12 @@ export default function Deposit({ defaultTransaction, selectCoin }) {
             )}
             {erc20 === 1 && (
               <>
-                <h3 className="deposit-currency">Deposit wallet address</h3>
+                <div className="withdraw-currency">
+                  Withdraw Address
+                  <h3>
+                    (Note: Only<span> {defaultTransaction.coin_name}</span>)
+                  </h3>
+                </div>
                 <div className="input-coin">
                   <div className="select-coin">
                     <div className="image">
@@ -156,7 +166,12 @@ export default function Deposit({ defaultTransaction, selectCoin }) {
             )}
           </div>
 
-          <h3 className="deposit-currency">Deposit wallet address</h3>
+          <div className="withdraw-currency">
+            Deposit Address
+            <h3>
+              (Note: Only<span> {defaultTransaction.coin_name}</span>)
+            </h3>
+          </div>
           <div className="input-coin">
             <div className="select-coin">
               <div className="image">

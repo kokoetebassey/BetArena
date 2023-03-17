@@ -29,7 +29,12 @@ export default function Withdraw({ defaultTransaction, selectCoin }) {
             </div>
           </div>
 
-          <h3 className="deposit-currency">Withdraw Address</h3>
+          <div className="withdraw-currency">
+            Withdraw Address
+            <h3>
+              (Note: Only<span> {defaultTransaction.coin_name}</span>)
+            </h3>
+          </div>
           <div className="input-coin">
             <div className="select-coin">
               <input type="text" placeholder="Address" />
