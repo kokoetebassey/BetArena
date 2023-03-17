@@ -1,98 +1,101 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Line } from 'react-chartjs-2';
+import { 
+  Chart as ChartJS,
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  PointElement
+} from 'chart.js';
+
+ChartJS.register(
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  PointElement
+);
 
 export default function Crashcount(crash) {
   const canvasRef = useRef(null);
-  const mobileCanvasRef = useRef(null);
+  const [multiplier, setMultiplier] = useState(1);
+  const [labels, setLabels] = useState([0,2,4,6,8,10,12,14,16,18,20]);
+  const [data, setData] = useState({
+    datasets: [{
+      data: [1.2,1.4,1.6,1.8,2.0,2.2,2.4,2.6,2.8,3.0,3.2],
+      borderColor: "white"
+    }]
+  });
 
   useEffect(() => {
-    const canvas = mobileCanvasRef.current;
-    const ctx = canvas.getContext("2d");
+    let intervalId = setInterval(() => {
+      setMultiplier(prevMultiplier => prevMultiplier + 1);
+    }, 1000);
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height); //clear canvas each time a line is drawn.
-
-    // define the starting and ending points of the curve
-    const startX = 4;
-    const startY = 160;
-    const endX = 300;
-    const endY = 10;
-
-    let startTime = null; // variable to store start time
-
-       const animate = (timestamp) => {
-      if (!startTime) {
-        startTime = timestamp; // set start time if not set
-      }
-
-      const progress = timestamp - startTime; // calculate elapsed time
-
-      // create a line/path and start from bottom-left corner
-      ctx.beginPath();
-      ctx.moveTo(startX, startY);
-      
-      // calculate intermediate point based on elapsed time
-      const currentX = startX + ((progress / 20000) * (endX - startX));
-      const currentY = startY + ((progress / 20000) * (endY - startY));
-      ctx.bezierCurveTo(startX, startY, 370, 180, currentX, currentY);
-
-      // draw the stroke path
-      ctx.closePath();
-      ctx.lineWidth = "2";
-      ctx.strokeStyle = "#FFEB73";
-      ctx.stroke();
-
-      // repeat animation until it reaches 50s
-      if (progress < 20000) {
-        requestAnimationFrame(animate);
-      }
-    };
-
-    requestAnimationFrame(animate); // start animation
+    return () => clearInterval(intervalId);
   }, []);
+
+  useEffect(() => {
+    setLabels([0,2,4,6,8,10,12,14,16,18,20].map(label => label * multiplier));
+    setData({
+      datasets: [{
+        data: [1.2,1.4,1.6,1.8,2.0,2.2,2.4,2.6,2.8,3.0,3.2].map(value => value * multiplier),
+        borderColor: "white"
+      }]
+    });
+  }, [multiplier]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) {
+      return;
+    }
     const ctx = canvas.getContext("2d");
+    const width = canvas.width;
+    const height = canvas.height;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height); //clear canvas each time a line is drawn.
-
-    // define the starting and ending points of the curve
-    const startX = 4;
-    const startY = 267;
-    const endX = 530;
-    const endY = 10;
-
-    let startTime = null; // variable to store start time
+    let startTime = null;
+    let strokeLength = 0
 
     const animate = (timestamp) => {
       if (!startTime) {
-        startTime = timestamp; // set start time if not set
+        startTime = timestamp;
       }
 
-      const progress = timestamp - startTime; // calculate elapsed time
+      const elapsed = timestamp - startTime;
+      const progress = elapsed / 20000;
 
-      // create a line/path and start from bottom-left corner
+
+      strokeLength = progress * Math.sqrt(width ** 2 + height ** 2);
+
+      ctx.clearRect(0, 0, width, height); //clear canvas each time a line is drawn.
       ctx.beginPath();
-      ctx.moveTo(startX, startY);
-      
-      // calculate intermediate point based on elapsed time
-      const currentX = startX + ((progress / 20000) * (endX - startX));
-      const currentY = startY + ((progress / 20000) * (endY - startY));
-      ctx.bezierCurveTo(startX, startY, 370, 180, currentX, currentY);
-
-      // draw the stroke path
-      ctx.closePath();
+      ctx.moveTo(0, height);
+      ctx.lineTo(strokeLength, 0);
       ctx.lineWidth = "2";
       ctx.strokeStyle = "#FFEB73";
       ctx.stroke();
 
-      // repeat animation until it reaches 50s
-      if (progress < 20000) {
+      if (progress < 1) {
         requestAnimationFrame(animate);
       }
     };
 
-    requestAnimationFrame(animate); // start animation
+    requestAnimationFrame(animate);
   }, []);
+
+  const options = {
+    plugins: {
+      legend: false
+    },
+    scales: {
+      x: {
+        display: true,
+        grid: {
+          display: false
+        }
+      },
+    }
+  }
   
   return (
     <div className="crashcount-container-cover">
@@ -101,10 +104,9 @@ export default function Crashcount(crash) {
         <h3>&#10006;</h3>
       </div>
       <div className="lineCrash">
-        <canvas id="animate-lineCrash" ref={canvasRef} fill="none" width="580" height="360" opacity="1" viewBox="35 80 800 550"></canvas>
-      </div>
-      <div className="lineCrash-mobile">
-        <canvas ref={mobileCanvasRef} fill="none" width="580" height="360" opacity="1" viewBox="35 80 800 550"></canvas>
+      <Line className="chartLine" data={{ labels, datasets: data.datasets }} options={options}>
+        <canvas id="animate-lineCrash" ref={canvasRef} fill="none" width="580" height="360" opacity="1" viewBox="35 80 800 550" />
+      </Line>
       </div>
     </div>
   );
