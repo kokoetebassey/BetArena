@@ -2,7 +2,7 @@ import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { useState } from "react";
 
-export default function TransactionCoins() {
+export default function TransactionCoins({ coinData }) {
   const [coinEl] = useState([
     {
       id: 1,
@@ -10,6 +10,10 @@ export default function TransactionCoins() {
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
+      network: {
+        erc20: "wigiufoehhwoeewhfuyweohweufhwofh",
+        erc30: "swiygwouwhow"
+      },
     },
     {
       id: 2,
@@ -17,6 +21,7 @@ export default function TransactionCoins() {
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/325/large/Tether.png",
+        network: null
     },
     {
       id: 3,
@@ -62,9 +67,10 @@ export default function TransactionCoins() {
     },
   ]);
 
-  const HandleCoinSelect = ((coin_name,coin_bal,coin_image)=>{
-    
-  })
+  const HandleCoinSelect = (coin_name, coin_image, coin_bal) => {
+    const data = { coin_name, coin_image, coin_bal };
+    coinData(data);
+  };
 
   return (
     <div className="transaction">
@@ -86,12 +92,15 @@ export default function TransactionCoins() {
           </div>
 
           {coinEl.map((e) => (
-            <div key={e.id} onClick={()=> HandleCoinSelect(e.coin_image,)} className="choose-coin-body">
+            <div
+              key={e.id}
+              onClick={() =>
+                HandleCoinSelect(e.coin_name, e.coin_image, e.coin_bal)
+              }
+              className="choose-coin-body"
+            >
               <div className="image">
-                <img
-                  src={e.coin_image}
-                  alt=""
-                />
+                <img src={e.coin_image} alt="" />
               </div>
               <div className="name">
                 <h3>{e.coin_name}</h3>

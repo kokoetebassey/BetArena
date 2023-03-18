@@ -1,4 +1,4 @@
-.win-page{
+.win-page {
   padding: 0;
   margin: 0;
   width: 100%;
@@ -20,9 +20,6 @@
   width: 15%;
 }
 .home-page-top-third-flex {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   padding-left: 20px;
   width: 30%;
 }
@@ -33,7 +30,8 @@
 .futures-arrow-left-third-top h3,
 .recommend-arrow-right-third-top h3,
 .recommend-arrow-left-third-top h3,
-.slot-arrow-left-fourth-top h3 {
+.slot-arrow-left-fourth-top h3,
+.slot-arrow-right-fourth-top h3 {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
@@ -54,6 +52,7 @@
 }
 
 .slot-arrow-left-third-top h3:hover,
-.slot-arrow-left-fourth-top h3:hover {
+.slot-arrow-left-fourth-top h3:hover,
+.slot-arrow-right-fourth-top h3:hover {
   background-color: rgba(157, 153, 153, 0.442);
 }

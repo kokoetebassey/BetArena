@@ -7,7 +7,6 @@ import "./styles/navbar/navbar3.css";
 import "./styles/navbar/openNavbar.css";
 import "./styles/navbar/navbarResponsive.css";
 import play from "../images/play.png";
-import userImage from "../images/chatimg.svg";
 import message from "../images/message.svg";
 import wallet from "../images/wallet bet.svg";
 import not from "../images/not bet.svg";
@@ -232,7 +231,7 @@ export default function HomeNavBar({ setScreen, setView }) {
 
               <div className="Home-Items2">
                 <div className="Home-Items2-1">
-                  <img src={userImage} alt="userImage" width={"25px"} />
+                  <img src={profile.img} alt="userImage" width={"25px"} />
                   <div onClick={HandleNavProfile} className="navPro">
                     <h3>&#9781;</h3>
                     {navProfile && (

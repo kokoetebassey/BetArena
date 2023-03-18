@@ -7,8 +7,14 @@ import transaction from "../images/transaction (2).svg";
 import statistics from "../images/statistics.svg";
 import ba from "../images/ba.svg";
 
+import { useLogOut } from "../hooks/useLogOut";
 
-export default function WalletCoins({profile}) {
+export default function WalletCoins({ profile }) {
+  const { logout } = useLogOut();
+
+  const HandleLogOut = () => {
+    logout();
+  };
 
   return (
     <div>
@@ -112,7 +118,7 @@ export default function WalletCoins({profile}) {
             </div>
           </div>
 
-          <div className="pro-pop-inner-footer">
+          <div className="pro-pop-inner-footer" onClick={HandleLogOut}>
             <img src={profile} alt="profile" />
             <h3>Logout</h3>
           </div>
