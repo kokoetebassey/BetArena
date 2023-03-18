@@ -224,12 +224,9 @@ export default function HomeNavBar({ setScreen, setView }) {
               </div>
               <div id="search" className={searchEL} onClick={searchHandle}>
                 <img src={search} alt="search" />
-                <input
-                  type="text"
-                  placeholder="Game name | Provider | Category Tag"
-                />
+                <input type="text"  placeholder="Game name | Provider | Category Tag"
+ />
               </div>
-
               <div className="home-wallet">
                 <div className="home-wallet-container">
                   <div

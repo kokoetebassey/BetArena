@@ -1,12 +1,15 @@
 import React from "react";
 import medal from "../images/medal.svg";
 import global from "../images/global.svg";
-import wallet from "../images/wallet (2).svg";
 import reward from "../images/reward (2).svg";
-import transaction from "../images/transaction (2).svg";
-import statistics from "../images/statistics.svg";
+import { RiVipCrown2Fill } from "react-icons/ri";
+import { FiLogOut } from "react-icons/fi";
 import ba from "../images/ba.svg";
-
+import affiliate from "../images/affiliate.png";
+import transact from "../images/transact.svg";
+import vault from "../images/vault.svg";
+import { FaUserAlt, FaWallet, FaChartLine } from "react-icons/fa";
+import { MdHeadphones } from "react-icons/md";
 import { useLogOut } from "../hooks/useLogOut";
 
 export default function WalletCoins({ profile }) {
@@ -48,7 +51,6 @@ export default function WalletCoins({ profile }) {
               <h3>Global Setting</h3>
             </div>
           </div>
-
           <div className="pro-pop-inner-top2-cover">
             <div className="pro-pop-inner-top2">
               <div className="pro-pop-inner-top2-left">
@@ -73,29 +75,29 @@ export default function WalletCoins({ profile }) {
             <div className="pro-pop-inner-body-inner">
               <div className="pro-pop-inner-body-inner1">
                 <div className="pro-pop-inner-body-inner-left">
-                  <img src={profile} alt="profile" />
+                  <FaUserAlt color="grey" />
                   <h3>User Information</h3>
                 </div>
                 <div className="pro-pop-inner-body-inner-left">
-                  <img src={statistics} alt="statistics" />
+                  <FaChartLine color="grey" />
                   <h3>Statistics</h3>
                 </div>
                 <div className="pro-pop-inner-body-inner-left">
-                  <img src={transaction} alt="transaction" />
+                  <img src={transact} alt="" />
                   <h3>Transaction</h3>
                 </div>
                 <div className="pro-pop-inner-body-inner-left">
-                  <img src={profile} alt="profile" />
+                  <MdHeadphones color="grey" />
                   <h3>Live Support</h3>
                 </div>
                 <div className="pro-pop-inner-body-inner-left">
-                  <img src={profile} alt="profile" />
+                  <img src={affiliate} alt="profile" />
                   <h3>Affiliate</h3>
                 </div>
               </div>
               <div className="pro-pop-inner-body-inner2">
                 <div className="pro-pop-inner-body-inner-right">
-                  <img src={wallet} alt="wallet" />
+                  <FaWallet color="grey" />
                   <h3>Wallet</h3>
                 </div>
                 <div className="pro-pop-inner-body-inner-right">
@@ -103,7 +105,7 @@ export default function WalletCoins({ profile }) {
                   <h3>BASwap</h3>
                 </div>
                 <div className="pro-pop-inner-body-inner-right">
-                  <img src={profile} alt="profile" />
+                  <img src={vault} alt="profile" />
                   <h3>Vault Pro</h3>
                 </div>
                 <div className="pro-pop-inner-body-inner-right">
@@ -111,7 +113,7 @@ export default function WalletCoins({ profile }) {
                   <h3>Reward</h3>
                 </div>
                 <div className="pro-pop-inner-body-inner-right">
-                  <img src={profile} alt="profile" />
+                  <RiVipCrown2Fill color="grey" />
                   <h3>VIP Club</h3>
                 </div>
               </div>
@@ -119,7 +121,7 @@ export default function WalletCoins({ profile }) {
           </div>
 
           <div className="pro-pop-inner-footer" onClick={HandleLogOut}>
-            <img src={profile} alt="profile" />
+            <FiLogOut color="grey" />
             <h3>Logout</h3>
           </div>
         </div>

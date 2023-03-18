@@ -215,6 +215,9 @@
   overflow: hidden;
   overflow-y: auto;
 }
+.pro-pop-inner-body::-webkit-scrollbar{
+  display: none;
+}
 
 .progress-motion-vip {
   position: absolute;
@@ -239,7 +242,13 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 15px;
+  padding: 6px 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+}
+.pro-pop-inner-body-inner-left:hover,
+.pro-pop-inner-body-inner-right:hover {
+  background: rgba(0, 0, 0, 0.533);
 }
 .pro-pop-inner-footer {
   display: flex;

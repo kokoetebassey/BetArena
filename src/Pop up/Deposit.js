@@ -13,14 +13,8 @@ export default function Deposit({
     selectCoin();
   };
 
-  // const [ setErc20] = useState(0);
-
-  // const handleErc = (index) => {
-  //   setErc20(index);
-  // };
 
   const [address] = useState(walletAddress);
-
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
