@@ -34,6 +34,7 @@ export default function HomeNavBar({ setScreen, setView }) {
   const [menucount, setMenuCount] = useState(true);
   const [PublicMsg, setPublicMsg] = useState(false);
   const [profile, setProfile] = useState("");
+  const [DBwallet, setDBwallet] = useState("");
   const { user } = useAuthContext();
 
   function searchHandle() {
@@ -149,9 +150,46 @@ export default function HomeNavBar({ setScreen, setView }) {
     coin_image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
   });
 
+  // ============= fetch wallet ================
+  useEffect(() => {
+    axios
+      .get("https://betarena.herokuapp.com/api/profile/wallet", {
+        headers: {
+          Authorization: `Bearer ${user.Token}`,
+        },
+      })
+      .then((response) => {
+        setDBwallet(response.data[0]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [user]);
+
+  // =================Fetch default coins ==========================
+  useEffect(() => {
+    const fetchData = async () => {
+      await axios
+        .get("https://betarena.herokuapp.com/api/profile/default-coin", {
+          headers: {
+            Authorization: `Bearer ${user.Token}`,
+          },
+        })
+        .then((response) => {
+          setNavCoins(response.data[0]);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    fetchData();
+  }, [user]);
+
   const updateCoin = (e) => {
     setNavCoins(e);
   };
+
+  //  ==================== Fetch profile doc ===================
   useEffect(() => {
     const fetchData = async () => {
       await axios
@@ -205,9 +243,6 @@ export default function HomeNavBar({ setScreen, setView }) {
                       <div className="coin">
                         <h3>{navCoins.coin_name}</h3>
                       </div>
-                      {/* <div className="arrow">
-                        <h4>&#10095;</h4>
-                      </div> */}
                     </div>
                     <div className="balance">
                       <h4>{navCoins.coin_bal}</h4>
@@ -224,6 +259,7 @@ export default function HomeNavBar({ setScreen, setView }) {
 
               {coinDropdown && (
                 <WalletCoins
+                  DBwallet={DBwallet}
                   Clear={HandleCoinDropDown}
                   updateCoin={updateCoin}
                 />

@@ -30,7 +30,7 @@ import Vault from "./Pop up/Vault";
 import SecondStep from "./Logins/SecondStep";
 import LastStep from "./Logins/LastStep";
 
-// import { useLogOut } from "./hooks/useLogOut";
+import axios from "axios";
 
 function App() {
   const [isTablet, setIsTablet] = useState(false);
@@ -58,6 +58,7 @@ function App() {
     }
   };
 
+  const [ walletAddress, setwalletAddress ] = useState('')
   const [displaySelectCoin, setDisplaySelectCoin] = useState(false);
   const [defaultTransaction, setDefaultTransaction] = useState({
     coin_name: "BTC",
@@ -65,7 +66,18 @@ function App() {
     coin_bal: 0,
   });
 
-  const coinData = (e) => {
+  const coinData = async (e) => {
+    await axios
+      .post("https://betarena.herokuapp.com/api/admin/admin-walllet", {
+        coin_name: e.coin_name,
+      })
+      .then((response) => {
+        setwalletAddress(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     if (displaySelectCoin) {
       setDefaultTransaction(e);
       setDisplaySelectCoin(false);
@@ -99,7 +111,6 @@ function App() {
             <Route path="/signup/finale" element={<LastStep />} />
 
             <Route path="/login" element={<Login />}></Route>
-
             {/* ========= Pages ================= */}
             <Route path="/slots" element={<Slot />}></Route>
             <Route path="/affiliate" element={<Affiliate />}></Route>
@@ -134,6 +145,7 @@ function App() {
                   <Deposit
                     defaultTransaction={defaultTransaction}
                     selectCoin={SelectCoin}
+                    walletAddress={walletAddress}
                   />
                 }
               ></Route>

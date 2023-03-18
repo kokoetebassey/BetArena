@@ -4,7 +4,6 @@ import TransactionCoins from "./TransactionCoins";
 
 export default function Transaction({displaySelectCoin, coinData}) {
 
-
   return (
     <>
       {!displaySelectCoin && (

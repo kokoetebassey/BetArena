@@ -4,18 +4,23 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import star from "../images/Star 1.svg";
 import reward from "../images/reward img.svg";
 
-export default function Deposit({ defaultTransaction, selectCoin }) {
+export default function Deposit({
+  defaultTransaction,
+  selectCoin,
+  walletAddress,
+}) {
   const HandleCoin = () => {
     selectCoin();
   };
 
-  const [erc20, setErc20] = useState(0);
+  // const [ setErc20] = useState(0);
 
-  const handleErc = (index) => {
-    setErc20(index);
-  };
+  // const handleErc = (index) => {
+  //   setErc20(index);
+  // };
 
-  const [address] = useState("duguysiaygiaygiasfiwe78223973979827e7g8gias");
+  const [address] = useState(walletAddress);
+
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -101,7 +106,7 @@ export default function Deposit({ defaultTransaction, selectCoin }) {
             </div>
           </div>
 
-          <div className="network-coin">
+          {/* <div className="network-coin">
             <div className="network-coin-top">Choose Network</div>
             <div className="network-selection-cover">
               <div className="network-selection">
@@ -123,49 +128,8 @@ export default function Deposit({ defaultTransaction, selectCoin }) {
                 </div>
               </div>
             </div>
-
-            {erc20 === 0 && (
-              <>
-                <div className="withdraw-currency">
-                  Withdraw Address
-                  <h3>
-                    (Note: Only<span> {defaultTransaction.coin_name}</span>)
-                  </h3>
-                </div>
-                <div className="input-coin">
-                  <div className="select-coin">
-                    <div className="image">
-                      <p>duguysiaygiaygiasfiwe78223973979827e7g83446ffdfas</p>
-                      <div className="copy-icon">
-                        <FaRegCopy />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </>
-            )}
-            {erc20 === 1 && (
-              <>
-                <div className="withdraw-currency">
-                  Withdraw Address
-                  <h3>
-                    (Note: Only<span> {defaultTransaction.coin_name}</span>)
-                  </h3>
-                </div>
-                <div className="input-coin">
-                  <div className="select-coin">
-                    <div className="image">
-                      <p>duguysiaygiaygiasfiwe78223973979827e7g8gias</p>
-                      <div className="copy-icon">
-                        <FaRegCopy />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </>
-            )}
-          </div>
-
+          </div> */}
+          
           <div className="withdraw-currency">
             Deposit Address
             <h3>
@@ -175,7 +139,7 @@ export default function Deposit({ defaultTransaction, selectCoin }) {
           <div className="input-coin">
             <div className="select-coin">
               <div className="image">
-                <p>duguysiaygiaygiasfiwe78223973979827e7g83446ffdf</p>
+                <p>agiG</p>
                 <div className="copy-icon">
                   <FaRegCopy onClick={() => copyToClipboard(`${address}`)} />
                 </div>
