@@ -1,9 +1,16 @@
 import "./styles/transaction.css";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import TransactionCoins from "./TransactionCoins";
+import deposit from "../images/deposit.svg";
+import withdraw from "../images/widthdraw.svg";
+import swap from "../images/swap.svg";
+import vault from "../images/vault.svg";
+export default function Transaction({ displaySelectCoin, coinData }) {
+  const navigate = useNavigate();
 
-export default function Transaction({displaySelectCoin, coinData}) {
-
+  const HandleBack = () => {
+    navigate(-1);
+  };
 
   return (
     <>
@@ -13,13 +20,28 @@ export default function Transaction({displaySelectCoin, coinData}) {
             <div className="transaction-body">
               <div className="headers">
                 <h2 className="wallet">Wallet</h2>
-                <h2 className="transactions">Transactions</h2>
+                <h2 className="transactions">Transactions </h2>
+                <span className="cancelWallet" onClick={HandleBack}>
+                  &#10006;
+                </span>
               </div>
               <div className="transaction-routes">
-                <NavLink to="deposit">Deposit</NavLink>
-                <NavLink to="withdraw">Withdraw</NavLink>
-                <NavLink to="swap">BaSwap</NavLink>
-                <NavLink to="vault">Vault Pro</NavLink>
+                <NavLink to="deposit">
+                  <img src={deposit} width={"20px"} alt="" />
+                  <p>Deposit</p>
+                </NavLink>
+                <NavLink to="withdraw">
+                  <img src={withdraw} width={"20px"} alt="" />
+                  <p>Withdarw</p>
+                </NavLink>
+                <NavLink to="swap">
+                  <img src={swap} width={"20px"} alt="" />
+                  <p>BaSwap</p>
+                </NavLink>
+                <NavLink to="vault">
+                  <img src={vault} width={"20px"} alt="" />
+                  <p>Vault Pro</p>
+                </NavLink>
               </div>
               <div className="transaction-contents">
                 <Outlet />

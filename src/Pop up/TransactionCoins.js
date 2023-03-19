@@ -10,10 +10,6 @@ export default function TransactionCoins({ coinData }) {
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
-      network: {
-        erc20: "wigiufoehhwoeewhfuyweohweufhwofh",
-        erc30: "swiygwouwhow"
-      },
     },
     {
       id: 2,

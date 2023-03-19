@@ -1,69 +1,88 @@
 import React from "react";
 import search from "../images/search.svg";
-
+import axios from "axios";
 import { useState } from "react";
 
-export default function WalletCoins({Clear, updateCoin }) {
+import { useAuthContext } from "../hooks/useAuthContext";
+
+export default function WalletCoins({ Clear, updateCoin, DBwallet }) {
+  const { user } = useAuthContext();
+
+
   const HandleCoinSelect = (coin_name, coin_image, coin_bal) => {
-    const data = { coin_name, coin_bal, coin_image };
+    const data = { coin_name, coin_image, coin_bal };
     updateCoin(data);
-    Clear()
+    Clear();
+
+    axios.post(
+      "https://betarena.herokuapp.com/api/profile/default-coin",
+      {
+        coin_name: coin_name,
+        coin_image: coin_image,
+        coin_bal: coin_bal,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${user.Token}`,
+        },
+      }
+    );
   };
 
   const [coinEl] = useState([
     {
       id: 1,
       coin_name: "BTC",
-      coin_bal: "0.00000",
+      coin_bal: DBwallet.btc,
       coin_image:
         "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
     },
     {
       id: 2,
       coin_name: "USDT",
-      coin_bal: "0.00000",
+      coin_bal: DBwallet.usdt,
       coin_image:
         "https://assets.coingecko.com/coins/images/325/large/Tether.png",
     },
     {
       id: 3,
       coin_name: "ETH",
-      coin_bal: "0.00000",
+      coin_bal: DBwallet.eth,
       coin_image:
         "https://assets.coingecko.com/coins/images/279/large/ethereum.png",
     },
     {
       id: 4,
       coin_name: "SOL",
-      coin_bal: "0.00000",
+      coin_bal: DBwallet.sol,
       coin_image:
         "https://assets.coingecko.com/coins/images/4128/large/solana.png",
     },
     {
       id: 5,
       coin_name: "NEXO",
-      coin_bal: "0.00000",
+      coin_bal: DBwallet.nexo,
       coin_image:
         "https://assets.coingecko.com/coins/images/3695/large/nexo.png",
     },
     {
       id: 6,
       coin_name: "USDC",
-      coin_bal: "0.00000",
+      coin_bal: DBwallet.usdc,
       coin_image:
         "https://assets.coingecko.com/coins/images/6319/large/USD_Coin_icon.png",
     },
     {
       id: 8,
       coin_name: "BNB",
-      coin_bal: "0.00000",
+      coin_bal: DBwallet.bnb,
       coin_image:
         "https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png",
     },
     {
       id: 9,
       coin_name: "BUSD",
-      coin_bal: "0.00000",
+      coin_bal: DBwallet.busd,
       coin_image:
         "https://assets.coingecko.com/coins/images/9576/large/BUSD.png",
     },
