@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MenuBar from "./components/MenuBar";
 import Navbar from "./components/Navbar";
 import CrashPoint from "./Crash/CrashPoint";
@@ -58,7 +58,7 @@ function App() {
     }
   };
 
-  const [ walletAddress, setwalletAddress ] = useState('')
+  const [walletAddress, setwalletAddress] = useState("");
   const [displaySelectCoin, setDisplaySelectCoin] = useState(false);
   const [defaultTransaction, setDefaultTransaction] = useState({
     coin_name: "BTC",
@@ -93,6 +93,10 @@ function App() {
     } else {
       setDisplaySelectCoin(true);
     }
+  };
+
+  const WalletAddress = (e) => {
+    console.log(e);
   };
 
   return (
@@ -134,6 +138,7 @@ function App() {
               element={
                 <Transaction
                   coinData={coinData}
+                  WalletAddress={WalletAddress}
                   displaySelectCoin={displaySelectCoin}
                 />
               }

@@ -11,7 +11,7 @@ import message from "../images/message.svg";
 import wallet from "../images/wallet bet.svg";
 import not from "../images/not bet.svg";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import menu from "../images/menu.svg";
@@ -224,8 +224,10 @@ export default function HomeNavBar({ setScreen, setView }) {
               </div>
               <div id="search" className={searchEL} onClick={searchHandle}>
                 <img src={search} alt="search" />
-                <input type="text"  placeholder="Game name | Provider | Category Tag"
- />
+                <input
+                  type="text"
+                  placeholder="Game name | Provider | Category Tag"
+                />
               </div>
               <div className="home-wallet">
                 <div className="home-wallet-container">
@@ -245,12 +247,12 @@ export default function HomeNavBar({ setScreen, setView }) {
                       <h4>{navCoins.coin_bal}</h4>
                     </div>
                   </div>
-                  <NavLink to="wallet/deposit">
+                  <Link to="wallet/deposit" >
                     <div className="Home-wallet-btn">
                       <img src={wallet} alt="wallet" width={"12px"} />
                       <h3>Wallet</h3>
                     </div>
-                  </NavLink>
+                  </Link>
                 </div>
               </div>
 
@@ -276,6 +278,7 @@ export default function HomeNavBar({ setScreen, setView }) {
                   </div>
                 </div>
               </div>
+
               <div className="Home-Items3">
                 <img src={message} alt="message" width={"20px"} />
                 <img src={not} alt="not" width={"20px"} />
