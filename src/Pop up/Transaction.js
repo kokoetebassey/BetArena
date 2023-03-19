@@ -1,5 +1,5 @@
 import "./styles/transaction.css";
-import { NavLink, Outlet, useNavigate, useLocation } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import TransactionCoins from "./TransactionCoins";
 import deposit from "../images/deposit.svg";
 import withdraw from "../images/widthdraw.svg";
@@ -11,9 +11,6 @@ export default function Transaction({
   WalletAddress,
 }) {
   const navigate = useNavigate();
-  // const location = useLocation();
-  // const { from } = location.state;
-
   const HandleBack = () => {
     navigate(-1);
   };
