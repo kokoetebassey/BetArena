@@ -26,6 +26,7 @@
 }
 .Navbar-containerEL .Navbar-content .logo {
   width: 20%;
+  cursor: pointer;
 }
 .Navbar-containerEL .Navbar-content .logo img {
   width: 180px;

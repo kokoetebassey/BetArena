@@ -28,6 +28,8 @@
 }
 .Navbar-container3 .Navbar-content .logo {
   width: 20%;
+  cursor: pointer;
+
 }
 .Navbar-container3 .Navbar-content .logo img {
   width: 180px;
