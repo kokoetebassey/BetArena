@@ -17,6 +17,7 @@
   top: 40px;
   left: 30%;
   color: #fff;
+  scroll-behavior: smooth;
 }
 .transaction-body {
   position: relative;
