@@ -224,8 +224,10 @@ export default function HomeNavBar({ setScreen, setView }) {
               </div>
               <div id="search" className={searchEL} onClick={searchHandle}>
                 <img src={search} alt="search" />
-                <input type="text"  placeholder="Game name | Provider | Category Tag"
- />
+                <input
+                  type="text"
+                  placeholder="Game name | Provider | Category Tag"
+                />
               </div>
               <div className="home-wallet">
                 <div className="home-wallet-container">
@@ -245,7 +247,7 @@ export default function HomeNavBar({ setScreen, setView }) {
                       <h4>{navCoins.coin_bal}</h4>
                     </div>
                   </div>
-                  <Link to="wallet/deposit" state={ {from: navCoins } }>
+                  <Link to="wallet/deposit" >
                     <div className="Home-wallet-btn">
                       <img src={wallet} alt="wallet" width={"12px"} />
                       <h3>Wallet</h3>
@@ -276,6 +278,7 @@ export default function HomeNavBar({ setScreen, setView }) {
                   </div>
                 </div>
               </div>
+
               <div className="Home-Items3">
                 <img src={message} alt="message" width={"20px"} />
                 <img src={not} alt="not" width={"20px"} />

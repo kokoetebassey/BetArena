@@ -3,6 +3,9 @@ import { FaRegCopy } from "react-icons/fa";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import star from "../images/Star 1.svg";
 import reward from "../images/reward img.svg";
+import { useAuthContext } from "../hooks/useAuthContext";
+
+import axios from "axios"
 
 export default function Deposit({
   defaultTransaction,
@@ -13,8 +16,34 @@ export default function Deposit({
     selectCoin();
   };
 
+  const { user } = useAuthContext();
+
+
   const [address] = useState(walletAddress);
   const [copied, setCopied] = useState(false);
+
+    // =================Fetch default coins ==========================
+    useEffect(() => {
+      const fetchData = async () => {
+        await axios
+          .get("https://betarena.herokuapp.com/api/profile/default-coin", {
+            headers: {
+              Authorization: `Bearer ${user.Token}`,
+            },
+          })
+          .then((response) => {
+            console.log(response.data[0]);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+      fetchData();
+    }, [user]);
+  
+    // const updateCoin = (e) => {
+    //   setNavCoins(e);
+    // };
 
   useEffect(() => {
     if (copied) {

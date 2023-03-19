@@ -1,12 +1,18 @@
 import "./styles/transaction.css";
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, useNavigate, useLocation } from "react-router-dom";
 import TransactionCoins from "./TransactionCoins";
 import deposit from "../images/deposit.svg";
 import withdraw from "../images/widthdraw.svg";
 import swap from "../images/swap.svg";
 import vault from "../images/vault.svg";
-export default function Transaction({ displaySelectCoin, coinData, WalletAddress }) {
+export default function Transaction({
+  displaySelectCoin,
+  coinData,
+  WalletAddress,
+}) {
   const navigate = useNavigate();
+  // const location = useLocation();
+  // const { from } = location.state;
 
   const HandleBack = () => {
     navigate(-1);
@@ -50,7 +56,9 @@ export default function Transaction({ displaySelectCoin, coinData, WalletAddress
           </div>
         </div>
       )}
-      {displaySelectCoin && <TransactionCoins WalletAddress={WalletAddress} coinData={coinData} />}
+      {displaySelectCoin && (
+        <TransactionCoins WalletAddress={WalletAddress} coinData={coinData} />
+      )}
     </>
   );
 }
