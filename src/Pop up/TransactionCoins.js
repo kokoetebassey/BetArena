@@ -1,8 +1,9 @@
 import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { useState } from "react";
+import axios from "axios";
 
-export default function TransactionCoins({ coinData }) {
+export default function TransactionCoins({ coinData, WalletAddress }) {
   const [coinEl] = useState([
     {
       id: 1,
@@ -17,7 +18,7 @@ export default function TransactionCoins({ coinData }) {
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/325/large/Tether.png",
-        network: null
+      network: null,
     },
     {
       id: 3,
@@ -66,6 +67,16 @@ export default function TransactionCoins({ coinData }) {
   const HandleCoinSelect = (coin_name, coin_image, coin_bal) => {
     const data = { coin_name, coin_image, coin_bal };
     coinData(data);
+
+    axios.post("https://betarena.herokuapp.com/api/admin/admin-walllet", {
+      coin_name: coin_name,
+    })
+    .then((res)=>{
+      WalletAddress(res.data)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
   };
 
   return (

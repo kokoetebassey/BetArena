@@ -5,7 +5,7 @@ import deposit from "../images/deposit.svg";
 import withdraw from "../images/widthdraw.svg";
 import swap from "../images/swap.svg";
 import vault from "../images/vault.svg";
-export default function Transaction({ displaySelectCoin, coinData }) {
+export default function Transaction({ displaySelectCoin, coinData, WalletAddress }) {
   const navigate = useNavigate();
 
   const HandleBack = () => {
@@ -50,7 +50,7 @@ export default function Transaction({ displaySelectCoin, coinData }) {
           </div>
         </div>
       )}
-      {displaySelectCoin && <TransactionCoins coinData={coinData} />}
+      {displaySelectCoin && <TransactionCoins WalletAddress={WalletAddress} coinData={coinData} />}
     </>
   );
 }

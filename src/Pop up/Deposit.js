@@ -13,7 +13,6 @@ export default function Deposit({
     selectCoin();
   };
 
-
   const [address] = useState(walletAddress);
   const [copied, setCopied] = useState(false);
 
@@ -38,13 +37,13 @@ export default function Deposit({
     <>
       <div className="deposit">
         <div className="deposit-container">
-          <h3 className="deposit-currency"> Currency</h3>
+          <h3 className="deposit-currency">Deposit Currency</h3>
           <div className="input-coin">
             <div className="select-coin" onClick={HandleCoin}>
               <div className="image">
                 <img src={defaultTransaction.coin_image} alt="" />
               </div>
-              <div className="c">
+              <div className="name">
                 <h4>{defaultTransaction.coin_name}</h4>
               </div>
               <div className="arrow">
@@ -52,7 +51,7 @@ export default function Deposit({
               </div>
             </div>
             <div className="showBalance">
-              <h3 className="balance">Balance</h3>
+              <h3 className="balance">Balance : </h3>
               <h3>{defaultTransaction.coin_bal}</h3>
             </div>
           </div>
@@ -123,7 +122,7 @@ export default function Deposit({
               </div>
             </div>
           </div> */}
-          
+
           <div className="withdraw-currency">
             Deposit Address
             <h3>
@@ -132,8 +131,10 @@ export default function Deposit({
           </div>
           <div className="input-coin">
             <div className="select-coin">
-              <div className="image">
-                <p>agiG</p>
+              <div className="wallet">
+                <div className="wallet-address">
+                  <p>agirrhtffnrshnsrhntshnshshsrhsG</p>
+                </div>
                 <div className="copy-icon">
                   <FaRegCopy onClick={() => copyToClipboard(`${address}`)} />
                 </div>

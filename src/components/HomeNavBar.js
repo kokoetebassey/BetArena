@@ -11,7 +11,7 @@ import message from "../images/message.svg";
 import wallet from "../images/wallet bet.svg";
 import not from "../images/not bet.svg";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import menu from "../images/menu.svg";
@@ -245,12 +245,12 @@ export default function HomeNavBar({ setScreen, setView }) {
                       <h4>{navCoins.coin_bal}</h4>
                     </div>
                   </div>
-                  <NavLink to="wallet/deposit">
+                  <Link to="wallet/deposit" state={ {from: navCoins } }>
                     <div className="Home-wallet-btn">
                       <img src={wallet} alt="wallet" width={"12px"} />
                       <h3>Wallet</h3>
                     </div>
-                  </NavLink>
+                  </Link>
                 </div>
               </div>
 
