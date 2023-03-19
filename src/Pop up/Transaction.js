@@ -9,11 +9,16 @@ export default function Transaction({
   displaySelectCoin,
   coinData,
   WalletAddress,
+  SelectCoin
 }) {
   const navigate = useNavigate();
   const HandleBack = () => {
     navigate(-1);
   };
+
+  const ClearChooseCoin = (()=>{
+    SelectCoin()
+  })
 
   return (
     <>
@@ -54,7 +59,7 @@ export default function Transaction({
         </div>
       )}
       {displaySelectCoin && (
-        <TransactionCoins WalletAddress={WalletAddress} coinData={coinData} />
+        <TransactionCoins WalletAddress={WalletAddress} ClearChooseCoin={ClearChooseCoin} coinData={coinData} />
       )}
     </>
   );

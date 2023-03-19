@@ -139,6 +139,7 @@ function App() {
                 <Transaction
                   coinData={coinData}
                   WalletAddress={WalletAddress}
+                  SelectCoin={SelectCoin}
                   displaySelectCoin={displaySelectCoin}
                 />
               }

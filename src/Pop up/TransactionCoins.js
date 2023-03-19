@@ -3,7 +3,7 @@ import { BiSearch } from "react-icons/bi";
 import { useState } from "react";
 import axios from "axios";
 
-export default function TransactionCoins({ coinData, WalletAddress }) {
+export default function TransactionCoins({ coinData, WalletAddress, ClearChooseCoin }) {
   const [coinEl] = useState([
     {
       id: 1,
@@ -79,12 +79,16 @@ export default function TransactionCoins({ coinData, WalletAddress }) {
     })
   };
 
+  const Cancel = (()=>{
+      ClearChooseCoin()
+  })
+
   return (
     <div className="transaction">
       <div className="transaction-container">
         <div className="choose-coin-header">
           <h2 className="choose-coin">Choose Coin</h2>
-          <h2 className="cancel">&#x2715;</h2>
+          <h2 onClick={Cancel} className="cancel">&#x2715;</h2>
         </div>
         <div className="choose-coin-content">
           <div className="search-bar">
