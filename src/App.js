@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import MenuBar from "./components/MenuBar";
 import Navbar from "./components/Navbar";
 import CrashPoint from "./Crash/CrashPoint";
@@ -139,6 +139,7 @@ function App() {
                 <Transaction
                   coinData={coinData}
                   WalletAddress={WalletAddress}
+                  SelectCoin={SelectCoin}
                   displaySelectCoin={displaySelectCoin}
                 />
               }

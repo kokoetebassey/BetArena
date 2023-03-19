@@ -3,47 +3,21 @@ import { FaRegCopy } from "react-icons/fa";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import star from "../images/Star 1.svg";
 import reward from "../images/reward img.svg";
-import { useAuthContext } from "../hooks/useAuthContext";
+import { useLocation } from "react-router";
 
-import axios from "axios"
-
-export default function Deposit({
-  defaultTransaction,
-  selectCoin,
-  walletAddress,
-}) {
+export default function Deposit({ selectCoin, walletAddress }) {
   const HandleCoin = () => {
     selectCoin();
   };
-
-  const { user } = useAuthContext();
-
-
+  const { state } = useLocation();
   const [address] = useState(walletAddress);
   const [copied, setCopied] = useState(false);
 
-    // =================Fetch default coins ==========================
-    useEffect(() => {
-      const fetchData = async () => {
-        await axios
-          .get("https://betarena.herokuapp.com/api/profile/default-coin", {
-            headers: {
-              Authorization: `Bearer ${user.Token}`,
-            },
-          })
-          .then((response) => {
-            console.log(response.data[0]);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      };
-      fetchData();
-    }, [user]);
-  
-    // const updateCoin = (e) => {
-    //   setNavCoins(e);
-    // };
+  const [erc20, setErc20] = useState(1);
+
+  const handleErc = (e) => {
+    setErc20(e);
+  };
 
   useEffect(() => {
     if (copied) {
@@ -70,10 +44,10 @@ export default function Deposit({
           <div className="input-coin">
             <div className="select-coin" onClick={HandleCoin}>
               <div className="image">
-                <img src={defaultTransaction.coin_image} alt="" />
+                <img src={state.navCoins.coin_image} alt="" />
               </div>
               <div className="name">
-                <h4>{defaultTransaction.coin_name}</h4>
+                <h4>{state.navCoins.coin_name}</h4>
               </div>
               <div className="arrow">
                 <MdOutlineKeyboardArrowRight />
@@ -81,7 +55,7 @@ export default function Deposit({
             </div>
             <div className="showBalance">
               <h3 className="balance">Balance : </h3>
-              <h3>{defaultTransaction.coin_bal}</h3>
+              <h3>{state.navCoins.coin_bal}</h3>
             </div>
           </div>
 
@@ -129,40 +103,40 @@ export default function Deposit({
           </div>
 
           {/* <div className="network-coin">
-            <div className="network-coin-top">Choose Network</div>
-            <div className="network-selection-cover">
-              <div className="network-selection">
-                <div
-                  onClick={() => handleErc(0)}
-                  className={`network-selection1 ${
-                    erc20 === 0 ? "active" : ""
-                  }`}
-                >
-                  <button>ERC20</button>
-                </div>
-                <div
-                  onClick={() => handleErc(1)}
-                  className={`network-selection1 ${
-                    erc20 === 1 ? "active" : ""
-                  }`}
-                >
-                  <button>BEP20</button>
+              <div className="network-coin-top">Choose Network</div>
+              <div className="network-selection-cover">
+                <div className="network-selection">
+                  <div
+                    onClick={() => handleErc(0)}
+                    className={`network-selection1 ${
+                      erc20 === 0 ? "active" : ""
+                    }`}
+                  >
+                    <button>ERC20</button>
+                  </div>
+                  <div
+                    onClick={() => handleErc(1)}
+                    className={`network-selection1 ${
+                      erc20 === 1 ? "active" : ""
+                    }`}
+                  >
+                    <button>BEP20</button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div> */}
+            </div> */}
 
           <div className="withdraw-currency">
             Deposit Address
             <h3>
-              (Note: Only<span> {defaultTransaction.coin_name}</span>)
+              (Note: Only<span> {state.navCoins.coin_name}</span>)
             </h3>
           </div>
           <div className="input-coin">
             <div className="select-coin">
               <div className="wallet">
                 <div className="wallet-address">
-                  <p>agirrhtffnrshnsrhntshnshshsrhsG</p>
+                  <p>{state.navCoins.wallet_address[0].address}</p>
                 </div>
                 <div className="copy-icon">
                   <FaRegCopy onClick={() => copyToClipboard(`${address}`)} />

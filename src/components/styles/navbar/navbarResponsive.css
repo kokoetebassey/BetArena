@@ -19,6 +19,8 @@
 @media only screen and (min-width: 1150px) and (max-width: 1210px) {
   .Navbar-container .Navbar-content .logo {
     width: 20%;
+  cursor: pointer;
+
   }
   .Navbar-container {
     position: absolute;

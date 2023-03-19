@@ -37,6 +37,7 @@
 }
 .Navbar-container .Navbar-content .logo {
   width: 20%;
+  cursor: pointer;
 }
 .Navbar-container .Navbar-content .logo img {
   width: 180px;

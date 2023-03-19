@@ -11,7 +11,7 @@ import message from "../images/message.svg";
 import wallet from "../images/wallet bet.svg";
 import not from "../images/not bet.svg";
 
-import { NavLink, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import menu from "../images/menu.svg";
@@ -37,6 +37,7 @@ export default function HomeNavBar({ setScreen, setView }) {
   const [profile, setProfile] = useState("");
   const [DBwallet, setDBwallet] = useState("");
   const { user } = useAuthContext();
+  const navigate = useNavigate();
 
   const [userInfo, setUserInfo] = useState(false)
 
@@ -228,10 +229,8 @@ export default function HomeNavBar({ setScreen, setView }) {
               <div className="menu" onClick={menuHandler}>
                 <img src={menu} alt="" />
               </div>
-              <div className="logo">
-                <NavLink to="/">
-                  <img src={logo} alt="" />
-                </NavLink>
+              <div className="logo" onClick={() => navigate("/")}>
+                <img src={logo} alt="" />
               </div>
               <div id="search" className={searchEL} onClick={searchHandle}>
                 <img src={search} alt="search" />
@@ -258,12 +257,20 @@ export default function HomeNavBar({ setScreen, setView }) {
                       <h4>{navCoins.coin_bal}</h4>
                     </div>
                   </div>
-                  <Link to="wallet/deposit" >
-                    <div className="Home-wallet-btn">
-                      <img src={wallet} alt="wallet" width={"12px"} />
-                      <h3>Wallet</h3>
-                    </div>
-                  </Link>
+
+                  <div
+                    onClick={() =>
+                      navigate("/wallet/deposit", {
+                        state: {
+                          navCoins,
+                        },
+                      })
+                    }
+                    className="Home-wallet-btn"
+                  >
+                    <img src={wallet} alt="wallet" width={"12px"} />
+                    <h3>Wallet</h3>
+                  </div>
                 </div>
               </div>
 
