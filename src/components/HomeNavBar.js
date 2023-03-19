@@ -21,6 +21,7 @@ import search from "../images/search.svg";
 import Chat from "./Chat";
 import WalletCoins from "../Navbar/WalletCoins";
 import NavProfile from "../Navbar/NavProfile.js";
+import UserInfo from "../Navbar/UserInfo";
 
 import { useAuthContext } from "../hooks/useAuthContext";
 
@@ -36,6 +37,16 @@ export default function HomeNavBar({ setScreen, setView }) {
   const [profile, setProfile] = useState("");
   const [DBwallet, setDBwallet] = useState("");
   const { user } = useAuthContext();
+
+  const [userInfo, setUserInfo] = useState(false)
+
+  function functionUserInfo(){
+    if (userInfo) {
+      setUserInfo(false);
+    } else {
+      setUserInfo(true);
+    }
+  };
 
   function searchHandle() {
     if (count) {
@@ -266,7 +277,13 @@ export default function HomeNavBar({ setScreen, setView }) {
 
               <div className="Home-Items2">
                 <div className="Home-Items2-1">
+                  <div onClick={functionUserInfo}>
                   <img src={profile.img} alt="userImage" width={"25px"} />
+                  {userInfo && (
+                    <UserInfo />
+                  )}
+                  </div>
+
                   <div onClick={HandleNavProfile} className="navPro">
                     <h3>&#9781;</h3>
                     {navProfile && (
