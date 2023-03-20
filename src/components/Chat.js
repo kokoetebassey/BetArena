@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/chat.css";
+import "./styles/notification.css";
 import cup from "../images/images/cup.svg";
 import { AiFillExclamationCircle } from "react-icons/ai";
 import chat from "../images/chatimg.svg";

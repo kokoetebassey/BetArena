@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useState} from "react";
+import { useState } from "react";
 import MenuBar from "./components/MenuBar";
 import Navbar from "./components/Navbar";
 import CrashPoint from "./Crash/CrashPoint";
@@ -33,9 +33,12 @@ import ChatRoom from "./Pop up/ChatRoom";
 import Request from "./Pop up/Request";
 import Options from "./Pop up/Options";
 
+<<<<<<< HEAD
 import axios from "axios";
 import UserInfo from "./Navbar/UserInfo";
 
+=======
+>>>>>>> 0fd710095575b1514488dda899c33064d5f48d2f
 function App() {
   const [isTablet, setIsTablet] = useState(false);
   const [viewPoint, setViewPoint] = useState("default-view");
@@ -62,34 +65,7 @@ function App() {
     }
   };
 
-  const [walletAddress, setwalletAddress] = useState("");
   const [displaySelectCoin, setDisplaySelectCoin] = useState(false);
-  const [defaultTransaction, setDefaultTransaction] = useState({
-    coin_name: "BTC",
-    coin_image: `https://assets.coingecko.com/coins/images/1/large/bitcoin.png`,
-    coin_bal: 0,
-  });
-
-  const coinData = async (e) => {
-    await axios
-      .post("https://betarena.herokuapp.com/api/admin/admin-walllet", {
-        coin_name: e.coin_name,
-      })
-      .then((response) => {
-        setwalletAddress(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    if (displaySelectCoin) {
-      setDefaultTransaction(e);
-      setDisplaySelectCoin(false);
-    } else {
-      setDefaultTransaction(e);
-      setDisplaySelectCoin(true);
-    }
-  };
 
   const SelectCoin = (e) => {
     if (displaySelectCoin) {
@@ -149,7 +125,6 @@ function App() {
               path="/wallet"
               element={
                 <Transaction
-                  coinData={coinData}
                   WalletAddress={WalletAddress}
                   SelectCoin={SelectCoin}
                   displaySelectCoin={displaySelectCoin}
@@ -159,22 +134,11 @@ function App() {
               <Route index element={<Deposit />} />
               <Route
                 path="deposit"
-                element={
-                  <Deposit
-                    defaultTransaction={defaultTransaction}
-                    selectCoin={SelectCoin}
-                    walletAddress={walletAddress}
-                  />
-                }
+                element={<Deposit selectCoin={SelectCoin} />}
               ></Route>
               <Route
                 path="withdraw"
-                element={
-                  <Withdraw
-                    defaultTransaction={defaultTransaction}
-                    selectCoin={SelectCoin}
-                  />
-                }
+                element={<Withdraw selectCoin={SelectCoin} />}
               ></Route>
               <Route path="swap" element={<Swap />}></Route>
               <Route path="vault" element={<Vault />}></Route>

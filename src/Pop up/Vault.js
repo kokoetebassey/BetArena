@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import '../Pop up/styles/vault.css'
 import question from '../images/question.svg'
-import bitcoin from '../images/bitcoin icon svg.svg'
 import arrow from '../images/arrow.svg'
+import { useLocation } from 'react-router'
 
 
 export default function Vault() {
   const [sswitch,setSswitch] = useState(0)
+  const { state } = useLocation();
+
+  console.log(state)
 
   function handleSwitch(index){
     setSswitch(index)
@@ -52,7 +55,7 @@ export default function Vault() {
           <h1>You Send</h1>
           <div className='topstandflex'>
             <h2>Wallet Balance: </h2>
-            <h3>100541</h3>
+            <h3>{state.navCoins.coin_bal}</h3>
           </div>
         </div>
 
@@ -62,8 +65,8 @@ export default function Vault() {
                <span><h2>max</h2></span>
              </div>
              <div className='cbottomright'>
-               <img src={bitcoin} alt='' width={'54px'} />
-               <h1>CUB</h1>
+               <img src={state.navCoins.coin_image} alt='' width={'30px'} />
+               <h1>{state.navCoins.coin_name}</h1>
                <img src={arrow} alt='' width={'7px'} className='arroww' />
              </div>
            </div>
@@ -77,8 +80,8 @@ export default function Vault() {
          <div className='topstandalone'>
           <h1>You Send</h1>
           <div className='topstandflex'>
-            <h2>Wallet Balance: </h2>
-            <h3>0</h3>
+            <h2>Vault Balance: </h2>
+            <h3>{state.navCoins.coin_bal}</h3>
           </div>
         </div>
 
@@ -88,8 +91,8 @@ export default function Vault() {
                <span><h2>max</h2></span>
              </div>
              <div className='cbottomright'>
-               <img src={bitcoin} alt='' width={'54px'} />
-               <h1>CUB</h1>
+               <img src={state.navCoins.coin_image} alt='' width={'54px'} />
+               <h1>{state.navCoins.coin_name}</h1>
                <img src={arrow} alt='' width={'7px'} className='arroww' />
              </div>
            </div>

@@ -19,6 +19,7 @@ import logo from "../images/betarena.png";
 import search from "../images/search.svg";
 // import MobileMenubar from "./Mobile-Menubar";
 import Chat from "./Chat";
+import Notification from "./Notification";
 import WalletCoins from "../Navbar/WalletCoins";
 import NavProfile from "../Navbar/NavProfile.js";
 // import UserInfo from "../Navbar/UserInfo";
@@ -35,6 +36,7 @@ export default function HomeNavBar({ setScreen, setView }) {
   const [count, setCount] = useState(true);
   const [menucount, setMenuCount] = useState(true);
   const [PublicMsg, setPublicMsg] = useState(false);
+  const [NotifyMsg, setNotifyMsg] = useState(false);
   const [profile, setProfile] = useState("");
   const [DBwallet, setDBwallet] = useState("");
   const { user } = useAuthContext();
@@ -92,15 +94,42 @@ export default function HomeNavBar({ setScreen, setView }) {
       }
     }
   }
+  
+  function menuHandler() {
+    if (menucount) {
+      setScreen();
+      setMenuCount(false);
+      if (NotifyMsg) {
+        setView("left_view");
+        setNavBarPage("Navbar-container3");
+      } else {
+        setView("full_view");
+        setNavBarPage("openNavbar-container");
+      }
+    } else {
+      setScreen();
+      setMenuCount(true);
+      if (NotifyMsg) {
+        setView("default");
+        setNavBarPage("Navbar-containerEL");
+      } else {
+        setView("default");
+        setNavBarPage("Navbar-container");
+      }
+    }
+  }
 
   const handleResize = () => {
     if (window.innerWidth < 650) {
       console.log("mobile");
       setPublicMsg(false);
+      setNotifyMsg(false);
     } else if (window.innerWidth < 900) {
       setPublicMsg(false);
+      setNotifyMsg(false);
     } else {
       setPublicMsg(true);
+      setNotifyMsg(true);
       setMenuCount("Navbar-container");
       setNavBarPage("Navbar-container");
     }
@@ -119,6 +148,7 @@ export default function HomeNavBar({ setScreen, setView }) {
 
   const Cancel = (e) => {
     setPublicMsg(false);
+    setNotifyMsg(false);
     if (menucount) {
       setView("default");
       setNavBarPage("Navbar-container");
@@ -134,6 +164,17 @@ export default function HomeNavBar({ setScreen, setView }) {
 
   const Message = () => {
     setPublicMsg(true);
+    if (menucount) {
+      setView("middle_view");
+      setNavBarPage("Navbar-containerEL");
+    } else {
+      setView("left_view");
+      setNavBarPage("Navbar-container3");
+    }
+  };
+
+  const Notify = () => {
+    setNotifyMsg(true);
     if (menucount) {
       setView("middle_view");
       setNavBarPage("Navbar-containerEL");
@@ -324,11 +365,16 @@ export default function HomeNavBar({ setScreen, setView }) {
           
                 {/* <div onClick={functionChatRoom} className="Home-Items3">
                 <img src={message} alt="message" width={"20px"} />
+<<<<<<< HEAD
                 {chatRoom && (
                   <ChatRoom />
                 )}
                 </div> */}
                 <img src={not} alt="not" width={"20px"} />
+=======
+                <img onClick={Notify} src={not} alt="not" width={"20px"} />
+                {NotifyMsg && <Notification cancel={Cancel} />}
+>>>>>>> 0fd710095575b1514488dda899c33064d5f48d2f
               </div>
 
               <div className="play" onClick={Message}>
@@ -337,6 +383,7 @@ export default function HomeNavBar({ setScreen, setView }) {
               </div>
             </div>
             {PublicMsg && <Chat cancel={Cancel} />}
+            {NotifyMsg && <Notification cancel={Cancel} />}
           </div>
         </div>
       </div>

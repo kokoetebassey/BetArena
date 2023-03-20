@@ -13,11 +13,11 @@ export default function Deposit({ selectCoin, walletAddress }) {
   const [address] = useState(walletAddress);
   const [copied, setCopied] = useState(false);
 
-  const [erc20, setErc20] = useState(1);
+  // const [erc20, setErc20] = useState(1);
 
-  const handleErc = (e) => {
-    setErc20(e);
-  };
+  // const handleErc = (e) => {
+  //   setErc20(e);
+  // };
 
   useEffect(() => {
     if (copied) {
