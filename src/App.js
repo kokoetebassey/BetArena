@@ -29,8 +29,12 @@ import Swap from "./Pop up/Swap";
 import Vault from "./Pop up/Vault";
 import SecondStep from "./Logins/SecondStep";
 import LastStep from "./Logins/LastStep";
+import ChatRoom from "./Pop up/ChatRoom";
+import Request from "./Pop up/Request";
+import Options from "./Pop up/Options";
 
 import axios from "axios";
+import UserInfo from "./Navbar/UserInfo";
 
 function App() {
   const [isTablet, setIsTablet] = useState(false);
@@ -113,6 +117,14 @@ function App() {
             </Route>
             <Route path="/signup/secon" element={<SecondStep />} />
             <Route path="/signup/finale" element={<LastStep />} />
+
+
+            <Route path="/user/information" element={<UserInfo />} />
+            <Route path="/options" element={<Options />} />
+            <Route path="/chat" element={<ChatRoom />}>
+              <Route path="request" element={<Request />} />
+            </Route>
+           
 
             <Route path="/login" element={<Login />}></Route>
             {/* ========= Pages ================= */}

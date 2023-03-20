@@ -8,6 +8,11 @@ import vect from '../images/database.svg'
 
 export default function Swap() {
   const [swapAltcoin, setSwapAltcoin] = useState(0)
+  const [value,setValue] = useState('0')
+
+  function handleValue(e){
+    setValue(e.target.value)
+  }
 
 function handleSwap(index){
     setSwapAltcoin(index)
@@ -52,7 +57,8 @@ function handleSwap(index){
 
  <div className='containerbottom'>
    <div className='cbottomleft'>
-     <h1>0</h1>
+     {/* <h1>0</h1> */}
+     <input type='text' value={value} onChange={handleValue} placeholder='0' />
      <span><h2>max</h2></span>
    </div>
    <div className='cbottomright'>
@@ -80,7 +86,8 @@ function handleSwap(index){
 
  <div className='containerbottom'>
    <div className='cbottomleft'>
-     <h1>0</h1>
+     {/* <h1>0</h1> */}
+     <input type='text' value={value} onChange={handleValue} placeholder='0' />
      <span></span>
    </div>
    <div className='cbottomright'>
