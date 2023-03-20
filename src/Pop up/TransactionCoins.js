@@ -1,9 +1,10 @@
 import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { useState } from "react";
-import axios from "axios";
 
-export default function TransactionCoins({ coinData, WalletAddress, ClearChooseCoin }) {
+export default function TransactionCoins({ coinData, ClearChooseCoin }) {
+  // const [walletAddress, setwalletAddress] = useState("");
+
   const [coinEl] = useState([
     {
       id: 1,
@@ -11,6 +12,8 @@ export default function TransactionCoins({ coinData, WalletAddress, ClearChooseC
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
+
+      address: `128TUZbbpJ73zjEU1UUUJP2ftBYveTPXdC`,
     },
     {
       id: 2,
@@ -18,7 +21,7 @@ export default function TransactionCoins({ coinData, WalletAddress, ClearChooseC
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/325/large/Tether.png",
-      network: null,
+      address: `0x60a3171d77c38c4BEB84c0102680d4F4dc75e3db`,
     },
     {
       id: 3,
@@ -26,6 +29,7 @@ export default function TransactionCoins({ coinData, WalletAddress, ClearChooseC
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/279/large/ethereum.png",
+      address: `0x60a3171d77c38c4BEB84c0102680d4F4dc75e3db`,
     },
     {
       id: 4,
@@ -33,6 +37,7 @@ export default function TransactionCoins({ coinData, WalletAddress, ClearChooseC
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/4128/large/solana.png",
+      address: `0x60a3171d77c38c4BEB84c0102680d4F4dc75e3db`,
     },
     {
       id: 5,
@@ -40,6 +45,7 @@ export default function TransactionCoins({ coinData, WalletAddress, ClearChooseC
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/3695/large/nexo.png",
+      address: `0x121d60bd726b0f79ed9b94e607f2d2bf1d11133b`,
     },
     {
       id: 6,
@@ -47,6 +53,7 @@ export default function TransactionCoins({ coinData, WalletAddress, ClearChooseC
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/6319/large/USD_Coin_icon.png",
+      address: `0x121d60bd726b0f79ed9b94e607f2d2bf1d11133b`,
     },
     {
       id: 8,
@@ -54,6 +61,7 @@ export default function TransactionCoins({ coinData, WalletAddress, ClearChooseC
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png",
+      address: `0x121d60bd726b0f79ed9b94e607f2d2bf1d11133b`,
     },
     {
       id: 9,
@@ -61,34 +69,28 @@ export default function TransactionCoins({ coinData, WalletAddress, ClearChooseC
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/9576/large/BUSD.png",
+      address: `0x121d60bd726b0f79ed9b94e607f2d2bf1d11133b`,
     },
   ]);
 
-  const HandleCoinSelect = (coin_name, coin_image, coin_bal) => {
-    const data = { coin_name, coin_image, coin_bal };
-    coinData(data);
-
-    axios.post("https://betarena.herokuapp.com/api/admin/admin-walllet", {
-      coin_name: coin_name,
-    })
-    .then((res)=>{
-      WalletAddress(res.data)
-    })
-    .catch((error)=>{
-      console.log(error)
-    })
+  // console.log(coinEl[0] )
+  const HandleCoinSelect = (coin_name, coin_image, coin_bal, address) => {
+    const data = { coin_name, coin_image, coin_bal, address };
+    console.log(data);
   };
 
-  const Cancel = (()=>{
-      ClearChooseCoin()
-  })
+  const Cancel = () => {
+    ClearChooseCoin();
+  };
 
   return (
     <div className="transaction">
       <div className="transaction-container">
         <div className="choose-coin-header">
           <h2 className="choose-coin">Choose Coin</h2>
-          <h2 onClick={Cancel} className="cancel">&#x2715;</h2>
+          <h2 onClick={Cancel} className="cancel">
+            &#x2715;
+          </h2>
         </div>
         <div className="choose-coin-content">
           <div className="search-bar">
@@ -106,7 +108,12 @@ export default function TransactionCoins({ coinData, WalletAddress, ClearChooseC
             <div
               key={e.id}
               onClick={() =>
-                HandleCoinSelect(e.coin_name, e.coin_image, e.coin_bal)
+                HandleCoinSelect(
+                  e.coin_name,
+                  e.coin_image,
+                  e.coin_bal,
+                  e.address
+                )
               }
               className="choose-coin-body"
             >

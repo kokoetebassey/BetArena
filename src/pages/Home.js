@@ -18,6 +18,8 @@ import image3 from "../images/image 16.png";
 // import BCD from "../pages/BCD";
 // import TaskHub from "../pages/TaskHub";
 
+// import Notification from "../components/Notification";
+
 // Import Swiper React component4
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -39,12 +41,11 @@ import Basection from "../homepage/Ba_section";
 SwiperCore.use([Autoplay]);
 
 export default function Home() {
+  const [setShowLobbyRoutes] = useState(1);
 
-  const [  setShowLobbyRoutes ] = useState(1)
-
-  const LobyRoutes = ((e)=>{
-    setShowLobbyRoutes(e)
-  })
+  const LobyRoutes = (e) => {
+    setShowLobbyRoutes(e);
+  };
 
   return (
     <>
@@ -104,7 +105,9 @@ export default function Home() {
         </div>
         <WinSection />
         <LobbyRoute HandleLobbyRoute={LobyRoutes} />
-        
+
+        {/* <Notification /> */}
+
         <HomeSlots />
         <Basection />
       </div>
