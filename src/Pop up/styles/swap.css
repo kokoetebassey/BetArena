@@ -398,3 +398,15 @@
     margin-top: 10px;
     color: aliceblue;
 }
+.cbottomleft input{
+    margin: 0;
+    margin-left: 19px;
+    background-color: transparent;
+    border: none;
+    width: 45%;
+    outline: none;
+    color: aliceblue;
+}
+.cbottomleft input::placeholder{
+    color: aliceblue;
+}

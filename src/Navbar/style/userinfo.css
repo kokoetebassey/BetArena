@@ -1,10 +1,10 @@
 .userinform{
-    height: 42rem;
-    width: 20rem;
+    height: 44rem;
+    width: 29rem;
     position: absolute;
-    right: 250px;
+    right: 38%;
     z-index: 99;
-    top: 60px;
+    top: 1rem;
 }
 .userinformlayer{
     /* position: relative; */
@@ -36,18 +36,18 @@
 .poptopright .rec{
     position: absolute;
     width: 28px;
-    margin-left: 3.7rem;
+    margin-left: 5.7rem;
 }
 .poptopright .pol{
     position: absolute;
     width: 30px;
-    margin-left: 3.7rem;
+    margin-left: 5.6rem;
     margin-top: 3px;
 }
 .poptopright .klose{
     position: absolute;
     width: 13px;
-    margin-left: 7.4rem;
+    margin-left: 11.8rem;
     margin-top: 23px;
 }
 .popheart{
@@ -122,7 +122,7 @@
 }
 .medaldiv{
     margin-top: 28px;
-    margin-left:38.5%;
+    margin-left:40.5%;
     position: absolute;
     display: flex;
     align-items: center;
@@ -191,16 +191,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 25px;
+    gap: 40px;
     margin: 0;
     margin-top: 22px;
     width: 100%;
 }
 .big-medal-second img{
     width: 24px;
+    margin: 4px;
 }
 .big-medal-second .med{
     height: 45px;
+    margin: 4px;
 }
 .big-medal-secondd{
     display: flex;
@@ -215,10 +217,11 @@
 .big-medal-secondd div{
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     background: #1B1C20;
     border-radius: 12px;
-    width: 69px;
+    width: 105px;
     height: 100%;
     position: relative;
 }
@@ -269,7 +272,7 @@
     flex-direction: column;
     margin: 0;
     margin-top: 3rem;
-    margin-left: 3.3rem;
+    margin-left: 6.6rem;
 }
 .imagee .toy{
     width: 4rem;

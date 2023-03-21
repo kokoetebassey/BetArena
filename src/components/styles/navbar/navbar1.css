@@ -12,14 +12,16 @@
 .Navbar-container {
   position: relative;
   left: 240px;
-  width: 84%;
+  width: 86%;
   height: 60px;
   z-index: 22;
 }
 .Navbar-container .Navbar-content {
   display: flex;
   position: relative;
-  z-index: 1023628736;
+  z-index: 10;
+  width: 100%;
+  z-index: 2000;
 }
 .Navbar-container .Navbar-content .menu {
   top: 19px;
@@ -47,7 +49,7 @@
 
 .Navbar-container .Navbar-content .search-line {
   width: 40%;
-  background: #030307;
+  background: #191935;
   margin: 10px 15px;
   height: 40px;
   border-radius: 30px;
@@ -56,7 +58,7 @@
 
 .Navbar-container .Navbar-content .search {
   width: 40%;
-  background: #090915;
+  background: #191935;
   margin: 10px 15px;
   height: 40px;
   border-radius: 30px;
@@ -97,7 +99,7 @@
 }
 
 .Navbar-container .Navbar-content .login {
-  width: 10%;
+  width: 13%;
   text-align: end;
   margin-top: 16px;
   margin-left: 20px;
@@ -154,4 +156,270 @@
   top: 5px;
   background-color: rgba(173, 134, 5, 1);
   position: absolute;
+}
+
+
+@media  only screen and ( min-width: 1200px ) and ( max-width : 1360px ) {
+  .Navbar-container .Navbar-content .search-line {
+    width: 35%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(173, 134, 5, 1);
+  }
+  
+  .Navbar-container .Navbar-content .search {
+    width: 35%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+  }
+}
+
+@media  only screen and ( min-width: 1200px ) and ( max-width : 1360px ) {
+  .Navbar-container .Navbar-content .search-line {
+    width: 35%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(173, 134, 5, 1);
+  }
+  
+  .Navbar-container .Navbar-content .search {
+    width: 35%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+  }
+  .Navbar-container .Navbar-content .login {
+    width: 14%;
+    text-align: end;
+    margin-top: 16px;
+    margin-left: 20px;
+  }
+}
+
+@media  only screen and ( min-width: 1050px ) and ( max-width : 1200px ) {
+  .Navbar-container .Navbar-content .search-line {
+    width: 33%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(173, 134, 5, 1);
+  }
+  
+  .Navbar-container .Navbar-content .search {
+    width: 33%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+  }
+  .Navbar-container .Navbar-content .login {
+    width: 11%;
+    text-align: end;
+    margin-top: 16px;
+    margin-left: 20px;
+  }
+  .Navbar-container .Navbar-content .search input {
+    width:230px;
+    background: none;
+    border: none;
+    outline: none;
+    margin: auto;
+    margin-left: 10px;
+    color: #52506b;
+    font-weight: 900;
+  }
+}
+
+@media  only screen and ( min-width: 850px ) and ( max-width : 1050px ) {
+  .Navbar-container .Navbar-content .login {
+    width: 7%;
+    text-align: end;
+    margin-top: 16px;
+    margin-left: 20px;
+  }
+  
+  .Navbar-container .Navbar-content .search-line {
+    width: 30%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(173, 134, 5, 1);
+  }
+  
+  .Navbar-container .Navbar-content .search {
+    width: 30%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+  }
+  .Navbar-container .Navbar-content .login {
+    width: 7%;
+    text-align: end;
+    margin-top: 16px;
+    margin-left: 20px;
+  }
+  .Navbar-container .Navbar-content .search input {
+    width:160px;
+    background: none;
+    border: none;
+    outline: none;
+    margin: auto;
+    margin-left: 10px;
+    color: #52506b;
+    font-weight: 900;
+  }
+}
+
+@media  only screen and ( min-width: 750px ) and ( max-width : 850px ) {
+  .Navbar-container .Navbar-content .login {
+    width: 7%;
+    text-align: end;
+    margin-top: 16px;
+    margin-left: 20px;
+  }
+  .Navbar-container .Navbar-content .logo {
+    width: 20%;
+    cursor: pointer;
+  }
+  .Navbar-container .Navbar-content .logo img {
+    width: 160px;
+    padding: 6px;
+    border-radius: 8px;
+  }
+  
+  .Navbar-container .Navbar-content .search-line {
+    width: 20%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(173, 134, 5, 1);
+  }
+  
+  .Navbar-container .Navbar-content .search {
+    width: 20%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+  }
+  .Navbar-container .Navbar-content .login {
+    width: 7%;
+    text-align: end;
+    margin-top: 16px;
+    margin-left: 20px;
+  }
+  .Navbar-container .Navbar-content .search input {
+    width:85px;
+    background: none;
+    border: none;
+    outline: none;
+    margin: auto;
+    margin-left: 10px;
+    color: #52506b;
+    font-weight: 900;
+  }
+  .Navbar-container .Navbar-content .play p {
+    color: white;
+    font-size: 11.5px;
+    border-radius: 50%;
+    padding: 3px;
+    right: 0px;
+    top: 5px;
+    background-color: rgba(173, 134, 5, 1);
+    position: absolute;
+  }
+}
+
+
+@media  only screen and ( min-width: 650px ) and ( max-width : 750px ) {
+  .Navbar-container .Navbar-content .login {
+    width: 7%;
+    text-align: end;
+    margin-top: 16px;
+    margin-left: 20px;
+  }
+  .Navbar-container .Navbar-content .logo {
+    width: 26%;
+    cursor: pointer;
+  }
+  .Navbar-container .Navbar-content .logo img {
+    width: 160px;
+    padding: 6px;
+    border-radius: 8px;
+  }
+  
+  .Navbar-container .Navbar-content .search-line {
+    width: 10%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(173, 134, 5, 1);
+  }
+  
+  .Navbar-container .Navbar-content .search {
+    width: 10%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+  }
+  .Navbar-container .Navbar-content .login {
+    width: 8%;
+    text-align: end;
+    margin-top: 16px;
+    margin-left: 20px;
+  }
+  .Navbar-container .Navbar-content .search input {
+    width:15px;
+    background: none;
+    border: none;
+    outline: none;
+    margin: auto;
+    margin-left: 10px;
+    color: #52506b;
+    font-weight: 900;
+  }
+  .Navbar-container .Navbar-content .search-line input {
+    width:15px;
+    background: none;
+    border: none;
+    outline: none;
+    margin: auto;
+    margin-left: 10px;
+    color: #52506b;
+    font-weight: 900;
+  }
+  .Navbar-container .Navbar-content .play p {
+    color: white;
+    font-size: 11.5px;
+    border-radius: 50%;
+    padding: 3px;
+    right: -5px;
+    top: 5px;
+    background-color: rgba(173, 134, 5, 1);
+    position: absolute;
+  }
+  .Navbar-container .Navbar-content .signup a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 10.5px;
+    font-weight: 900;
+    background-color: rgba(173, 134, 5, 1);
+    letter-spacing: 1px;
+    border-radius: 30px;
+    padding: 5px 10px;
+  }
+  
 }

@@ -14,9 +14,10 @@ import medal1 from '../images/nwimages/1medal.svg'
 import medal2 from '../images/nwimages/2medal.svg'
 import medal3 from '../images/nwimages/3medal.svg'
 import medal4 from '../images/nwimages/4medal.svg'
-import network from '../images/nwimages/network.svg'
+import network from '../images/statistics.svg'
 import toy from '../images/nwimages/toy.svg'
 import oops from '../images/nwimages/oops.svg'
+import { NavLink } from 'react-router-dom'
 
 const UserInfo = () => {
   return (
@@ -28,7 +29,9 @@ const UserInfo = () => {
             <div className='poptopright'>
                 <img src={rec} alt='' className='rec'  />
                 <img src={polyg} alt='' className='pol'   />
-                <img src={klose} alt='' className='klose'   />
+               <NavLink to='/'>
+               <img src={klose} alt='' className='klose'   />
+               </NavLink>
 
             </div>
         </div>

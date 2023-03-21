@@ -3,6 +3,9 @@
   margin: 0;
   display: block;
 }
+.MenuBar-container{
+  z-index: 20;
+}
 
 .MenuBar-tab {
   background: rgba(0, 0, 0, 0.46);
@@ -31,9 +34,7 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.158);
 }
-.MenuBar-container{
-  z-index: 20;
-}
+
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .MenuBar::-webkit-scrollbar {
