@@ -22,7 +22,9 @@ const ChatRoom = () => {
     }
 
   return (
-    <div className='chat-room-container'>
+    <div className='main-chat-background'>
+
+<div className='chat-room-container'>
       <div className='chat-room-container-inner'>
 
         <div className='chat-room-head'>
@@ -141,6 +143,10 @@ const ChatRoom = () => {
       </div>
       <Outlet />
     </div>
+
+
+    </div>
+    
   )
 }
 

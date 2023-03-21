@@ -1,6 +1,14 @@
+.main-chat-background{
+    position: fixed;
+    height: 100hv;
+    width: 100%;
+    background-color:  #0b0d1c;
+    inset: 0px;
+    z-index: 100;
+}
 .chat-room-container{
     display: block;
-    position: absolute;
+    position: fixed;
     height: 45rem;
     z-index: 99;
     top: -5px;

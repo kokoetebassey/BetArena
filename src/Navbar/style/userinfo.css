@@ -1,7 +1,16 @@
+.main-background{
+    position: fixed;
+    height: 100hv;
+    width: 100%;
+    background-color:  #0b0d1c;
+    inset: 0px;
+    z-index: 100;
+}
 .userinform{
+    position: fixed;
     height: 44rem;
     width: 29rem;
-    position: absolute;
+    /* position: absolute; */
     right: 38%;
     z-index: 99;
     top: 1rem;

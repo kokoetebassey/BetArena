@@ -21,7 +21,10 @@ import { NavLink } from 'react-router-dom'
 
 const UserInfo = () => {
   return (
-    <div className='userinform'>
+    <div className='main-background'>
+
+
+<div className='userinform'>
       <div className='userinformlayer'>
 
         <div className='poptop'>
@@ -124,6 +127,11 @@ const UserInfo = () => {
 
       </div>
     </div>
+
+
+
+    </div>
+   
   )
 }
 
