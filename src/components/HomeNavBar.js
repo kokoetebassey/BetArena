@@ -11,7 +11,7 @@ import message from "../images/message.svg";
 import wallet from "../images/wallet bet.svg";
 import not from "../images/not bet.svg";
 
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import menu from "../images/menu.svg";
@@ -19,15 +19,15 @@ import logo from "../images/betarena.png";
 import search from "../images/search.svg";
 // import MobileMenubar from "./Mobile-Menubar";
 import Chat from "./Chat";
-import Notification from "./Notification";
 import WalletCoins from "../Navbar/WalletCoins";
 import NavProfile from "../Navbar/NavProfile.js";
-import UserInfo from "../Navbar/UserInfo";
+// import UserInfo from "../Navbar/UserInfo";
 
 import { useAuthContext } from "../hooks/useAuthContext";
 
 // =============== Import HTTPS request ==================
 import axios from "axios";
+// import ChatRoom from "../Pop up/ChatRoom";
 
 export default function HomeNavBar({ setScreen, setView }) {
   const [searchEL, setSearch] = useState("search");
@@ -35,21 +35,29 @@ export default function HomeNavBar({ setScreen, setView }) {
   const [count, setCount] = useState(true);
   const [menucount, setMenuCount] = useState(true);
   const [PublicMsg, setPublicMsg] = useState(false);
-  const [NotifyMsg, setNotifyMsg] = useState(false);
   const [profile, setProfile] = useState("");
   const [DBwallet, setDBwallet] = useState("");
   const { user } = useAuthContext();
   const navigate = useNavigate();
 
-  const [userInfo, setUserInfo] = useState(false)
+  // const [userInfo, setUserInfo] = useState(false)
+  // const [chatRoom, setChatRoom] = useState(false)
 
-  function functionUserInfo(){
-    if (userInfo) {
-      setUserInfo(false);
-    } else {
-      setUserInfo(true);
-    }
-  };
+  // function functionUserInfo(){
+  //   if (userInfo) {
+  //     setUserInfo(false);
+  //   } else {
+  //     setUserInfo(true);
+  //   }
+  // };
+
+  // function functionChatRoom(){
+  //   if(chatRoom){
+  //     setChatRoom(true)
+  //   }else{
+  //     setChatRoom(true)
+  //   }
+  // }
 
   function searchHandle() {
     if (count) {
@@ -84,42 +92,15 @@ export default function HomeNavBar({ setScreen, setView }) {
       }
     }
   }
-  
-  function menuHandler() {
-    if (menucount) {
-      setScreen();
-      setMenuCount(false);
-      if (NotifyMsg) {
-        setView("left_view");
-        setNavBarPage("Navbar-container3");
-      } else {
-        setView("full_view");
-        setNavBarPage("openNavbar-container");
-      }
-    } else {
-      setScreen();
-      setMenuCount(true);
-      if (NotifyMsg) {
-        setView("default");
-        setNavBarPage("Navbar-containerEL");
-      } else {
-        setView("default");
-        setNavBarPage("Navbar-container");
-      }
-    }
-  }
 
   const handleResize = () => {
     if (window.innerWidth < 650) {
       console.log("mobile");
       setPublicMsg(false);
-      setNotifyMsg(false);
     } else if (window.innerWidth < 900) {
       setPublicMsg(false);
-      setNotifyMsg(false);
     } else {
       setPublicMsg(true);
-      setNotifyMsg(true);
       setMenuCount("Navbar-container");
       setNavBarPage("Navbar-container");
     }
@@ -138,7 +119,6 @@ export default function HomeNavBar({ setScreen, setView }) {
 
   const Cancel = (e) => {
     setPublicMsg(false);
-    setNotifyMsg(false);
     if (menucount) {
       setView("default");
       setNavBarPage("Navbar-container");
@@ -154,17 +134,6 @@ export default function HomeNavBar({ setScreen, setView }) {
 
   const Message = () => {
     setPublicMsg(true);
-    if (menucount) {
-      setView("middle_view");
-      setNavBarPage("Navbar-containerEL");
-    } else {
-      setView("left_view");
-      setNavBarPage("Navbar-container3");
-    }
-  };
-
-  const Notify = () => {
-    setNotifyMsg(true);
     if (menucount) {
       setView("middle_view");
       setNavBarPage("Navbar-containerEL");
@@ -325,12 +294,15 @@ export default function HomeNavBar({ setScreen, setView }) {
 
               <div className="Home-Items2">
                 <div className="Home-Items2-1">
-                  <div onClick={functionUserInfo}>
+                  <NavLink to='/user/information'>
+                  <img src={profile.img} alt="userImage" width={"25px"} />
+                  </NavLink>
+                  {/* <div onClick={functionUserInfo}>
                   <img src={profile.img} alt="userImage" width={"25px"} />
                   {userInfo && (
                     <UserInfo />
                   )}
-                  </div>
+                  </div> */}
 
                   <div onClick={HandleNavProfile} className="navPro">
                     <h3>&#9781;</h3>
@@ -345,9 +317,18 @@ export default function HomeNavBar({ setScreen, setView }) {
               </div>
 
               <div className="Home-Items3">
+                
+              <NavLink to='/chat'  className="Home-Items3">
+              <img src={message} alt="message" width={"20px"} />
+              </NavLink>
+          
+                {/* <div onClick={functionChatRoom} className="Home-Items3">
                 <img src={message} alt="message" width={"20px"} />
-                <img onClick={Notify} src={not} alt="not" width={"20px"} />
-                {NotifyMsg && <Notification cancel={Cancel} />}
+                {chatRoom && (
+                  <ChatRoom />
+                )}
+                </div> */}
+                <img src={not} alt="not" width={"20px"} />
               </div>
 
               <div className="play" onClick={Message}>
@@ -356,7 +337,6 @@ export default function HomeNavBar({ setScreen, setView }) {
               </div>
             </div>
             {PublicMsg && <Chat cancel={Cancel} />}
-            {NotifyMsg && <Notification cancel={Cancel} />}
           </div>
         </div>
       </div>
