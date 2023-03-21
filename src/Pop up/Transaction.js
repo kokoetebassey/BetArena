@@ -1,13 +1,11 @@
 import "./styles/transaction.css";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-// import { useState, useEffect } from "react";
 import TransactionCoins from "./TransactionCoins";
 import deposit from "../images/deposit.svg";
 import withdraw from "../images/widthdraw.svg";
 import swap from "../images/swap.svg";
 import vault from "../images/vault.svg";
-// import axios from "axios";
-// import { useAuthContext } from "../hooks/useAuthContext";
+
 
 export default function Transaction({
   displaySelectCoin,
@@ -20,28 +18,7 @@ export default function Transaction({
     navigate(-1);
   };
 
-  // const { user } = useAuthContext();
 
-  // const [navCoins, setNavCoins] = useState("");
-
-  // =================Fetch default coins ==========================
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     await axios
-  //       .get("https://betarena.herokuapp.com/api/profile/default-coin", {
-  //         headers: {
-  //           Authorization: `Bearer ${user.Token}`,
-  //         },
-  //       })
-  //       .then((response) => {
-  //         setNavCoins(response.data[0]);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   };
-  //   fetchData();
-  // }, [user]);
 
   const ClearChooseCoin = () => {
     SelectCoin();

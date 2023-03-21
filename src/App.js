@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MenuBar from "./components/MenuBar";
 import Navbar from "./components/Navbar";
 import CrashPoint from "./Crash/CrashPoint";
@@ -30,6 +30,10 @@ import Vault from "./Pop up/Vault";
 import SecondStep from "./Logins/SecondStep";
 import LastStep from "./Logins/LastStep";
 
+
+// =============== Import HTTPS request ==================
+import axios from "axios";
+
 function App() {
   const [isTablet, setIsTablet] = useState(false);
   const [viewPoint, setViewPoint] = useState("default-view");
@@ -56,6 +60,30 @@ function App() {
     }
   };
 
+  // =================Fetch default coins ==========================
+  useEffect(() => {
+    const fetchData = async () => {
+      await axios
+        .get("https://betarena.herokuapp.com/api/profile/default-coin", {
+          headers: {
+            Authorization: `Bearer ${user.Token}`,
+          },
+        })
+        .then((response) => {
+          setCryptoCoin(response.data[0]);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    if(user){
+      fetchData();
+    }
+  }, [user]);
+
+  // console.log(cryptoCoin)
+
+
   const [displaySelectCoin, setDisplaySelectCoin] = useState(false);
 
   const SelectCoin = (e) => {
@@ -65,6 +93,39 @@ function App() {
       setDisplaySelectCoin(true);
     }
   };
+
+
+  const [ cryptoWallet,  setCryptoWallet ] = useState('')
+  const [ cryptoCoin, setCryptoCoin ] = useState('')
+
+  // =================Fetch default coins ==========================
+  useEffect(() => {
+    const fetchData = async () => {
+      await axios
+        .get("https://betarena.herokuapp.com/api/profile/default-coin", {
+          headers: {
+            Authorization: `Bearer ${user.Token}`,
+          },
+        })
+        .then((response) => {
+          setCryptoCoin(response.data[0]);
+          setCryptoWallet(response.data[0].wallet_address[0])
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    if(user){
+      fetchData();
+    }
+  }, [user]);
+
+const coinData = ((e)=>{
+    setCryptoCoin(e)
+    setCryptoWallet(e.wallet_address[0])
+    setDisplaySelectCoin(false);
+})  
+
 
   const WalletAddress = (e) => {
     console.log(e);
@@ -107,17 +168,14 @@ function App() {
             <Route
               path="/wallet"
               element={
-                <Transaction
-                  WalletAddress={WalletAddress}
-                  SelectCoin={SelectCoin}
-                  displaySelectCoin={displaySelectCoin}
-                />
+                <Transaction  WalletAddress={WalletAddress}  coinData={coinData}
+                  SelectCoin={SelectCoin}   displaySelectCoin={displaySelectCoin}  />
               }
             >
               <Route index element={<Deposit />} />
               <Route
                 path="deposit"
-                element={<Deposit selectCoin={SelectCoin} />}
+                element={<Deposit cryptoCoin={cryptoCoin} cryptoWallet={cryptoWallet} selectCoin={SelectCoin} />}
               ></Route>
               <Route
                 path="withdraw"

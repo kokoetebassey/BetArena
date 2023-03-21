@@ -62,53 +62,29 @@ export default function HomeNavBar({ setScreen, setView }) {
   }
 
   function menuHandler() {
-    if (menucount) {
-      setScreen();
-      setMenuCount(false);
-      if (PublicMsg) {
-        setView("left_view");
-        setNavBarPage("Navbar-container3");
+      if (menucount) {
+        setScreen();
+        setMenuCount(false);
+        if (PublicMsg) {
+          setView("left_view");
+          setNavBarPage("Navbar-container3");
+        } else {
+          setView("full_view");
+          setNavBarPage("openNavbar-container");
+        }
       } else {
-        setView("full_view");
-        setNavBarPage("openNavbar-container");
+        setScreen();
+        setMenuCount(true);
+        if (PublicMsg) {
+          setView("default");
+          setNavBarPage("Navbar-containerEL");
+        } else {
+          setView("default");
+          setNavBarPage("Navbar-container");
+        }
       }
-    } else {
-      setScreen();
-      setMenuCount(true);
-      if (PublicMsg) {
-        setView("default");
-        setNavBarPage("Navbar-containerEL");
-      } else {
-        setView("default");
-        setNavBarPage("Navbar-container");
-      }
-    }
   }
   
-  function menuHandler() {
-    if (menucount) {
-      setScreen();
-      setMenuCount(false);
-      if (NotifyMsg) {
-        setView("left_view");
-        setNavBarPage("Navbar-container3");
-      } else {
-        setView("full_view");
-        setNavBarPage("openNavbar-container");
-      }
-    } else {
-      setScreen();
-      setMenuCount(true);
-      if (NotifyMsg) {
-        setView("default");
-        setNavBarPage("Navbar-containerEL");
-      } else {
-        setView("default");
-        setNavBarPage("Navbar-container");
-      }
-    }
-  }
-
   const handleResize = () => {
     if (window.innerWidth < 650) {
       console.log("mobile");
