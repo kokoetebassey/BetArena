@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import CrashTime from "./CrashTime";
-// import Message from "../Crash/Message";
 import CrashMessage from "./CrashMessage";
 import Crashcount from "./Crashcount";
 import { NavLink } from "react-router-dom";
