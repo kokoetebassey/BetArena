@@ -6,17 +6,14 @@ import vect from "../images/database.svg";
 // import { useLocation } from "react-router";
 
 export default function Swap() {
-<<<<<<< HEAD
   const [swapAltcoin, setSwapAltcoin] = useState(0)
   const [value,setValue] = useState('0')
 
   function handleValue(e){
     setValue(e.target.value)
   }
-=======
-  const [swapAltcoin, setSwapAltcoin] = useState(0);
+  // const [swapAltcoin, setSwapAltcoin] = useState(0);
   // const { state } = useLocation();
->>>>>>> 0fd710095575b1514488dda899c33064d5f48d2f
 
   function handleSwap(index) {
     setSwapAltcoin(index);
@@ -71,7 +68,6 @@ export default function Swap() {
               </div>
             </div>
 
-<<<<<<< HEAD
  <div className='containerbottom'>
    <div className='cbottomleft'>
      {/* <h1>0</h1> */}
@@ -84,14 +80,12 @@ export default function Swap() {
      <img src={arrow} alt='' width={'7px'} className='arroww' />
    </div>
  </div>
-=======
             <div className="ccontbottom">
               <h1>1BTC</h1>
               <h4>=</h4>
               <h2>0.000000</h2>
               <h3>BTC</h3>
             </div>
->>>>>>> 0fd710095575b1514488dda899c33064d5f48d2f
 
             <div className="middlearrow"></div>
 
@@ -112,7 +106,6 @@ export default function Swap() {
               </div>
             </div>
 
-<<<<<<< HEAD
  <div className='containerbottom'>
    <div className='cbottomleft'>
      {/* <h1>0</h1> */}
@@ -125,7 +118,6 @@ export default function Swap() {
      <img src={arrow} alt='' width={'7px'} className='arroww' />
    </div>
  </div>
-=======
             <div className="darkdiv">
               <div className="estimdiv">
                 <h3>Estimated Time*</h3>
@@ -137,7 +129,6 @@ export default function Swap() {
                 <h3>BTC</h3>
               </div>
             </div>
->>>>>>> 0fd710095575b1514488dda899c33064d5f48d2f
 
             <button className="divbutton">Swap Now</button>
           </>

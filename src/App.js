@@ -33,12 +33,9 @@ import ChatRoom from "./Pop up/ChatRoom";
 import Request from "./Pop up/Request";
 import Options from "./Pop up/Options";
 
-<<<<<<< HEAD
-import axios from "axios";
+// import axios from "axios";
 import UserInfo from "./Navbar/UserInfo";
 
-=======
->>>>>>> 0fd710095575b1514488dda899c33064d5f48d2f
 function App() {
   const [isTablet, setIsTablet] = useState(false);
   const [viewPoint, setViewPoint] = useState("default-view");
