@@ -11,14 +11,17 @@ export default function CrashPoint(crash) {
   const [crashGame, setcrashGame] = useState("");
   const [ResponseMsg, setResponseMsg] = useState("");
   const [loading, setLoading] = useState(false)
+  const [divHide, setdivHide] = useState(false)
 
   function functionLoad(){
-    if(loading === true && crashGame === false){
+    if(loading === true && crashGame === false && divHide === false){
       setLoading(false)
       setcrashGame(true)
+      setdivHide(true)
     }else{
       setLoading(true)
       setcrashGame(false)
+      setdivHide(false)
     }
   }
 
@@ -61,7 +64,7 @@ export default function CrashPoint(crash) {
           </NavLink>
         </div>
         <div className="crash-Display-left-crash-top2-cover">
-          <div className="crash-Display-left-crash-top2">
+          <div className='crash-Display-left-crash-top2'>
             <div className="crash-Display-left-crash-top2-circle"></div>
             <div className="crash-Display-left-crash-top2-list">
               <h3>46464646</h3>
@@ -107,7 +110,7 @@ export default function CrashPoint(crash) {
         </div>
 
           <div className="main-crash-count" onLoad={functionLoad}>
-           {!loading && crashGame ? crashGame   : <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div> }
+           {!loading && crashGame ? crashGame   : <div className="craash"> <h4>Reconnecting</h4> <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div> </div> }
             
          </div>
       </div>
