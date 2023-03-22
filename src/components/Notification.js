@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/chat.css";
+import "./styles/notification.css";
 import { useState } from "react";
 import FA from "../images/betarena 2fa.JPEG";
 import { NavLink } from "react-router-dom";

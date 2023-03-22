@@ -6,7 +6,9 @@ import { NavLink } from 'react-router-dom'
 
 const Options = () => {
   return (
-    <div className='options-main-container'>
+    <div className='main-option-background'>
+
+<div className='options-main-container'>
       <div className='options-main-con-inner'>
 
         <div className='options-head'>
@@ -103,6 +105,10 @@ const Options = () => {
 
       </div>
     </div>
+
+
+    </div>
+ 
   )
 }
 
