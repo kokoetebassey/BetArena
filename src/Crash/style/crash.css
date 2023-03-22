@@ -775,7 +775,7 @@
     width: 40px;
     height: 217 0px;
     background: #030307;
-    padding-top: 8.125rem;
+    padding-top: 5rem;
     z-index: 101;
   }
   .crash-side-inner {
@@ -1038,7 +1038,7 @@
     width: 3.5rem;
     height: 100%;
     background-color: rgb(45, 48, 53);
-    padding-top: 8.125rem;
+    padding-top: 5rem;
     z-index: 0;
   }
   .side-menu-cover::before {
@@ -1905,7 +1905,7 @@
     width: 40px;
     height: 217 0px;
     background: #030307;
-    padding-top: 8.125rem;
+    padding-top: 5rem;
     z-index: 101;
   }
   .crash-side-inner {
@@ -2175,7 +2175,7 @@
     width: 3.5rem;
     height: 100%;
     background-color: rgb(45, 48, 53);
-    padding-top: 8.125rem;
+    padding-top: 5rem;
     z-index: 0;
   }
   .side-menu-cover::before {
@@ -3038,7 +3038,7 @@
     width: 40px;
     height: 217 0px;
     background: #030307;
-    padding-top: 8.125rem;
+    padding-top: 5rem;
     z-index: 101;
   }
   .crash-side-inner {
@@ -3304,7 +3304,7 @@
     width: 3.5rem;
     height: 100%;
     background-color: rgb(45, 48, 53);
-    padding-top: 8.125rem;
+    padding-top: 5rem;
     z-index: 0;
   }
   .side-menu-cover::before {
@@ -4171,7 +4171,7 @@
     width: 40px;
     height: 217 0px;
     background: #030307;
-    padding-top: 8.125rem;
+    padding-top: 5rem;
     z-index: 101;
   }
   .crash-side-inner {
@@ -4437,8 +4437,8 @@
     top: 0px;
     width: 3.5rem;
     height: 100%;
-    background-color: rgb(45, 48, 53);
-    padding-top: 8.125rem;
+    background-color: rgba(45, 48, 53, 0.1);
+    padding-top: 5rem;
     z-index: 0;
   }
   .side-menu-cover::before {
@@ -5308,7 +5308,7 @@
     width: 40px;
     height: 217 0px;
     background: #030307;
-    padding-top: 8.125rem;
+    padding-top: 5rem;
     z-index: 101;
   }
   .crash-side-inner {
@@ -5573,8 +5573,8 @@
     top: 0px;
     width: 3.5rem;
     height: 100%;
-    background-color: rgb(45, 48, 53);
-    padding-top: 8.125rem;
+    background-color: rgba(45, 48, 53, 0.1);
+    padding-top: 5rem;
     z-index: 0;
   }
   .side-menu-cover::before {
@@ -6441,7 +6441,7 @@
     width: 40px;
     height: 217 0px;
     background: #030307;
-    padding-top: 8.125rem;
+    padding-top: 5rem;
     z-index: 101;
   }
   .crash-side-inner {
@@ -6715,7 +6715,7 @@
     position: relative;
     margin-right: auto;
     font-size: 12px;
-    background-color: rgba(49, 52, 60, 0.7);
+    background-color: rgba(45, 48, 53, 0.1);
     border-radius: 30px;
     width: fit-content;
   }
@@ -7529,7 +7529,7 @@
     width: 40px;
     height: 217 0px;
     background: #030307;
-    padding-top: 8.125rem;
+    padding-top: 5rem;
     z-index: 101;
   }
   .crash-side-inner {
@@ -8617,7 +8617,7 @@
     width: 40px;
     height: 217 0px;
     background: #030307;
-    padding-top: 8.125rem;
+    padding-top: 5rem;
     z-index: 101;
   }
   .crash-side-inner {

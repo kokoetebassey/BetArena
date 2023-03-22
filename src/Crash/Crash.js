@@ -28,6 +28,7 @@ import Recommend from "../pages/Recommend";
 import CrashPoint from "./CrashPoint";
 import BetHistory from "../pages/BetHistory";
 import { NavLink } from "react-router-dom";
+import Baoriginal from "./Ba_original";
 
 export default function Crash() {
   const [activeBet, setActiveBet] = useState(1);
@@ -77,93 +78,104 @@ export default function Crash() {
     setStakeValue2(stakeValue2 * 2);
   };
 
+  const [showBa, setShowBa] = useState(false);
+  const openBa = () => {
+    setShowBa(true);
+  };
+  const closeBa = () => {
+    setShowBa(false);
+  };
 
   return (
     <div className="crash-display-page-cover">
-      <div className="side-menu-cover">
-        <div className="side-menu-inner">
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={crash} alt="crash" width={"20px"} />
-            </div>
-          </NavLink>
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={dicer} alt="Dicer" width={"20px"} />
-            </div>
-          </NavLink>
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={dice} alt="Dice2" width={"20px"} />
-            </div>
-          </NavLink>
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={Jackpot} alt="Jackpot" width={"20px"} />
-            </div>
-          </NavLink>
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={Fragmentation} alt="Fragmentation" width={"30px"} />
-            </div>
-          </NavLink>
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={Wheel} alt="Wheel" width={"20px"} />
-            </div>
-          </NavLink>
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={machine} alt="machine" width={"20px"} />
-            </div>
-          </NavLink>
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={Coin} alt="Coin" width={"30px"} />
-            </div>
-          </NavLink>
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={Dices} alt="Dices" width={"20px"} />
-            </div>
-          </NavLink>
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={Rectangle} alt="Rectangle" width={"20px"} />
-            </div>
-          </NavLink>
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={Group} alt="Group" width={"20px"} />
-            </div>
-          </NavLink>
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={Rectangle1} alt="Rectangle1" width={"20px"} />
-            </div>
-          </NavLink>
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={Spade} alt="Spade" width={"20px"} />
-            </div>
-          </NavLink>
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={Sword} alt="Sword" width={"20px"} />
-            </div>
-          </NavLink>
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={Crown} alt="Crown" width={"20px"} />
-            </div>
-          </NavLink>
-          <NavLink to="">
-            <div className="side-menu-inner-icon">
-              <img src={Rectangle2} alt="Rectangle2" width={"30px"} />
-            </div>
-          </NavLink>
+      <div onMouseEnter={openBa} className="side-menu-cover">
+        <div className="side-menu-cover">
+          <div className="side-menu-inner">
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={crash} alt="crash" width={"15px"} />
+              </div>
+            </NavLink>
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={dicer} alt="Dicer" width={"15px"} />
+              </div>
+            </NavLink>
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={dice} alt="Dice2" width={"15px"} />
+              </div>
+            </NavLink>
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={Jackpot} alt="Jackpot" width={"15px"} />
+              </div>
+            </NavLink>
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={Fragmentation} alt="Fragmentation" width={"30px"} />
+              </div>
+            </NavLink>
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={Wheel} alt="Wheel" width={"15px"} />
+              </div>
+            </NavLink>
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={machine} alt="machine" width={"15px"} />
+              </div>
+            </NavLink>
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={Coin} alt="Coin" width={"20px"} />
+              </div>
+            </NavLink>
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={Dices} alt="Dices" width={"15px"} />
+              </div>
+            </NavLink>
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={Rectangle} alt="Rectangle" width={"15px"} />
+              </div>
+            </NavLink>
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={Group} alt="Group" width={"15px"} />
+              </div>
+            </NavLink>
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={Rectangle1} alt="Rectangle1" width={"15px"} />
+              </div>
+            </NavLink>
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={Spade} alt="Spade" width={"15px"} />
+              </div>
+            </NavLink>
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={Sword} alt="Sword" width={"15px"} />
+              </div>
+            </NavLink>
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={Crown} alt="Crown" width={"15px"} />
+              </div>
+            </NavLink>
+            <NavLink to="">
+              <div className="side-menu-inner-icon">
+                <img src={Rectangle2} alt="Rectangle2" width={"20px"} />
+              </div>
+            </NavLink>
+          </div>
         </div>
       </div>
+
+      {/* {showBa && <Baoriginal />} */}
       <div className="crash-Display-cover">
         <div className="crash-Display-cover-inner">
           <div className="crash-Display">
@@ -186,6 +198,12 @@ export default function Crash() {
                   Trenball
                 </button>
               </div>
+
+              {showBa && (
+                <div onMouseLeave={closeBa} className="original">
+                  <Baoriginal />
+                </div>
+              )}
 
               <div className="crash-Display-left-crash">
                 <CrashPoint />
