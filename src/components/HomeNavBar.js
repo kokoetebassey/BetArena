@@ -19,6 +19,7 @@ import logo from "../images/betarena.png";
 import search from "../images/search.svg";
 // import MobileMenubar from "./Mobile-Menubar";
 import Chat from "./Chat";
+import Notification from "./Notification";
 import WalletCoins from "../Navbar/WalletCoins";
 import NavProfile from "../Navbar/NavProfile.js";
 // import UserInfo from "../Navbar/UserInfo";
@@ -35,6 +36,7 @@ export default function HomeNavBar({ setScreen, setView }) {
   const [count, setCount] = useState(true);
   const [menucount, setMenuCount] = useState(true);
   const [PublicMsg, setPublicMsg] = useState(false);
+  const [PublicNot, setPublicNot] = useState(false);
   const [profile, setProfile] = useState("");
   const [DBwallet, setDBwallet] = useState("");
   const { user } = useAuthContext();
@@ -97,10 +99,13 @@ export default function HomeNavBar({ setScreen, setView }) {
     if (window.innerWidth < 650) {
       console.log("mobile");
       setPublicMsg(false);
+      // setPublicNot(false);
     } else if (window.innerWidth < 900) {
       setPublicMsg(false);
+      // setPublicNot(false);
     } else {
       setPublicMsg(true);
+      // setPublicNot(true);
       setMenuCount("Navbar-container");
       setNavBarPage("Navbar-container");
     }
@@ -119,6 +124,7 @@ export default function HomeNavBar({ setScreen, setView }) {
 
   const Cancel = (e) => {
     setPublicMsg(false);
+    setPublicNot(false);
     if (menucount) {
       setView("default");
       setNavBarPage("Navbar-container");
@@ -134,6 +140,17 @@ export default function HomeNavBar({ setScreen, setView }) {
 
   const Message = () => {
     setPublicMsg(true);
+    // setPublicNot(true);
+    if (menucount) {
+      setView("middle_view");
+      setNavBarPage("Navbar-containerEL");
+    } else {
+      setView("left_view");
+      setNavBarPage("Navbar-container3");
+    }
+  };
+  const Notify = () => {
+    setPublicNot(true);
     if (menucount) {
       setView("middle_view");
       setNavBarPage("Navbar-containerEL");
@@ -294,8 +311,8 @@ export default function HomeNavBar({ setScreen, setView }) {
 
               <div className="Home-Items2">
                 <div className="Home-Items2-1">
-                  <NavLink to='/user/information'>
-                  <img src={profile.img} alt="userImage" width={"25px"} />
+                  <NavLink to="/user/information">
+                    <img src={profile.img} alt="userImage" width={"25px"} />
                   </NavLink>
                   {/* <div onClick={functionUserInfo}>
                   <img src={profile.img} alt="userImage" width={"25px"} />
@@ -317,18 +334,17 @@ export default function HomeNavBar({ setScreen, setView }) {
               </div>
 
               <div className="Home-Items3">
-                
-              <NavLink to='/chat'  className="Home-Items3">
-              <img src={message} alt="message" width={"20px"} />
-              </NavLink>
-          
+                <NavLink to="/chat" className="Home-Items3">
+                  <img src={message} alt="message" width={"20px"} />
+                </NavLink>
+
                 {/* <div onClick={functionChatRoom} className="Home-Items3">
                 <img src={message} alt="message" width={"20px"} />
                 {chatRoom && (
                   <ChatRoom />
                 )}
                 </div> */}
-                <img src={not} alt="not" width={"20px"} />
+                <img onClick={Notify} src={not} alt="not" width={"20px"} />
               </div>
 
               <div className="play" onClick={Message}>
@@ -337,6 +353,7 @@ export default function HomeNavBar({ setScreen, setView }) {
               </div>
             </div>
             {PublicMsg && <Chat cancel={Cancel} />}
+            {PublicNot && <Notification cancel={Cancel} />}
           </div>
         </div>
       </div>

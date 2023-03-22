@@ -27,6 +27,11 @@
     color: #878787;
     font-weight: 100;
   }
+  .main-crash-graph h3,
+  .main-crash-graph-side h3 {
+    color: #34334b63;
+  }
+
   .main-crash-graph-side {
     position: absolute;
     display: flex;
@@ -120,7 +125,7 @@
     color: #878787;
     font-size: 11px;
   }
-  .crash-Display-left-crash-top2-list h4 {
+  .crash-Display-left-crash-top2-list h3 {
     color: #ffd805;
     line-height: 10px;
     font-size: 11px;
@@ -262,6 +267,7 @@
     border-radius: 20px;
     padding: 8px;
     font-size: 11px;
+    color: #878787;
   }
   .crash-light {
     background: linear-gradient(
@@ -298,6 +304,17 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 30px;
+  }
+  .button-cover-bet {
+    color: rgb(245, 246, 247);
+    box-shadow: rgb(29 34 37 / 10%) 0px 4px 8px 0px;
+    background: #664500;
+    background-image: conic-gradient(from 1turn, #664500);
+    padding: 10px 100px;
     border: none;
     cursor: pointer;
     outline: none;
@@ -997,11 +1014,16 @@
     width: 25px;
     cursor: pointer;
   }
+
   .crash-Display-cover {
-    margin-top: 90px;
+    margin: 90px 10px 10px 3.5rem;
   }
   .crash-Display-left {
     width: 60%;
+  }
+  .main-crash-graph h3,
+  .main-crash-graph-side h3 {
+    color: #34334b63;
   }
   .main-crash-graph {
     position: absolute;
@@ -1028,16 +1050,12 @@
     left: -12px;
   }
 
-  .crash-Display-cover {
-    margin-left: 3.8rem;
-  }
-
   .side-menu-cover {
-    position: absolute;
+    position: fixed;
     top: 0px;
-    width: 3.5rem;
+    width: 3rem;
     height: 100%;
-    background-color: rgb(45, 48, 53);
+    background-color: rgba(45, 48, 53, 0.1);
     padding-top: 5rem;
     z-index: 0;
   }
@@ -1142,15 +1160,15 @@
     gap: 5px;
   }
   .crash-Display-left-crash-top2-cover {
-    overflow-x: scroll;
     display: flex;
     align-items: center;
     background: #222328;
     width: 80%;
     border-radius: 30px;
-    padding: 5px 15px;
+    padding: 8px 15px;
     margin-right: 30px;
     gap: 10px;
+    justify-content: space-between;
   }
   .crash-Display-left-crash-top2-cover::-webkit-scrollbar {
     display: none;
@@ -1162,7 +1180,7 @@
   .crash-Display-left-crash-top2-list a h3 {
     color: #878787;
   }
-  .crash-Display-left-crash-top2-list h4 {
+  .crash-Display-left-crash-top2-list h3 {
     color: #ffd805;
     line-height: 10px;
   }
@@ -1307,18 +1325,18 @@
   }
   .main-crash::before {
     content: "";
-    width: 2px;
-    background-color: #787792;
+    width: 1px;
+    background-color: #34334b63;
     height: 270px;
     position: absolute;
   }
   .main-crash::after {
+    bottom: 0;
     content: "";
     width: 100%;
-    background-color: #787792;
-    height: 2px;
+    background-color: #34334b63;
+    height: 1px;
     position: absolute;
-    bottom: 0;
   }
   .crash-text {
     display: flex;
@@ -1330,6 +1348,7 @@
     border-radius: 20px;
     padding: 8px;
     font-size: 12px;
+    color: #878787;
   }
   .crash-light {
     background: linear-gradient(
@@ -1366,6 +1385,17 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 30px;
+  }
+  .button-cover-bet {
+    color: rgb(245, 246, 247);
+    box-shadow: rgb(29 34 37 / 10%) 0px 4px 8px 0px;
+    background: #664500;
+    background-image: conic-gradient(from 1turn, #664500);
+    padding: 15px 100px;
     border: none;
     cursor: pointer;
     outline: none;
@@ -2131,7 +2161,7 @@
     cursor: pointer;
   }
   .crash-Display-cover {
-    margin: 10px 10px 10px 40px;
+    margin: 10px 10px 10px 3.5rem;
   }
   .crash-Display-left {
     width: 60%;
@@ -2139,6 +2169,10 @@
 
   .lineCrash-mobile {
     display: none;
+  }
+  .main-crash-graph h3,
+  .main-crash-graph-side h3 {
+    color: #34334b63;
   }
   .main-crash-graph {
     position: absolute;
@@ -2165,16 +2199,12 @@
     left: -12px;
   }
 
-  .crash-Display-cover {
-    margin-left: 3.8rem;
-  }
-
   .side-menu-cover {
-    position: absolute;
+    position: fixed;
     top: 0px;
-    width: 3.5rem;
+    width: 3rem;
     height: 100%;
-    background-color: rgb(45, 48, 53);
+    background-color: rgba(45, 48, 53, 0.1);
     padding-top: 5rem;
     z-index: 0;
   }
@@ -2275,15 +2305,15 @@
     gap: 5px;
   }
   .crash-Display-left-crash-top2-cover {
-    overflow-x: scroll;
     display: flex;
     align-items: center;
     background: #222328;
     width: 80%;
     border-radius: 30px;
-    padding: 5px 15px;
+    padding: 8px 15px;
     margin-right: 30px;
     gap: 10px;
+    justify-content: space-between;
   }
   .crash-Display-left-crash-top2-cover::-webkit-scrollbar {
     display: none;
@@ -2295,7 +2325,7 @@
   .crash-Display-left-crash-top2-list a h3 {
     color: #878787;
   }
-  .crash-Display-left-crash-top2-list h4 {
+  .crash-Display-left-crash-top2-list h3 {
     color: #ffd805;
     line-height: 10px;
   }
@@ -2440,18 +2470,18 @@
   }
   .main-crash::before {
     content: "";
-    width: 2px;
-    background-color: #787792;
+    width: 1px;
+    background-color: #34334b63;
     height: 270px;
     position: absolute;
   }
   .main-crash::after {
+    bottom: 0;
     content: "";
     width: 100%;
-    background-color: #787792;
-    height: 2px;
+    background-color: #34334b63;
+    height: 1px;
     position: absolute;
-    bottom: 0;
   }
   .crash-text {
     display: flex;
@@ -2463,6 +2493,7 @@
     border-radius: 20px;
     padding: 8px;
     font-size: 12px;
+    color: #878787;
   }
   .crash-light {
     background: linear-gradient(
@@ -2499,6 +2530,17 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 30px;
+  }
+  .button-cover-bet {
+    color: rgb(245, 246, 247);
+    box-shadow: rgb(29 34 37 / 10%) 0px 4px 8px 0px;
+    background: #664500;
+    background-image: conic-gradient(from 1turn, #664500);
+    padding: 15px 100px;
     border: none;
     cursor: pointer;
     outline: none;
@@ -3263,6 +3305,10 @@
     width: 25px;
     cursor: pointer;
   }
+  .main-crash-graph h3,
+  .main-crash-graph-side h3 {
+    color: #34334b63;
+  }
   .main-crash-graph {
     position: absolute;
     display: flex;
@@ -3288,22 +3334,18 @@
     left: -12px;
   }
   .crash-Display-cover {
-    margin: 10px 10px 10px 40px;
+    margin: 10px 10px 10px 3.5rem;
   }
   .crash-Display-left {
     width: 60%;
   }
 
-  .crash-Display-cover {
-    margin-left: 3.8rem;
-  }
-
   .side-menu-cover {
-    position: absolute;
+    position: fixed;
     top: 0px;
-    width: 3.5rem;
+    width: 3rem;
     height: 100%;
-    background-color: rgb(45, 48, 53);
+    background-color: rgba(45, 48, 53, 0.1);
     padding-top: 5rem;
     z-index: 0;
   }
@@ -3408,15 +3450,15 @@
     gap: 5px;
   }
   .crash-Display-left-crash-top2-cover {
-    overflow-x: scroll;
     display: flex;
     align-items: center;
     background: #222328;
     width: 80%;
     border-radius: 30px;
-    padding: 5px 15px;
+    padding: 8px 15px;
     margin-right: 30px;
     gap: 10px;
+    justify-content: space-between;
   }
   .crash-Display-left-crash-top2-cover::-webkit-scrollbar {
     display: none;
@@ -3428,7 +3470,7 @@
   .crash-Display-left-crash-top2-list a h3 {
     color: #878787;
   }
-  .crash-Display-left-crash-top2-list h4 {
+  .crash-Display-left-crash-top2-list h3 {
     color: #ffd805;
     line-height: 10px;
   }
@@ -3573,18 +3615,18 @@
   }
   .main-crash::before {
     content: "";
-    width: 2px;
-    background-color: #787792;
+    width: 1px;
+    background-color: #34334b63;
     height: 270px;
     position: absolute;
   }
   .main-crash::after {
+    bottom: 0;
     content: "";
     width: 100%;
-    background-color: #787792;
-    height: 2px;
+    background-color: #34334b63;
+    height: 1px;
     position: absolute;
-    bottom: 0;
   }
   .crash-text {
     display: flex;
@@ -3596,6 +3638,7 @@
     border-radius: 20px;
     padding: 8px;
     font-size: 12px;
+    color: #878787;
   }
   .crash-light {
     background: linear-gradient(
@@ -3632,6 +3675,17 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 30px;
+  }
+  .button-cover-bet {
+    color: rgb(245, 246, 247);
+    box-shadow: rgb(29 34 37 / 10%) 0px 4px 8px 0px;
+    background: #664500;
+    background-image: conic-gradient(from 1turn, #664500);
+    padding: 15px 100px;
     border: none;
     cursor: pointer;
     outline: none;
@@ -4395,6 +4449,10 @@
     width: 25px;
     cursor: pointer;
   }
+  .main-crash-graph h3,
+  .main-crash-graph-side h3 {
+    color: #34334b63;
+  }
   .main-crash-graph {
     position: absolute;
     display: flex;
@@ -4429,13 +4487,13 @@
   }
 
   .crash-Display-cover {
-    margin-left: 3.8rem;
+    margin: 10px 10px 10px 3.5rem;
   }
 
   .side-menu-cover {
-    position: absolute;
+    position: fixed;
     top: 0px;
-    width: 3.5rem;
+    width: 3rem;
     height: 100%;
     background-color: rgba(45, 48, 53, 0.1);
     padding-top: 5rem;
@@ -4545,15 +4603,15 @@
     gap: 5px;
   }
   .crash-Display-left-crash-top2-cover {
-    overflow-x: scroll;
     display: flex;
     align-items: center;
     background: #222328;
     width: 80%;
     border-radius: 30px;
-    padding: 5px 15px;
+    padding: 8px 15px;
     margin-right: 30px;
     gap: 10px;
+    justify-content: space-between;
   }
   .crash-Display-left-crash-top2-cover::-webkit-scrollbar {
     display: none;
@@ -4565,7 +4623,7 @@
   .crash-Display-left-crash-top2-list a h3 {
     color: #878787;
   }
-  .crash-Display-left-crash-top2-list h4 {
+  .crash-Display-left-crash-top2-list h3 {
     color: #ffd805;
     line-height: 10px;
   }
@@ -4710,18 +4768,18 @@
   }
   .main-crash::before {
     content: "";
-    width: 2px;
-    background-color: #787792;
+    width: 1px;
+    background-color: #34334b63;
     height: 270px;
     position: absolute;
   }
   .main-crash::after {
+    bottom: 0;
     content: "";
     width: 100%;
-    background-color: #787792;
-    height: 2px;
+    background-color: #34334b63;
+    height: 1px;
     position: absolute;
-    bottom: 0;
   }
   .crash-text {
     display: flex;
@@ -4733,6 +4791,7 @@
     border-radius: 20px;
     padding: 8px;
     font-size: 12px;
+    color: #878787;
   }
   .crash-light {
     background: linear-gradient(
@@ -4769,6 +4828,17 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 30px;
+  }
+  .button-cover-bet {
+    color: rgb(245, 246, 247);
+    box-shadow: rgb(29 34 37 / 10%) 0px 4px 8px 0px;
+    background: #664500;
+    background-image: conic-gradient(from 1turn, #664500);
+    padding: 15px 100px;
     border: none;
     cursor: pointer;
     outline: none;
@@ -5533,6 +5603,10 @@
     width: 25px;
     cursor: pointer;
   }
+  .main-crash-graph h3,
+  .main-crash-graph-side h3 {
+    color: #34334b63;
+  }
   .main-crash-graph {
     position: absolute;
     display: flex;
@@ -5558,20 +5632,16 @@
     left: -12px;
   }
   .crash-Display-cover {
-    margin: 10px 10px 10px 40px;
+    margin: 10px 10px 10px 3.5rem;
   }
   .crash-Display-left {
     width: 60%;
   }
 
-  .crash-Display-cover {
-    margin-left: 3.8rem;
-  }
-
   .side-menu-cover {
-    position: absolute;
+    position: fixed;
     top: 0px;
-    width: 3.5rem;
+    width: 3rem;
     height: 100%;
     background-color: rgba(45, 48, 53, 0.1);
     padding-top: 5rem;
@@ -5678,16 +5748,17 @@
     gap: 5px;
   }
   .crash-Display-left-crash-top2-cover {
-    overflow-x: scroll;
     display: flex;
     align-items: center;
     background: #222328;
     width: 80%;
     border-radius: 30px;
-    padding: 5px 15px;
+    padding: 8px 15px;
     margin-right: 30px;
     gap: 10px;
+    justify-content: space-between;
   }
+
   .crash-Display-left-crash-top2-cover::-webkit-scrollbar {
     display: none;
   }
@@ -5698,7 +5769,7 @@
   .crash-Display-left-crash-top2-list a h3 {
     color: #878787;
   }
-  .crash-Display-left-crash-top2-list h4 {
+  .crash-Display-left-crash-top2-list h3 {
     color: #ffd805;
     line-height: 10px;
   }
@@ -5843,18 +5914,18 @@
   }
   .main-crash::before {
     content: "";
-    width: 2px;
-    background-color: #787792;
+    width: 1px;
+    background-color: #34334b63;
     height: 270px;
     position: absolute;
   }
   .main-crash::after {
+    bottom: 0;
     content: "";
     width: 100%;
-    background-color: #787792;
-    height: 2px;
+    background-color: #34334b63;
+    height: 1px;
     position: absolute;
-    bottom: 0;
   }
   .crash-text {
     display: flex;
@@ -5866,6 +5937,7 @@
     border-radius: 20px;
     padding: 8px;
     font-size: 12px;
+    color: #878787;
   }
   .crash-light {
     background: linear-gradient(
@@ -5902,6 +5974,17 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 30px;
+  }
+  .button-cover-bet {
+    color: rgb(245, 246, 247);
+    box-shadow: rgb(29 34 37 / 10%) 0px 4px 8px 0px;
+    background: #664500;
+    background-image: conic-gradient(from 1turn, #664500);
+    padding: 15px 100px;
     border: none;
     cursor: pointer;
     outline: none;
@@ -6671,6 +6754,10 @@
     width: 25px;
     cursor: pointer;
   }
+  .main-crash-graph h3,
+  .main-crash-graph-side h3 {
+    color: #34334b63;
+  }
   .main-crash-graph {
     position: absolute;
     display: flex;
@@ -6696,7 +6783,7 @@
     left: -12px;
   }
   .crash-Display-cover {
-    margin: 10px 10px 10px 40px;
+    margin: 10px 10px 10px 3.5rem;
   }
   .crash-Display-left {
     width: 60%;
@@ -6766,15 +6853,15 @@
     gap: 5px;
   }
   .crash-Display-left-crash-top2-cover {
-    overflow-x: scroll;
     display: flex;
     align-items: center;
     background: #222328;
     width: 80%;
     border-radius: 30px;
-    padding: 5px 15px;
+    padding: 8px 15px;
     margin-right: 30px;
     gap: 10px;
+    justify-content: space-between;
   }
   .crash-Display-left-crash-top2-cover::-webkit-scrollbar {
     display: none;
@@ -6786,7 +6873,7 @@
   .crash-Display-left-crash-top2-list a h3 {
     color: #878787;
   }
-  .crash-Display-left-crash-top2-list h4 {
+  .crash-Display-left-crash-top2-list h3 {
     color: #ffd805;
     line-height: 10px;
   }
@@ -6931,18 +7018,18 @@
   }
   .main-crash::before {
     content: "";
-    width: 2px;
-    background-color: #787792;
+    width: 1px;
+    background-color: #34334b63;
     height: 270px;
     position: absolute;
   }
   .main-crash::after {
+    bottom: 0;
     content: "";
     width: 100%;
-    background-color: #787792;
-    height: 2px;
+    background-color: #34334b63;
+    height: 1px;
     position: absolute;
-    bottom: 0;
   }
   .crash-text {
     display: flex;
@@ -6954,6 +7041,7 @@
     border-radius: 20px;
     padding: 8px;
     font-size: 12px;
+    color: #878787;
   }
   .crash-light {
     background: linear-gradient(
@@ -6990,6 +7078,17 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 30px;
+  }
+  .button-cover-bet {
+    color: rgb(245, 246, 247);
+    box-shadow: rgb(29 34 37 / 10%) 0px 4px 8px 0px;
+    background: #664500;
+    background-image: conic-gradient(from 1turn, #664500);
+    padding: 15px 100px;
     border: none;
     cursor: pointer;
     outline: none;
@@ -7755,6 +7854,10 @@
     display: flex;
     gap: 10px;
   }
+  .main-crash-graph h3,
+  .main-crash-graph-side h3 {
+    color: #34334b63;
+  }
   .main-crash-graph {
     position: absolute;
     display: flex;
@@ -7784,7 +7887,7 @@
     cursor: pointer;
   }
   .crash-Display-cover {
-    margin: 10px 10px 10px 40px;
+    margin: 10px 10px 10px 3.5rem;
   }
   .crash-Display-left {
     width: 60%;
@@ -7854,15 +7957,15 @@
     gap: 5px;
   }
   .crash-Display-left-crash-top2-cover {
-    overflow-x: scroll;
     display: flex;
     align-items: center;
     background: #222328;
     width: 80%;
     border-radius: 30px;
-    padding: 5px 15px;
+    padding: 8px 15px;
     margin-right: 30px;
     gap: 10px;
+    justify-content: space-between;
   }
   .crash-Display-left-crash-top2-cover::-webkit-scrollbar {
     display: none;
@@ -7874,7 +7977,7 @@
   .crash-Display-left-crash-top2-list a h3 {
     color: #878787;
   }
-  .crash-Display-left-crash-top2-list h4 {
+  .crash-Display-left-crash-top2-list h3 {
     color: #ffd805;
     line-height: 10px;
   }
@@ -8019,18 +8122,18 @@
   }
   .main-crash::before {
     content: "";
-    width: 2px;
-    background-color: #787792;
+    width: 1px;
+    background-color: #34334b63;
     height: 270px;
     position: absolute;
   }
   .main-crash::after {
+    bottom: 0;
     content: "";
     width: 100%;
-    background-color: #787792;
-    height: 2px;
+    background-color: #34334b63;
+    height: 1px;
     position: absolute;
-    bottom: 0;
   }
   .crash-text {
     display: flex;
@@ -8041,6 +8144,7 @@
     background: #201f37;
     border-radius: 20px;
     padding: 8px;
+    color: #878787;
     font-size: 12px;
   }
   .crash-light {
@@ -8078,6 +8182,17 @@
     background: #664500;
     background-image: conic-gradient(from 1turn, #664500);
     padding: 5px 100px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 30px;
+  }
+  .button-cover-bet {
+    color: rgb(245, 246, 247);
+    box-shadow: rgb(29 34 37 / 10%) 0px 4px 8px 0px;
+    background: #664500;
+    background-image: conic-gradient(from 1turn, #664500);
+    padding: 15px 100px;
     border: none;
     cursor: pointer;
     outline: none;

@@ -1,5 +1,5 @@
 .Ba-original {
-  background: #0f0f22;
+  background: rgb(8, 8, 26);
   position: fixed;
   width: 222px;
   height: 100%;
@@ -19,8 +19,10 @@
 .Ba-original-conatiner a {
   display: flex;
   align-items: center;
-  color: #ffff;
+  color: #878787;
   font-size: 12px;
+  margin-bottom: 0px;
+  padding: 0px;
 }
 .Ba-original-conatiner .image img {
   width: 20px;

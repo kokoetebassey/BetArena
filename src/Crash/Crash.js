@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style/crash.css";
 import graph from "../images/images/graph.svg";
 import Keyboard from "../images/images/Keyboard.svg";
@@ -25,10 +25,16 @@ import Group from "../images/Group 621.svg";
 import empty from "../images/images/empty.svg";
 import Footer from "../pages/FooterPage";
 import Recommend from "../pages/Recommend";
-import CrashPoint from "./CrashPoint";
+// import CrashPoint from "./CrashPoint";
 import BetHistory from "../pages/BetHistory";
 import { NavLink } from "react-router-dom";
 import Baoriginal from "./Ba_original";
+
+import axios from "axios";
+
+import CrashTime from "./CrashTime";
+import CrashMessage from "./CrashMessage";
+import Crashcount from "./Crashcount";
 
 export default function Crash() {
   const [activeBet, setActiveBet] = useState(1);
@@ -86,6 +92,41 @@ export default function Crash() {
     setShowBa(false);
   };
 
+  const [crashGame, setcrashGame] = useState("");
+  const [ResponseMsg, setResponseMsg] = useState("");
+  const [Bet, setBet] = useState(true);
+  const [Next, setNext] = useState("");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      axios
+        .get("https://crashgame.herokuapp.com/api/crashgame")
+        .then((Response) => {
+          setResponseMsg(Response.data[0].message);
+          if (ResponseMsg === "crash") {
+            setcrashGame(<CrashMessage crash={Response.data[0].crashPoint} />);
+            setNext(true);
+            setBet(false);
+          } else if (ResponseMsg === "running") {
+            setcrashGame(<Crashcount crash={Response.data[0].crashcount} />);
+            setNext(true);
+            setBet(false);
+          } else if (ResponseMsg === "start") {
+            if (Response.data[0].startTime === -0.01) {
+            } else {
+              setcrashGame(<CrashTime crash={Response.data[0].startTime} />);
+              setBet(true);
+              setNext(false);
+            }
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }, 200);
+    return () => clearInterval(interval);
+  }, [ResponseMsg]);
+
   return (
     <div className="crash-display-page-cover">
       <div onMouseEnter={openBa} className="side-menu-cover">
@@ -93,22 +134,22 @@ export default function Crash() {
           <div className="side-menu-inner">
             <NavLink to="">
               <div className="side-menu-inner-icon">
-                <img src={crash} alt="crash" width={"15px"} />
+                <img src={crash} alt="crash" width={"12px"} />
               </div>
             </NavLink>
             <NavLink to="">
               <div className="side-menu-inner-icon">
-                <img src={dicer} alt="Dicer" width={"15px"} />
+                <img src={dicer} alt="Dicer" width={"12px"} />
               </div>
             </NavLink>
             <NavLink to="">
               <div className="side-menu-inner-icon">
-                <img src={dice} alt="Dice2" width={"15px"} />
+                <img src={dice} alt="Dice2" width={"12px"} />
               </div>
             </NavLink>
             <NavLink to="">
               <div className="side-menu-inner-icon">
-                <img src={Jackpot} alt="Jackpot" width={"15px"} />
+                <img src={Jackpot} alt="Jackpot" width={"12px"} />
               </div>
             </NavLink>
             <NavLink to="">
@@ -118,57 +159,57 @@ export default function Crash() {
             </NavLink>
             <NavLink to="">
               <div className="side-menu-inner-icon">
-                <img src={Wheel} alt="Wheel" width={"15px"} />
+                <img src={Wheel} alt="Wheel" width={"12px"} />
               </div>
             </NavLink>
             <NavLink to="">
               <div className="side-menu-inner-icon">
-                <img src={machine} alt="machine" width={"15px"} />
+                <img src={machine} alt="machine" width={"12px"} />
               </div>
             </NavLink>
             <NavLink to="">
               <div className="side-menu-inner-icon">
-                <img src={Coin} alt="Coin" width={"20px"} />
+                <img src={Coin} alt="Coin" width={"15px"} />
               </div>
             </NavLink>
             <NavLink to="">
               <div className="side-menu-inner-icon">
-                <img src={Dices} alt="Dices" width={"15px"} />
+                <img src={Dices} alt="Dices" width={"12px"} />
               </div>
             </NavLink>
             <NavLink to="">
               <div className="side-menu-inner-icon">
-                <img src={Rectangle} alt="Rectangle" width={"15px"} />
+                <img src={Rectangle} alt="Rectangle" width={"12px"} />
               </div>
             </NavLink>
             <NavLink to="">
               <div className="side-menu-inner-icon">
-                <img src={Group} alt="Group" width={"15px"} />
+                <img src={Group} alt="Group" width={"12px"} />
               </div>
             </NavLink>
             <NavLink to="">
               <div className="side-menu-inner-icon">
-                <img src={Rectangle1} alt="Rectangle1" width={"15px"} />
+                <img src={Rectangle1} alt="Rectangle1" width={"12px"} />
               </div>
             </NavLink>
             <NavLink to="">
               <div className="side-menu-inner-icon">
-                <img src={Spade} alt="Spade" width={"15px"} />
+                <img src={Spade} alt="Spade" width={"12px"} />
               </div>
             </NavLink>
             <NavLink to="">
               <div className="side-menu-inner-icon">
-                <img src={Sword} alt="Sword" width={"15px"} />
+                <img src={Sword} alt="Sword" width={"12px"} />
               </div>
             </NavLink>
             <NavLink to="">
               <div className="side-menu-inner-icon">
-                <img src={Crown} alt="Crown" width={"15px"} />
+                <img src={Crown} alt="Crown" width={"12px"} />
               </div>
             </NavLink>
             <NavLink to="">
               <div className="side-menu-inner-icon">
-                <img src={Rectangle2} alt="Rectangle2" width={"20px"} />
+                <img src={Rectangle2} alt="Rectangle2" width={"15px"} />
               </div>
             </NavLink>
           </div>
@@ -206,7 +247,64 @@ export default function Crash() {
               )}
 
               <div className="crash-Display-left-crash">
-                <CrashPoint />
+                <div className="display-crash-xzy">
+                  <div className="crash-Display-left-crash-top">
+                    <div className="crash-Display-left-crash-top1">
+                      <NavLink to="">
+                        <h3>
+                          BankRoll <span>CUB</span>
+                        </h3>
+                        <h4>3742964</h4>
+                      </NavLink>
+                    </div>
+                    <div className="crash-Display-left-crash-top2-cover">
+                      <div className="crash-Display-left-crash-top2">
+                        <div className="crash-Display-left-crash-top2-circle"></div>
+                        <div className="crash-Display-left-crash-top2-list">
+                          <h3>0.33x</h3>
+                        </div>
+                      </div>
+                      <div className="crash-Display-left-crash-top2">
+                        <div className="crash-Display-left-crash-top2-circle"></div>
+                        <div className="crash-Display-left-crash-top2-list">
+                          <h3>0.33x</h3>
+                        </div>
+                      </div>
+                      <div className="crash-Display-left-crash-top2">
+                        <div className="crash-Display-left-crash-top2-circle"></div>
+                        <div className="crash-Display-left-crash-top2-list">
+                          <h3>0.33x</h3>
+                        </div>
+                      </div>
+                      <div className="crash-Display-left-crash-top2">
+                        <div className="crash-Display-left-crash-top2-circle"></div>
+                        <div className="crash-Display-left-crash-top2-list">
+                          <h3>0.33x</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="main-crash">
+                    <div className="main-crash-graph">
+                      <h3>0</h3>
+                      <h3>2</h3>
+                      <h3>4</h3>
+                      <h3>6</h3>
+                      <h3>8</h3>
+                    </div>
+                    <div className="main-crash-graph-side">
+                      <h3>8</h3>
+                      <h3>6</h3>
+                      <h3>4</h3>
+                      <h3>2</h3>
+                    </div>
+
+                    <div className="main-crash-count">{crashGame}</div>
+                  </div>
+                  <div className="crash-text">
+                    <h3>House Edge 1%</h3>
+                  </div>
+                </div>
                 <div className="crash-light"></div>.
                 <div className="main-crash-details-cover">
                   {activeBet === 2 && (
@@ -284,14 +382,21 @@ export default function Crash() {
                   {activeBet === 1 && (
                     <>
                       <div className="main-crash-details">
-                        <NavLink to="">
-                          <button className="button-cover">
-                            <div className="button-inner">
+                        {Bet && (
+                          <>
+                            <button className="button-cover-bet">
+                              <div>Bet</div>
+                            </button>
+                          </>
+                        )}
+                        {Next && (
+                          <>
+                            <button className="button-cover">
                               <div>Bet</div>
                               <div className="sub-text">(Next round)</div>
-                            </div>
-                          </button>
-                        </NavLink>
+                            </button>
+                          </>
+                        )}
                       </div>
                       <div className="main-crash-inputs">
                         <div className="main-crash-inputs1">

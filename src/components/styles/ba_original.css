@@ -18,6 +18,8 @@
 .Ba-original-conatiner a {
   display: flex;
   align-items: center;
+  color: #ffff;
+  font-size: 12px;
 }
 .Ba-original-conatiner .image img {
   width: 20px;

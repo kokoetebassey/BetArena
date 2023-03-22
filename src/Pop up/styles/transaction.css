@@ -68,7 +68,7 @@
   padding: 0px 0.1875rem;
   scroll-snap-align: start;
 }
-.cancelWallet{
+.cancelWallet {
   position: absolute;
   top: 10px;
   right: 20px;
@@ -77,9 +77,8 @@
   color: rgb(148, 148, 148);
   cursor: pointer;
 }
-.cancelWallet:hover{
+.cancelWallet:hover {
   color: rgb(228, 227, 227);
-  
 }
 .network-selection1.active {
   color: #fff;
@@ -256,12 +255,11 @@
   gap: 60%;
 }
 
-
-.select-coin .wallet{
+.select-coin .wallet {
   display: flex;
   padding: 7px;
 }
-.wallet .wallet-address{
+.wallet .wallet-address {
   padding: 5px;
   width: 80%;
 }
@@ -319,6 +317,7 @@
   padding: 10px;
   margin: 20px 20px;
   border-radius: 12px;
+  overflow: hidden;
 }
 .deposit {
   font-size: 12px;
