@@ -226,9 +226,8 @@ const Cancel = (e) => {
 
             </Route>
 
-            {/* <Route path="/crash" element={<Crash />}></Route>
-            <Route path="CrashPoint" element={<CrashPoint />}></Route> 
-            <Route path="BetHistory" element={<BetHistory />}></Route>
+            <Route path="/crash" element={<Crash />}></Route>
+            {/* <Route path="BetHistory" element={<BetHistory />}></Route>
 
             <Route path="Recommend" element={<Recommend />}></Route>
 

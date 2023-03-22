@@ -13,7 +13,7 @@ export default function Crashcount(crash) {
           fill="none"
           width="580px"
           height="360px"
-          viewBox="35 80 800 550"
+          viewBox="50 70 800 560"
           opacity="1"
         >
           <path
@@ -22,7 +22,7 @@ export default function Crashcount(crash) {
             fill="none"
             stroke="#FFEB73"
             strokemiterlimitt="10"
-            d="M0 480 C 0 455 0.07681069704984 595   960.2374082 6.5406103"
+            d="M0 486 C 0 460 0.07681069704984 595   960.2374082 6.5406103"
           />
         </svg>
       </div>
