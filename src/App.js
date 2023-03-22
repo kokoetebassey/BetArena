@@ -91,7 +91,7 @@ function App() {
 
 
   const [displaySelectCoin, setDisplaySelectCoin] = useState(false);
-  const [PublicMsg, setPublicMsg] = useState(false);
+  const [PublicMsg] = useState(false);
 
   const SelectCoin = (e) => {
     if (displaySelectCoin) {

@@ -1,9 +1,9 @@
-.MainBar{
+.MainBar {
   padding: 0;
   margin: 0;
   display: block;
 }
-.MenuBar-container{
+.MenuBar-container {
   z-index: 20;
 }
 
@@ -18,7 +18,7 @@
   width: 65px;
   overflow-y: scroll;
 }
-.normal{
+.normal {
   position: relative;
   z-index: 10;
 }
@@ -34,7 +34,9 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.158);
 }
-
+.MenuBar-container {
+  z-index: 20;
+}
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .MenuBar::-webkit-scrollbar {
@@ -126,7 +128,7 @@
   width: 40.5px;
 }
 .MenuBar-contents a .game-text h3 {
-  font-size: 13.3px;
+  font-size: 12px;
   margin-left: 4px;
   margin-right: 20px;
   margin-top: 10px;
@@ -151,7 +153,6 @@
   display: flex;
   color: #878787;
   width: fit-content;
-  padding: 0px 10px;
   margin-bottom: -5px;
 }
 
@@ -173,11 +174,9 @@
 .MenuBar-contents .ba-original {
   display: flex;
   color: #fff;
-  padding: 0px 10px;
-  margin-bottom: 15px;
 }
 
-.MenuBar-contents .ba-original:hover .game-arrow img {
+/* .MenuBar-contents .ba-original:hover .game-arrow img {
   transform: rotate(90deg);
   animation: rotation 0.2s ease-in;
 }
@@ -189,7 +188,7 @@
   to {
     transform: rotate(90deg);
   }
-}
+} */
 
 .MenuBar-contents .ba-original h3 {
   font-size: 13.3px;
@@ -204,7 +203,7 @@
   margin-left: 3px;
 }
 
-.MenuBar-contents .ba-original .game-arrow img {
+.game-arrow img {
   width: 8.5px;
   margin-left: 3px;
   margin-top: 14.5px;
@@ -212,6 +211,11 @@
 }
 .middle-contents .middle {
   display: flex;
+}
+.nav-details-cover {
+  display: flex;
+  width: 100%;
+  gap: 35px;
 }
 
 .MenuBar-contents a .middle-belt img {
@@ -255,18 +259,18 @@
   border-radius: 50%;
 }
 
-.MenuBar-contents .middle-belt .rotate img {
+/* .MenuBar-contents .middle-belt .rotate img {
   animation: spin 2s infinite linear;
-}
+} */
 
-@keyframes spin {
+/* @keyframes spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 hr {
   border: 1px solid #b8b9c828;
 }
@@ -330,14 +334,14 @@ hr {
     rgba(173, 134, 5, 0.75) 100%
   );
 }
-.live_support_head .live_support_text{
-padding: 6px 7px;
+.live_support_head .live_support_text {
+  padding: 6px 7px;
 }
-.live_support_head .live_support_text h3{
+.live_support_head .live_support_text h3 {
   font-size: 12px;
-padding: 0px 17px;
-margin: 0px 7px;
-  }
+  padding: 0px 17px;
+  margin: 0px 7px;
+}
 
 .MenuBar-contents .switch-mode {
   display: flex;

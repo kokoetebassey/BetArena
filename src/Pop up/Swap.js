@@ -42,110 +42,83 @@ export default function Swap() {
           </div>
         </div>
 
-        {swapAltcoin === 0 && (
-          <>
-            <div className="yousenddiv">
-              <div className="yousend">
-                <h1>You Send</h1>
+        <div className="swap-scroll">
+          {swapAltcoin === 0 && (
+            <>
+              <div className="yousenddiv">
+                <div className="yousend">
+                  <h1>You Send</h1>
+                </div>
+                <div className="minBal">
+                  <h1>Min:0</h1>
+                  <h2>Balance:0</h2>
+                </div>
               </div>
-              <div className="minBal">
-                <h1>Min:0</h1>
-                <h2>Balance:0</h2>
-              </div>
-            </div>
 
-            {/* <div className="containerbottom">
-              <div className="cbottomleft">
-                <h1>0</h1>
-                <span>
-                  <h2>max</h2>
-                </span>
+              <div className="containerbottom">
+                <div className="cbottomleft">
+                  <input
+                    type="text"
+                    value={value}
+                    onChange={handleValue}
+                    placeholder="0"
+                  />
+                  <span>
+                    <h2>max</h2>
+                  </span>
+                </div>
+                <div className="cbottomright">
+                  <img src={bitcoin} alt="" width={"54px"} />
+                  <h1>BTC</h1>
+                  <img src={arrow} alt="" width={"7px"} className="arroww" />
+                </div>
               </div>
-              <div className="cbottomright">
-                <img src={bitcoin} alt="" width={"54px"} />
-                <h1>BTC</h1>
-                <img src={arrow} alt="" width={"7px"} className="arroww" />
-              </div>
-            </div> */}
-
-            <div className="containerbottom">
-              <div className="cbottomleft">
-                {/* <h1>0</h1> */}
-                <input
-                  type="text"
-                  value={value}
-                  onChange={handleValue}
-                  placeholder="0"
-                />
-                <span>
-                  <h2>max</h2>
-                </span>
-              </div>
-              <div className="cbottomright">
-                <img src={bitcoin} alt="" width={"54px"} />
-                <h1>BTC</h1>
-                <img src={arrow} alt="" width={"7px"} className="arroww" />
-              </div>
-            </div>
-            <div className="ccontbottom">
-              <h1>1BTC</h1>
-              <h4>=</h4>
-              <h2>0.000000</h2>
-              <h3>BTC</h3>
-            </div>
-
-            <div className="middlearrow"></div>
-
-            <div className="aproximdiv">
-              <h5>You get Approximately</h5>
-              <h4>Record</h4>
-            </div>
-
-            {/* <div className="containerbottom">
-              <div className="cbottomleft">
-                <h1>0</h1>
-                <span></span>
-              </div>
-              <div className="cbottomright">
-                <img src={bitcoin} alt="" width={"54px"} />
-                <h1>BTC</h1>
-                <img src={arrow} alt="" width={"7px"} className="arroww" />
-              </div>
-            </div> */}
-
-            <div className="containerbottom">
-              <div className="cbottomleft">
-                {/* <h1>0</h1> */}
-                <input
-                  type="text"
-                  value={value}
-                  onChange={handleValue}
-                  placeholder="0"
-                />
-                <span></span>
-              </div>
-              <div className="cbottomright">
-                <img src={bitcoin} alt="" width={"54px"} />
-                <h1>BTC</h1>
-                <img src={arrow} alt="" width={"7px"} className="arroww" />
-              </div>
-            </div>
-            <div className="darkdiv">
-              <div className="estimdiv">
-                <h3>Estimated Time*</h3>
-                <h4>Seconds</h4>
-              </div>
-              <div className="swapdiv">
-                <h1>Swap fee:</h1>
-                <h2>-</h2>
+              <div className="ccontbottom">
+                <h1>1BTC</h1>
+                <h4>=</h4>
+                <h2>0.000000</h2>
                 <h3>BTC</h3>
               </div>
-            </div>
 
-            <button className="divbutton">Swap Now</button>
-          </>
-        )}
+              <div className="middlearrow"></div>
 
+              <div className="aproximdiv">
+                <h5>You get Approximately</h5>
+                <h4>Record</h4>
+              </div>
+
+              <div className="containerbottom">
+                <div className="cbottomleft">
+                  <input
+                    type="text"
+                    value={value}
+                    onChange={handleValue}
+                    placeholder="0"
+                  />
+                  <span></span>
+                </div>
+                <div className="cbottomright">
+                  <img src={bitcoin} alt="" width={"54px"} />
+                  <h1>BTC</h1>
+                  <img src={arrow} alt="" width={"7px"} className="arroww" />
+                </div>
+              </div>
+              <div className="darkdiv">
+                <div className="estimdiv">
+                  <h3>Estimated Time*</h3>
+                  <h4>Seconds</h4>
+                </div>
+                <div className="swapdiv">
+                  <h1>Swap fee:</h1>
+                  <h2>-</h2>
+                  <h3>BTC</h3>
+                </div>
+              </div>
+
+              <button className="divbutton">Swap Now</button>
+            </>
+          )}
+        </div>
         {swapAltcoin === 1 && (
           <>
             <div className="fromaltcoin"></div>

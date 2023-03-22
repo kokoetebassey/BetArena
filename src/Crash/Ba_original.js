@@ -6,7 +6,6 @@ import dicer from "../images/Dicers.svg";
 import dice from "../images/Dice (1).svg";
 import Jackpot from "../images/Jackpot.svg";
 import Fragmentation from "../images/Fragmentation.svg";
-// import Wheel from "../images/Wheel of fortune.svg";
 import machine from "../images/Slot machine.svg";
 import Coin from "../images/Coin.svg";
 import Dices from "../images/Dices.svg";

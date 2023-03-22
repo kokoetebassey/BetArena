@@ -111,22 +111,28 @@ export default function MenuBar({ isTablet }) {
                 </div>
               </NavLink>
 
-              <div
-                className="ba-original"
-                onMouseLeave={closeBa}
-                onMouseEnter={openBa}
-              >
-                <div className="game-icon">
-                  <img src={dice} alt="casino" />
+              <NavLink onMouseLeave={closeBa} onMouseEnter={openBa} to="/crash">
+                <div
+                  // onMouseLeave={closeBa}
+                  // onMouseEnter={openBa}
+                  className="nav-details-cover"
+                >
+                  <div className="nav-details">
+                    <div className="ba-original">
+                      <div className="game-icon">
+                        <img src={dice} alt="casino" />
+                      </div>
+                      <div className="game-text">
+                        <h3>BA Original</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="game-arrow">
+                    <img src={arrow} alt="casino" />
+                  </div>
+                  {showBa && <Baoriginal />}
                 </div>
-                <div className="game-text">
-                  <h3>BA Original</h3>
-                </div>
-                <div className="game-arrow">
-                  <img src={arrow} alt="casino" />
-                </div>
-                {showBa && <Baoriginal />}
-              </div>
+              </NavLink>
 
               <NavLink to="/slots">
                 <div className="nav-details">

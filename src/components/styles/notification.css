@@ -6,6 +6,16 @@
   width: 350px;
   height: 100%;
   z-index: 103;
+  animation: menu 0.3s ease-out;
+}
+
+@keyframes menu {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 .notify-page {
   width: 100%;
@@ -127,6 +137,9 @@
   touch-action: pan-y;
   overscroll-behavior: contain;
   padding: 0.625rem;
+}
+.notify-body-main-inner::-webkit-scrollbar {
+  display: none;
 }
 .notify-body-system {
   width: 100%;
