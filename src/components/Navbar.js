@@ -7,16 +7,16 @@ import "./styles/navbar/openNavbar.css";
 import "./styles/navbar/navbarResponsive.css";
 import mobileIcon from "../images/mobile-icon.svg";
 import mobileMenu from "../images/mobile-menu.svg";
-// import icon1 from "../images/home icon 1.png";
-// import icon3 from "../images/home icon 3.png";
-// import icon4 from "../images/home icon 4.png";
+import icon1 from "../images/home icon 1.png";
+import icon3 from "../images/home icon 3.png";
+import icon4 from "../images/home icon 4.png";
 import play from "../images/play.png";
-// import spin1 from "../images/spin rotaete.png";
-// import spin2 from "../images/spin rotaete pointer.png";
-// import key from "../images/key svg.svg";
-// import bitcoinIcon from "../images/bitcoin icon svg.svg";
-// import bitcoinLogo from "../images/bitcoin logo cover.svg";
-// import shitcode from "../images/shitcode icon.svg";
+import spin1 from "../images/spin rotaete.png";
+import spin2 from "../images/spin rotaete pointer.png";
+import key from "../images/key svg.svg";
+import bitcoinIcon from "../images/bitcoin icon svg.svg";
+import bitcoinLogo from "../images/bitcoin logo cover.svg";
+import shitcode from "../images/shitcode icon.svg";
 
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -25,7 +25,6 @@ import menu from "../images/menu.svg";
 import logo from "../images/betarena.png";
 import search from "../images/search.svg";
 import MobileMenubar from "./Mobile-Menubar";
-import Chat from "./Chat";
 
 export default function Navbar({ setScreen, setView }) {
   const [searchEL, setSearch] = useState("search");
@@ -91,16 +90,6 @@ export default function Navbar({ setScreen, setView }) {
     setShowMobileMenu(true);
   };
 
-  const Cancel = (e) => {
-    setPublicMsg(false);
-    if (menucount) {
-      setView("default");
-      setNavBarPage("Navbar-container");
-    } else {
-      setView("full_view");
-      setNavBarPage("openNavbar-container");
-    }
-  };
 
   const close = (data) => {
     setShowMobileMenu(false);
@@ -146,7 +135,7 @@ export default function Navbar({ setScreen, setView }) {
           </div>
         </div>
 
-        {/* <div className="mobile-item-display">
+        <div className="mobile-item-display">
           <div className="mobile-item-display-flex">
             <div className="mobile-item-display-task">
               <img src={icon1} alt="icon1" />
@@ -207,7 +196,7 @@ export default function Navbar({ setScreen, setView }) {
               <p>204</p>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
 
       <div className="Navbar">
@@ -240,7 +229,6 @@ export default function Navbar({ setScreen, setView }) {
                 <img src={play} alt="" />
               </div>
             </div>
-            {PublicMsg && <Chat cancel={Cancel} />}
           </div>
         </div>
       </div>

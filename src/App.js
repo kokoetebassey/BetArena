@@ -1,10 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MenuBar from "./components/MenuBar";
 import Navbar from "./components/Navbar";
 import HomeNavBar from "./components/HomeNavBar";
 import Home from "./pages/Home";
 import { BrowserRouter } from "react-router-dom";
+import Chat from "./components/Chat";
 
 import Signup from "./Logins/Signup";
 import Login from "./Logins/Login";
@@ -35,6 +36,10 @@ import Options from "./Pop up/Options";
 // import axios from "axios";
 import UserInfo from "./Navbar/UserInfo";
 
+
+// =============== Import HTTPS request ==================
+import axios from "axios";
+
 function App() {
   const [isTablet, setIsTablet] = useState(false);
   const [viewPoint, setViewPoint] = useState("default-view");
@@ -61,7 +66,32 @@ function App() {
     }
   };
 
+  // =================Fetch default coins ==========================
+  useEffect(() => {
+    const fetchData = async () => {
+      await axios
+        .get("https://betarena.herokuapp.com/api/profile/default-coin", {
+          headers: {
+            Authorization: `Bearer ${user.Token}`,
+          },
+        })
+        .then((response) => {
+          setCryptoCoin(response.data[0]);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    if(user){
+      fetchData();
+    }
+  }, [user]);
+
+  // console.log(cryptoCoin)
+
+
   const [displaySelectCoin, setDisplaySelectCoin] = useState(false);
+  const [PublicMsg, setPublicMsg] = useState(false);
 
   const SelectCoin = (e) => {
     if (displaySelectCoin) {
@@ -71,6 +101,52 @@ function App() {
     }
   };
 
+
+  const [ cryptoWallet,  setCryptoWallet ] = useState('')
+  const [ cryptoCoin, setCryptoCoin ] = useState('')
+
+  // =================Fetch default coins ==========================
+  useEffect(() => {
+    const fetchData = async () => {
+      await axios
+        .get("https://betarena.herokuapp.com/api/profile/default-coin", {
+          headers: {
+            Authorization: `Bearer ${user.Token}`,
+          },
+        })
+        .then((response) => {
+          setCryptoCoin(response.data[0]);
+          setCryptoWallet(response.data[0].wallet_address[0])
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    if(user){
+      fetchData();
+    }
+  }, [user]);
+
+const coinData = ((e)=>{
+    setCryptoCoin(e)
+    setCryptoWallet(e.wallet_address[0])
+    setDisplaySelectCoin(false);
+})  
+
+
+const Cancel = (e) => {
+  // setPublicMsg(false);
+  // if (menucount) {
+  //   setView("default");
+  //   setNavBarPage("Navbar-container");
+  // } else {
+  //   setView("full_view");
+  //   setNavBarPage("openNavbar-container");
+  // }
+};
+
+
+
   const WalletAddress = (e) => {
     console.log(e);
   };
@@ -79,26 +155,33 @@ function App() {
     <div className="App">
       <BrowserRouter>
         {user && <HomeNavBar setView={setView} setScreen={setScreen} />}
+        {PublicMsg && <Chat cancel={Cancel} />}
+
         <MenuBar isTablet={isTablet} />
         {!user && <Navbar setView={setView} setScreen={setScreen} />}
         <div className={viewPoint}>
           <Routes>
             <Route path="/" element={<Home />}></Route>
+
+
+            {/* ================ Login route ============================= */}
+
             <Route path="/signup" element={<Signup />}>
               <Route path="regist" element={<Signup />} />
             </Route>
             <Route path="/signup/secon" element={<SecondStep />} />
             <Route path="/signup/finale" element={<LastStep />} />
+             <Route path="/login" element={<Login />}></Route> 
 
 
-            <Route path="/user/information" element={<UserInfo />} />
+             <Route path="/user/information" element={<UserInfo />} />
             <Route path="/options" element={<Options />} />
             <Route path="/chat" element={<ChatRoom />}>
               <Route path="request" element={<Request />} />
             </Route>
-           
 
-            <Route path="/login" element={<Login />}></Route>
+    
+           
             {/* ========= Pages ================= */}
             <Route path="/slots" element={<Slot />}></Route>
             <Route path="/affiliate" element={<Affiliate />}></Route>
@@ -117,27 +200,30 @@ function App() {
 
             {/* ============= Games =================== */}
             <Route path="/crash" element={<Crash />}></Route>
+
+
+            {/* ====================== Transactions ================================ */}
             <Route
               path="/wallet"
               element={
-                <Transaction
-                  WalletAddress={WalletAddress}
-                  SelectCoin={SelectCoin}
-                  displaySelectCoin={displaySelectCoin}
-                />
+                <Transaction  WalletAddress={WalletAddress}  coinData={coinData}
+                  SelectCoin={SelectCoin}   displaySelectCoin={displaySelectCoin}  />
               }
             >
+
+
               <Route index element={<Deposit />} />
               <Route
                 path="deposit"
-                element={<Deposit selectCoin={SelectCoin} />}
+                element={<Deposit cryptoCoin={cryptoCoin} cryptoWallet={cryptoWallet} selectCoin={SelectCoin} />}
               ></Route>
               <Route
                 path="withdraw"
-                element={<Withdraw selectCoin={SelectCoin} />}
+                element={<Withdraw cryptoCoin={cryptoCoin} selectCoin={SelectCoin} />}
               ></Route>
               <Route path="swap" element={<Swap />}></Route>
-              <Route path="vault" element={<Vault />}></Route>
+              <Route path="vault" element={<Vault  cryptoCoin={cryptoCoin} />}></Route>
+
             </Route>
 
             <Route path="/crash" element={<Crash />}></Route>
@@ -158,8 +244,8 @@ function App() {
 
             <Route path="/ShitCode" element={<ShitCode />}></Route>
             <Route path="/TaskHub" element={<TaskHub />}></Route>
-            <Route path="/Testing" element={<Testing />}></Route> */}
-          </Routes>
+            <Route path="/Testing" element={<Testing />}></Route>*/}
+          </Routes> 
         </div>
       </BrowserRouter>
     </div>

@@ -24,6 +24,8 @@ export default function Login() {
 
   return (
     <div className="signUp-display">
+       {error && <p className="error-message">{error}</p>}
+
       <div className="signUp-display-page">
         <div className="signUp-display-page-top">
           <img src={signupLogo} alt="signupLogo" width={"160px"} />
@@ -45,7 +47,6 @@ export default function Login() {
                 required
               ></input>
             </div>
-            {error && <p className="error-message">{error}</p>}
             <div className="signUp-second-flex">
               <label htmlFor="Password">Login Password</label>
               <input
@@ -58,9 +59,10 @@ export default function Login() {
             </div>
             <div className="login-submit">
               <div className="login-login">
-                <button disabled={isLoading} type="submit">
+                { !isLoading ?   <button disabled={isLoading} type="submit">
                   Sign in
-                </button>
+                </button> :  <button disabled={isLoading} type="submit"> <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></button> }
+         
               </div>
               <div className="login-signUp">
                 <NavLink to="/signup/regist">

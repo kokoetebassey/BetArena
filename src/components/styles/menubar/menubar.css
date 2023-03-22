@@ -3,6 +3,9 @@
   margin: 0;
   display: block;
 }
+.MenuBar-container {
+  z-index: 20;
+}
 
 .MenuBar-tab {
   background: rgba(0, 0, 0, 0.46);

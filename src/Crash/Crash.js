@@ -96,6 +96,17 @@ export default function Crash() {
   const [ResponseMsg, setResponseMsg] = useState("");
   const [Bet, setBet] = useState(true);
   const [Next, setNext] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  function functionLoad() {
+    if (loading === true && crashGame === false) {
+      setLoading(false);
+      setcrashGame(true);
+    } else {
+      setLoading(true);
+      setcrashGame(false);
+    }
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -299,7 +310,18 @@ export default function Crash() {
                       <h3>2</h3>
                     </div>
 
-                    <div className="main-crash-count">{crashGame}</div>
+                    <div className="main-crash-count" onLoad={functionLoad}>
+                      {!loading && crashGame ? (
+                        crashGame
+                      ) : (
+                        <div className="lds-ellipsis">
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <div className="crash-text">
                     <h3>House Edge 1%</h3>

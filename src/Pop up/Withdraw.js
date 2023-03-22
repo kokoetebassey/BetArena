@@ -1,14 +1,12 @@
 import React from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { useLocation } from 'react-router'
 
 
-export default function Withdraw({ defaultTransaction, selectCoin }) {
+export default function Withdraw({ defaultTransaction,selectCoin, cryptoCoin, }) {
   const HandleCoin = () => {
     selectCoin();
   };
-  const { state } = useLocation();
-  console.log(state)
+
 
 
   return (
@@ -19,10 +17,10 @@ export default function Withdraw({ defaultTransaction, selectCoin }) {
           <div className="input-coin">
             <div className="select-coin" onClick={HandleCoin}>
               <div className="image">
-                <img src={state.navCoins.coin_image} alt="" />
+                <img src={cryptoCoin.coin_image} alt="" />
               </div>
               <div className="c">
-                <h4>{state.navCoins.coin_name}</h4>
+                <h4>{cryptoCoin.coin_name}</h4>
               </div>
               <div className="arrow">
                 <MdOutlineKeyboardArrowRight />
@@ -30,14 +28,14 @@ export default function Withdraw({ defaultTransaction, selectCoin }) {
             </div>
             <div className="showBalance">
               <h3 className="balance">Balance</h3>
-              <h3>{state.navCoins.coin_bal}</h3>
+              <h3>{cryptoCoin.coin_bal}</h3>
             </div>
           </div>
 
           <div className="withdraw-currency">
             Withdraw Address
             <h3>
-              (Note: Only<span> {state.navCoins.coin_name}</span>)
+              (Note: Only<span> {cryptoCoin.coin_name}</span>)
             </h3>
           </div>
           <div className="input-coin">

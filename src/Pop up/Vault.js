@@ -2,14 +2,9 @@ import React, { useState } from 'react'
 import '../Pop up/styles/vault.css'
 import question from '../images/question.svg'
 import arrow from '../images/arrow.svg'
-import { useLocation } from 'react-router'
 
-
-export default function Vault() {
-  const [sswitch,setSswitch] = useState(0)
-  const { state } = useLocation();
-
-  console.log(state)
+export default function Vault({cryptoCoin}) {
+  const [sswitch,setSswitch] = useState()
 
   function handleSwitch(index){
     setSswitch(index)
@@ -55,7 +50,7 @@ export default function Vault() {
           <h1>You Send</h1>
           <div className='topstandflex'>
             <h2>Wallet Balance: </h2>
-            <h3>{state.navCoins.coin_bal}</h3>
+            <h3>{cryptoCoin.coin_bal}</h3>
           </div>
         </div>
 
@@ -65,8 +60,8 @@ export default function Vault() {
                <span><h2>max</h2></span>
              </div>
              <div className='cbottomright'>
-               <img src={state.navCoins.coin_image} alt='' width={'30px'} />
-               <h1>{state.navCoins.coin_name}</h1>
+               <img src={cryptoCoin.coin_image} alt='' width={'30px'} />
+               <h1>{cryptoCoin.coin_name}</h1>
                <img src={arrow} alt='' width={'7px'} className='arroww' />
              </div>
            </div>
@@ -81,7 +76,7 @@ export default function Vault() {
           <h1>You Send</h1>
           <div className='topstandflex'>
             <h2>Vault Balance: </h2>
-            <h3>{state.navCoins.coin_bal}</h3>
+            <h3>{cryptoCoin.coin_bal}</h3>
           </div>
         </div>
 
@@ -91,8 +86,8 @@ export default function Vault() {
                <span><h2>max</h2></span>
              </div>
              <div className='cbottomright'>
-               <img src={state.navCoins.coin_image} alt='' width={'54px'} />
-               <h1>{state.navCoins.coin_name}</h1>
+               <img src={cryptoCoin.coin_image} alt='' width={'54px'} />
+               <h1>{cryptoCoin.coin_name}</h1>
                <img src={arrow} alt='' width={'7px'} className='arroww' />
              </div>
            </div>
