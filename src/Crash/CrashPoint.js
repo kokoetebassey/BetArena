@@ -10,12 +10,24 @@ import { NavLink } from "react-router-dom";
 export default function CrashPoint(crash) {
   const [crashGame, setcrashGame] = useState("");
   const [ResponseMsg, setResponseMsg] = useState("");
+  const [loading, setLoading] = useState(false)
+
+  function functionLoad(){
+    if(loading === true && crashGame === false){
+      setLoading(false)
+      setcrashGame(true)
+    }else{
+      setLoading(true)
+      setcrashGame(false)
+    }
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
       axios
         .get("https://crashgame.herokuapp.com/api/crashgame")
         .then((Response) => {
+          // setLoading(false)
           setResponseMsg(Response.data[0].message);
           if (ResponseMsg === "crash") {
             setcrashGame(<CrashMessage crash={Response.data[0].crashPoint} />);
@@ -30,6 +42,7 @@ export default function CrashPoint(crash) {
           }
         })
         .catch((error) => {
+          // setLoading(false)
           console.log(error);
         });
     }, 200);
@@ -93,7 +106,10 @@ export default function CrashPoint(crash) {
           <h3>2</h3>
         </div>
 
-        <div className="main-crash-count">{crashGame}</div>
+          <div className="main-crash-count" onLoad={functionLoad}>
+           {!loading && crashGame ? crashGame   : <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div> }
+            
+         </div>
       </div>
       <div className="crash-text">
         <h3>House Edge 1%</h3>
