@@ -329,11 +329,14 @@ export default function Crash() {
                       {!loading && crashGame ? (
                         crashGame
                       ) : (
-                        <div className="lds-ellipsis">
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
+                        <div className="craash">
+                          <h4>Reconnecting</h4>{" "}
+                          <div className="lds-ellipsis">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                          </div>
                         </div>
                       )}
                     </div>
