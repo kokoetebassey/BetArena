@@ -138,6 +138,19 @@ export default function Crash() {
     return () => clearInterval(interval);
   }, [ResponseMsg]);
 
+  const [list, setList] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("https://betarena.herokuapp.com/api/crash/crashlist")
+      .then((res) => {
+        setList(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+
   return (
     <div className="crash-display-page-cover">
       <div onMouseEnter={openBa} className="side-menu-cover">
@@ -261,38 +274,40 @@ export default function Crash() {
                 <div className="display-crash-xzy">
                   <div className="crash-Display-left-crash-top">
                     <div className="crash-Display-left-crash-top1">
-                      <NavLink to="">
-                        <h3>
-                          BankRoll <span>CUB</span>
-                        </h3>
-                        <h4>3742964</h4>
-                      </NavLink>
+                      <h3>
+                        BankRoll <span>CUB</span>
+                      </h3>
+                      <h4>3742964</h4>
                     </div>
+
                     <div className="crash-Display-left-crash-top2-cover">
-                      <div className="crash-Display-left-crash-top2">
-                        <div className="crash-Display-left-crash-top2-circle"></div>
-                        <div className="crash-Display-left-crash-top2-list">
-                          <h3>0.33x</h3>
-                        </div>
-                      </div>
-                      <div className="crash-Display-left-crash-top2">
-                        <div className="crash-Display-left-crash-top2-circle"></div>
-                        <div className="crash-Display-left-crash-top2-list">
-                          <h3>0.33x</h3>
-                        </div>
-                      </div>
-                      <div className="crash-Display-left-crash-top2">
-                        <div className="crash-Display-left-crash-top2-circle"></div>
-                        <div className="crash-Display-left-crash-top2-list">
-                          <h3>0.33x</h3>
-                        </div>
-                      </div>
-                      <div className="crash-Display-left-crash-top2">
-                        <div className="crash-Display-left-crash-top2-circle"></div>
-                        <div className="crash-Display-left-crash-top2-list">
-                          <h3>0.33x</h3>
-                        </div>
-                      </div>
+                      {list &&
+                        list.map((e) => (
+                          <div key={e._id}>
+                            {e.color === "green" && (
+                              <div className="crash-Display-left-crash-top2">
+                                <div className="crash-Display-left-crash-top2-circle"></div>
+                                <div
+                                  id="green"
+                                  className="crash-Display-left-crash-top2-list"
+                                >
+                                  {e.crashlist}
+                                </div>
+                              </div>
+                            )}
+                            {e.color === "red" && (
+                              <div className="crash-Display-left-crash-top2">
+                                <div className="crash-Display-left-crash-top2-circle-red"></div>
+                                <div
+                                  id="red"
+                                  className="crash-Display-left-crash-top2-list"
+                                >
+                                  {e.crashlist}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        ))}
                     </div>
                   </div>
                   <div className="main-crash">
@@ -314,16 +329,17 @@ export default function Crash() {
                       {!loading && crashGame ? (
                         crashGame
                       ) : (
-                        <div className="loadingg">
-                          <h3>reconnecting</h3>
-                        <div className="lds-ellipsis">
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
+                        <div className="craash">
+                          <h4>Reconnecting</h4>
+                          <div className="lds-ellipsis">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                          </div>
                         </div>
 
-                        </div>
+                      
                       
                       )}
                     </div>

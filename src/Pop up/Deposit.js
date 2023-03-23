@@ -1,13 +1,32 @@
-
 import { FaRegCopy } from "react-icons/fa";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import star from "../images/Star 1.svg";
 import reward from "../images/reward img.svg";
+import React, { useEffect, useState } from "react";
 
-
-export default function Deposit({  selectCoin, cryptoCoin, cryptoWallet}) {
+export default function Deposit({ selectCoin, cryptoCoin, cryptoWallet }) {
   const HandleCoin = () => {
     selectCoin();
+  };
+
+  const [invite] = useState(cryptoWallet.address);
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (copied) {
+      alert("Copied!");
+    }
+  }, [copied]);
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text).then(
+      function () {
+        setCopied(true);
+      },
+      function (err) {
+        console.error("Could not copy text: ", err);
+      }
+    );
   };
 
   return (
@@ -18,12 +37,18 @@ export default function Deposit({  selectCoin, cryptoCoin, cryptoWallet}) {
           <div className="input-coin">
             <div className="select-coin" onClick={HandleCoin}>
               <div className="image">
-                {cryptoCoin.coin_image ?   
-                    <img src={cryptoCoin.coin_image} alt="" /> :   <img src='' alt="" />
-                }
+                {cryptoCoin.coin_image ? (
+                  <img src={cryptoCoin.coin_image} alt="" />
+                ) : (
+                  <img src="" alt="" />
+                )}
               </div>
               <div className="name">
-                { cryptoCoin.coin_name ? <h4>{cryptoCoin.coin_name}</h4> : <h4>Loading....</h4> }
+                {cryptoCoin.coin_name ? (
+                  <h4>{cryptoCoin.coin_name}</h4>
+                ) : (
+                  <h4>Loading....</h4>
+                )}
               </div>
               <div className="arrow">
                 <MdOutlineKeyboardArrowRight />
@@ -31,7 +56,11 @@ export default function Deposit({  selectCoin, cryptoCoin, cryptoWallet}) {
             </div>
             <div className="showBalance">
               <h3 className="balance">Balance : </h3>
-              { cryptoCoin.coin_bal ? <h4>{cryptoCoin.coin_bal}</h4> : <h4>Loading....</h4> }
+              {cryptoCoin.coin_bal ? (
+                <h4>{cryptoCoin.coin_bal}</h4>
+              ) : (
+                <h4>Loading....</h4>
+              )}
             </div>
           </div>
 
@@ -105,16 +134,30 @@ export default function Deposit({  selectCoin, cryptoCoin, cryptoWallet}) {
           <div className="withdraw-currency">
             Deposit Address
             <h3>
-              { cryptoCoin.coin_name ? <h4>  ( Note: Only<span> {cryptoCoin.coin_name }</span>) </h4> : <h4>Loading....</h4> }
+              {cryptoCoin.coin_name ? (
+                <h4>
+                  {" "}
+                  ( Note: Only<span> {cryptoCoin.coin_name}</span>){" "}
+                </h4>
+              ) : (
+                <h4>Loading....</h4>
+              )}
             </h3>
           </div>
           <div className="input-coin">
             <div className="select-coin">
               <div className="wallet">
                 <div className="wallet-address">
-                {   cryptoWallet ? <h4>   {cryptoWallet.address }</h4> : <h4>Loading....</h4> }
+                  {cryptoWallet ? (
+                    <h4>{cryptoWallet.address}</h4>
+                  ) : (
+                    <h4>Loading....</h4>
+                  )}
                 </div>
-                <div className="copy-icon">
+                <div
+                  onClick={() => copyToClipboard(`${invite}`)}
+                  className="copy-icon"
+                >
                   <FaRegCopy />
                 </div>
               </div>

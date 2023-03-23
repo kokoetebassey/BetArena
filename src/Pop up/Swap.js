@@ -118,88 +118,88 @@ export default function Swap() {
               <button className="divbutton">Swap Now</button>
             </>
           )}
-        </div>
-        {swapAltcoin === 1 && (
-          <>
-            <div className="fromaltcoin"></div>
-            <div className="fromaltcoin"></div>
+           {swapAltcoin === 1 && (
+            <>
+              <div className="fromaltcoin"></div>
+              <div className="fromaltcoin"></div>
 
-            <div className="altcointext">
-              <span>
-                <b>From Altcoin: </b>
-              </span>
-              Deposit using any ERC altcoins. Your funds will be converted and
-              credited in the chosen currency supported by BETARENA.GG.
-              Currently only alt coins on ERC chain are supported.
-            </div>
+              <div className="altcointext">
+                <span>
+                  <b>From Altcoin: </b>
+                </span>
+                Deposit using any ERC altcoins. Your funds will be converted and
+                credited in the chosen currency supported by BETARENA.GG.
+                Currently only alt coins on ERC chain are supported.
+              </div>
 
-            <div className="limitedanddeposit">
-              <h2>You Send (Limited Time Deposit Bonus)</h2>
-              <h3>More</h3>
-            </div>
+              <div className="limitedanddeposit">
+                <h2>You Send (Limited Time Deposit Bonus)</h2>
+                <h3>More</h3>
+              </div>
 
-            <div className="middlecontainer">
-              <div className="middlecleft">
-                <div className="middlecleftinner">
-                  <h2>$30</h2>
-                  <h3> (or above to get bonus)</h3>
+              <div className="middlecontainer">
+                <div className="middlecleft">
+                  <div className="middlecleftinner">
+                    <h2>$30</h2>
+                    <h3> (or above to get bonus)</h3>
+                  </div>
+                  <h4>= 51.8843628 1INCH</h4>
                 </div>
-                <h4>= 51.8843628 1INCH</h4>
+                <div className="middlecright">
+                  <h2>1INCH</h2>
+                  <img src={arrow} alt="" width={"7px"} />
+                </div>
               </div>
-              <div className="middlecright">
-                <h2>1INCH</h2>
-                <img src={arrow} alt="" width={"7px"} />
+
+              <div className="standalone">
+                <h1>1BTC</h1>
+                <h2>=</h2>
+                <h3>0.0000000 BTC</h3>
               </div>
-            </div>
 
-            <div className="standalone">
-              <h1>1BTC</h1>
-              <h2>=</h2>
-              <h3>0.0000000 BTC</h3>
-            </div>
+              <div className="aprodiv">
+                <h2>You get Approximately</h2>
+                <h3>Record</h3>
+              </div>
 
-            <div className="aprodiv">
-              <h2>You get Approximately</h2>
-              <h3>Record</h3>
-            </div>
-
-            <div className="centercontainer">
-              <div className="centerleft">
-                <h2 className="hach">0.01607364</h2>
-                <div className="innercenterleft">
-                  <img src={vect} alt="" width={"20px"} />
-                  <h2 className="hech">+100% Bonus</h2>
-                  <div className="innerincenterleft">
-                    <h1 className="hesh">End in</h1>
-                    <h2 className="hesh1">00:00</h2>
+              <div className="centercontainer">
+                <div className="centerleft">
+                  <h2 className="hach">0.01607364</h2>
+                  <div className="innercenterleft">
+                    <img src={vect} alt="" width={"20px"} />
+                    <h2 className="hech">+100% Bonus</h2>
+                    <div className="innerincenterleft">
+                      <h1 className="hesh">End in</h1>
+                      <h2 className="hesh1">00:00</h2>
+                    </div>
                   </div>
                 </div>
+                <div className="centerright">
+                  <img src={bitcoin} alt="" width={"54px"} />
+                  <h1>BTC</h1>
+                  <img src={arrow} alt="" width={"7px"} className="arroww" />
+                </div>
               </div>
-              <div className="centerright">
-                <img src={bitcoin} alt="" width={"54px"} />
-                <h1>BTC</h1>
-                <img src={arrow} alt="" width={"7px"} className="arroww" />
-              </div>
-            </div>
 
-            <div className="endiv">
-              <div className="endivinner">
-                <h1 className="calor">Network fee </h1>
-                <h1>0.00193586 ETH</h1>
+              <div className="endiv">
+                <div className="endivinner">
+                  <h1 className="calor">Network fee </h1>
+                  <h1>0.00193586 ETH</h1>
+                </div>
+                <div className="endivinner">
+                  <h1 className="calor">Exchange fee </h1>
+                  <h1>0.000007232 ETH</h1>
+                </div>
+                <div className="endivinner">
+                  <h1 className="calor">Estimated Time</h1>
+                  <h1>5-30 minutes</h1>
+                </div>
               </div>
-              <div className="endivinner">
-                <h1 className="calor">Exchange fee </h1>
-                <h1>0.000007232 ETH</h1>
-              </div>
-              <div className="endivinner">
-                <h1 className="calor">Estimated Time</h1>
-                <h1>5-30 minutes</h1>
-              </div>
-            </div>
 
-            <button className="enbutton">Start Transaction</button>
-          </>
-        )}
+              <button className="enbutton">Start Transaction</button>
+            </>
+          )}
+        </div>
       </div>
     </>
   );
