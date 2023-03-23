@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
-
-export default function Withdraw({ defaultTransaction,selectCoin, cryptoCoin, }) {
+export default function Withdraw({
+  defaultTransaction,
+  selectCoin,
+  cryptoCoin,
+}) {
   const HandleCoin = () => {
     selectCoin();
   };
 
+  const [stakeValue, setStakeValue] = useState(0.0);
 
+  const Half = () => {
+    setStakeValue((stakeValue / 100) * 25);
+  };
+
+  const Half1 = () => {
+    setStakeValue((stakeValue / 100) * 50);
+  };
 
   return (
     <>
@@ -40,14 +51,28 @@ export default function Withdraw({ defaultTransaction,selectCoin, cryptoCoin, })
           </div>
           <div className="input-coin">
             <div className="select-coin">
-              <input type="text" placeholder="Fill in carefully according to the specific wallet"  />
+              <input
+                type="text"
+                placeholder="Fill in carefully according to the specific wallet"
+              />
             </div>
           </div>
 
           <h3 className="deposit-currency">Withdraw Amount</h3>
           <div className="input-coin">
             <div className="select-coin">
-              <input type="number" placeholder="Amount" />
+              <input
+                type="number"
+                onChange={(e) => setStakeValue(e.target.value)}
+                value={stakeValue}
+                placeholder="Amount"
+              />
+            </div>
+            <div className="btn-cover">
+              <button>Min</button>
+              <button onClick={Half}>25%</button>
+              <button onClick={Half1}>50%</button>
+              <button>Max</button>
             </div>
           </div>
 

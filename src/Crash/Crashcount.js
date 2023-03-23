@@ -20,7 +20,7 @@ export default function Crashcount(crash) {
             strokeWidth="5"
             // strokeHeight="1000"
             fill="none"
-            stroke="#FFEB73"
+            stroke="rgba(173, 134, 5, 0.6)"
             strokemiterlimitt="10"
             d="M0 486 C 0 460 0.07681069704984 595   960.2374082 6.5406103"
           />
@@ -38,7 +38,7 @@ export default function Crashcount(crash) {
             strokeWidth="5"
             // strokeHeight="1000"
             fill="none"
-            stroke="#FFEB73"
+            stroke="rgba(173, 134, 5, 0.6)"
             strokemiterlimitt="10"
             d="M0 480 C 0 455 0.07681069704984 595   960.2374082 6.5406103"
           />

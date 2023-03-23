@@ -105,7 +105,7 @@ function App() {
   const [ cryptoWallet,  setCryptoWallet ] = useState('')
   const [ cryptoCoin, setCryptoCoin ] = useState('')
 
-  // =================Fetch default coins ==========================
+  // =================Fetch default coins ========================== 
   useEffect(() => {
     const fetchData = async () => {
       await axios
