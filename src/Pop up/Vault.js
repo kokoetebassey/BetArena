@@ -60,7 +60,7 @@ export default function Vault({cryptoCoin}) {
                <span><h2>max</h2></span>
              </div>
              <div className='cbottomright'>
-               <img src={cryptoCoin.coin_image} alt='' width={'30px'} />
+               <img className='round' src={cryptoCoin.coin_image} alt='' width={'30px'} />
                <h1>{cryptoCoin.coin_name}</h1>
                <img src={arrow} alt='' width={'7px'} className='arroww' />
              </div>
@@ -86,7 +86,7 @@ export default function Vault({cryptoCoin}) {
                <span><h2>max</h2></span>
              </div>
              <div className='cbottomright'>
-               <img src={cryptoCoin.coin_image} alt='' width={'54px'} />
+               <img src={cryptoCoin.coin_image} alt='' width={'30px'} />
                <h1>{cryptoCoin.coin_name}</h1>
                <img src={arrow} alt='' width={'7px'} className='arroww' />
              </div>

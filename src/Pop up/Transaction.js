@@ -1,11 +1,10 @@
 import "./styles/transaction.css";
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import TransactionCoins from "./TransactionCoins";
 import deposit from "../images/deposit.svg";
 import withdraw from "../images/widthdraw.svg";
 import swap from "../images/swap.svg";
 import vault from "../images/vault.svg";
-
 
 export default function Transaction({
   displaySelectCoin,
@@ -13,13 +12,6 @@ export default function Transaction({
   WalletAddress,
   SelectCoin,
 }) {
-  const navigate = useNavigate();
-  const HandleBack = () => {
-    navigate(-1);
-  };
-
-
-
   const ClearChooseCoin = () => {
     SelectCoin();
   };
@@ -33,8 +25,10 @@ export default function Transaction({
               <div className="headers">
                 <h2 className="wallet">Wallet</h2>
                 <h2 className="transactions">Transactions </h2>
-                <span className="cancelWallet" onClick={HandleBack}>
-                  &#10006;
+                <span className="cancelWallet">
+                  <NavLink to="/">
+                    <h3>&#10006;</h3>
+                  </NavLink>
                 </span>
               </div>
               <div className="transaction-routes">

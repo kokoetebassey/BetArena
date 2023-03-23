@@ -254,6 +254,12 @@
   padding: 10px;
   gap: 60%;
 }
+.transaction-body .headers span a {
+  color: #878787;
+}
+.transaction-body .headers span a:hover {
+  color: #fff;
+}
 
 .select-coin .wallet {
   display: flex;
