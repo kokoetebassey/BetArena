@@ -4,10 +4,25 @@ import star from "../images/Star 1.svg";
 import reward from "../images/reward img.svg";
 import React, { useEffect, useState } from "react";
 
-export default function Deposit({ selectCoin, cryptoCoin, cryptoWallet }) {
+export default function Deposit({
+  selectCoin,
+  usdt,
+  cryptoCoin,
+  cryptoWallet,
+}) {
   const HandleCoin = () => {
     selectCoin();
   };
+
+  const [erc] = useState(usdt[0]);
+  const [bep, setBep] = useState();
+  const [erc20, setErc20] = useState(0);
+
+  useEffect(() => {
+    if (erc) {
+      setBep(usdt[0].ERC20);
+    }
+  }, [erc, usdt]);
 
   const [invite] = useState(cryptoWallet.address);
   const [copied, setCopied] = useState(false);
@@ -27,6 +42,16 @@ export default function Deposit({ selectCoin, cryptoCoin, cryptoWallet }) {
         console.error("Could not copy text: ", err);
       }
     );
+  };
+
+  const handleErc = (e) => {
+    if (e === 0) {
+      setBep(usdt[0].ERC20);
+      setErc20(0);
+    } else if (e === 1) {
+      setBep(usdt[0].BEP20);
+      setErc20(1);
+    }
   };
 
   return (
@@ -106,8 +131,8 @@ export default function Deposit({ selectCoin, cryptoCoin, cryptoWallet }) {
               </div>
             </div>
           </div>
-
-          {/* <div className="network-coin">
+          {usdt && (
+            <div className="network-coin">
               <div className="network-coin-top">Choose Network</div>
               <div className="network-selection-cover">
                 <div className="network-selection">
@@ -129,7 +154,8 @@ export default function Deposit({ selectCoin, cryptoCoin, cryptoWallet }) {
                   </div>
                 </div>
               </div>
-            </div> */}
+            </div>
+          )}
 
           <div className="withdraw-currency">
             Deposit Address
@@ -144,25 +170,46 @@ export default function Deposit({ selectCoin, cryptoCoin, cryptoWallet }) {
               )}
             </h3>
           </div>
-          <div className="input-coin">
-            <div className="select-coin">
-              <div className="wallet">
-                <div className="wallet-address">
-                  {cryptoWallet ? (
-                    <h4>{cryptoWallet.address}</h4>
-                  ) : (
-                    <h4>Loading....</h4>
-                  )}
-                </div>
-                <div
-                  onClick={() => copyToClipboard(`${invite}`)}
-                  className="copy-icon"
-                >
-                  <FaRegCopy />
+
+          {!usdt && (
+            <div className="input-coin">
+              <div className="select-coin">
+                <div className="wallet">
+                  <div className="wallet-address">
+                    {cryptoWallet ? (
+                      <h4>{cryptoWallet.address}</h4>
+                    ) : (
+                      <h4>Loading....</h4>
+                    )}
+                  </div>
+                  <div
+                    onClick={() => copyToClipboard(`${invite}`)}
+                    className="copy-icon"
+                  >
+                    <FaRegCopy />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
+
+          {usdt && (
+            <div className="input-coin">
+              <div className="select-coin">
+                <div className="wallet">
+                  <div className="wallet-address">
+                    {erc ? <h4>{bep}</h4> : <h4>Loading....</h4>}
+                  </div>
+                  <div
+                    onClick={() => copyToClipboard(`${invite}`)}
+                    className="copy-icon"
+                  >
+                    <FaRegCopy />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           <h3 className="deposit-currency">Deposit Amount</h3>
           <div className="input-coin">

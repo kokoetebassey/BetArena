@@ -12,7 +12,7 @@ export default function TransactionCoins({ coinData, ClearChooseCoin }) {
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
-        wallet_address: [ {
+        wallet_address: [{
           address: `128TUZbbpJ73zjEU1UUUJP2ftBYveTPXdC`,
         }]
     },
@@ -23,7 +23,10 @@ export default function TransactionCoins({ coinData, ClearChooseCoin }) {
       coin_image:
         "https://assets.coingecko.com/coins/images/325/large/Tether.png",
         wallet_address:[{
-          address: `0x60a3171d77c38c4BEB84c0102680d4F4dc75e3db`,
+          address:[{
+            ERC20: `0x60a3171d77c38c4BEB84c0102680d4F4dc75e3db`,
+            BEP20: `128TUZbbpJ73zjEU1UUUJP2ftBYveTPXdC`
+          }] ,
         }]
     },
     {
@@ -94,6 +97,7 @@ export default function TransactionCoins({ coinData, ClearChooseCoin }) {
   const HandleCoinSelect = (coin_name, coin_image, coin_bal, wallet_address) => {
     const data = { coin_name, coin_image, coin_bal, wallet_address};
     coinData(data);
+    // console.log(data)
   };
 
   const Cancel = () => {

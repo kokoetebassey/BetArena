@@ -39,14 +39,14 @@
   .btn-cover button:hover {
     color: #fff;
     }
-  .btn-cover button:first-child {
-    padding-left: 0.1875rem;
-    border-radius: 10px 0px 0px 10px;
-  }
-  .btn-cover button:last-child {
-    padding-right: 0.1875rem;
-    border-radius: 0px 10px 10px 0px;
-  }
+    .btn-cover button:first-child {
+      padding-left: 0.1875rem;
+      border-radius: 30px 0px 0px 30px;
+    }
+    .btn-cover button:last-child {
+      padding-right: 0.1875rem;
+      border-radius: 0px 30px 30px 0px;
+    }
   .crash-Display-cover {
     margin: 10px;
   }
@@ -1092,14 +1092,14 @@
   .btn-cover button:hover {
     color: #fff;
     }
-  .btn-cover button:first-child {
-    padding-left: 0.1875rem;
-    border-radius: 10px 0px 0px 10px;
-  }
-  .btn-cover button:last-child {
-    padding-right: 0.1875rem;
-    border-radius: 0px 10px 10px 0px;
-  }
+    .btn-cover button:first-child {
+      padding-left: 0.1875rem;
+      border-radius: 30px 0px 0px 30px;
+    }
+    .btn-cover button:last-child {
+      padding-right: 0.1875rem;
+      border-radius: 0px 30px 30px 0px;
+    }
 
   .crash-Display-cover {
     margin: 90px 10px 10px 3.5rem;
@@ -2279,14 +2279,14 @@
   .btn-cover button:hover {
     color: #fff;
     }
-  .btn-cover button:first-child {
-    padding-left: 0.1875rem;
-    border-radius: 10px 0px 0px 10px;
-  }
-  .btn-cover button:last-child {
-    padding-right: 0.1875rem;
-    border-radius: 0px 10px 10px 0px;
-  }
+    .btn-cover button:first-child {
+      padding-left: 0.1875rem;
+      border-radius: 30px 0px 0px 30px;
+    }
+    .btn-cover button:last-child {
+      padding-right: 0.1875rem;
+      border-radius: 0px 30px 30px 0px;
+    }
   .main-crash-footer img {
     width: 25px;
     cursor: pointer;
@@ -3471,11 +3471,11 @@
   }
   .btn-cover button:first-child {
     padding-left: 0.1875rem;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 30px 0px 0px 30px;
   }
   .btn-cover button:last-child {
     padding-right: 0.1875rem;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 30px 30px 0px;
   }
   .main-crash-footer img {
     width: 25px;
@@ -4662,14 +4662,14 @@
   .btn-cover button:hover {
     color: #fff;
     }
-  .btn-cover button:first-child {
-    padding-left: 0.1875rem;
-    border-radius: 10px 0px 0px 10px;
-  }
-  .btn-cover button:last-child {
-    padding-right: 0.1875rem;
-    border-radius: 0px 10px 10px 0px;
-  }
+    .btn-cover button:first-child {
+      padding-left: 0.1875rem;
+      border-radius: 30px 0px 0px 30px;
+    }
+    .btn-cover button:last-child {
+      padding-right: 0.1875rem;
+      border-radius: 0px 30px 30px 0px;
+    }
   .main-crash-graph h3,
   .main-crash-graph-side h3 {
     color: #34334b63;
@@ -5857,14 +5857,14 @@
   .btn-cover button:hover {
     color: #fff;
     }
-  .btn-cover button:first-child {
-    padding-left: 0.1875rem;
-    border-radius: 10px 0px 0px 10px;
-  }
-  .btn-cover button:last-child {
-    padding-right: 0.1875rem;
-    border-radius: 0px 10px 10px 0px;
-  }
+    .btn-cover button:first-child {
+      padding-left: 0.1875rem;
+      border-radius: 30px 0px 0px 30px;
+    }
+    .btn-cover button:last-child {
+      padding-right: 0.1875rem;
+      border-radius: 0px 30px 30px 0px;
+    }
   .main-crash-footer img {
     width: 25px;
     cursor: pointer;
@@ -7053,14 +7053,14 @@
   .btn-cover button:hover {
     color: #fff;
     }
-  .btn-cover button:first-child {
-    padding-left: 0.1875rem;
-    border-radius: 10px 0px 0px 10px;
-  }
-  .btn-cover button:last-child {
-    padding-right: 0.1875rem;
-    border-radius: 0px 10px 10px 0px;
-  }
+    .btn-cover button:first-child {
+      padding-left: 0.1875rem;
+      border-radius: 30px 0px 0px 30px;
+    }
+    .btn-cover button:last-child {
+      padding-right: 0.1875rem;
+      border-radius: 0px 30px 30px 0px;
+    }
   .main-crash-footer img {
     width: 25px;
     cursor: pointer;
@@ -8207,14 +8207,14 @@
   .btn-cover button:hover {
     color: #fff;
     }
-  .btn-cover button:first-child {
-    padding-left: 0.1875rem;
-    border-radius: 10px 0px 0px 10px;
-  }
-  .btn-cover button:last-child {
-    padding-right: 0.1875rem;
-    border-radius: 0px 10px 10px 0px;
-  }
+    .btn-cover button:first-child {
+      padding-left: 0.1875rem;
+      border-radius: 30px 0px 0px 30px;
+    }
+    .btn-cover button:last-child {
+      padding-right: 0.1875rem;
+      border-radius: 0px 30px 30px 0px;
+    }
   .main-crash-graph-side {
     position: absolute;
     display: flex;

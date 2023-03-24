@@ -104,6 +104,7 @@ function App() {
 
   const [ cryptoWallet,  setCryptoWallet ] = useState('')
   const [ cryptoCoin, setCryptoCoin ] = useState('')
+  const [ USDTCoin, setUSDTCoin ] = useState('')
 
   // =================Fetch default coins ========================== 
   useEffect(() => {
@@ -129,8 +130,15 @@ function App() {
 
 const coinData = ((e)=>{
     setCryptoCoin(e)
-    setCryptoWallet(e.wallet_address[0])
     setDisplaySelectCoin(false);
+      if(e.coin_name === "USDT"){
+        setUSDTCoin(e.wallet_address[0].address)
+        setCryptoWallet('')
+      }else{
+        setUSDTCoin('')
+        setCryptoWallet(e.wallet_address[0])
+      }
+    
 })  
 
 
@@ -215,7 +223,7 @@ const Cancel = (e) => {
               <Route index element={<Deposit />} />
               <Route
                 path="deposit"
-                element={<Deposit cryptoCoin={cryptoCoin} cryptoWallet={cryptoWallet} selectCoin={SelectCoin} />}
+                element={<Deposit cryptoCoin={cryptoCoin} usdt={USDTCoin} cryptoWallet={cryptoWallet} selectCoin={SelectCoin} />}
               ></Route>
               <Route
                 path="withdraw"
