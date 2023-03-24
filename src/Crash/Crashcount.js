@@ -115,6 +115,7 @@ export default function Crashcount(crash) {
       <Line className="chartLine" data={{ labels, datasets: data.datasets }} options={options}>
         <canvas id="animate-lineCrash" ref={canvasRef} fill="none" width="580" height="360" opacity="1" viewBox="35 80 800 550" />
       </Line>
+
       </div>
     </div>
   );

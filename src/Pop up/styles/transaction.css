@@ -17,6 +17,7 @@
   top: 40px;
   left: 30%;
   color: #fff;
+  scroll-behavior: smooth;
 }
 .transaction-body {
   position: relative;
@@ -30,9 +31,11 @@
 }
 .deposit-reward-cover-tops h2 {
   color: #ffd805;
+  font-size: 14px;
 }
 .deposit-reward-cover-tops h3 {
   color: #d04b21;
+  font-size: 12px;
 }
 .deposit-reward-text h3 {
   color: #ffd805;
@@ -65,7 +68,18 @@
   padding: 0px 0.1875rem;
   scroll-snap-align: start;
 }
-
+.cancelWallet {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  margin-left: 10px;
+  font-size: 15px;
+  color: rgb(148, 148, 148);
+  cursor: pointer;
+}
+.cancelWallet:hover {
+  color: rgb(228, 227, 227);
+}
 .network-selection1.active {
   color: #fff;
   border: 1px solid rgb(179, 154, 9);
@@ -102,6 +116,7 @@
   height: 3.875rem;
   border: none;
   padding: 0px 1.125rem 0.375rem;
+  margin-bottom: 20px;
 }
 .deposit-reward-inner {
   overflow: hidden;
@@ -157,6 +172,7 @@
   display: flex;
   font-size: 12px;
   gap: 5px;
+  padding: 10px;
 }
 .withdraw-currency span {
   font-size: 12px;
@@ -238,6 +254,16 @@
   padding: 10px;
   gap: 60%;
 }
+
+.select-coin .wallet {
+  display: flex;
+  padding: 7px;
+}
+.wallet .wallet-address {
+  padding: 5px;
+  width: 80%;
+}
+
 .transaction-body .headers .wallet {
   font-size: 17px;
   padding: 5px;
@@ -271,6 +297,7 @@
   color: white;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -290,6 +317,7 @@
   padding: 10px;
   margin: 20px 20px;
   border-radius: 12px;
+  overflow: hidden;
 }
 .deposit {
   font-size: 12px;
@@ -308,14 +336,18 @@
 }
 .input-coin {
   background-color: rgba(119, 115, 115, 0.127);
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   padding: 3px;
   cursor: pointer;
   margin-bottom: 20px;
+  position: relative;
+  right: 5px;
+  right: 5px;
 }
 .input-coin img {
-  width: 30px;
+  width: 24px;
+  border-radius: 50%;
 }
 .input-coin .arrow {
   margin: 15px 55px;
@@ -323,19 +355,24 @@
   font-weight: 100;
 }
 .showBalance {
-  border-left: 1px solid grey;
+  border-left: 1px solid rgba(128, 128, 128, 0.211);
   margin-right: 10px;
   color: #c3c3c3;
   padding: 10px;
+  width: 25%;
+  color: white;
+  font-weight: bold;
 }
-.showBalance h3 {
+.showBalance .balance {
   font-size: 12px;
   font-weight: 300;
+  color: grey;
 }
 .select-coin {
   display: flex;
   width: 100%;
-  gap: 30px;
+  gap: 0px;
+  font-weight: 300;
   align-items: center;
 }
 .select-coin .image {
@@ -343,7 +380,7 @@
   position: relative;
   display: flex;
   color: rgb(220, 220, 220);
-  width: 100%;
+  width: 5%;
   justify-content: space-between;
 }
 .select-coin .image p {
@@ -357,6 +394,9 @@
 }
 .select-coin .copy-icon {
   color: gray;
+  position: absolute;
+  right: 5px;
+  top: 5px;
   font-size: 18px;
   padding: 4px;
   cursor: pointer;
@@ -366,11 +406,12 @@
   margin: 10px;
   font-size: 15px;
   font-weight: 300;
+  width: 46%;
 }
 .select-coin input {
   background: none;
   outline: none;
-  width: 100%;
+  width: 90%;
   padding: 11px;
   color: #fff;
   font-weight: 300;

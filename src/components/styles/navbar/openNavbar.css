@@ -1,8 +1,7 @@
 .openNavbar-container {
   position: relative;
   left: 52px;
-  width: 100%;
-  
+  width: 96%;
   z-index: 22;
 }
 .openNavbar-container .Navbar-content {
@@ -22,6 +21,7 @@
 }
 .openNavbar-container .Navbar-content .logo {
   width: 20%;
+  cursor: pointer;
 }
 .openNavbar-container .Navbar-content .logo img {
   width: 180px;
@@ -30,8 +30,8 @@
 }
 
 .openNavbar-container .Navbar-content .search-line {
-  width: 42%;
-  background: #030307;
+  width: 50%;
+  background: #191935;
   margin: 10px 15px;
   height: 40px;
   border-radius: 30px;
@@ -39,8 +39,8 @@
 }
 
 .openNavbar-container .Navbar-content .search {
-  width: 42%;
-  background: #090915;
+  width: 50%;
+  background: #191935;
   margin: 10px 15px;
   height: 40px;
   border-radius: 30px;
@@ -135,4 +135,167 @@
   top: 5px;
   background-color: rgba(173, 134, 5, 1);
   position: absolute;
+}
+
+@media  only screen and ( min-width: 840px ) and ( max-width : 1060px ) {
+  .openNavbar-container .Navbar-content .search-line {
+    width: 45%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(173, 134, 5, 1);
+  }
+  
+  .openNavbar-container .Navbar-content .search {
+    width: 45%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+  }
+  .openNavbar-container .Navbar-content .play p {
+    color: white;
+    font-size: 11.5px;
+    border-radius: 50%;
+    padding: 3px;
+    right: -6px;
+    top: 5px;
+    background-color: rgba(173, 134, 5, 1);
+    position: absolute;
+  }
+  .openNavbar-container .Navbar-content .login {
+    width: 12%;
+    text-align: end;
+    margin-top: 16px;
+  }
+}
+
+
+
+@media  only screen and ( min-width: 740px ) and ( max-width : 840px ) {
+  .openNavbar-container .Navbar-content .logo {
+    width: 24%;
+    cursor: pointer;
+  }
+  .openNavbar-container .Navbar-content .search-line {
+    width: 33%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 35px;
+    border-radius: 30px;
+    border: 1px solid rgba(173, 134, 5, 1);
+  }
+  
+  .openNavbar-container .Navbar-content .search {
+    width: 33%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+  }
+  .openNavbar-container .Navbar-content .play p {
+    color: white;
+    font-size: 11.5px;
+    border-radius: 50%;
+    padding: 3px;
+    right: -6px;
+    top: 5px;
+    background-color: rgba(173, 134, 5, 1);
+    position: absolute;
+  }
+  .openNavbar-container .Navbar-content .search input {
+    width: 200px;
+    background: none;
+    border: none;
+    outline: none;
+    margin: auto;
+    margin-left: 10px;
+    color: #52506b;
+    font-weight: 900;
+  }
+  .openNavbar-container .Navbar-content .search-line input {
+    width: 200px;
+    background: none;
+    border: none;
+    outline: none;
+    margin: auto;
+    margin-left: 10px;
+    color: #52506b;
+    font-weight: 600;
+  }
+  .openNavbar-container .Navbar-content .login {
+    width: 12%;
+    text-align: end;
+    margin-top: 16px;
+  }
+}
+
+
+@media  only screen and ( min-width: 650px ) and ( max-width : 840px ) {
+  .openNavbar-container .Navbar-content .logo {
+    width: 24%;
+    cursor: pointer;
+  }
+
+  
+  .openNavbar-container .Navbar-content .search-line {
+    width: 28%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 35px;
+    border-radius: 30px;
+    border: 1px solid rgba(173, 134, 5, 1);
+  }
+  
+  .openNavbar-container .Navbar-content .search {
+    width: 28%;
+    background: #191935;
+    margin: 10px 15px;
+    height: 40px;
+    border-radius: 30px;
+  }
+  .openNavbar-container .Navbar-content .play p {
+    color: white;
+    font-size: 11.5px;
+    border-radius: 50%;
+    padding: 3px;
+    right: 0px;
+    top: 5px;
+    background-color: rgba(173, 134, 5, 1);
+    position: absolute;
+  }
+
+  .openNavbar-container .Navbar-content .play {
+    width: 9%;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .openNavbar-container .Navbar-content .search input {
+    width: 100px;
+    background: none;
+    border: none;
+    outline: none;
+    margin: auto;
+    margin-left: 10px;
+    color: #52506b;
+    font-weight: 900;
+  }
+  .openNavbar-container .Navbar-content .search-line input {
+    width: 100px;
+    background: none;
+    border: none;
+    outline: none;
+    margin: auto;
+    margin-left: 10px;
+    color: #52506b;
+    font-weight: 600;
+  }
+  .openNavbar-container .Navbar-content .login {
+    width: 12%;
+    text-align: end;
+    margin-top: 16px;
+  }
 }

@@ -32,6 +32,8 @@ export default function Signup() {
 
   return (
     <div className="signUp-display">
+            {error && <p className="error-message">{error}</p>}
+
       <div className="signUp-display-page">
         <div className="signUp-display-page-top">
           <img src={signupLogo} alt="signupLogo" width={"160px"} />
@@ -75,7 +77,6 @@ export default function Signup() {
                 ></input>
               )}
             </div>
-            {error && <p className="error-message">{error}</p>}
 
             <div className="signUp-check">
               <input type="checkbox" required />

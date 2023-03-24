@@ -1,0 +1,117 @@
+.main-option-background{
+    position: fixed;
+    height: 100hv;
+    width: 100%;
+    background-color:  #0b0d1c;
+    inset: 0px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.options-main-container{
+    height: 44rem;
+    width: 29rem;
+    position: fixed;
+    right: 38%;
+    z-index: 99;
+    top: -5px;
+}
+.options-main-con-inner{
+    height: 100%;
+    background: black;
+    border-radius: 20.0456px;
+    /* background: #1E2024;
+    border-radius: 20.0456px;
+    box-shadow: rgba(56, 56, 56, 0.24) 0px 5px 8px 0px; */
+}
+.options-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10%;
+    margin: auto;
+    margin-top: 25px;
+    position: relative;
+}
+.options-head-left{
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+.options-head-left h1{
+    font-size: 17px;
+    color: aliceblue;
+}
+.options-head-left .ahrwo{
+    width: 25px;
+}
+.options-head-right .kulose{
+    width: 20px;
+    margin: 0;
+    margin-right: 15px;
+}
+.options-bottom-cont{
+    height: 90%;
+    background: #1E2024;
+    border-radius: 20.0456px;
+    box-shadow: rgba(56, 56, 56, 0.24) 0px 5px 8px 0px;
+}
+.options-bottom-first-div{
+    display: flex;
+    position: relative;
+    margin: auto;
+    height: 5rem;
+    width: 90%;
+    border-bottom: 1px solid #6d6d6a;
+}
+.h1-p-text{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 75%;
+    flex: 1;
+    margin: 0;
+    margin-top: 14px;
+}
+.h1-p-text h1{
+    margin: 0;
+    margin-right: 5.5rem;
+    font-size: 13px;
+    color: #6d6d6a;
+}
+.h1-p-text p{
+    font-size: 11px;
+    color: #6d6d6a;
+}
+.toggul{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 25%;
+    margin: 0;
+    margin-top: 25px;
+    margin-right: 7px;
+}
+#p-text h1{
+    font-size: 12px;
+}
+#p-textt h1{
+    font-size: 13px;
+    margin: 0;
+    margin-top: 20px;
+    margin-right: 2.5rem;
+}
+#p-test h1{
+    font-size: 13px;
+    margin: 0;
+    margin-top: 20px;
+    margin-right: 6.5rem;
+}
+#p-tesst h1{
+    font-size: 13px;
+    margin: 0;
+    margin-top: 20px;
+    margin-right: 7.9rem;
+}

@@ -45,18 +45,18 @@
 }
 
 .tablet-MenuBar .ba-original:hover .game-arrow img {
-  transform: rotate(90deg);
-  animation: rotation 0.2s ease-in;
+  /* game-arrow; */
+  /* animation: rotation 0.2s ease-in; */
 }
 
-@keyframes rotation {
+/* @keyframes rotation {
   from {
     transform: rotate(20deg);
   }
   to {
-    transform: rotate(90deg);
+    game-arrow;
   }
-}
+} */
 
 .tablet-MenuBar .middle-belt .rotate img {
   animation: spin 2s infinite linear;

@@ -1,0 +1,270 @@
+.notify-display {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 350px;
+  height: 100%;
+  z-index: 103;
+  animation: menu 0.3s ease-out;
+}
+
+@keyframes menu {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+.notify-page {
+  width: 100%;
+  max-width: 414px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.notify-page::before {
+  content: "";
+  position: absolute;
+  left: -0.75rem;
+  top: 0rem;
+  width: 0.75rem;
+  pointer-events: none;
+  height: 100%;
+  background-image: linear-gradient(to left, rgb(4, 4, 4), rgba(36, 38, 43, 0));
+  opacity: 0.1;
+}
+.notify-top {
+  height: 2.3rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 10px;
+  background: rgb(30, 32, 36);
+}
+.notify-body-top::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 0.75rem;
+  background-image: linear-gradient(rgb(17, 20, 21), rgba(17, 20, 21, 0));
+  opacity: 0.44;
+}
+.notify-top-flex1 h3 {
+  color: #fff;
+  font-size: 12px;
+}
+.notify-top-flex2 h4 {
+  color: #878787;
+}
+.notify-body {
+  flex: 1 1 0%;
+  background: #030307;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.notify-body-top {
+  height: 3rem;
+  display: flex;
+  background-color: rgb(16, 16, 17);
+  position: relative;
+}
+.top-flex {
+  flex: 1 1 0%;
+  font-size: 12px;
+  color: rgba(95, 105, 117, 0.6);
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  height: 100%;
+  border: none;
+  padding: 0;
+  user-select: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.top-flex.active {
+  position: relative;
+  color: rgb(245, 246, 247);
+  font-weight: 600;
+  background-image: linear-gradient(
+    to top,
+    #ad86055e,
+    rgba(91, 174, 28, 0) 60%
+  );
+}
+.top-flex.active::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 0.125rem;
+  background-color: #ad8605;
+  z-index: 12;
+}
+.circle-ba {
+  width: 20px;
+  height: 20px;
+  background-color: #ad8605;
+  border-radius: 50%;
+  margin-right: 0.375rem;
+}
+.enable a {
+  color: #ad8605;
+  font-size: 14px;
+}
+.notify-body-main {
+  overflow: hidden;
+  flex: 1 1 0%;
+  position: relative;
+}
+.notify-body-main-inner {
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
+  touch-action: pan-y;
+  overscroll-behavior: contain;
+  padding: 0.625rem;
+}
+.notify-body-main-inner::-webkit-scrollbar {
+  display: none;
+}
+.notify-body-system {
+  width: 100%;
+  background: rgba(45, 48, 53, 0.6);
+  border-radius: 1.25rem;
+  padding: 1.25rem 0px;
+  position: relative;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+}
+.notify-body-system-inner {
+  padding: 0px 0.875rem;
+  border-bottom: 1px solid rgba(85, 91, 101, 0.2);
+}
+.notify-body-system-inner h1 {
+  line-height: 1.25;
+  font-weight: 600;
+  font-size: 12px;
+  color: #fff;
+}
+.notify-ba {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 1rem 0px 0.625rem;
+  font-size: 12px;
+}
+.notify-ba-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notify-ba-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notify-body-system-inner-main {
+  font-size: 0.875rem;
+  color: rgba(153, 164, 176, 0.8);
+  padding: 0px 0.875rem;
+}
+.notify-body-system-inner-main-inner {
+  font-weight: 600;
+  padding: 1.25rem 2.1875rem;
+  color: rgb(245, 246, 247);
+  background: url(https://static.nanogames.io/assets/hand.1053c278.svg) left
+    center / 1.6875rem 2.1875rem no-repeat;
+}
+.notify-body-system-inner-main img {
+  width: 100%;
+  border-radius: 10px;
+}
+.links-notify {
+  background: rgba(11, 12, 12, 0.7);
+  border-radius: 0.625rem;
+  padding: 0.625rem;
+  margin: 0px 0px 0.875rem;
+  white-space: pre-wrap;
+}
+.p {
+  margin: 0px 0px 0.875rem;
+  white-space: pre-wrap;
+}
+.links-notify1 {
+  display: flex;
+}
+.links-notify1-1 {
+  font-size: 0.875rem;
+  color: rgb(245, 246, 247);
+}
+.finger {
+  padding-right: 1.5rem;
+  background: url(https://static.nanogames.io/assets/finger.1b642f84.svg) right
+    center / 0.9375rem no-repeat;
+}
+.notify-reward {
+  padding-top: 2.875rem;
+  height: 100%;
+}
+.notify-reward-inner {
+  position: absolute;
+  inset: 0px;
+  height: 2.5rem;
+  background: rgb(30, 32, 36);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 2px 6px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  padding-right: 1.25rem;
+  z-index: 5;
+}
+.notify-reward-data {
+  padding: 2.5rem 0px;
+  color: rgba(153, 164, 176, 0.6);
+  line-height: 1;
+  text-align: center;
+  height: 100%;
+  min-height: 16.25rem;
+  position: relative;
+}
+.notify-reward-data img {
+  position: absolute;
+  left: 60%;
+  top: 40%;
+  margin: -6.875rem 0px 0px -6.25rem;
+  width: 120px;
+}
+.notify-reward-data .text-data {
+  position: absolute;
+  z-index: 1;
+  line-height: 1.25rem;
+  width: 17.5rem;
+  top: 38%;
+  margin-left: 30px;
+  font-size: 12px;
+}
+.notify-reward-inner {
+  color: #878787;
+}
+.view-angle {
+  margin-left: 1.875rem;
+}

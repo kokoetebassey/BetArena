@@ -2,7 +2,9 @@ import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { useState } from "react";
 
-export default function TransactionCoins({ coinData }) {
+export default function TransactionCoins({ coinData, ClearChooseCoin }) {
+  // const [walletAddress, setwalletAddress] = useState("");
+
   const [coinEl] = useState([
     {
       id: 1,
@@ -10,10 +12,9 @@ export default function TransactionCoins({ coinData }) {
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
-      network: {
-        erc20: "wigiufoehhwoeewhfuyweohweufhwofh",
-        erc30: "swiygwouwhow"
-      },
+        wallet_address: [ {
+          address: `128TUZbbpJ73zjEU1UUUJP2ftBYveTPXdC`,
+        }]
     },
     {
       id: 2,
@@ -21,7 +22,9 @@ export default function TransactionCoins({ coinData }) {
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/325/large/Tether.png",
-        network: null
+        wallet_address:[{
+          address: `0x60a3171d77c38c4BEB84c0102680d4F4dc75e3db`,
+        }]
     },
     {
       id: 3,
@@ -29,6 +32,9 @@ export default function TransactionCoins({ coinData }) {
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/279/large/ethereum.png",
+        wallet_address:[{
+          address: `0x60a3171d77c38c4BEB84c0102680d4F4dc75e3db`,
+        }]
     },
     {
       id: 4,
@@ -36,6 +42,11 @@ export default function TransactionCoins({ coinData }) {
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/4128/large/solana.png",
+        wallet_address : [
+          {
+            address: `0x60a3171d77c38c4BEB84c0102680d4F4dc75e3db`,
+          }
+        ]
     },
     {
       id: 5,
@@ -43,6 +54,9 @@ export default function TransactionCoins({ coinData }) {
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/3695/large/nexo.png",
+        wallet_address: [{
+          address: `0x121d60bd726b0f79ed9b94e607f2d2bf1d11133b`,
+        }]
     },
     {
       id: 6,
@@ -50,6 +64,9 @@ export default function TransactionCoins({ coinData }) {
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/6319/large/USD_Coin_icon.png",
+        wallet_address:[{
+          address: `0x121d60bd726b0f79ed9b94e607f2d2bf1d11133b`,
+        }]
     },
     {
       id: 8,
@@ -57,6 +74,9 @@ export default function TransactionCoins({ coinData }) {
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png",
+        wallet_address:[{
+          address: `0x121d60bd726b0f79ed9b94e607f2d2bf1d11133b`,
+        }]
     },
     {
       id: 9,
@@ -64,12 +84,20 @@ export default function TransactionCoins({ coinData }) {
       coin_bal: "0.00000",
       coin_image:
         "https://assets.coingecko.com/coins/images/9576/large/BUSD.png",
+        wallet_address:[{
+          address: `0x121d60bd726b0f79ed9b94e607f2d2bf1d11133b`,
+        }]
     },
   ]);
 
-  const HandleCoinSelect = (coin_name, coin_image, coin_bal) => {
-    const data = { coin_name, coin_image, coin_bal };
+
+  const HandleCoinSelect = (coin_name, coin_image, coin_bal, wallet_address) => {
+    const data = { coin_name, coin_image, coin_bal, wallet_address};
     coinData(data);
+  };
+
+  const Cancel = () => {
+    ClearChooseCoin();
   };
 
   return (
@@ -77,7 +105,9 @@ export default function TransactionCoins({ coinData }) {
       <div className="transaction-container">
         <div className="choose-coin-header">
           <h2 className="choose-coin">Choose Coin</h2>
-          <h2 className="cancel">&#x2715;</h2>
+          <h2 onClick={Cancel} className="cancel">
+            &#x2715;
+          </h2>
         </div>
         <div className="choose-coin-content">
           <div className="search-bar">
@@ -95,7 +125,12 @@ export default function TransactionCoins({ coinData }) {
             <div
               key={e.id}
               onClick={() =>
-                HandleCoinSelect(e.coin_name, e.coin_image, e.coin_bal)
+                HandleCoinSelect(
+                  e.coin_name,
+                  e.coin_image,
+                  e.coin_bal,
+                  e.wallet_address
+                )
               }
               className="choose-coin-body"
             >

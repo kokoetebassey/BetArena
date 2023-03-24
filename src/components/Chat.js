@@ -30,7 +30,10 @@ export default function Chat({ cancel }) {
             <div className="chat-top-flex22-2">
               <img src={cup} alt="cup" width={"19px"} />
             </div>
-            <div className="chat-top-flex22-3" onClick={()=>Clear("clear this guy")}>
+            <div
+              className="chat-top-flex22-3"
+              onClick={() => Clear("clear this guy")}
+            >
               <h3> &#10006;</h3>
             </div>
           </div>

@@ -26,6 +26,7 @@
 }
 .Navbar-containerEL .Navbar-content .logo {
   width: 20%;
+  cursor: pointer;
 }
 .Navbar-containerEL .Navbar-content .logo img {
   width: 180px;
@@ -35,7 +36,7 @@
 
 .Navbar-containerEL .Navbar-content .search-line {
   width: 26%;
-  background: #030307;
+  background: #191935;
   margin: 10px 15px;
   height: 40px;
   border-radius: 30px;
@@ -44,7 +45,8 @@
 
 .Navbar-containerEL .Navbar-content .search {
   width: 26%;
-  background: #090915;
+  background: #191935;
+
   margin: 10px 10px;
   height: 40px;
   border-radius: 30px;
@@ -140,4 +142,175 @@
   top: 5px;
   background-color: rgba(173, 134, 5, 1);
   position: absolute;
+}
+
+
+@media  only screen and ( min-width: 1100px ) and ( max-width : 1210px ) {
+  .Navbar-containerEL .Navbar-content .play {
+    width:7%;
+    text-align: center;
+    position: relative;
+  }
+  .Navbar-containerEL .Navbar-content .play p {
+    color: white;
+    font-size: 11.5px;
+    border-radius: 50%;
+    padding: 3px;
+    right: 0px;
+    top: 5px;
+    background-color: rgba(173, 134, 5, 1);
+    position: absolute;
+  }
+  .Navbar-containerEL .Navbar-content .signup {
+    width: 13%;
+    text-align: center;
+    margin-top: 16px;
+  }
+  
+}
+
+
+@media  only screen and ( min-width: 850px ) and ( max-width : 1110px ) {
+  .Navbar-containerEL .Navbar-content .logo {
+    width: 23%;
+    cursor: pointer;
+  }
+  .Navbar-containerEL .Navbar-content .play {
+    width:7%;
+    text-align: center;
+    position: relative;
+  }
+  .Navbar-containerEL .Navbar-content .play p {
+    color: white;
+    font-size: 11.5px;
+    border-radius: 50%;
+    padding: 3px;
+    right: 0px;
+    top: 5px;
+    background-color: rgba(173, 134, 5, 1);
+    position: absolute;
+  }
+  .Navbar-containerEL .Navbar-content .signup {
+    width: 13%;
+    text-align: center;
+    margin-top: 16px;
+  }
+  
+.Navbar-containerEL .Navbar-content .search-line {
+  width: 14%;
+  background: #191935;
+  margin: 10px 15px;
+  height: 40px;
+  border-radius: 30px;
+  border: 1px solid rgba(173, 134, 5, 1);
+}
+
+.Navbar-containerEL .Navbar-content .search {
+  width: 14%;
+  background: #191935;
+  margin: 10px 10px;
+  height: 40px;
+  border-radius: 30px;
+}
+.Navbar-containerEL .Navbar-content .search-line input {
+  width: 40px;
+  background: none;
+  border: none;
+  outline: none;
+  margin: auto;
+  margin-left: 10px;
+  color: #52506b;
+  font-weight: 600;
+  font-size: 12px;
+}
+.Navbar-containerEL .Navbar-content .search input {
+  width: 40px;
+  background: none;
+  border: none;
+  outline: none;
+  margin: auto;
+  margin-left: 10px;
+  color: #52506b;
+  font-weight: 600;
+  font-size: 12px;
+}
+.Navbar-containerEL .Navbar-content .logo img {
+  width: 160px;
+  padding: 11px 0px;
+  border-radius: 8px;
+}
+
+}
+
+
+@media  only screen and ( min-width: 750px ) and ( max-width : 850px ) {
+  .Navbar-containerEL .Navbar-content .logo {
+    width: 23%;
+    cursor: pointer;
+  }
+  .Navbar-containerEL .Navbar-content .play {
+    width:7%;
+    text-align: center;
+    position: relative;
+  }
+  .Navbar-containerEL .Navbar-content .play p {
+    color: white;
+    font-size: 11.5px;
+    border-radius: 50%;
+    padding: 3px;
+    right: 0px;
+    top: 5px;
+    background-color: rgba(173, 134, 5, 1);
+    position: absolute;
+  }
+  .Navbar-containerEL .Navbar-content .signup {
+    width: 13%;
+    text-align: center;
+    margin-top: 16px;
+  }
+  
+.Navbar-containerEL .Navbar-content .search-line {
+  width: 14%;
+  background: #191935;
+  margin: 10px 15px;
+  height: 40px;
+  border-radius: 30px;
+  border: 1px solid rgba(173, 134, 5, 1);
+}
+
+.Navbar-containerEL .Navbar-content .search {
+  width: 14%;
+  background: #191935;
+  margin: 10px 10px;
+  height: 40px;
+  border-radius: 30px;
+}
+.Navbar-containerEL .Navbar-content .search-line input {
+  width: 40px;
+  background: none;
+  border: none;
+  outline: none;
+  margin: auto;
+  margin-left: 10px;
+  color: #52506b;
+  font-weight: 600;
+  font-size: 12px;
+}
+.Navbar-containerEL .Navbar-content .search input {
+  width: 40px;
+  background: none;
+  border: none;
+  outline: none;
+  margin: auto;
+  margin-left: 10px;
+  color: #52506b;
+  font-weight: 600;
+  font-size: 12px;
+}
+.Navbar-containerEL .Navbar-content .logo img {
+  width: 160px;
+  padding: 11px 0px;
+  border-radius: 8px;
+}
+
 }

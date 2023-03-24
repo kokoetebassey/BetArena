@@ -1,21 +1,15 @@
-import React, { useState, useEffect } from "react";
 import { FaRegCopy } from "react-icons/fa";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import star from "../images/Star 1.svg";
 import reward from "../images/reward img.svg";
+import React, { useEffect, useState } from "react";
 
-export default function Deposit({ defaultTransaction, selectCoin }) {
+export default function Deposit({ selectCoin, cryptoCoin, cryptoWallet }) {
   const HandleCoin = () => {
     selectCoin();
   };
 
-  const [erc20, setErc20] = useState(0);
-
-  const handleErc = (index) => {
-    setErc20(index);
-  };
-
-  const [address] = useState("duguysiaygiaygiasfiwe78223973979827e7g8gias");
+  const [invite] = useState(cryptoWallet.address);
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -39,22 +33,34 @@ export default function Deposit({ defaultTransaction, selectCoin }) {
     <>
       <div className="deposit">
         <div className="deposit-container">
-          <h3 className="deposit-currency"> Currency</h3>
+          <h3 className="deposit-currency">Deposit Currency</h3>
           <div className="input-coin">
             <div className="select-coin" onClick={HandleCoin}>
               <div className="image">
-                <img src={defaultTransaction.coin_image} alt="" />
+                {cryptoCoin.coin_image ? (
+                  <img src={cryptoCoin.coin_image} alt="" />
+                ) : (
+                  <img src="" alt="" />
+                )}
               </div>
-              <div className="c">
-                <h4>{defaultTransaction.coin_name}</h4>
+              <div className="name">
+                {cryptoCoin.coin_name ? (
+                  <h4>{cryptoCoin.coin_name}</h4>
+                ) : (
+                  <h4>Loading....</h4>
+                )}
               </div>
               <div className="arrow">
                 <MdOutlineKeyboardArrowRight />
               </div>
             </div>
             <div className="showBalance">
-              <h3 className="balance">Balance</h3>
-              <h3>{defaultTransaction.coin_bal}</h3>
+              <h3 className="balance">Balance : </h3>
+              {cryptoCoin.coin_bal ? (
+                <h4>{cryptoCoin.coin_bal}</h4>
+              ) : (
+                <h4>Loading....</h4>
+              )}
             </div>
           </div>
 
@@ -101,83 +107,58 @@ export default function Deposit({ defaultTransaction, selectCoin }) {
             </div>
           </div>
 
-          <div className="network-coin">
-            <div className="network-coin-top">Choose Network</div>
-            <div className="network-selection-cover">
-              <div className="network-selection">
-                <div
-                  onClick={() => handleErc(0)}
-                  className={`network-selection1 ${
-                    erc20 === 0 ? "active" : ""
-                  }`}
-                >
-                  <button>ERC20</button>
-                </div>
-                <div
-                  onClick={() => handleErc(1)}
-                  className={`network-selection1 ${
-                    erc20 === 1 ? "active" : ""
-                  }`}
-                >
-                  <button>BEP20</button>
+          {/* <div className="network-coin">
+              <div className="network-coin-top">Choose Network</div>
+              <div className="network-selection-cover">
+                <div className="network-selection">
+                  <div
+                    onClick={() => handleErc(0)}
+                    className={`network-selection1 ${
+                      erc20 === 0 ? "active" : ""
+                    }`}
+                  >
+                    <button>ERC20</button>
+                  </div>
+                  <div
+                    onClick={() => handleErc(1)}
+                    className={`network-selection1 ${
+                      erc20 === 1 ? "active" : ""
+                    }`}
+                  >
+                    <button>BEP20</button>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {erc20 === 0 && (
-              <>
-                <div className="withdraw-currency">
-                  Withdraw Address
-                  <h3>
-                    (Note: Only<span> {defaultTransaction.coin_name}</span>)
-                  </h3>
-                </div>
-                <div className="input-coin">
-                  <div className="select-coin">
-                    <div className="image">
-                      <p>duguysiaygiaygiasfiwe78223973979827e7g83446ffdfas</p>
-                      <div className="copy-icon">
-                        <FaRegCopy />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </>
-            )}
-            {erc20 === 1 && (
-              <>
-                <div className="withdraw-currency">
-                  Withdraw Address
-                  <h3>
-                    (Note: Only<span> {defaultTransaction.coin_name}</span>)
-                  </h3>
-                </div>
-                <div className="input-coin">
-                  <div className="select-coin">
-                    <div className="image">
-                      <p>duguysiaygiaygiasfiwe78223973979827e7g8gias</p>
-                      <div className="copy-icon">
-                        <FaRegCopy />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </>
-            )}
-          </div>
+            </div> */}
 
           <div className="withdraw-currency">
             Deposit Address
             <h3>
-              (Note: Only<span> {defaultTransaction.coin_name}</span>)
+              {cryptoCoin.coin_name ? (
+                <h4>
+                  {" "}
+                  ( Note: Only<span> {cryptoCoin.coin_name}</span>){" "}
+                </h4>
+              ) : (
+                <h4>Loading....</h4>
+              )}
             </h3>
           </div>
           <div className="input-coin">
             <div className="select-coin">
-              <div className="image">
-                <p>duguysiaygiaygiasfiwe78223973979827e7g83446ffdf</p>
-                <div className="copy-icon">
-                  <FaRegCopy onClick={() => copyToClipboard(`${address}`)} />
+              <div className="wallet">
+                <div className="wallet-address">
+                  {cryptoWallet ? (
+                    <h4>{cryptoWallet.address}</h4>
+                  ) : (
+                    <h4>Loading....</h4>
+                  )}
+                </div>
+                <div
+                  onClick={() => copyToClipboard(`${invite}`)}
+                  className="copy-icon"
+                >
+                  <FaRegCopy />
                 </div>
               </div>
             </div>

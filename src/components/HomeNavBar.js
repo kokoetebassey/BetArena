@@ -11,7 +11,7 @@ import message from "../images/message.svg";
 import wallet from "../images/wallet bet.svg";
 import not from "../images/not bet.svg";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import menu from "../images/menu.svg";
@@ -19,13 +19,16 @@ import logo from "../images/betarena.png";
 import search from "../images/search.svg";
 // import MobileMenubar from "./Mobile-Menubar";
 import Chat from "./Chat";
+import Notification from "./Notification";
 import WalletCoins from "../Navbar/WalletCoins";
 import NavProfile from "../Navbar/NavProfile.js";
+// import UserInfo from "../Navbar/UserInfo";
 
 import { useAuthContext } from "../hooks/useAuthContext";
 
 // =============== Import HTTPS request ==================
 import axios from "axios";
+// import ChatRoom from "../Pop up/ChatRoom";
 
 export default function HomeNavBar({ setScreen, setView }) {
   const [searchEL, setSearch] = useState("search");
@@ -33,8 +36,30 @@ export default function HomeNavBar({ setScreen, setView }) {
   const [count, setCount] = useState(true);
   const [menucount, setMenuCount] = useState(true);
   const [PublicMsg, setPublicMsg] = useState(false);
+  const [PublicNot, setPublicNot] = useState(false);
   const [profile, setProfile] = useState("");
+  const [DBwallet, setDBwallet] = useState("");
   const { user } = useAuthContext();
+  const navigate = useNavigate();
+
+  // const [userInfo, setUserInfo] = useState(false)
+  // const [chatRoom, setChatRoom] = useState(false)
+
+  // function functionUserInfo(){
+  //   if (userInfo) {
+  //     setUserInfo(false);
+  //   } else {
+  //     setUserInfo(true);
+  //   }
+  // };
+
+  // function functionChatRoom(){
+  //   if(chatRoom){
+  //     setChatRoom(true)
+  //   }else{
+  //     setChatRoom(true)
+  //   }
+  // }
 
   function searchHandle() {
     if (count) {
@@ -47,37 +72,39 @@ export default function HomeNavBar({ setScreen, setView }) {
   }
 
   function menuHandler() {
-    if (menucount) {
-      setScreen();
-      setMenuCount(false);
-      if (PublicMsg) {
-        setView("left_view");
-        setNavBarPage("Navbar-container3");
+      if (menucount) {
+        setScreen();
+        setMenuCount(false);
+        if (PublicMsg) {
+          setView("left_view");
+          setNavBarPage("Navbar-container3");
+        } else {
+          setView("full_view");
+          setNavBarPage("openNavbar-container");
+        }
       } else {
-        setView("full_view");
-        setNavBarPage("openNavbar-container");
+        setScreen();
+        setMenuCount(true);
+        if (PublicMsg) {
+          setView("default");
+          setNavBarPage("Navbar-containerEL");
+        } else {
+          setView("default");
+          setNavBarPage("Navbar-container");
+        }
       }
-    } else {
-      setScreen();
-      setMenuCount(true);
-      if (PublicMsg) {
-        setView("default");
-        setNavBarPage("Navbar-containerEL");
-      } else {
-        setView("default");
-        setNavBarPage("Navbar-container");
-      }
-    }
   }
-
   const handleResize = () => {
     if (window.innerWidth < 650) {
       console.log("mobile");
       setPublicMsg(false);
+      // setPublicNot(false);
     } else if (window.innerWidth < 900) {
       setPublicMsg(false);
+      // setPublicNot(false);
     } else {
       setPublicMsg(true);
+      // setPublicNot(true);
       setMenuCount("Navbar-container");
       setNavBarPage("Navbar-container");
     }
@@ -96,6 +123,7 @@ export default function HomeNavBar({ setScreen, setView }) {
 
   const Cancel = (e) => {
     setPublicMsg(false);
+    setPublicNot(false);
     if (menucount) {
       setView("default");
       setNavBarPage("Navbar-container");
@@ -111,6 +139,17 @@ export default function HomeNavBar({ setScreen, setView }) {
 
   const Message = () => {
     setPublicMsg(true);
+    // setPublicNot(true);
+    if (menucount) {
+      setView("middle_view");
+      setNavBarPage("Navbar-containerEL");
+    } else {
+      setView("left_view");
+      setNavBarPage("Navbar-container3");
+    }
+  };
+  const Notify = () => {
+    setPublicNot(true);
     if (menucount) {
       setView("middle_view");
       setNavBarPage("Navbar-containerEL");
@@ -149,9 +188,46 @@ export default function HomeNavBar({ setScreen, setView }) {
     coin_image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
   });
 
+  // ============= fetch wallet ================
+  useEffect(() => {
+    axios
+      .get("https://betarena.herokuapp.com/api/profile/wallet", {
+        headers: {
+          Authorization: `Bearer ${user.Token}`,
+        },
+      })
+      .then((response) => {
+        setDBwallet(response.data[0]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [user]);
+
+  // =================Fetch default coins ==========================
+  useEffect(() => {
+    const fetchData = async () => {
+      await axios
+        .get("https://betarena.herokuapp.com/api/profile/default-coin", {
+          headers: {
+            Authorization: `Bearer ${user.Token}`,
+          },
+        })
+        .then((response) => {
+          setNavCoins(response.data[0]);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    fetchData();
+  }, [user]);
+
   const updateCoin = (e) => {
     setNavCoins(e);
   };
+
+  //  ==================== Fetch profile doc ===================
   useEffect(() => {
     const fetchData = async () => {
       await axios
@@ -179,10 +255,8 @@ export default function HomeNavBar({ setScreen, setView }) {
               <div className="menu" onClick={menuHandler}>
                 <img src={menu} alt="" />
               </div>
-              <div className="logo">
-                <NavLink to="/">
-                  <img src={logo} alt="" />
-                </NavLink>
+              <div className="logo" onClick={() => navigate("/")}>
+                <img src={logo} alt="" />
               </div>
               <div id="search" className={searchEL} onClick={searchHandle}>
                 <img src={search} alt="search" />
@@ -191,7 +265,6 @@ export default function HomeNavBar({ setScreen, setView }) {
                   placeholder="Game name | Provider | Category Tag"
                 />
               </div>
-
               <div className="home-wallet">
                 <div className="home-wallet-container">
                   <div
@@ -205,25 +278,31 @@ export default function HomeNavBar({ setScreen, setView }) {
                       <div className="coin">
                         <h3>{navCoins.coin_name}</h3>
                       </div>
-                      {/* <div className="arrow">
-                        <h4>&#10095;</h4>
-                      </div> */}
                     </div>
                     <div className="balance">
                       <h4>{navCoins.coin_bal}</h4>
                     </div>
                   </div>
-                  <NavLink to="wallet/deposit">
-                    <div className="Home-wallet-btn">
-                      <img src={wallet} alt="wallet" width={"12px"} />
-                      <h3>Wallet</h3>
-                    </div>
-                  </NavLink>
+
+                  <div
+                    onClick={() =>
+                      navigate("/wallet/deposit", {
+                        state: {
+                          navCoins,
+                        },
+                      })
+                    }
+                    className="Home-wallet-btn"
+                  >
+                    <img src={wallet} alt="wallet" width={"12px"} />
+                    <h3>Wallet</h3>
+                  </div>
                 </div>
               </div>
 
               {coinDropdown && (
                 <WalletCoins
+                  DBwallet={DBwallet}
                   Clear={HandleCoinDropDown}
                   updateCoin={updateCoin}
                 />
@@ -231,7 +310,16 @@ export default function HomeNavBar({ setScreen, setView }) {
 
               <div className="Home-Items2">
                 <div className="Home-Items2-1">
+                  <NavLink to="/user/information">
+                    <img src={profile.img} alt="userImage" width={"25px"} />
+                  </NavLink>
+                  {/* <div onClick={functionUserInfo}>
                   <img src={profile.img} alt="userImage" width={"25px"} />
+                  {userInfo && (
+                    <UserInfo />
+                  )}
+                  </div> */}
+
                   <div onClick={HandleNavProfile} className="navPro">
                     <h3>&#9781;</h3>
                     {navProfile && (
@@ -243,9 +331,19 @@ export default function HomeNavBar({ setScreen, setView }) {
                   </div>
                 </div>
               </div>
+
               <div className="Home-Items3">
+                <NavLink to="/chat" className="Home-Items3">
+                  <img src={message} alt="message" width={"20px"} />
+                </NavLink>
+
+                {/* <div onClick={functionChatRoom} className="Home-Items3">
                 <img src={message} alt="message" width={"20px"} />
-                <img src={not} alt="not" width={"20px"} />
+                {chatRoom && (
+                  <ChatRoom />
+                )}
+                </div> */}
+                <img onClick={Notify} src={not} alt="not" width={"20px"} />
               </div>
 
               <div className="play" onClick={Message}>
@@ -254,6 +352,7 @@ export default function HomeNavBar({ setScreen, setView }) {
               </div>
             </div>
             {PublicMsg && <Chat cancel={Cancel} />}
+            {PublicNot && <Notification cancel={Cancel} />}
           </div>
         </div>
       </div>
