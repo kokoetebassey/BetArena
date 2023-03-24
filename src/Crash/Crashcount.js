@@ -70,7 +70,14 @@ export default function Crashcount(crash) {
       ctx.clearRect(0, 0, width, height); //clear canvas each time a line is drawn.
       ctx.beginPath();
       ctx.moveTo(0, height);
-      ctx.lineTo(strokeLength, 0);
+      ctx.bezierCurveTo(
+        width * 0.25,
+        height * 0.75,
+        width * 0.75,
+        height * 0.25,
+        strokeLength,
+        0
+      );
       ctx.lineWidth = "2";
       ctx.strokeStyle = "#FFEB73";
       ctx.stroke();
