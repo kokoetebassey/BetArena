@@ -9,6 +9,20 @@ import green from "../images/images/lottery green ball.png";
 import display from "../images/images/lottery-display-img.png";
 
 export default function History() {
+  const date = new Date();
+
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+
+  let currentDate = `${day}/${month}/${year}`;
+
+  let hoursMin = date.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+
   return (
     <div className="lottery-page-cover">
       <div className="lottery-main">
@@ -21,11 +35,14 @@ export default function History() {
               <img src={back} alt="back" />
             </div>
             <div className="lottery-main-flex-img2">
-              <h1>000000</h1>
+              <h3>000000</h3>
               <img src={arrow} alt="arrow" />
             </div>
             <img className="lottery-forward-arrow" src={arrow} alt="arrow" />
-            <h4>8/19/2022, 3:55:00 PM</h4>
+            <h4>
+              {" "}
+              {currentDate}, {hoursMin}
+            </h4>
           </div>
           <div className="lottery-main-logo">
             <img src={logo} alt="logo" />
@@ -316,13 +333,6 @@ export default function History() {
           </div>
         </div>
       </div>
-
-     
-
-      
-
-
-     
     </div>
   );
 }

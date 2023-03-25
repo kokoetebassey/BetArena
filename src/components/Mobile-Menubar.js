@@ -102,7 +102,9 @@ export default function MobileMenubar(props) {
                 </div>
               </div>
             </NavLink>
+
             <hr />
+
             <NavLink to="/lottery">
               <div className="nav-details">
                 <div className="game-icon">
@@ -135,7 +137,7 @@ export default function MobileMenubar(props) {
               </div>
             </NavLink>
 
-            <NavLink to="/probably-fair">
+            <NavLink to="/login">
               <div className="nav-details">
                 <div className="game-icon">
                   <img src={probablyImg} alt="casino" />
@@ -148,7 +150,7 @@ export default function MobileMenubar(props) {
 
             <hr />
 
-            <NavLink to="/probably-fair">
+            <NavLink to="/login">
               <div className="nav-details">
                 <div className="game-icon">
                   <img src={favourite} alt="casino" />
@@ -159,7 +161,7 @@ export default function MobileMenubar(props) {
               </div>
             </NavLink>
 
-            <NavLink to="/probably-fair">
+            <NavLink to="/login">
               <div className="nav-details">
                 <div className="game-icon">
                   <img src={recent} alt="casino" />

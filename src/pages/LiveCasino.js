@@ -74,7 +74,7 @@ export default function LiveCasino() {
           <div className="slot">
             <div className="slot-page">
               <div className="slot-text1">
-                <h4>Slots</h4>
+              <h4>Live Casino</h4>
               </div>
               <div
                 onMouseEnter={showPro}
@@ -1211,7 +1211,7 @@ export default function LiveCasino() {
           <div className="slot">
             <div className="slot-page">
               <div className="slot-text1">
-                <h4>Slots</h4>
+                <h4>Live Casino</h4>
               </div>
               <div
                 onMouseEnter={showPro}

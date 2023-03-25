@@ -17,12 +17,23 @@ import { useState, useEffect } from "react";
 import menu from "../images/menu.svg";
 import logo from "../images/betarena.png";
 import search from "../images/search.svg";
-// import MobileMenubar from "./Mobile-Menubar";
 import Chat from "./Chat";
 import Notification from "./Notification";
 import WalletCoins from "../Navbar/WalletCoins";
 import NavProfile from "../Navbar/NavProfile.js";
-// import UserInfo from "../Navbar/UserInfo";
+
+import mobileIcon from "../images/mobile-icon.svg";
+import mobileMenu from "../images/mobile-menu.svg";
+import MobileMenubar from "./Mobile-Menubar";
+import icon1 from "../images/home icon 1.png";
+// import icon3 from "../images/home icon 3.png";
+// import icon4 from "../images/home icon 4.png";
+import spin1 from "../images/spin rotaete.png";
+import spin2 from "../images/spin rotaete pointer.png";
+// import key from "../images/key svg.svg";
+import bitcoinIcon from "../images/bitcoin icon svg.svg";
+import bitcoinLogo from "../images/bitcoin logo cover.svg";
+import shitcode from "../images/shitcode icon.svg";
 
 import { useAuthContext } from "../hooks/useAuthContext";
 
@@ -41,6 +52,16 @@ export default function HomeNavBar({ setScreen, setView }) {
   const [DBwallet, setDBwallet] = useState("");
   const { user } = useAuthContext();
   const navigate = useNavigate();
+
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  const MobileHandle = () => {
+    setShowMobileMenu(true);
+  };
+
+  const close = (data) => {
+    setShowMobileMenu(false);
+  };
 
   // const [userInfo, setUserInfo] = useState(false)
   // const [chatRoom, setChatRoom] = useState(false)
@@ -72,39 +93,36 @@ export default function HomeNavBar({ setScreen, setView }) {
   }
 
   function menuHandler() {
-      if (menucount) {
-        setScreen();
-        setMenuCount(false);
-        if (PublicMsg) {
-          setView("left_view");
-          setNavBarPage("Navbar-container3");
-        } else {
-          setView("full_view");
-          setNavBarPage("openNavbar-container");
-        }
+    if (menucount) {
+      setScreen();
+      setMenuCount(false);
+      if (PublicMsg) {
+        setView("left_view");
+        setNavBarPage("Navbar-container3");
       } else {
-        setScreen();
-        setMenuCount(true);
-        if (PublicMsg) {
-          setView("default");
-          setNavBarPage("Navbar-containerEL");
-        } else {
-          setView("default");
-          setNavBarPage("Navbar-container");
-        }
+        setView("full_view");
+        setNavBarPage("openNavbar-container");
       }
+    } else {
+      setScreen();
+      setMenuCount(true);
+      if (PublicMsg) {
+        setView("default");
+        setNavBarPage("Navbar-containerEL");
+      } else {
+        setView("default");
+        setNavBarPage("Navbar-container");
+      }
+    }
   }
   const handleResize = () => {
     if (window.innerWidth < 650) {
       console.log("mobile");
       setPublicMsg(false);
-      // setPublicNot(false);
     } else if (window.innerWidth < 900) {
       setPublicMsg(false);
-      // setPublicNot(false);
     } else {
       setPublicMsg(true);
-      // setPublicNot(true);
       setMenuCount("Navbar-container");
       setNavBarPage("Navbar-container");
     }
@@ -248,6 +266,126 @@ export default function HomeNavBar({ setScreen, setView }) {
 
   return (
     <>
+      {showMobileMenu && <MobileMenubar cancel={close} />}
+      <div className="mobile-display-navbar">
+        <div className="mobile-head-container">
+          <div className="mobile-first-nav">
+            <div className="mobile-first-logo">
+              <img src={mobileIcon} alt="mobileMenu" />
+            </div>
+            <div className="mobile-first-menu" onClick={MobileHandle}>
+              <img src={mobileMenu} alt="mobileMenu" />
+            </div>
+          </div>
+
+          <div id="mobile-extreme-nav">
+            <div className="home-wallet-container">
+              <div className="home-wallet-content" onClick={HandleCoinDropDown}>
+                <div className="home-wallet-details">
+                  <div className="image">
+                    <img src={navCoins.coin_image} alt="table3" />
+                  </div>
+                  <div className="coin">
+                    <h3>{navCoins.coin_name}</h3>
+                  </div>
+                </div>
+                <div className="balance">
+                  <h4>{navCoins.coin_bal}</h4>
+                </div>
+              </div>
+
+              <div
+                onClick={() =>
+                  navigate("/wallet/deposit", {
+                    state: {
+                      navCoins,
+                    },
+                  })
+                }
+                className="Home-wallet-btn"
+              >
+                <img src={wallet} alt="wallet" width={"12px"} />
+                <h3>Wallet</h3>
+              </div>
+            </div>
+
+            {coinDropdown && (
+              <WalletCoins
+                DBwallet={DBwallet}
+                Clear={HandleCoinDropDown}
+                updateCoin={updateCoin}
+              />
+            )}
+
+            <div className="Home-Items2">
+              <div className="Home-Items2-1">
+                <NavLink to="/user/information">
+                  <img src={profile.img} alt="userImage" width={"30px"} />
+                </NavLink>
+
+                <div onClick={HandleNavProfile} className="navPro">
+                  <h3>&#9781;</h3>
+                  {navProfile && (
+                    <NavProfile profile={profile} Clear={HandleCoinDropDown} />
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mobile-item-display">
+          <div className="mobile-item-display-flex">
+            <div className="mobile-item-display-task">
+              <img src={icon1} alt="icon1" />
+            </div>
+
+            <div className="mobile-item-display-rotate">
+              <img className="mobile-rotate" src={spin1} alt="spin1" />
+              <img
+                className="mobile-item-display-pointer"
+                src={spin2}
+                alt="spin2"
+              />
+            </div>
+
+            <div className="mobile-item-display-fourth">
+              <img src={shitcode} alt="bitcoinIcon" />
+            </div>
+
+            <div className="mobile-item-display-fifth">
+              <div className="mobile-item-display-bitcoin">
+                <img src={bitcoinIcon} alt="bitcoinIcon" />
+                <img
+                  className="mobile-item-display-bitcoin-logo-cover"
+                  src={bitcoinLogo}
+                  alt="bitcoinLogo"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="mobile-item-display-play">
+            <div className="Home-Items3">
+              <NavLink to="" className="Home-Items3">
+                <img src={message} alt="message" width={"20px"} />
+              </NavLink>
+            </div>
+
+            <img className="Notify-mobile" onClick={Notify} src={not} alt="not" width={"20px"} />
+           
+            <div className="mobile-item-display-playing">
+              <img src={play} alt="play" />
+            </div>
+            <div onClick={Message} className="mobile-item-display-play-num">
+              <p>204</p>
+            </div>
+          </div>
+        </div>
+        {PublicMsg && <Chat cancel={Cancel} />}
+        {PublicNot && <Notification cancel={Cancel} />}
+      </div>
+
       <div className="Navbar">
         <div className="normal">
           <div className={NavBarPage}>

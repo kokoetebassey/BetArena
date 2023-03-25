@@ -13,7 +13,7 @@ import image1 from "../images/image 14.png";
 import image2 from "../images/image 15.png";
 import image3 from "../images/image 16.png";
 
-// import MobileHome from "../components/MobileHome";
+import MobileHome from "../components/MobileHome";
 // import ShitCode from "../pages/ShitCode";
 // import BCD from "../pages/BCD";
 // import TaskHub from "../pages/TaskHub";
@@ -49,6 +49,7 @@ export default function Home() {
 
   return (
     <>
+      <MobileHome />
       <div className="home-display">
         <div className="content-img-swipe">
           <div className="slot-line1-arrows-home-top">

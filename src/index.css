@@ -77,8 +77,6 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-
-
 .lds-ellipsis {
   display: inline-block;
   position: relative;
@@ -134,7 +132,7 @@ input[type="number"] {
     transform: translate(24px, 0);
   }
 }
-.craash{
+.craash {
   display: flex;
   align-items: center;
   justify-content: center;

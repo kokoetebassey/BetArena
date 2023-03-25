@@ -1,15 +1,16 @@
-.main-background{
+@media screen and (min-width: 1100px) {
+  .main-background {
     position: fixed;
     height: 100hv;
     width: 100%;
-    background-color:  #0b0d1c;
+    background-color: #0b0d1c;
     inset: 0px;
     z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.userinform{
+  }
+  .userinform {
     position: fixed;
     height: 44rem;
     width: 29rem;
@@ -17,52 +18,52 @@
     right: 38%;
     z-index: 99;
     top: 1rem;
-}
-.userinformlayer{
+  }
+  .userinformlayer {
     /* position: relative; */
     height: 100%;
-    background: #1E2024;
+    background: #1e2024;
     border-radius: 20.0456px;
     box-shadow: rgba(56, 56, 56, 0.24) 0px 5px 8px 0px;
-}
-.poptop{
+  }
+  .poptop {
     position: relative;
     display: flex;
-}
-.poptopleft{
+  }
+  .poptopleft {
     width: 50%;
     margin: 0;
     padding: 0;
     margin-top: 23px;
     margin-left: 20px;
-}
-.poptop h1{
+  }
+  .poptop h1 {
     font-size: 10px;
     color: #f0dede;
-}
-.poptopright{
+  }
+  .poptopright {
     width: 50%;
     margin: 0;
     padding: 0;
-}
-.poptopright .rec{
+  }
+  .poptopright .rec {
     position: absolute;
     width: 28px;
     margin-left: 5.7rem;
-}
-.poptopright .pol{
+  }
+  .poptopright .pol {
     position: absolute;
     width: 30px;
     margin-left: 5.6rem;
     margin-top: 3px;
-}
-.poptopright .klose{
+  }
+  .poptopright .klose {
     position: absolute;
     width: 13px;
     margin-left: 11.8rem;
     margin-top: 23px;
-}
-.popheart{
+  }
+  .popheart {
     position: relative;
     display: flex;
     align-items: center;
@@ -70,80 +71,80 @@
     margin: 0;
     padding: 0;
     margin-top: 18px;
-}
-.popheartleft{
+  }
+  .popheartleft {
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
-.popheartleft .brokn{
+  }
+  .popheartleft .brokn {
     width: 12px;
     margin: 3px;
     margin-left: 17px;
-}
-.popheartleft h1{
+  }
+  .popheartleft h1 {
     font-size: 12px;
     color: #f0dede;
-}
-.popheartright{
+  }
+  .popheartright {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-}
-.popheartright .smellipe{
+  }
+  .popheartright .smellipe {
     position: absolute;
     width: 25px;
     z-index: 0;
     margin: 0;
     margin-right: 1.1rem;
-}
-.popheartright .penn{
+  }
+  .popheartright .penn {
     /* position: absolute; */
     width: 12px;
     z-index: 1;
     margin: 0;
     margin-right: 1.1rem;
-}
-.bigellipe{
+  }
+  .bigellipe {
     width: 100%;
     position: relative;
     margin: 0;
     padding: 0;
-}
-.bigellipe .bigelipe{
+  }
+  .bigellipe .bigelipe {
     position: absolute;
     width: 39px;
     margin-left: 45%;
     margin-top: -19px;
-}
-.lword{
+  }
+  .lword {
     width: 100%;
     position: relative;
     margin: 0;
     padding: 0;
     margin-top: 7px;
-}
-.lword h1{
+  }
+  .lword h1 {
     position: absolute;
     font-size: 10px;
     font-weight: 400;
     color: #f0dede;
     margin-left: 46%;
     margin-top: 15px;
-}
-.medaldiv{
+  }
+  .medaldiv {
     margin-top: 28px;
-    margin-left:40.5%;
+    margin-left: 40.5%;
     position: absolute;
     display: flex;
     align-items: center;
-}
-.medaldiv img{
+  }
+  .medaldiv img {
     margin: 2px;
     width: 12px;
-}
-.bigmedaldiv{
+  }
+  .bigmedaldiv {
     position: relative;
     width: 86%;
     height: 4.4rem;
@@ -152,8 +153,8 @@
     background: rgba(0, 0, 0, 0.7);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-}
-.bigmedaldivv{
+  }
+  .bigmedaldivv {
     position: relative;
     width: 86%;
     height: 4.4rem;
@@ -162,8 +163,8 @@
     background: rgba(0, 0, 0, 0.7);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-}
-.big-medal-inner{
+  }
+  .big-medal-inner {
     position: absolute;
     display: flex;
     align-items: center;
@@ -171,34 +172,34 @@
     margin: 0;
     margin-top: 5px;
     width: 100%;
-}
-.big-medal-inner-left{
+  }
+  .big-medal-inner-left {
     width: 50%;
     display: flex;
     align-items: center;
     gap: 5px;
-}
-.big-medal-inner-left img{
+  }
+  .big-medal-inner-left img {
     width: 11px;
-}
-.big-medal-inner-left h1{
+  }
+  .big-medal-inner-left h1 {
     font-size: 8px;
     color: #f0dede;
-}
-.big-medal-inner-right{
+  }
+  .big-medal-inner-right {
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 8px;
-}
-.big-medal-inner-right img{
+  }
+  .big-medal-inner-right img {
     width: 5px;
-}
-.big-medal-inner-right h1{
+  }
+  .big-medal-inner-right h1 {
     font-size: 8px;
     color: darkgoldenrod;
-}
-.big-medal-second{
+  }
+  .big-medal-second {
     position: absolute;
     display: flex;
     align-items: center;
@@ -207,16 +208,16 @@
     margin: 0;
     margin-top: 22px;
     width: 100%;
-}
-.big-medal-second img{
+  }
+  .big-medal-second img {
     width: 24px;
     margin: 4px;
-}
-.big-medal-second .med{
+  }
+  .big-medal-second .med {
     height: 45px;
     margin: 4px;
-}
-.big-medal-secondd{
+  }
+  .big-medal-secondd {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -225,41 +226,41 @@
     margin: 0;
     margin-top: 25px;
     height: 60%;
-}
-.big-medal-secondd div{
+  }
+  .big-medal-secondd div {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: #1B1C20;
+    background: #1b1c20;
     border-radius: 12px;
     width: 105px;
     height: 100%;
     position: relative;
-}
-.big-medal-secondd div h1{
+  }
+  .big-medal-secondd div h1 {
     font-size: 9px;
     color: #878787;
     margin: 0;
     margin-top: 10px;
-}
-.big-medal-secondd div h2{
+  }
+  .big-medal-secondd div h2 {
     /* position: absolute; */
     font-size: 10px;
     color: #f0dede;
     /* margin: 0;
-    margin-left: 7%;
-    margin-top: 5px; */
-}
-.big-medal-secondd .bid-medal-div2 h1{
+          margin-left: 7%;
+          margin-top: 5px; */
+  }
+  .big-medal-secondd .bid-medal-div2 h1 {
     font-size: 7px;
-}
-/* .big-medal-secondd .bid-medal-div2 h2{
-    margin: 0;
-    margin-top: 5px;
-    margin-left: 11px;
-} */
-.big-middle-div{
+  }
+  /* .big-medal-secondd .bid-medal-div2 h2{
+          margin: 0;
+          margin-top: 5px;
+          margin-left: 11px;
+      } */
+  .big-middle-div {
     position: relative;
     width: 86%;
     height: 10rem;
@@ -268,16 +269,16 @@
     background: rgba(0, 0, 0, 0.7);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-}
-.big-middle-div h1{
+  }
+  .big-middle-div h1 {
     position: absolute;
     margin: 0;
     margin-top: 13px;
     margin-left: 19px;
     font-size: 8px;
     color: #f0dede;
-}
-.imagee{
+  }
+  .imagee {
     position: absolute;
     display: flex;
     align-items: center;
@@ -285,11 +286,299 @@
     margin: 0;
     margin-top: 3rem;
     margin-left: 6.6rem;
-}
-.imagee .toy{
+  }
+  .imagee .toy {
     width: 4rem;
-}
-.imagee .oops{
+  }
+  .imagee .oops {
     width: 9rem;
     margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .main-background {
+    position: fixed;
+    height: 100hv;
+    width: 100%;
+    background-color: #0b0d1c;
+    inset: 0px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .userinform {
+    width: 100%;
+    height: 100vh;
+    background: rgb(15, 13, 32);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  .userinformlayer {
+    /* position: relative; */
+    height: 100%;
+    background: #1e2024;
+    box-shadow: rgba(56, 56, 56, 0.24) 0px 5px 8px 0px;
+  }
+  .poptop {
+    position: relative;
+    display: flex;
+  }
+  .poptopleft {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    margin-top: 23px;
+    margin-left: 20px;
+  }
+  .poptop h1 {
+    font-size: 10px;
+    color: #f0dede;
+  }
+  .poptopright {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+  }
+  .poptopright .rec {
+    position: absolute;
+    width: 28px;
+    margin-left: 5.7rem;
+  }
+  .poptopright .pol {
+    position: absolute;
+    width: 30px;
+    margin-left: 5.6rem;
+    margin-top: 3px;
+  }
+  .poptopright .klose {
+    position: absolute;
+    width: 19px;
+    right: 15px;
+    top: 10px;
+  }
+  .popheart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    margin-top: 18px;
+  }
+  .popheartleft {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .popheartleft .brokn {
+    width: 12px;
+    margin: 3px;
+    margin-left: 17px;
+  }
+  .popheartleft h1 {
+    font-size: 12px;
+    color: #f0dede;
+  }
+  .popheartright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .popheartright .smellipe {
+    position: absolute;
+    width: 25px;
+    z-index: 0;
+    margin: 0;
+    margin-right: 1.1rem;
+  }
+  .popheartright .penn {
+    /* position: absolute; */
+    width: 12px;
+    z-index: 1;
+    margin: 0;
+    margin-right: 1.1rem;
+  }
+  .bigellipe {
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  .bigellipe .bigelipe {
+    position: absolute;
+    width: 39px;
+    margin-left: 45%;
+    margin-top: -19px;
+  }
+  .lword {
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    margin-top: 7px;
+  }
+  .lword h1 {
+    position: absolute;
+    font-size: 10px;
+    font-weight: 400;
+    color: #f0dede;
+    margin-left: 46%;
+    margin-top: 15px;
+  }
+  .medaldiv {
+    margin-top: 28px;
+    margin-left: 40.5%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+  }
+  .medaldiv img {
+    margin: 2px;
+    width: 12px;
+  }
+  .bigmedaldiv {
+    position: relative;
+    width: 86%;
+    height: 4.4rem;
+    margin: auto;
+    margin-top: 5.4rem;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+  .bigmedaldivv {
+    position: relative;
+    width: 86%;
+    height: 4.4rem;
+    margin: auto;
+    margin-top: 4px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+  .big-medal-inner {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+    margin-top: 5px;
+    width: 100%;
+  }
+  .big-medal-inner-left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .big-medal-inner-left img {
+    width: 11px;
+  }
+  .big-medal-inner-left h1 {
+    font-size: 8px;
+    color: #f0dede;
+  }
+  .big-medal-inner-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 8px;
+  }
+  .big-medal-inner-right img {
+    width: 5px;
+  }
+  .big-medal-inner-right h1 {
+    font-size: 8px;
+    color: darkgoldenrod;
+  }
+  .big-medal-second {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 0;
+    margin-top: 22px;
+    width: 100%;
+  }
+  .big-medal-second img {
+    width: 24px;
+    margin: 4px;
+  }
+  .big-medal-second .med {
+    height: 45px;
+    margin: 4px;
+  }
+  .big-medal-secondd {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    margin-top: 25px;
+    height: 60%;
+  }
+  .big-medal-secondd div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #1b1c20;
+    border-radius: 12px;
+    width: 105px;
+    height: 100%;
+    position: relative;
+  }
+  .big-medal-secondd div h1 {
+    font-size: 9px;
+    color: #878787;
+    margin: 0;
+    margin-top: 10px;
+  }
+  .big-medal-secondd div h2 {
+    font-size: 10px;
+    color: #f0dede;
+  }
+  .big-medal-secondd .bid-medal-div2 h1 {
+    font-size: 7px;
+  }
+  .big-middle-div {
+    position: relative;
+    width: 86%;
+    height: 10rem;
+    margin: auto;
+    margin-top: 4px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+  .big-middle-div h1 {
+    position: absolute;
+    margin: 0;
+    margin-top: 13px;
+    margin-left: 19px;
+    font-size: 8px;
+    color: #f0dede;
+  }
+  .imagee {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 3rem;
+    margin-left: 6.6rem;
+  }
+  .imagee .toy {
+    width: 4rem;
+  }
+  .imagee .oops {
+    width: 9rem;
+    margin-top: 1rem;
+  }
 }

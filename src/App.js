@@ -36,7 +36,6 @@ import Options from "./Pop up/Options";
 // import axios from "axios";
 import UserInfo from "./Navbar/UserInfo";
 
-
 // =============== Import HTTPS request ==================
 import axios from "axios";
 
@@ -82,13 +81,12 @@ function App() {
           console.log(error);
         });
     };
-    if(user){
+    if (user) {
       fetchData();
     }
   }, [user]);
 
   // console.log(cryptoCoin)
-
 
   const [displaySelectCoin, setDisplaySelectCoin] = useState(false);
   const [PublicMsg] = useState(false);
@@ -101,12 +99,11 @@ function App() {
     }
   };
 
+  const [cryptoWallet, setCryptoWallet] = useState("");
+  const [cryptoCoin, setCryptoCoin] = useState("");
+  const [USDTCoin, setUSDTCoin] = useState("");
 
-  const [ cryptoWallet,  setCryptoWallet ] = useState('')
-  const [ cryptoCoin, setCryptoCoin ] = useState('')
-  const [ USDTCoin, setUSDTCoin ] = useState('')
-
-  // =================Fetch default coins ========================== 
+  // =================Fetch default coins ==========================
   useEffect(() => {
     const fetchData = async () => {
       await axios
@@ -117,43 +114,39 @@ function App() {
         })
         .then((response) => {
           setCryptoCoin(response.data[0]);
-          setCryptoWallet(response.data[0].wallet_address[0])
+          setCryptoWallet(response.data[0].wallet_address[0]);
         })
         .catch((error) => {
           console.log(error);
         });
     };
-    if(user){
+    if (user) {
       fetchData();
     }
   }, [user]);
 
-const coinData = ((e)=>{
-    setCryptoCoin(e)
+  const coinData = (e) => {
+    setCryptoCoin(e);
     setDisplaySelectCoin(false);
-      if(e.coin_name === "USDT"){
-        setUSDTCoin(e.wallet_address[0].address)
-        setCryptoWallet('')
-      }else{
-        setUSDTCoin('')
-        setCryptoWallet(e.wallet_address[0])
-      }
-    
-})  
+    if (e.coin_name === "USDT") {
+      setUSDTCoin(e.wallet_address[0].address);
+      setCryptoWallet("");
+    } else {
+      setUSDTCoin("");
+      setCryptoWallet(e.wallet_address[0]);
+    }
+  };
 
-
-const Cancel = (e) => {
-  // setPublicMsg(false);
-  // if (menucount) {
-  //   setView("default");
-  //   setNavBarPage("Navbar-container");
-  // } else {
-  //   setView("full_view");
-  //   setNavBarPage("openNavbar-container");
-  // }
-};
-
-
+  const Cancel = (e) => {
+    // setPublicMsg(false);
+    // if (menucount) {
+    //   setView("default");
+    //   setNavBarPage("Navbar-container");
+    // } else {
+    //   setView("full_view");
+    //   setNavBarPage("openNavbar-container");
+    // }
+  };
 
   const WalletAddress = (e) => {
     console.log(e);
@@ -171,7 +164,6 @@ const Cancel = (e) => {
           <Routes>
             <Route path="/" element={<Home />}></Route>
 
-
             {/* ================ Login route ============================= */}
 
             <Route path="/signup" element={<Signup />}>
@@ -179,17 +171,14 @@ const Cancel = (e) => {
             </Route>
             <Route path="/signup/secon" element={<SecondStep />} />
             <Route path="/signup/finale" element={<LastStep />} />
-             <Route path="/login" element={<Login />}></Route> 
+            <Route path="/login" element={<Login />}></Route>
 
-
-             <Route path="/user/information" element={<UserInfo />} />
+            <Route path="/user/information" element={<UserInfo />} />
             <Route path="/options" element={<Options />} />
             <Route path="/chat" element={<ChatRoom />}>
               <Route path="request" element={<Request />} />
             </Route>
 
-    
-           
             {/* ========= Pages ================= */}
             <Route path="/slots" element={<Slot />}></Route>
             <Route path="/affiliate" element={<Affiliate />}></Route>
@@ -209,29 +198,41 @@ const Cancel = (e) => {
             {/* ============= Games =================== */}
             <Route path="/crash" element={<Crash />}></Route>
 
-
             {/* ====================== Transactions ================================ */}
             <Route
               path="/wallet"
               element={
-                <Transaction  WalletAddress={WalletAddress}  coinData={coinData}
-                  SelectCoin={SelectCoin}   displaySelectCoin={displaySelectCoin}  />
+                <Transaction
+                  WalletAddress={WalletAddress}
+                  coinData={coinData}
+                  SelectCoin={SelectCoin}
+                  displaySelectCoin={displaySelectCoin}
+                />
               }
             >
-
-
               <Route index element={<Deposit />} />
               <Route
                 path="deposit"
-                element={<Deposit cryptoCoin={cryptoCoin} usdt={USDTCoin} cryptoWallet={cryptoWallet} selectCoin={SelectCoin} />}
+                element={
+                  <Deposit
+                    cryptoCoin={cryptoCoin}
+                    usdt={USDTCoin}
+                    cryptoWallet={cryptoWallet}
+                    selectCoin={SelectCoin}
+                  />
+                }
               ></Route>
               <Route
                 path="withdraw"
-                element={<Withdraw cryptoCoin={cryptoCoin} selectCoin={SelectCoin} />}
+                element={
+                  <Withdraw cryptoCoin={cryptoCoin} selectCoin={SelectCoin} />
+                }
               ></Route>
               <Route path="swap" element={<Swap />}></Route>
-              <Route path="vault" element={<Vault  cryptoCoin={cryptoCoin} />}></Route>
-
+              <Route
+                path="vault"
+                element={<Vault cryptoCoin={cryptoCoin} />}
+              ></Route>
             </Route>
 
             <Route path="/crash" element={<Crash />}></Route>
@@ -253,7 +254,7 @@ const Cancel = (e) => {
             <Route path="/ShitCode" element={<ShitCode />}></Route>
             <Route path="/TaskHub" element={<TaskHub />}></Route>
             <Route path="/Testing" element={<Testing />}></Route>*/}
-          </Routes> 
+          </Routes>
         </div>
       </BrowserRouter>
     </div>
