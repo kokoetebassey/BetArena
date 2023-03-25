@@ -330,7 +330,7 @@ export default function Crash() {
                         crashGame
                       ) : (
                         <div className="craash">
-                          <h4>Reconnecting</h4>{" "}
+                          <h4>Reconnecting</h4>
                           <div className="lds-ellipsis">
                             <div></div>
                             <div></div>
@@ -338,6 +338,9 @@ export default function Crash() {
                             <div></div>
                           </div>
                         </div>
+
+                      
+                      
                       )}
                     </div>
                   </div>
