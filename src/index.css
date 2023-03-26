@@ -85,7 +85,6 @@ input[type="number"] {
 }
 .lds-ellipsis div {
   position: absolute;
-
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -140,4 +139,23 @@ input[type="number"] {
   font-size: 18px;
   margin: 0;
   margin-left: 4rem;
+}
+@media screen and (max-width: 767px) {
+  .craash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    font-size: 14px;
+    margin: 0;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(180, 140, 40);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    padding-left: 5px;
+  }
 }
