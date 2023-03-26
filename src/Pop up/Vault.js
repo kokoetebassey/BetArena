@@ -65,7 +65,7 @@ export default function Vault({ cryptoCoin }) {
                   className="round"
                   src={cryptoCoin.coin_image}
                   alt=""
-                  width={"30px"}
+                  width={"24px"}
                 />
                 <h1>{cryptoCoin.coin_name}</h1>
                 <img src={arrow} alt="" width={"7px"} className="arroww" />

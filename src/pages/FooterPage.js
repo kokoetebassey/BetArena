@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import "./pagesStyles/footerPage.css";
 
 export default function History() {
+
   return (
     <div className="footer-general-cover">
       <div className="footer-general">
@@ -142,7 +143,10 @@ export default function History() {
             <div className="mobile-footer-last-row2">
               <h4>©2022 BETARENA.GG ALL RIGHTS RESERVED</h4>
               <div className="mobile-footer-top">
-                <div className="footer-top">
+                <div
+           
+                  className="footer-top"
+                >
                   <div className="footer-top-arrow">
                     <img src={footer2} alt="footer2" />
                   </div>

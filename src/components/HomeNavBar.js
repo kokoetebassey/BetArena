@@ -378,7 +378,7 @@ export default function HomeNavBar({ setScreen, setView }) {
               <img src={play} alt="play" />
             </div>
             <div onClick={Message} className="mobile-item-display-play-num">
-              <p>204</p>
+              <p>1</p>
             </div>
           </div>
         </div>
@@ -485,7 +485,7 @@ export default function HomeNavBar({ setScreen, setView }) {
               </div>
 
               <div className="play" onClick={Message}>
-                <p>28</p>
+                <p>1</p>
                 <img src={play} alt="" />
               </div>
             </div>

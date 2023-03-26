@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import footer1 from "../images/footer-logo.png";
 import footer2 from "../images/footer-top arrow.png";
 import { NavLink } from "react-router-dom";
@@ -6,6 +6,9 @@ import { NavLink } from "react-router-dom";
 import "./styles/footer.css";
 
 export default function History() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   return (
     <div className="footer-general-cover">
       <div className="footer-general">
@@ -57,7 +60,12 @@ export default function History() {
             <div className="copyright">
               <h4>©2022 BETARENA.GG ALL RIGHTS RESERVED</h4>
             </div>
-            <div className="footer-top">
+            <div
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+              className="footer-top"
+            >
               <div className="footer-top-arrow">
                 <img src={footer2} alt="footer2" />
               </div>
@@ -142,7 +150,12 @@ export default function History() {
 
             <div className="mobile-footer-last-row2">
               <h4>©2022 BETARENA.GG ALL RIGHTS RESERVED</h4>
-              <div className="mobile-footer-top">
+              <div
+                onClick={() => {
+                  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                }}
+                className="mobile-footer-top"
+              >
                 <div className="footer-top">
                   <div className="footer-top-arrow">
                     <img src={footer2} alt="footer2" />

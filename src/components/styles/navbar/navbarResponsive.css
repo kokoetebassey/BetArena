@@ -39,7 +39,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 20;
   }
   .mobile-extreme-nav {
     display: flex;
@@ -159,7 +159,7 @@
     top: 54px;
     left: 0;
     padding: 10px 0px 5px 0px;
-    z-index: 99;
+    z-index: 19;
   }
 
   .mobile-item-display-flex {
@@ -260,9 +260,10 @@
     top: 0px;
     right: -10px;
     background: #ad8605;
-    padding: 2px;
-    border-radius: 9px;
-
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
   }
   .mobile-item-display-play-num p {
     color: #ffffff;

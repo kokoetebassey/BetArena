@@ -17,6 +17,7 @@ import key from "../images/key svg.svg";
 import bitcoinIcon from "../images/bitcoin icon svg.svg";
 import bitcoinLogo from "../images/bitcoin logo cover.svg";
 import shitcode from "../images/shitcode icon.svg";
+import Chat from "./Chat";
 
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -90,9 +91,19 @@ export default function Navbar({ setScreen, setView }) {
     setShowMobileMenu(true);
   };
 
-
   const close = (data) => {
     setShowMobileMenu(false);
+  };
+
+  const Cancel = (e) => {
+    setPublicMsg(false);
+    if (menucount) {
+      setView("default");
+      setNavBarPage("Navbar-container");
+    } else {
+      setView("full_view");
+      setNavBarPage("openNavbar-container");
+    }
   };
 
   const Message = () => {
@@ -188,7 +199,7 @@ export default function Navbar({ setScreen, setView }) {
             </div>
           </div>
 
-          <div className="mobile-item-display-play">
+          <div onClick={Message} className="mobile-item-display-play">
             <div className="mobile-item-display-playing">
               <img src={play} alt="play" />
             </div>
@@ -196,6 +207,7 @@ export default function Navbar({ setScreen, setView }) {
               <p>204</p>
             </div>
           </div>
+          {PublicMsg && <Chat cancel={Cancel} />}
         </div>
       </div>
 
@@ -229,6 +241,7 @@ export default function Navbar({ setScreen, setView }) {
                 <img src={play} alt="" />
               </div>
             </div>
+            {PublicMsg && <Chat cancel={Cancel} />}
           </div>
         </div>
       </div>

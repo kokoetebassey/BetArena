@@ -571,6 +571,11 @@
   }
   .flexB span {
     font-size: 10px;
+    
+  }
+  .flexB  {
+    padding-bottom: 15px;
+
   }
   .deposit-reward-cover-tops {
     display: flex;

@@ -228,7 +228,10 @@ function App() {
                   <Withdraw cryptoCoin={cryptoCoin} selectCoin={SelectCoin} />
                 }
               ></Route>
-              <Route path="swap" element={<Swap />}></Route>
+              <Route
+                path="swap"
+                element={<Swap cryptoCoin={cryptoCoin} />}
+              ></Route>
               <Route
                 path="vault"
                 element={<Vault cryptoCoin={cryptoCoin} />}

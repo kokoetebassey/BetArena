@@ -5,7 +5,7 @@ import arrow from "../images/arrow.svg";
 import vect from "../images/database.svg";
 // import { useLocation } from "react-router";
 
-export default function Swap() {
+export default function Swap({ cryptoCoin }) {
   const [swapAltcoin, setSwapAltcoin] = useState(0);
   const [value, setValue] = useState("0");
 
@@ -68,7 +68,7 @@ export default function Swap() {
                   </span>
                 </div>
                 <div className="cbottomright">
-                  <img src={bitcoin} alt="" width={"54px"} />
+                  <img src={cryptoCoin.coin_image} alt="" width={"20px"} />
                   <h1>BTC</h1>
                   <img src={arrow} alt="" width={"7px"} className="arroww" />
                 </div>
@@ -98,7 +98,7 @@ export default function Swap() {
                   <span></span>
                 </div>
                 <div className="cbottomright">
-                  <img src={bitcoin} alt="" width={"54px"} />
+                  <img src={cryptoCoin.coin_image} alt="" width={"20px"} />
                   <h1>BTC</h1>
                   <img src={arrow} alt="" width={"7px"} className="arroww" />
                 </div>
@@ -118,7 +118,7 @@ export default function Swap() {
               <button className="divbutton">Swap Now</button>
             </>
           )}
-           {swapAltcoin === 1 && (
+          {swapAltcoin === 1 && (
             <>
               <div className="fromaltcoin"></div>
               <div className="fromaltcoin"></div>
@@ -175,7 +175,7 @@ export default function Swap() {
                   </div>
                 </div>
                 <div className="centerright">
-                  <img src={bitcoin} alt="" width={"54px"} />
+                  <img src={cryptoCoin.coin_image} alt="" width={"20px"} />
                   <h1>BTC</h1>
                   <img src={arrow} alt="" width={"7px"} className="arroww" />
                 </div>
