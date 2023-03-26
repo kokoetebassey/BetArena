@@ -204,7 +204,7 @@ export default function Navbar({ setScreen, setView }) {
               <img src={play} alt="play" />
             </div>
             <div className="mobile-item-display-play-num">
-              <p>204</p>
+              <p>1</p>
             </div>
           </div>
           {PublicMsg && <Chat cancel={Cancel} />}
@@ -237,7 +237,7 @@ export default function Navbar({ setScreen, setView }) {
                 <NavLink to="signup/regist">Signup</NavLink>
               </div>
               <div className="play" onClick={Message}>
-                <p>28</p>
+                <p>1</p>
                 <img src={play} alt="" />
               </div>
             </div>
