@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../Pop up/styles/swap.css";
-import bitcoin from "../images/bitcoin icon svg.svg";
 import arrow from "../images/arrow.svg";
 import vect from "../images/database.svg";
 // import { useLocation } from "react-router";
