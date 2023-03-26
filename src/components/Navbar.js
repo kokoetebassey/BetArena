@@ -125,7 +125,9 @@ export default function Navbar({ setScreen, setView }) {
         <div className="mobile-head-container">
           <div className="mobile-first-nav">
             <div className="mobile-first-logo">
-              <img src={mobileIcon} alt="mobileMenu" />
+              <NavLink to="/">
+                <img src={mobileIcon} alt="mobileMenu" />
+              </NavLink>
             </div>
             <div className="mobile-first-menu" onClick={MobileHandle}>
               <img src={mobileMenu} alt="mobileMenu" />

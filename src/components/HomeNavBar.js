@@ -271,7 +271,9 @@ export default function HomeNavBar({ setScreen, setView }) {
         <div className="mobile-head-container">
           <div className="mobile-first-nav">
             <div className="mobile-first-logo">
-              <img src={mobileIcon} alt="mobileMenu" />
+              <NavLink to="/">
+                <img src={mobileIcon} alt="mobileMenu" />
+              </NavLink>
             </div>
             <div className="mobile-first-menu" onClick={MobileHandle}>
               <img src={mobileMenu} alt="mobileMenu" />
@@ -372,8 +374,14 @@ export default function HomeNavBar({ setScreen, setView }) {
               </NavLink>
             </div>
 
-            <img className="Notify-mobile" onClick={Notify} src={not} alt="not" width={"20px"} />
-           
+            <img
+              className="Notify-mobile"
+              onClick={Notify}
+              src={not}
+              alt="not"
+              width={"20px"}
+            />
+
             <div className="mobile-item-display-playing">
               <img src={play} alt="play" />
             </div>
