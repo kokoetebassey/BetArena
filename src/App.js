@@ -53,6 +53,8 @@ function App() {
 
   }
 
+  
+
   const setScreen = () => {
     if (isTablet) {
       setIsTablet(false);
