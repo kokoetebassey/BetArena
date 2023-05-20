@@ -2,11 +2,41 @@ import React from "react";
 import footer1 from "../images/footer-logo.png";
 import footer2 from "../images/footer-top arrow.png";
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import "./styles/footer.css";
 
 export default function History() {
+
+ 
+    const [isVisible, setIsVisible] = useState(false);
+  
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+  
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    };
+  
+    useEffect(() => {
+      window.addEventListener('scroll', toggleVisibility);
+      return () => {
+        window.removeEventListener('scroll', toggleVisibility);
+      };
+    }, []);
+
+
+
   return (
+
     <div className="footer-general-cover">
       <div className="footer-general">
         <div className="footer-logo">
@@ -57,7 +87,9 @@ export default function History() {
             <div className="copyright">
               <h4>©2022 BETARENA.GG ALL RIGHTS RESERVED</h4>
             </div>
-            <div className="footer-top">
+            <div className="footer-top"
+              // className={`scroll-to-top ${isVisible ? 'visible' : ''}`} 
+              onClick={scrollToTop}>
               <div className="footer-top-arrow">
                 <img src={footer2} alt="footer2" />
               </div>
@@ -65,6 +97,14 @@ export default function History() {
                 <h1>Top</h1>
               </div>
             </div>
+            {/* <div className="footer-top">
+              <div className="footer-top-arrow">
+                <img src={footer2} alt="footer2" />
+              </div>
+              <div className="footer-top-logo">
+                <h1>Top</h1>
+              </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -152,6 +192,15 @@ export default function History() {
                   </div>
                 </div>
               </div>
+
+
+            <div 
+              className={`scroll-to-top ${isVisible ? 'visible' : ''}`} 
+              onClick={scrollToTop}>
+              <span>&#8593;</span> {/* Up arrow icon */}
+            </div>
+
+
             </div>
           </div>
         </div>

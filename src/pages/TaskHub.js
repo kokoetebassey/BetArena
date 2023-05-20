@@ -7,13 +7,21 @@ import T4 from "../images/images/l3 1.png";
 import T5 from "../images/images/g3 1.png";
 
 export default function TaskHup() {
+  const History = (e) => {
+    e.preventDefault();
+    window.history.back();
+  };
+
+
   return (
+
+
     <div className="task-display-cover">
       <div className="task-display-cover">
         <div className="task-display-page">
           <div className="task-display-top">
             <h3>BCD Unlock</h3>
-            <h2>&#10006;</h2>
+            <h2 onClick={History}>&#10006;</h2>
           </div>
 
           <div className="task-display-second-cover-scroll">

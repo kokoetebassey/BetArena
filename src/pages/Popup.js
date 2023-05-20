@@ -1,8 +1,8 @@
 import React from 'react'
 import "./pagesStyles/Popup.css";
-import download from "./images/download.png";
+// import download from "./images/download.png";
 import { Link } from 'react-router-dom';
-import Home from '../components/Home';
+// import Home from '../components/Home';
 
 
 
@@ -19,7 +19,7 @@ export default function Popup() {
     <div className="popup_container">
       <div className="popup_container_flex">
         <div className="imgs">
-          <img src={download} alt="" width={300}/>
+          {/* <img src={download} alt="" width={300}/> */}
         </div>
         <div className="close">
           <h3 onClick={History}>x</h3>
@@ -38,7 +38,9 @@ export default function Popup() {
         </div>
       </div>
     </div>
-    <Home />
+
+    
+    {/* <Home /> */}
     </div>
   )
 }

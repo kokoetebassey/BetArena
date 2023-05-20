@@ -2,12 +2,12 @@ import { Routes,  Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import MenuBar from "./components/MenuBar";
 import Navbar from "./components/Navbar";
+import PageMaintain from "./components/PageMaintain";
 import HomeNavBar from "./components/HomeNavBar";
 import Home from "./pages/Home";
 import axios from "axios";
 import Signup from "./Logins/Signup";
 import Login from "./Logins/Login";
-
 import { useAuthContext } from "./hooks/useAuthContext";
 import Slot from "./pages/Slot";
 import Affiliate from "./pages/Affiliate";
@@ -15,11 +15,17 @@ import Lottery from "./pages/Lottery";
 import History from "./pages/History";
 import Ticket from "./pages/Tickets";
 import BCD from "./pages/BCD";
+// import Preloader from "./pages/Preloader";
 import Vip from "./pages/Vip";
+import Popup from "./pages/Popup"
 import Promotion from "./pages/Promotion";
 import TaskHup from "./pages/TaskHub";
 import LiveCasino from "./pages/LiveCasino";
+import ShitCode from "./pages/ShitCode";
+import Support from "./pages/Support";
 import Crash from "./Crash/Crash";
+
+import Preloader from './pages/Preloader';
 
 
 // import { useLogOut } from "./hooks/useLogOut";
@@ -53,8 +59,6 @@ function App() {
 
   }
 
-  
-
   const setScreen = () => {
     if (isTablet) {
       setIsTablet(false);
@@ -80,11 +84,25 @@ function App() {
   //   logout();
   // };
 
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 10000); // Change time to your desired duration
+    return () => clearTimeout(timer);
+  }, []);
+
+
   return (
-    <div className="App">
+    <>
+    {isLoading ? <Preloader /> 
+    :
+    <div className="App"> 
       {user && <HomeNavBar setView={setView} setScreen={setScreen} />}
       <MenuBar isTablet={isTablet} />
       {!user && <Navbar setView={setView} setScreen={setScreen} />}
+
+
 
       <div className={viewPoint}>
         <Routes>
@@ -103,37 +121,25 @@ function App() {
             <Route path="/vip" element={<Vip />}></Route>
             <Route path="/promotion" element={<Promotion />}></Route>
             <Route path="/live-casino" element={<LiveCasino />}></Route>
+            {/* <Route path="/Preloader" element={<Preloader />}></Route> */}
             
 
           {/* ========== Pop ============== */}
           <Route path="/BCD" element={<BCD />}></Route>
-          <Route path="/TaskHup" element={<TaskHup />}></Route>
+          <Route path="TaskHup" element={<TaskHup />}></Route>
 
         {/* ============= Games =================== */}
 
-        <Route path="/crash" element={<Crash />}></Route>
-          {/* <Route path="BetHistory" element={<BetHistory />}></Route>
-
-            <Route path="Recommend" element={<Recommend />}></Route>
-            <Route path="CrashPoint" element={<CrashPoint />}></Route>
-
-            <Route path="/Support" element={<Support />}></Route>
-            <Route path="/Support1" element={<Support1 />}></Route>
-            <Route path="/Support2" element={<Support2 />}></Route>
-            <Route path="/Support3" element={<Support3 />}></Route>
+        <Route path="/crash" element={<Crash />}></Route>  
             <Route path="/Popup" element={<Popup />}></Route>
-            <Route path="/ChatBox" element={<ChatBox />}></Route>
-            <Route
-              path="UsersNotification"
-              element={<UsersNotification />}
-            ></Route>
-
+            <Route path="/PageMaintain" element={<PageMaintain />}></Route>
+            <Route path="/Support" element={<Support />}></Route>
             <Route path="/ShitCode" element={<ShitCode />}></Route>
-            <Route path="/TaskHub" element={<TaskHub />}></Route>
-            <Route path="/Testing" element={<Testing />}></Route> */}
         </Routes>
       </div>
     </div>
+  }
+  </>
   );
 }
 

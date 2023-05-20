@@ -100,7 +100,7 @@ export default function MenuBar({ isTablet }) {
             </div>
 
             <div className="MenuBar-contents">
-              <NavLink to="/">
+              <NavLink to="/PageMaintain">
                 <div className="nav-details">
                   <div className="game-icon">
                     <img src={home} alt="casino" />
@@ -169,7 +169,7 @@ export default function MenuBar({ isTablet }) {
                     </div>
                   </NavLink>
 
-                  <NavLink to="/popup">
+                  <NavLink to="/PageMaintain">
                     <div className="middle-belt">
                       <div className="pointer">
                         <img src={pointer} alt="casino" />
@@ -180,7 +180,7 @@ export default function MenuBar({ isTablet }) {
                     </div>
                   </NavLink>
 
-                  <NavLink to="">
+                  <NavLink to="/PageMaintain">
                     <div className="middle-belt">
                       <div className="key">
                         <img src={key} alt="casino" />
@@ -192,10 +192,11 @@ export default function MenuBar({ isTablet }) {
                   </NavLink>
                 </div>
               </div>
+              
 
               <div className="middle-contents">
                 <div className="middle">
-                  <NavLink to="">
+                  <NavLink to="/PageMaintain">
                     <div className="middle-belt">
                       <div className="key">
                         <img src={key} alt="casino" />
@@ -214,7 +215,7 @@ export default function MenuBar({ isTablet }) {
                     </div>
                   </NavLink>
 
-                  <NavLink to="/UnlockPopup">
+                  <NavLink to="/PageMaintain">
                     <div className="middle-belt">
                       <div className="holder">
                         <img src={coinIcon} alt="casino" />
@@ -329,32 +330,7 @@ export default function MenuBar({ isTablet }) {
 
                   <div className="language-currency">
                     <div className="container">
-                      {/* <div className="contents">
-                        <p>Language & Currently</p>
-                        <div className="input">
-                          <input type="text" placeholder="English" />
-                          <img src={arrow} alt="" />
-                        </div>
-                      </div> */}
-
-                      {/* <div className="switch-mode">
-                        <div className="switch" onClick={switchHandle}>
-                          <div className="switch-contents">
-                            <div className="moon">
-                              <img src={moon} alt="" />
-                            </div>
-                            <div className="setting">
-                              <img src={setting} alt="" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="mode">
-                          <div className="mode-contents">
-                            <h3>Dark mode</h3>
-                            <h4>Currently</h4>
-                          </div>
-                        </div>
-                      </div> */}
+           
 
                       <hr />
                       <div className="live_support_head">

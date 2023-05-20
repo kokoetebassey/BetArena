@@ -1,14 +1,14 @@
 import React from 'react'
-import betlogo from "./images/betlogo.png";
-import chatbox from "./images/chatbox-sign.png";
-import Ellipse  from "./images/Ellipse 18.png";
-import Ellipse1  from "./images/Ellipse 19.png";
-import Ellipse2  from "./images/Ellipse 20.png";
-import greater  from "./images/greater.svg";
-import vector  from "./images/vector 20.png";
+import betlogo from "../images/images/betlogo.png";
+import chatbox from "../images/images/chatbox-sign.png";
+import Ellipse  from "../images/images/Ellipse 18.png";
+import Ellipse1  from "../images/images/Ellipse 19.png";
+import Ellipse2  from "../images/images/Ellipse 20.png";
+import greater  from "../images/images/greater.svg";
+import vector  from "../images/images/vector 20.png";
 import "./pagesStyles/Support.css";
 import { Link } from 'react-router-dom';
-import Home from '../components/Home';
+// import Home from '../components/Home';
 
 
 
@@ -100,7 +100,6 @@ export default function Support() {
 
     </div>
     </div>
-    <Home/>
     </>
   )
 }

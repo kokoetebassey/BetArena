@@ -160,3 +160,21 @@
   color: #ffffff;
   font-size: 14px;
 }
+
+
+.under_maintain{
+  /* background-color: #0c0b0b; */
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000000;
+}
+.under_maintain h1{
+  color: white;
+  top: 37%;
+  left: 27%;
+  position: fixed;
+}
+.hold_on{
+margin-left:216px;
+}
